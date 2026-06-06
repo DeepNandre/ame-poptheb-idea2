@@ -1,6 +1,4 @@
-import { useEffect, useState, type CSSProperties } from "react";
-
-const NBSP = " ";
+import { Fragment, useEffect, useState, type CSSProperties } from "react";
 
 interface AnimatedHeadingProps {
   /** Heading text. Split on "\n" into separate lines. */
@@ -21,9 +19,9 @@ interface AnimatedHeadingProps {
  * character is (lineIndex * lineLength * charDelay) + (charIndex * charDelay),
  * and the whole sequence begins after `initialDelay`.
  *
- * Characters are grouped into per-word inline-block units so a line only ever
- * wraps at word boundaries — never mid-word — even though every glyph animates
- * on its own.
+ * Letters are grouped into per-word inline-block units (so a word never breaks
+ * mid-glyph), with a normal breaking space between words (so a long line still
+ * wraps at word boundaries instead of overflowing).
  */
 export function AnimatedHeading({
   text,
@@ -60,20 +58,26 @@ export function AnimatedHeading({
         return (
           <span key={lineIndex} className="block">
             {words.map((word, wordIndex) => {
+              const letters = word.split("").map((char) => {
+                const idx = charCursor++;
+                return (
+                  <span
+                    key={idx}
+                    className="inline-block"
+                    style={charStyle(lineIndex, lineLength, idx)}
+                  >
+                    {char}
+                  </span>
+                );
+              });
               const isLast = wordIndex === words.length - 1;
-              // Keep each word's trailing space attached so it never starts a line.
-              const unit = (isLast ? word : word + " ").split("");
+              if (!isLast) charCursor++; // account for the inter-word space in the stagger
               return (
-                <span key={wordIndex} className="inline-block whitespace-nowrap">
-                  {unit.map((char) => {
-                    const idx = charCursor++;
-                    return (
-                      <span key={idx} className="inline-block" style={charStyle(lineIndex, lineLength, idx)}>
-                        {char === " " ? NBSP : char}
-                      </span>
-                    );
-                  })}
-                </span>
+                <Fragment key={wordIndex}>
+                  <span className="inline-block whitespace-nowrap">{letters}</span>
+                  {/* Breakable space between words → the line wraps at word boundaries. */}
+                  {!isLast ? " " : null}
+                </Fragment>
               );
             })}
           </span>

@@ -15,9 +15,6 @@ dist-ssr
 .env.*
 !.env.example
 
-# Early-access lead capture — contains visitor emails (PII)
-data/
-
 # Editor / OS
 .vscode/*
 !.vscode/extensions.json

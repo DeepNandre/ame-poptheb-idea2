@@ -1,27 +1,41 @@
 import { useEffect, useState } from "react";
 import { Hero } from "./Hero";
-import { EarlyAccessModal } from "./EarlyAccessModal";
+import { Thesis } from "./Thesis";
+import { Capabilities } from "./Capabilities";
+import { HowItWorks } from "./HowItWorks";
+import { ForInsurers } from "./ForInsurers";
+import { Scope } from "./Scope";
+import { FinalCta } from "./FinalCta";
+import { Footer } from "./Footer";
+import { DemoModal } from "./DemoModal";
 
 /**
- * Stealth teaser landing — full-screen hero video with an early-access form.
- * Deliberately does not reveal the underlying product.
+ * Spectre marketing landing — attack-surface intelligence for insurers.
  *
- * Visiting with `?access` (e.g. from an email or social link) opens the
- * early-access form straight away.
+ * Visiting with `?demo` (e.g. from an email or ad) opens the demo form straight
+ * away.
  */
 export function LandingPage() {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [demoOpen, setDemoOpen] = useState(false);
 
   useEffect(() => {
-    if (new URLSearchParams(window.location.search).has("access")) {
-      setModalOpen(true);
-    }
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("demo") || params.has("access")) setDemoOpen(true);
   }, []);
 
+  const openDemo = () => setDemoOpen(true);
+
   return (
-    <div className="font-inter min-h-screen bg-black">
-      <Hero onRequestAccess={() => setModalOpen(true)} />
-      <EarlyAccessModal open={modalOpen} onClose={() => setModalOpen(false)} />
+    <div className="font-inter min-h-screen overflow-x-hidden bg-black text-white">
+      <Hero onBookDemo={openDemo} />
+      <Thesis />
+      <Capabilities />
+      <HowItWorks />
+      <ForInsurers />
+      <Scope />
+      <FinalCta onBookDemo={openDemo} />
+      <Footer />
+      <DemoModal open={demoOpen} onClose={() => setDemoOpen(false)} />
     </div>
   );
 }

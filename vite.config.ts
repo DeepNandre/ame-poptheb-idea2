@@ -1,26 +1,12 @@
 import path from "path";
 import react from "@vitejs/plugin-react";
-import { defineConfig, type PluginOption } from "vite";
-// @ts-expect-error — plain .mjs server module, no types
-import { earlyAccessMiddleware } from "./server/earlyAccess.mjs";
+import { defineConfig } from "vite";
 
-// Mounts the /api/early-access lead-capture endpoint inside the Vite dev and
-// preview servers so the early-access form works with `npm run dev` /
-// `npm run preview`. (A static-only host has no Node server — see README.)
-function earlyAccessPlugin(): PluginOption {
-  return {
-    name: "early-access-api",
-    configureServer(server) {
-      server.middlewares.use(earlyAccessMiddleware);
-    },
-    configurePreviewServer(server) {
-      server.middlewares.use(earlyAccessMiddleware);
-    },
-  };
-}
-
+// Spectre marketing landing — a pure static SPA. The demo form writes directly
+// to Supabase from the browser (see src/components/landing/submitDemo.ts), so
+// there is no server-side component to configure.
 export default defineConfig({
-  plugins: [react(), earlyAccessPlugin()],
+  plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

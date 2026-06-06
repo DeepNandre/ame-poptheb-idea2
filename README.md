@@ -1,15 +1,16 @@
-# VEX
+# Spectre
 
-**Shaping tomorrow with vision and action.**
+**We show insurers what attackers already know about their policyholders.**
 
-We back visionaries and craft ventures that define what comes next.
-Investing. Building. Advisory.
+Spectre turns any insured address into an attacker's-eye picture — assembled only
+from public records and passively-observed signals. Quantify the exposure before
+it becomes a claim.
 
-A teaser landing page with an early-access form.
+This repository is the marketing landing page.
 
 ## Stack
 
-React 19 + TypeScript + Vite + Tailwind CSS.
+React 19 + TypeScript + Vite + Tailwind CSS. Pure static SPA — no backend.
 
 ## Quick start
 
@@ -18,22 +19,21 @@ npm install
 npm run dev        # http://localhost:5173
 ```
 
-Visiting with `?access` opens the early-access form directly.
+Visiting with `?demo` opens the "Book a demo" form directly.
 
 ## Scripts
 
 ```bash
-npm run dev       # dev server (early-access endpoint mounted in-process)
+npm run dev       # dev server
 npm run build     # type-check + production build to dist/
 npm run preview   # preview the production build
 ```
 
-## Early access
+## Demo requests
 
-The form posts to `/api/early-access`, handled in dev/preview by a small Vite
-middleware (`server/earlyAccess.mjs`) that appends each submission to
-`data/early-access.jsonl` (gitignored).
+The "Book a demo" form writes directly to Supabase from the browser
+(`src/components/landing/submitDemo.ts`). The table is **insert-only** under
+Row-Level Security — visitors can submit a lead, but the publishable key cannot
+read, update, or delete any data. Schema: [`supabase/demo_requests.sql`](supabase/demo_requests.sql).
 
-> Note: a static-only host (e.g. plain Vercel/Netlify static) has no Node
-> server, so the endpoint won't exist there — wire the form to a form service
-> (Formspree, Supabase, etc.) for production capture.
+Read submitted leads from the Supabase dashboard's Table editor.

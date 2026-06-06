@@ -1,37 +1,45 @@
 interface LandingNavbarProps {
-  onRequestAccess: () => void;
+  onBookDemo: () => void;
 }
 
-const NAV_LINKS = ["Story", "Investing", "Building", "Advisory"];
+const NAV_LINKS = [
+  { label: "Capabilities", href: "#capabilities" },
+  { label: "How it works", href: "#how" },
+  { label: "For insurers", href: "#insurers" },
+  { label: "Scope", href: "#scope" },
+];
 
-export function LandingNavbar({ onRequestAccess }: LandingNavbarProps) {
+export function LandingNavbar({ onBookDemo }: LandingNavbarProps) {
   return (
-    <div className="px-6 pt-6 md:px-12 lg:px-16">
-      <nav className="liquid-glass flex items-center justify-between rounded-xl px-4 py-2">
+    <header className="fixed inset-x-0 top-0 z-40 px-4 pt-4 md:px-8 md:pt-6 lg:px-12">
+      <nav className="liquid-glass mx-auto flex max-w-7xl items-center justify-between rounded-xl px-4 py-2.5">
         {/* Logo */}
-        <span className="text-2xl font-semibold tracking-tight text-white">VEX</span>
+        <a href="#top" className="flex items-center gap-2">
+          <span className="inline-block h-2 w-2 rounded-full bg-sky-400 shadow-[0_0_12px_2px_rgba(56,189,248,0.6)]" />
+          <span className="text-xl font-semibold tracking-tight text-white">Spectre</span>
+        </a>
 
-        {/* Center links — hidden on mobile */}
+        {/* Center links */}
         <div className="hidden items-center gap-8 md:flex">
           {NAV_LINKS.map((link) => (
             <a
-              key={link}
-              href="#"
-              className="text-sm text-white transition-colors hover:text-gray-300"
+              key={link.href}
+              href={link.href}
+              className="text-sm text-gray-300 transition-colors hover:text-white"
             >
-              {link}
+              {link.label}
             </a>
           ))}
         </div>
 
-        {/* Right CTA */}
+        {/* CTA */}
         <button
-          onClick={onRequestAccess}
-          className="rounded-lg bg-white px-6 py-2 text-sm font-medium text-black transition-colors hover:bg-gray-100"
+          onClick={onBookDemo}
+          className="rounded-lg bg-white px-5 py-2 text-sm font-medium text-black transition-colors hover:bg-gray-100"
         >
-          Start a Chat
+          Book a demo
         </button>
       </nav>
-    </div>
+    </header>
   );
 }
