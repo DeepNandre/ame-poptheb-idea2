@@ -251,6 +251,13 @@ export const interviews: Interview[] = [
   },
 ];
 
+// ── What the field research told us (insight, not a product pivot) ───────────
+export const insight = {
+  label: "What the field research told us",
+  body:
+    "Sites already have the hardware — cameras, sensors, control rooms. The real gap is ambiguous human moments: tailgating, people who won't leave, uncertainty over how to escalate. That messy, human side of physical risk is exactly what insurers underwrite — and what German Shepherd surfaces from the outside, before an incident.",
+};
+
 // ── Field footage — primary-source video from the sprint ─────────────────────
 export const fieldFootage = {
   src: "/evidence/field-footage.mp4",

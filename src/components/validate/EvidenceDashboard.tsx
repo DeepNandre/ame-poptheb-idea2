@@ -17,6 +17,7 @@ import {
   fieldLog,
   fieldFootage,
   interviews,
+  insight,
   significance,
   verifySteps,
   pendingEvidence,
@@ -272,6 +273,15 @@ export function EvidenceDashboard() {
         {/* Field validation log */}
         <section id="field-log" className="scroll-mt-20 py-10">
           <SectionLabel>Field validation — 24-hour demand-discovery method</SectionLabel>
+          <p className="-mt-1 mb-4 max-w-[760px] text-[13px] leading-[1.6] text-[#777]">
+            The sprint ran on two tracks. The <span className="font-semibold text-[#444]">consent-based research</span>{" "}
+            below — interviews, footage, and the LOI — is the rigorous evidence. The playful{" "}
+            <span className="font-semibold text-[#444]">“break-in” posts</span> in{" "}
+            <a href="#build-in-public" className="underline decoration-[#ccc] underline-offset-2 hover:text-black">
+              Build in public
+            </a>{" "}
+            are build-in-public energy, kept separate from the proof.
+          </p>
           <div className="rounded-2xl border border-[#eee] p-6 md:p-8">
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {fieldLog.map((f, i) => (
@@ -380,6 +390,12 @@ export function EvidenceDashboard() {
               </div>
             ))}
           </div>
+
+          {/* What we learned — insight, not a pivot */}
+          <div className="mt-5 rounded-2xl border-l-2 bg-[#fafafa] p-6 md:p-7" style={{ borderColor: ORANGE }}>
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#999]">{insight.label}</p>
+            <p className="mt-2.5 max-w-[820px] text-[15px] leading-[1.6] text-[#333]">{insight.body}</p>
+          </div>
         </section>
 
         {/* Significance */}
@@ -427,7 +443,7 @@ export function EvidenceDashboard() {
           </div>
 
           {/* Build in public */}
-          <div className="rounded-2xl border border-[#eee] p-6">
+          <div id="build-in-public" className="scroll-mt-20 rounded-2xl border border-[#eee] p-6">
             <SectionLabel>Build in public</SectionLabel>
             <ul className="space-y-3">
               {buildInPublic.map((post) => (
