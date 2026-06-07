@@ -1,0 +1,1455 @@
+{
+  "building": "174-queen-victoria-street-city-of-london-london-ec4v-4eg-united-kingdom",
+  "people": [
+    {
+      "name": "Waterstone Company Secretaries Ltd",
+      "role": "corporate-secretary",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2024-01-10",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Dipankar Banerjee",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2022-03-17",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Sharif Burra",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2026-05-21",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Sunil Kumar Chaturvedi",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2022-04-23",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Edwin Tornado Elias",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2023-11-16",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Nikki Fisher",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2022-03-30",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Douglas Robert Gain",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2022-03-30",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "William Gambiza",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2024-05-16",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Matthew David Graeme Gerber",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2022-10-13",
+      "email": "matthew.gerber@yancoal.com.au",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/matthew-gerber-5648474",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "General Manager, Corporate Affairs"
+    },
+    {
+      "name": "Jim Grech",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2021-11-15",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Nontokozo Yvonne Hadebe",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2026-04-23",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Gavin Bernard Kotzen",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2024-10-01",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Michelle Manook",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2019-11-05",
+      "email": "mmanook@futurecoal.org",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/michelle-manook",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "CEO"
+    },
+    {
+      "name": "Daniel Leseja Marokane",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2026-05-13",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Lefika Moagi",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2023-10-24",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": "http://www.linkedin.com/in/lefika",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Non Executive Director"
+    },
+    {
+      "name": "Matthew David Nugen",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2022-04-06",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Dominic Hugh O'Brien",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2026-04-22",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Veera Reddy",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2022-11-30",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Rebecca Susan Rinaldi",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2026-05-19",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Munashe Shava",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2024-05-16",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Michael Solomon Teke",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2022-03-30",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Brian Thompson",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2023-05-17",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Ernie Leo Thrasher",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2014-04-11",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Michael Andrew Van Maanen",
+      "role": "director",
+      "company": "FUTURECOAL LIMITED",
+      "company_number": "01947623",
+      "appointed": "2022-04-29",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "David Collins",
+      "role": "director",
+      "company": "LCM RECOVERIES UK LIMITED",
+      "company_number": "12408615",
+      "appointed": "2024-10-04",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "David Collins",
+      "role": "director",
+      "company": "LCM CORPORATE SERVICES UK LTD",
+      "company_number": "11529204",
+      "appointed": "2024-10-04",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "David Collins",
+      "role": "director",
+      "company": "LCM FUNDING UK LIMITED",
+      "company_number": "12365749",
+      "appointed": "2024-10-04",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Waterstone Company Secretaries Ltd",
+      "role": "corporate-secretary",
+      "company": "GLOBAL STARNET LIMITED",
+      "company_number": "05738632",
+      "appointed": "2017-06-06",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Francesco Corallo",
+      "role": "director",
+      "company": "GLOBAL STARNET LIMITED",
+      "company_number": "05738632",
+      "appointed": "2025-03-18",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Waterstone Company Secretaries Ltd",
+      "role": "corporate-secretary",
+      "company": "MCKENZIE INTELLIGENCE SERVICES LIMITED",
+      "company_number": "07533381",
+      "appointed": "2022-11-15",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Gareth James Brookes",
+      "role": "director",
+      "company": "MCKENZIE INTELLIGENCE SERVICES LIMITED",
+      "company_number": "07533381",
+      "appointed": "2024-11-26",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Emma Dunlop",
+      "role": "director",
+      "company": "MCKENZIE INTELLIGENCE SERVICES LIMITED",
+      "company_number": "07533381",
+      "appointed": "2021-07-07",
+      "email": "emma@mckenzieintelligence.co.uk",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/emma-dunlop-6b98162b",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Commercial Director and Co-Founder"
+    },
+    {
+      "name": "Forbes Mckenzie",
+      "role": "director",
+      "company": "MCKENZIE INTELLIGENCE SERVICES LIMITED",
+      "company_number": "07533381",
+      "appointed": "2011-02-17",
+      "email": "forbes@mckenzieintelligence.co.uk",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/forbesmckenzie",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Commentary & Analysis for the BBC, Sky News, Telegraph, ITN and Other Media Outlets"
+    },
+    {
+      "name": "Matthew John O'Connor",
+      "role": "director",
+      "company": "MCKENZIE INTELLIGENCE SERVICES LIMITED",
+      "company_number": "07533381",
+      "appointed": "2018-11-29",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Meyrick Raoul Vevers",
+      "role": "director",
+      "company": "MCKENZIE INTELLIGENCE SERVICES LIMITED",
+      "company_number": "07533381",
+      "appointed": "2019-02-01",
+      "email": "meyrick.vevers@brooklands.ac.uk",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/meyrickvevers",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Governor"
+    },
+    {
+      "name": "Waterstone Company Secretaries Ltd",
+      "role": "corporate-secretary",
+      "company": "HEARTHSTONE ASSET MANAGEMENT LIMITED",
+      "company_number": "07458920",
+      "appointed": "2017-08-15",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Cedric Alain Bucher",
+      "role": "director",
+      "company": "HEARTHSTONE ASSET MANAGEMENT LIMITED",
+      "company_number": "07458920",
+      "appointed": "2018-05-14",
+      "email": "cbucher@hearthstone.co.uk",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/cedric-bucher-8490329",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "CEO"
+    },
+    {
+      "name": "Andrew Richard Ingram Smith",
+      "role": "director",
+      "company": "HEARTHSTONE ASSET MANAGEMENT LIMITED",
+      "company_number": "07458920",
+      "appointed": "2018-05-14",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Darren Stent",
+      "role": "director",
+      "company": "HEARTHSTONE ASSET MANAGEMENT LIMITED",
+      "company_number": "07458920",
+      "appointed": "2018-05-14",
+      "email": "dstent@hearthstone.co.uk",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/darrenstent",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Head of Business Development"
+    },
+    {
+      "name": "Richard Duc Binh Banh",
+      "role": "secretary",
+      "company": "CHALLENGER MANAGEMENT SERVICES (UK) LIMITED",
+      "company_number": "06393787",
+      "appointed": "2015-12-08",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Richard Duc Binh Banh",
+      "role": "director",
+      "company": "CHALLENGER MANAGEMENT SERVICES (UK) LIMITED",
+      "company_number": "06393787",
+      "appointed": "2018-11-19",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Kieran Sean Roane",
+      "role": "director",
+      "company": "CHALLENGER MANAGEMENT SERVICES (UK) LIMITED",
+      "company_number": "06393787",
+      "appointed": "2024-11-11",
+      "email": "kroane@challenger.com.au",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/kieran-roane-3bb94185",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Senior Portfolio Manager"
+    },
+    {
+      "name": "Martin And Company (Company Secretaries) Limited",
+      "role": "corporate-secretary",
+      "company": "MACOM CONSULTING LIMITED",
+      "company_number": "03921302",
+      "appointed": "2006-07-19",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Mark Ashford",
+      "role": "director",
+      "company": "MACOM CONSULTING LIMITED",
+      "company_number": "03921302",
+      "appointed": "2000-02-08",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Richard Duc Binh Banh",
+      "role": "secretary",
+      "company": "FIDANTE PARTNERS EUROPE LIMITED",
+      "company_number": "04040660",
+      "appointed": "2015-12-08",
+      "email": "rbanh@fidante.com",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/richard-banh-32202a46",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "COO, Head of Legal and Compliance, UK & Europe"
+    },
+    {
+      "name": "Richard Duc Binh Banh",
+      "role": "director",
+      "company": "FIDANTE PARTNERS EUROPE LIMITED",
+      "company_number": "04040660",
+      "appointed": "2018-11-19",
+      "email": "rbanh@fidante.com",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/richard-banh-32202a46",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "COO, Head of Legal and Compliance, UK & Europe"
+    },
+    {
+      "name": "Kieran Sean Roane",
+      "role": "director",
+      "company": "FIDANTE PARTNERS EUROPE LIMITED",
+      "company_number": "04040660",
+      "appointed": "2024-11-11",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Richard Duc Binh Banh",
+      "role": "secretary",
+      "company": "FIDANTE PARTNERS HOLDINGS EUROPE LIMITED",
+      "company_number": "06172534",
+      "appointed": "2015-12-08",
+      "email": "rbanh@fidante.com",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/richard-banh-32202a46",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "COO, Head of Legal and Compliance, UK & Europe"
+    },
+    {
+      "name": "Richard Duc Binh Banh",
+      "role": "director",
+      "company": "FIDANTE PARTNERS HOLDINGS EUROPE LIMITED",
+      "company_number": "06172534",
+      "appointed": "2017-03-24",
+      "email": "rbanh@fidante.com",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/richard-banh-32202a46",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "COO, Head of Legal and Compliance, UK & Europe"
+    },
+    {
+      "name": "Waterstone Company Secretaries Ltd",
+      "role": "corporate-secretary",
+      "company": "HEARTHSTONE INVESTMENTS (FP) LIMITED",
+      "company_number": "09278247",
+      "appointed": "2017-10-04",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Cedric Alain Bucher",
+      "role": "director",
+      "company": "HEARTHSTONE INVESTMENTS (FP) LIMITED",
+      "company_number": "09278247",
+      "appointed": "2021-07-09",
+      "email": "cbucher@hearthstone.co.uk",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/cedric-bucher-8490329",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "CEO"
+    },
+    {
+      "name": "Helen Simons",
+      "role": "director",
+      "company": "HEARTHSTONE INVESTMENTS (FP) LIMITED",
+      "company_number": "09278247",
+      "appointed": "2021-07-09",
+      "email": "hsimons@hearthstone.co.uk",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/helen-simons-258136212",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Investment Director"
+    },
+    {
+      "name": "Andrew Richard Ingram Smith",
+      "role": "director",
+      "company": "HEARTHSTONE INVESTMENTS (FP) LIMITED",
+      "company_number": "09278247",
+      "appointed": "2014-10-23",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Christopher Barry",
+      "role": "secretary",
+      "company": "AETN INTERNATIONAL (UK) LIMITED",
+      "company_number": "06001496",
+      "appointed": "2016-12-01",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Christopher Barry",
+      "role": "director",
+      "company": "AETN INTERNATIONAL (UK) LIMITED",
+      "company_number": "06001496",
+      "appointed": "2016-12-01",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Patrick Paul Vien",
+      "role": "director",
+      "company": "AETN INTERNATIONAL (UK) LIMITED",
+      "company_number": "06001496",
+      "appointed": "2019-09-01",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Carole Batarseh",
+      "role": "secretary",
+      "company": "MONTY MOBILE LIMITED",
+      "company_number": "12980683",
+      "appointed": "2020-10-28",
+      "email": "carole.batarseh@montymobile.com",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/carole-batarseh-05518222",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Administrative Assistant/ PA"
+    },
+    {
+      "name": "Carole Batarseh",
+      "role": "director",
+      "company": "MONTY MOBILE LIMITED",
+      "company_number": "12980683",
+      "appointed": "2026-05-26",
+      "email": "carole.batarseh@montymobile.com",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/carole-batarseh-05518222",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Administrative Assistant/ PA"
+    },
+    {
+      "name": "Mountasser Muad Hachem",
+      "role": "director",
+      "company": "MONTY MOBILE LIMITED",
+      "company_number": "12980683",
+      "appointed": "2020-10-28",
+      "email": "monty@montyholding.com",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/mountasser-hachem-877a7a2a",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Founder & Chairman"
+    },
+    {
+      "name": "Carole Batarseh",
+      "role": "secretary",
+      "company": "MONTY UK GLOBAL LIMITED",
+      "company_number": "08632740",
+      "appointed": "2014-05-29",
+      "email": "carole.batarseh@montymobile.com",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/carole-batarseh-05518222",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Administrative Assistant/ PA"
+    },
+    {
+      "name": "Carole Batarseh",
+      "role": "director",
+      "company": "MONTY UK GLOBAL LIMITED",
+      "company_number": "08632740",
+      "appointed": "2026-05-26",
+      "email": "carole.batarseh@montymobile.com",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/carole-batarseh-05518222",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Administrative Assistant/ PA"
+    },
+    {
+      "name": "Mountasser Muad Hachem",
+      "role": "director",
+      "company": "MONTY UK GLOBAL LIMITED",
+      "company_number": "08632740",
+      "appointed": "2016-08-04",
+      "email": "monty@montyholding.com",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/mountasser-hachem-877a7a2a",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Founder & Chairman"
+    },
+    {
+      "name": "Gareth Miles Parsons",
+      "role": "llp-designated-member",
+      "company": "HERONSGATE CAPITAL LLP",
+      "company_number": "OC430243",
+      "appointed": "2021-03-03",
+      "email": "gareth.parsons@heronsgatecapital.com",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/gareth-parsons-b6b00a22",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Partner"
+    },
+    {
+      "name": "Christopher Sexton",
+      "role": "llp-designated-member",
+      "company": "HERONSGATE CAPITAL LLP",
+      "company_number": "OC430243",
+      "appointed": "2020-01-13",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Anthony William Wellby",
+      "role": "llp-designated-member",
+      "company": "HERONSGATE CAPITAL LLP",
+      "company_number": "OC430243",
+      "appointed": "2020-01-13",
+      "email": "tony.wellby@heronsgatecapital.com",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/tonywellby",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Partner, Financial Planning"
+    },
+    {
+      "name": "Katherine Elizabeth Burton",
+      "role": "llp-member",
+      "company": "HERONSGATE CAPITAL LLP",
+      "company_number": "OC430243",
+      "appointed": "2025-04-01",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Daniel James Mackenzie",
+      "role": "llp-member",
+      "company": "HERONSGATE CAPITAL LLP",
+      "company_number": "OC430243",
+      "appointed": "2025-04-01",
+      "email": "dan.mackenzie@heronsgatecapital.com",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/dan-mackenzie-73093a157",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Associate Director"
+    },
+    {
+      "name": "Ashley John Pontiggia",
+      "role": "llp-member",
+      "company": "HERONSGATE CAPITAL LLP",
+      "company_number": "OC430243",
+      "appointed": "2025-04-01",
+      "email": "ashley.pontiggia@heronsgatecapital.com",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/ashley-pontiggia-463681117",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Director"
+    },
+    {
+      "name": "Jamie Michael Rich",
+      "role": "llp-member",
+      "company": "HERONSGATE CAPITAL LLP",
+      "company_number": "OC430243",
+      "appointed": "2025-04-01",
+      "email": "jamie.rich@heronsgatecapital.com",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/jamie-rich-3583b815a",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Associate Director"
+    },
+    {
+      "name": "Rachael Wellby",
+      "role": "llp-member",
+      "company": "HERONSGATE CAPITAL LLP",
+      "company_number": "OC430243",
+      "appointed": "2025-04-01",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Riverfront Hgs Limited",
+      "role": "corporate-llp-member",
+      "company": "HERONSGATE CAPITAL LLP",
+      "company_number": "OC430243",
+      "appointed": "2020-03-17",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Bridgehouse Company Secretaries Limited",
+      "role": "corporate-secretary",
+      "company": "7 MILLENNIUM DRIVE E14 RTM COMPANY LIMITED",
+      "company_number": "09046839",
+      "appointed": "2019-03-01",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Joanne Bird",
+      "role": "director",
+      "company": "7 MILLENNIUM DRIVE E14 RTM COMPANY LIMITED",
+      "company_number": "09046839",
+      "appointed": "2014-05-19",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "James Allan Dearden",
+      "role": "director",
+      "company": "7 MILLENNIUM DRIVE E14 RTM COMPANY LIMITED",
+      "company_number": "09046839",
+      "appointed": "2014-05-19",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Simon Christopher Hagger",
+      "role": "director",
+      "company": "7 MILLENNIUM DRIVE E14 RTM COMPANY LIMITED",
+      "company_number": "09046839",
+      "appointed": "2014-05-19",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Lesley Margaret Shaikh",
+      "role": "director",
+      "company": "7 MILLENNIUM DRIVE E14 RTM COMPANY LIMITED",
+      "company_number": "09046839",
+      "appointed": "2026-05-07",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Sanjay Kumar Sikdar",
+      "role": "director",
+      "company": "7 MILLENNIUM DRIVE E14 RTM COMPANY LIMITED",
+      "company_number": "09046839",
+      "appointed": "2017-02-04",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Neil Stuart Bower",
+      "role": "director",
+      "company": "SKF TRADING LIMITED",
+      "company_number": "07678618",
+      "appointed": "2011-06-22",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Olakunle Olafare",
+      "role": "director",
+      "company": "SKF TRADING LIMITED",
+      "company_number": "07678618",
+      "appointed": "2011-06-22",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "David Robert Steppings",
+      "role": "director",
+      "company": "SKF TRADING LIMITED",
+      "company_number": "07678618",
+      "appointed": "2011-06-22",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Edward William Parladorio",
+      "role": "director",
+      "company": "HANOVER BOND LAW LIMITED",
+      "company_number": "09139161",
+      "appointed": "2014-07-21",
+      "email": "ep@hanoverbondlaw.com",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/eddie-parladorio-b6187116",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Senior Partner"
+    },
+    {
+      "name": "Luca Salerno",
+      "role": "director",
+      "company": "HANOVER BOND LAW LIMITED",
+      "company_number": "09139161",
+      "appointed": "2020-03-30",
+      "email": "ls@hanoverbondlaw.com",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/luca-salerno-b519a130",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Partner"
+    },
+    {
+      "name": "Carole Batarseh",
+      "role": "secretary",
+      "company": "MONTY FINANCE UK LTD",
+      "company_number": "13458623",
+      "appointed": "2021-07-30",
+      "email": "carole.batarseh@montymobile.com",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/carole-batarseh-05518222",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Administrative Assistant/ PA"
+    },
+    {
+      "name": "Carole Batarseh",
+      "role": "director",
+      "company": "MONTY FINANCE UK LTD",
+      "company_number": "13458623",
+      "appointed": "2026-05-26",
+      "email": "carole.batarseh@montymobile.com",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/carole-batarseh-05518222",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Administrative Assistant/ PA"
+    },
+    {
+      "name": "Mountasser Muad Hachem",
+      "role": "director",
+      "company": "MONTY FINANCE UK LTD",
+      "company_number": "13458623",
+      "appointed": "2021-06-15",
+      "email": "monty@montyholding.com",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/mountasser-hachem-877a7a2a",
+      "sources": [
+        "companies_house",
+        "apollo"
+      ],
+      "apollo_title": "Founder & Chairman"
+    },
+    {
+      "name": "Waterstone Company Secretaries Ltd",
+      "role": "corporate-secretary",
+      "company": "PARIS TOBACCO COMPANY LTD",
+      "company_number": "07426764",
+      "appointed": "2018-08-21",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Siew Feong Ho",
+      "role": "director",
+      "company": "PARIS TOBACCO COMPANY LTD",
+      "company_number": "07426764",
+      "appointed": "2023-10-31",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Shao Yee Wee",
+      "role": "director",
+      "company": "PARIS TOBACCO COMPANY LTD",
+      "company_number": "07426764",
+      "appointed": "2023-10-31",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Bridgehouse Company Secretaries Limited",
+      "role": "corporate-secretary",
+      "company": "4-6A WORCESTER ROAD E.17 RESIDENTS ASSOCIATION LIMITED",
+      "company_number": "05153887",
+      "appointed": "2008-04-28",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "James Shu Yun Tavener Chan",
+      "role": "director",
+      "company": "4-6A WORCESTER ROAD E.17 RESIDENTS ASSOCIATION LIMITED",
+      "company_number": "05153887",
+      "appointed": "2025-02-10",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Dino Disha",
+      "role": "director",
+      "company": "4-6A WORCESTER ROAD E.17 RESIDENTS ASSOCIATION LIMITED",
+      "company_number": "05153887",
+      "appointed": "2009-04-24",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Simon Chee Keong Lai",
+      "role": "director",
+      "company": "4-6A WORCESTER ROAD E.17 RESIDENTS ASSOCIATION LIMITED",
+      "company_number": "05153887",
+      "appointed": "2004-06-15",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Graham Lewis",
+      "role": "director",
+      "company": "4-6A WORCESTER ROAD E.17 RESIDENTS ASSOCIATION LIMITED",
+      "company_number": "05153887",
+      "appointed": "2004-06-15",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Waterstone Company Secretaries Ltd",
+      "role": "corporate-secretary",
+      "company": "BRACKEL LTD.",
+      "company_number": "05560066",
+      "appointed": "2017-07-17",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Francesco Corallo",
+      "role": "director",
+      "company": "BRACKEL LTD.",
+      "company_number": "05560066",
+      "appointed": "2025-03-27",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    }
+  ],
+  "by_company": [
+    {
+      "company": "FUTURECOAL LIMITED",
+      "number": "01947623",
+      "people": 24,
+      "enriched": 3
+    },
+    {
+      "company": "LCM RECOVERIES UK LIMITED",
+      "number": "12408615",
+      "people": 1,
+      "enriched": 0
+    },
+    {
+      "company": "LCM CORPORATE SERVICES UK LTD",
+      "number": "11529204",
+      "people": 1,
+      "enriched": 0
+    },
+    {
+      "company": "LCM FUNDING UK LIMITED",
+      "number": "12365749",
+      "people": 1,
+      "enriched": 0
+    },
+    {
+      "company": "GLOBAL STARNET LIMITED",
+      "number": "05738632",
+      "people": 2,
+      "enriched": 0
+    },
+    {
+      "company": "HEARTHSTONE RESIDENTIAL FUND 2 L.P.",
+      "number": "LP020711",
+      "people": 0,
+      "enriched": 0
+    },
+    {
+      "company": "MCKENZIE INTELLIGENCE SERVICES LIMITED",
+      "number": "07533381",
+      "people": 6,
+      "enriched": 3
+    },
+    {
+      "company": "HEARTHSTONE ASSET MANAGEMENT LIMITED",
+      "number": "07458920",
+      "people": 4,
+      "enriched": 2
+    },
+    {
+      "company": "CHALLENGER MANAGEMENT SERVICES (UK) LIMITED",
+      "number": "06393787",
+      "people": 3,
+      "enriched": 1
+    },
+    {
+      "company": "MACOM CONSULTING LIMITED",
+      "number": "03921302",
+      "people": 2,
+      "enriched": 0
+    },
+    {
+      "company": "FIDANTE PARTNERS EUROPE LIMITED",
+      "number": "04040660",
+      "people": 3,
+      "enriched": 2
+    },
+    {
+      "company": "FIDANTE PARTNERS HOLDINGS EUROPE LIMITED",
+      "number": "06172534",
+      "people": 2,
+      "enriched": 2
+    },
+    {
+      "company": "HEARTHSTONE INVESTMENTS (FP) LIMITED",
+      "number": "09278247",
+      "people": 4,
+      "enriched": 2
+    },
+    {
+      "company": "HEARTHSTONE RESIDENTIAL FUND 1 L.P.",
+      "number": "LP016379",
+      "people": 0,
+      "enriched": 0
+    },
+    {
+      "company": "AETN INTERNATIONAL (UK) LIMITED",
+      "number": "06001496",
+      "people": 3,
+      "enriched": 0
+    },
+    {
+      "company": "MONTY MOBILE LIMITED",
+      "number": "12980683",
+      "people": 3,
+      "enriched": 3
+    },
+    {
+      "company": "MONTY UK GLOBAL LIMITED",
+      "number": "08632740",
+      "people": 3,
+      "enriched": 3
+    },
+    {
+      "company": "HERONSGATE CAPITAL LLP",
+      "number": "OC430243",
+      "people": 9,
+      "enriched": 5
+    },
+    {
+      "company": "7 MILLENNIUM DRIVE E14 RTM COMPANY LIMITED",
+      "number": "09046839",
+      "people": 6,
+      "enriched": 0
+    },
+    {
+      "company": "SKF TRADING LIMITED",
+      "number": "07678618",
+      "people": 3,
+      "enriched": 0
+    },
+    {
+      "company": "HANOVER BOND LAW LIMITED",
+      "number": "09139161",
+      "people": 2,
+      "enriched": 2
+    },
+    {
+      "company": "MONTY FINANCE UK LTD",
+      "number": "13458623",
+      "people": 3,
+      "enriched": 3
+    },
+    {
+      "company": "PARIS TOBACCO COMPANY LTD",
+      "number": "07426764",
+      "people": 3,
+      "enriched": 0
+    },
+    {
+      "company": "4-6A WORCESTER ROAD E.17 RESIDENTS ASSOCIATION LIMITED",
+      "number": "05153887",
+      "people": 5,
+      "enriched": 0
+    },
+    {
+      "company": "BRACKEL LTD.",
+      "number": "05560066",
+      "people": 2,
+      "enriched": 0
+    }
+  ],
+  "enriched": 31
+}

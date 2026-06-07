@@ -1,0 +1,46 @@
+{
+  "building": "1-blackfriars-road-southwark-london-se1-9gj-united-kingdom",
+  "people": [
+    {
+      "name": "Antonia Schultze-Mosgau",
+      "role": "director",
+      "company": "LONGEVITY CONSULTING GROUP LTD",
+      "company_number": "15126888",
+      "appointed": "2023-09-10",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Alexandra Hotelier",
+      "role": "director",
+      "company": "BOUTIQUE KAOTIQUE LIMITED",
+      "company_number": "11450366",
+      "appointed": "2018-07-05",
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    }
+  ],
+  "by_company": [
+    {
+      "company": "LONGEVITY CONSULTING GROUP LTD",
+      "number": "15126888",
+      "people": 1,
+      "enriched": 0
+    },
+    {
+      "company": "BOUTIQUE KAOTIQUE LIMITED",
+      "number": "11450366",
+      "people": 1,
+      "enriched": 0
+    }
+  ],
+  "enriched": 0
+}

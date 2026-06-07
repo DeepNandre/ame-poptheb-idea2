@@ -1933,7 +1933,12 @@ export function BuildingScannerProduct() {
               after selecting a building. Full recon run or à-la-carte phase subset. */}
           <EvaluationTrigger
             buildingName={selected.name}
-            onEvaluate={(keys) => recon.start({ name: selected.name }, keys)}
+            onEvaluate={(keys) =>
+              recon.start(
+                { name: selected.name, address: selected.address, url: selected.register?.url },
+                keys,
+              )
+            }
           />
           {selected.id === "arbor" && (
             <button

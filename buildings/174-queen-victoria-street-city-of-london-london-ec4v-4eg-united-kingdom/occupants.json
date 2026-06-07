@@ -1,0 +1,775 @@
+{
+  "query": "174 Queen Victoria Street, City of London, London, EC4V 4EG, United Kingdom",
+  "postcode": "EC4V 4EG",
+  "geo": {
+    "postcode": "EC4V 4EG",
+    "lat": 51.511352,
+    "lon": -0.103916,
+    "admin_district": "City of London",
+    "ward": "Castle Baynard"
+  },
+  "companies": [
+    {
+      "number": "01947623",
+      "name": "FUTURECOAL LIMITED",
+      "status": "active",
+      "type": "private-limited-guarant-nsc",
+      "incorporated": "1985-09-16",
+      "sic": [
+        "94990"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "12408615",
+      "name": "LCM RECOVERIES UK LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2020-01-17",
+      "sic": [
+        "82990"
+      ],
+      "address": "181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "11529204",
+      "name": "LCM CORPORATE SERVICES UK LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2018-08-21",
+      "sic": [
+        "82990"
+      ],
+      "address": "181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "12365749",
+      "name": "LCM FUNDING UK LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-12-16",
+      "sic": [
+        "82990"
+      ],
+      "address": "181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "05738632",
+      "name": "GLOBAL STARNET LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2006-03-10",
+      "sic": [
+        "96090"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "LP020711",
+      "name": "HEARTHSTONE RESIDENTIAL FUND 2 L.P.",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2019-12-10",
+      "sic": [],
+      "address": "Suite 2.06 Bridge House, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "07533381",
+      "name": "MCKENZIE INTELLIGENCE SERVICES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2011-02-17",
+      "sic": [
+        "96090"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "07458920",
+      "name": "HEARTHSTONE ASSET MANAGEMENT LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2010-12-02",
+      "sic": [
+        "66300"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "06393787",
+      "name": "CHALLENGER MANAGEMENT SERVICES (UK) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2007-10-09",
+      "sic": [
+        "64999"
+      ],
+      "address": "Bridge House, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "03921302",
+      "name": "MACOM CONSULTING LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2000-02-08",
+      "sic": [
+        "62020"
+      ],
+      "address": "181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "04040660",
+      "name": "FIDANTE PARTNERS EUROPE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2000-07-25",
+      "sic": [
+        "64999"
+      ],
+      "address": "Bridge House, Level 3, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "06172534",
+      "name": "FIDANTE PARTNERS HOLDINGS EUROPE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2007-03-20",
+      "sic": [
+        "70221"
+      ],
+      "address": "Bridge House, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "09278247",
+      "name": "HEARTHSTONE INVESTMENTS (FP) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2014-10-23",
+      "sic": [
+        "99999"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "LP016379",
+      "name": "HEARTHSTONE RESIDENTIAL FUND 1 L.P.",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2014-12-03",
+      "sic": [],
+      "address": "Suite 2.06 Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "06001496",
+      "name": "AETN INTERNATIONAL (UK) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2006-11-17",
+      "sic": [
+        "59133"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "12980683",
+      "name": "MONTY MOBILE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2020-10-28",
+      "sic": [
+        "61900"
+      ],
+      "address": "Bridge House, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "08632740",
+      "name": "MONTY UK GLOBAL LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2013-08-01",
+      "sic": [
+        "61900"
+      ],
+      "address": "Bridge House, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "OC430243",
+      "name": "HERONSGATE CAPITAL LLP",
+      "status": "active",
+      "type": "llp",
+      "incorporated": "2020-01-13",
+      "sic": [],
+      "address": "181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "09046839",
+      "name": "7 MILLENNIUM DRIVE E14 RTM COMPANY LIMITED",
+      "status": "active",
+      "type": "private-limited-guarant-nsc",
+      "incorporated": "2014-05-19",
+      "sic": [
+        "74990",
+        "98000",
+        "99999"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "07678618",
+      "name": "SKF TRADING LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2011-06-22",
+      "sic": [
+        "66190",
+        "66300"
+      ],
+      "address": "181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "09139161",
+      "name": "HANOVER BOND LAW LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2014-07-21",
+      "sic": [
+        "69102"
+      ],
+      "address": "Bridge House, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "13458623",
+      "name": "MONTY FINANCE UK LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-06-15",
+      "sic": [
+        "62012",
+        "62090",
+        "64999",
+        "96090"
+      ],
+      "address": "Bridge House, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "07426764",
+      "name": "PARIS TOBACCO COMPANY LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2010-11-02",
+      "sic": [
+        "12000"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "05153887",
+      "name": "4-6A WORCESTER ROAD E.17 RESIDENTS ASSOCIATION LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2004-06-15",
+      "sic": [
+        "82990"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "05560066",
+      "name": "BRACKEL LTD.",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2005-09-09",
+      "sic": [
+        "74990"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "05648056",
+      "name": "HORIZON RE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2005-12-07",
+      "sic": [
+        "74990"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "08501506",
+      "name": "BROOME YASAR PARTNERSHIP LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2013-04-24",
+      "sic": [
+        "78109"
+      ],
+      "address": "181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "15228387",
+      "name": "MONTYPAY UK LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-10-23",
+      "sic": [
+        "62012",
+        "62090",
+        "63990",
+        "64999"
+      ],
+      "address": "181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "02480430",
+      "name": "THE EIS ASSOCIATION LIMITED",
+      "status": "active",
+      "type": "private-limited-guarant-nsc",
+      "incorporated": "1990-03-13",
+      "sic": [
+        "94120"
+      ],
+      "address": "Bridge House, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "OC394844",
+      "name": "PHILIP HARE & ASSOCIATES LLP",
+      "status": "active",
+      "type": "llp",
+      "incorporated": "2014-08-18",
+      "sic": [],
+      "address": "Bridge House, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "16546889",
+      "name": "DELTA DEFENSE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-06-27",
+      "sic": [
+        "84220"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "12275401",
+      "name": "HEARTHSTONE INVESTMENTS (GP2) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-10-22",
+      "sic": [
+        "99999"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "02129227",
+      "name": "ARMSTRONG EXECUTIVE SEARCH LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1987-05-08",
+      "sic": [
+        "78109"
+      ],
+      "address": "Bridge House, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "07085757",
+      "name": "INFOBIP LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2009-11-24",
+      "sic": [
+        "82990"
+      ],
+      "address": "181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "08241880",
+      "name": "BUMI ARMADA UK LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2012-10-05",
+      "sic": [
+        "09100"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "08632529",
+      "name": "FIC GRAND PLAZA LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2013-07-31",
+      "sic": [
+        "55100"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "02716507",
+      "name": "BURLEY GARDENS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1992-05-20",
+      "sic": [
+        "98200"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "11534321",
+      "name": "LCM OPERATIONS UK LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2018-08-23",
+      "sic": [
+        "82990"
+      ],
+      "address": "181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "09651253",
+      "name": "HEARTHSTONE INVESTMENT MANAGEMENT LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2015-06-22",
+      "sic": [
+        "66300"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "10378369",
+      "name": "WATERSTONE COMPANY SECRETARIES LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-09-16",
+      "sic": [
+        "82990"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "15850687",
+      "name": "BARK & CO HOLDINGS LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2024-07-22",
+      "sic": [
+        "64209"
+      ],
+      "address": "181 Beaumont Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "06379066",
+      "name": "HEARTHSTONE INVESTMENTS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2007-09-24",
+      "sic": [
+        "66300",
+        "70100"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "LP023101",
+      "name": "HEARTHSTONE RESIDENTIAL FUND L.P.",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2023-03-02",
+      "sic": [],
+      "address": "Suite 2.06 Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "05620693",
+      "name": "BRIDGEHOUSE COMPANY SECRETARIES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2005-11-11",
+      "sic": [
+        "82990"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "07023097",
+      "name": "SPACTRON (U.K.) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2009-09-18",
+      "sic": [
+        "61900"
+      ],
+      "address": "Bridge House, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "03110908",
+      "name": "THE RCJ AND ISLINGTON CITIZENS ADVICE BUREAUX",
+      "status": "active",
+      "type": "private-limited-guarant-nsc-limited-exemption",
+      "incorporated": "1995-10-06",
+      "sic": [
+        "82990"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "14670941",
+      "name": "HEARTHSTONE INVESTMENTS (GP3) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-02-17",
+      "sic": [
+        "68100"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "15421905",
+      "name": "MONTY ESIM LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2024-01-17",
+      "sic": [
+        "61900"
+      ],
+      "address": "181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "04083071",
+      "name": "THE MILLENNIUM DRIVE MANAGEMENT COMPANY LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2000-10-03",
+      "sic": [
+        "55900"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "07168290",
+      "name": "BARK & CO SOLICITORS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2010-02-24",
+      "sic": [
+        "84220"
+      ],
+      "address": "181 Beaumont Bridge House, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "02997668",
+      "name": "LITTLE APPLE HOLDINGS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1994-12-02",
+      "sic": [
+        "81100"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "09810870",
+      "name": "PHILIP HARE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2015-10-06",
+      "sic": [
+        "74990"
+      ],
+      "address": "Bridge House, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "07626067",
+      "name": "CHALLENGER LIFE DEBT INVESTMENTS (EUROPE) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2011-05-09",
+      "sic": [
+        "70221"
+      ],
+      "address": "Bridge House, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "16555269",
+      "name": "DELTA DEFENCE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-07-02",
+      "sic": [
+        "84220"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "11428025",
+      "name": "ARMSTRONG GROUP LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2018-06-22",
+      "sic": [
+        "64209"
+      ],
+      "address": "Bridge House, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "16438104",
+      "name": "ARKAM LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-05-08",
+      "sic": [
+        "62020",
+        "62090"
+      ],
+      "address": "Bridge House 181, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "03564461",
+      "name": "ARMSTRONG INTERNATIONAL LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1998-05-14",
+      "sic": [
+        "78109"
+      ],
+      "address": "Bridge House, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "09278256",
+      "name": "HEARTHSTONE INVESTMENTS (GP) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2014-10-23",
+      "sic": [
+        "99999"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    },
+    {
+      "number": "13451967",
+      "name": "IE CORPORATE SERVICES LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-06-11",
+      "sic": [
+        "96090"
+      ],
+      "address": "Suite 2.06, Bridge House 181 Queen Victoria Street, London, EC4V 4EG",
+      "care_of": null
+    }
+  ],
+  "fhrs": [
+    {
+      "name": "The Blackfriar",
+      "type": "Pub/bar/nightclub",
+      "address": "Blackfriars Tavern, 174 Queen Victoria Street, EC4V 4EG"
+    }
+  ],
+  "prime_target": {
+    "care_of_agents": [],
+    "manager_named_companies": [
+      {
+        "name": "HEARTHSTONE ASSET MANAGEMENT LIMITED",
+        "number": "07458920"
+      },
+      {
+        "name": "CHALLENGER MANAGEMENT SERVICES (UK) LIMITED",
+        "number": "06393787"
+      },
+      {
+        "name": "FIDANTE PARTNERS HOLDINGS EUROPE LIMITED",
+        "number": "06172534"
+      },
+      {
+        "name": "HEARTHSTONE INVESTMENTS (FP) LIMITED",
+        "number": "09278247"
+      },
+      {
+        "name": "HEARTHSTONE INVESTMENTS (GP2) LIMITED",
+        "number": "12275401"
+      },
+      {
+        "name": "HEARTHSTONE INVESTMENT MANAGEMENT LIMITED",
+        "number": "09651253"
+      },
+      {
+        "name": "BARK & CO HOLDINGS LTD",
+        "number": "15850687"
+      },
+      {
+        "name": "HEARTHSTONE INVESTMENTS LIMITED",
+        "number": "06379066"
+      },
+      {
+        "name": "HEARTHSTONE INVESTMENTS (GP3) LIMITED",
+        "number": "14670941"
+      },
+      {
+        "name": "THE MILLENNIUM DRIVE MANAGEMENT COMPANY LIMITED",
+        "number": "04083071"
+      }
+    ]
+  },
+  "owner_note": "Freeholder/owner not resolved \u2014 HM Land Registry CCOD/OCOD has no keyless API. Pivot any manager_named_company's registration number through Companies House PSCs/officers to reach named humans, or buy the title register (\u00a33, pay-as-you-go) for the registered proprietor."
+}

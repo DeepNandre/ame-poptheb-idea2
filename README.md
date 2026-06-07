@@ -95,6 +95,36 @@ In dev, every `/api/*` route and the WebSocket are mounted inside Vite by
 See [`SCANNER_SETUP.md`](SCANNER_SETUP.md) for the scanner/OSINT/CCTV details and
 [`PROJECT_HANDOFF.md`](PROJECT_HANDOFF.md) for the full feature/issue history.
 
+## Python backend (`backend/`)
+
+A separate, `uv`-managed Python service (migrated from the `building-scanner`
+project) — two FastAPI apps that run as their own processes, independent of the
+Node/Vite dev server above:
+
+- **Device scanner** (`api.py`, `scan.py`) — company URL → org IP-space attribution
+  (CT logs + RDAP) → Shodan device fingerprints. VPN-gated (Surfshark WireGuard).
+  See [`backend/README.md`](backend/README.md).
+- **Blueprint Pipeline** (`pipeline_app.py`) — address → public-blueprint discovery
+  (A0) → 3D ingestion (A1) → graph/routes, plus building **occupancy & people**
+  intel (Companies House + Apollo). See [`backend/OCCUPANCY_API.md`](backend/OCCUPANCY_API.md)
+  and [`backend/PHASES.md`](backend/PHASES.md).
+
+```bash
+cd backend
+uv sync                                         # install deps into backend/.venv
+uv run uvicorn api:app --port 8000              # device scanner (needs Surfshark VPN)
+uv run uvicorn pipeline_app:app --port 8001     # blueprint + occupancy pipeline
+```
+
+**Keys** are read from `backend/.env` first, then the project-root `.env` (both
+gitignored) — `SHODAN_API_KEY`, `COMPANIES_HOUSE_API_KEY`, `APOLLO_API_KEY`,
+`OPENAI_API_KEY`, and the organizer-enricher set. The people-enricher pipeline also
+reaches the sibling `toolings/organizer-enricher` and `toolings/planning-scout`
+tools (resolved at the `building-hacking/` level).
+
+> Building data (`buildings/`, schematic-scanning) was **not** copied in this
+> migration — the pipeline starts with an empty store and rebuilds it as you scan.
+
 ## Honest limitations
 
 - **Heatmap** is an RSSI-weighted estimate at *your* location — wireless scans

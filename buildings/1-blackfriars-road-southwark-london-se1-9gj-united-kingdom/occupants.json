@@ -1,0 +1,43 @@
+{
+  "query": "1 Blackfriars Road, Southwark, London, SE1 9GJ, United Kingdom",
+  "postcode": "SE1 9GJ",
+  "geo": {
+    "postcode": "SE1 9GJ",
+    "lat": 51.507869,
+    "lon": -0.104839,
+    "admin_district": "Southwark",
+    "ward": "Borough & Bankside"
+  },
+  "companies": [
+    {
+      "number": "15126888",
+      "name": "LONGEVITY CONSULTING GROUP LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-09-10",
+      "sic": [
+        "72190"
+      ],
+      "address": "Flat 241, One Blackfriars 1 Blackfriars Road, London, SE1 9GJ",
+      "care_of": null
+    },
+    {
+      "number": "11450366",
+      "name": "BOUTIQUE KAOTIQUE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2018-07-05",
+      "sic": [
+        "47910"
+      ],
+      "address": "Apartment 176 1 Blackfriars Road, London, SE1 9GJ",
+      "care_of": null
+    }
+  ],
+  "fhrs": [],
+  "prime_target": {
+    "care_of_agents": [],
+    "manager_named_companies": []
+  },
+  "owner_note": "Freeholder/owner not resolved \u2014 HM Land Registry CCOD/OCOD has no keyless API. Pivot any manager_named_company's registration number through Companies House PSCs/officers to reach named humans, or buy the title register (\u00a33, pay-as-you-go) for the registered proprietor."
+}

@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Check, ChevronRight, Crosshair, Loader2, X } from "lucide-react";
+import { Check, ChevronRight, Crosshair, Loader2, Minus, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Recon, ReconPhaseState, ReconStepState } from "./useReconPipeline";
 
 function pctOf(p: ReconPhaseState): number {
   const total = p.steps.length || 1;
-  const done = p.steps.filter((s) => s.status === "ok").length;
+  // Resolved = anything no longer pending/running (ok, skipped, or errored).
+  const done = p.steps.filter((s) => s.status === "ok" || s.status === "skipped" || s.status === "error").length;
   return Math.round((done / total) * 100);
 }
 
@@ -15,6 +16,8 @@ function PhaseRow({ phase }: { phase: ReconPhaseState }) {
   const pct = pctOf(phase);
   const running = phase.status === "running";
   const queued = phase.status === "queued";
+  const skipped = phase.status === "skipped";
+  const errored = phase.status === "error";
 
   return (
     <div className="border-b border-white/[0.06] last:border-0">
@@ -27,12 +30,24 @@ function PhaseRow({ phase }: { phase: ReconPhaseState }) {
             "grid size-6 shrink-0 place-items-center rounded-md border",
             phase.status === "done"
               ? "border-emerald-400/30 bg-emerald-400/10 text-emerald-300"
-              : queued
-                ? "border-white/10 bg-white/[0.02] text-white/30"
-                : "border-white/15 bg-white/[0.04] text-white/55",
+              : errored
+                ? "border-rose-400/30 bg-rose-400/10 text-rose-300"
+                : skipped
+                  ? "border-white/10 bg-white/[0.02] text-white/35"
+                  : queued
+                    ? "border-white/10 bg-white/[0.02] text-white/30"
+                    : "border-white/15 bg-white/[0.04] text-white/55",
           )}
         >
-          {phase.status === "done" ? <Check className="size-3.5" /> : <Icon className="size-3.5" />}
+          {phase.status === "done" ? (
+            <Check className="size-3.5" />
+          ) : errored ? (
+            <X className="size-3.5" />
+          ) : skipped ? (
+            <Minus className="size-3.5" />
+          ) : (
+            <Icon className="size-3.5" />
+          )}
         </span>
 
         <span className="min-w-0 flex-1">
@@ -40,15 +55,29 @@ function PhaseRow({ phase }: { phase: ReconPhaseState }) {
             <span
               className={cn(
                 "truncate text-[13px] font-medium",
-                queued ? "text-white/45" : "text-white/90",
+                queued || skipped ? "text-white/45" : "text-white/90",
               )}
             >
               {phase.label}
+              {phase.note && (
+                <span className="ml-1.5 text-[11px] font-normal text-white/35">· {phase.note}</span>
+              )}
             </span>
             <span className="flex shrink-0 items-center gap-1.5">
               {running && <Loader2 className="size-3 animate-spin text-white/40" />}
-              <span className="font-mono text-[11px] tabular-nums text-white/45">
-                {queued ? "queued" : `${pct}%`}
+              <span
+                className={cn(
+                  "font-mono text-[11px] tabular-nums",
+                  errored ? "text-rose-300/80" : "text-white/45",
+                )}
+              >
+                {queued
+                  ? "queued"
+                  : skipped
+                    ? "n/a"
+                    : errored
+                      ? "failed"
+                      : `${pct}%`}
               </span>
             </span>
           </span>
@@ -57,7 +86,13 @@ function PhaseRow({ phase }: { phase: ReconPhaseState }) {
             <span
               className={cn(
                 "block h-full rounded-full transition-all duration-500",
-                phase.status === "done" ? "bg-emerald-400/80" : "bg-cyan-300/70",
+                phase.status === "done"
+                  ? "bg-emerald-400/80"
+                  : errored
+                    ? "bg-rose-400/70"
+                    : skipped
+                      ? "bg-white/20"
+                      : "bg-cyan-300/70",
               )}
               style={{ width: queued ? "0%" : `${pct}%` }}
             />
@@ -75,10 +110,14 @@ function PhaseRow({ phase }: { phase: ReconPhaseState }) {
             <li key={i} className="flex items-center gap-2 text-[11px]">
               {s.status === "ok" ? (
                 <Check className="size-3 shrink-0 text-emerald-400" />
-              ) : queued ? (
-                <span className="size-3 shrink-0 rounded-full border border-white/20" />
-              ) : (
+              ) : s.status === "error" ? (
+                <X className="size-3 shrink-0 text-rose-400" />
+              ) : s.status === "skipped" ? (
+                <Minus className="size-3 shrink-0 text-white/30" />
+              ) : s.status === "running" ? (
                 <Loader2 className="size-3 shrink-0 animate-spin text-white/35" />
+              ) : (
+                <span className="size-3 shrink-0 rounded-full border border-white/20" />
               )}
               <span
                 className={cn(
@@ -89,7 +128,13 @@ function PhaseRow({ phase }: { phase: ReconPhaseState }) {
                 {s.label}
               </span>
               <span className="shrink-0 font-mono text-[10px] tabular-nums text-white/30">
-                {s.status === "ok" && s.ms != null ? `${s.ms}ms` : queued ? "" : "…"}
+                {s.status === "ok" && s.ms != null
+                  ? `${s.ms}ms`
+                  : s.status === "running"
+                    ? "…"
+                    : s.status === "skipped"
+                      ? "n/a"
+                      : ""}
               </span>
             </li>
           ))}

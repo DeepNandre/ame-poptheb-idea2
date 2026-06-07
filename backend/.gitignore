@@ -1,0 +1,21 @@
+.venv/
+__pycache__/
+*.pyc
+.ruff_cache/
+store.json
+.env
+
+# pipeline_app.py job registry (runtime state)
+jobs.json
+
+# scan.py device index
+camera_index.json
+
+# playwright-mcp browser session artifacts (people.py linkedin source)
+.playwright-mcp/
+
+# people.py roster cache
+people_index.json
+
+# building.py occupancy cache
+building_index.json

@@ -1,6 +1,6 @@
 import path from "path";
 import react from "@vitejs/plugin-react";
-import { defineConfig, type PluginOption } from "vite";
+import { defineConfig, loadEnv, type PluginOption } from "vite";
 // @ts-expect-error — plain .mjs server module, no types
 import { planningMiddleware } from "./server/planning.mjs";
 // @ts-expect-error — plain .mjs server module, no types
@@ -49,11 +49,37 @@ function backendPlugin(): PluginOption {
   };
 }
 
-export default defineConfig({
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), "");
+  // The two Python apps in backend/. Override per-machine via .env:
+  //   VITE_PIPELINE_API  blueprint pipeline (pipeline_app.py)  — default :8001
+  //   VITE_SCAN_API      VPN-gated device scanner (api.py)     — default :8000
+  // Frontend always calls the relative /api/pipeline/* and /api/scan/* prefixes;
+  // these proxies strip the prefix and forward to the real app.
+  const pipelineApi = env.VITE_PIPELINE_API || "http://localhost:8001";
+  const scanApi = env.VITE_SCAN_API || "http://localhost:8000";
+  const reconProxy = {
+    "/api/pipeline": {
+      target: pipelineApi,
+      changeOrigin: true,
+      rewrite: (p: string) => p.replace(/^\/api\/pipeline/, ""),
+    },
+    "/api/scan": {
+      target: scanApi,
+      changeOrigin: true,
+      rewrite: (p: string) => p.replace(/^\/api\/scan/, ""),
+    },
+  };
+
+  return {
   plugins: [react(), backendPlugin()],
   server: {
     // If 5173 is taken (old dev server), use 5174+ instead of crashing
     strictPort: false,
+    proxy: reconProxy,
+  },
+  preview: {
+    proxy: reconProxy,
   },
   resolve: {
     alias: {
@@ -82,4 +108,5 @@ export default defineConfig({
     // only on chunks larger than that so genuine app-code regressions still flag.
     chunkSizeWarningLimit: 1900,
   },
+  };
 });
