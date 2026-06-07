@@ -1,153 +1,290 @@
 import { useState } from "react";
-import { ChevronDown, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import "./german-shepherd.css";
+import { DemoModal } from "./DemoModal";
+import iconSeed from "../../assets/german-shepherd/icon-seed.png";
+import iconPlant from "../../assets/german-shepherd/icon-plant.png";
+import iconTree from "../../assets/german-shepherd/icon-tree.png";
+import iconHands from "../../assets/german-shepherd/icon-hands.png";
 
-const ORANGE = "#ff5400";
+// Hero is a static asset served from /public.
+const HERO = "/german-shepherd/hero.png";
 
-function DogLogo({ className, style }: { className?: string; style?: React.CSSProperties }) {
-  return (
-    <svg viewBox="0 0 40 40" fill="none" className={className} style={style} aria-hidden>
-      <path
-        d="M20 6c-3.2 0-5.8 1.6-7.4 4.2-1 1.6-1.5 3.4-1.5 5.3 0 1 .2 2 .5 2.9-2.2.8-4.1 2.3-5.2 4.4-1.3 2.3-1.4 5-.3 7.3 1.5 2.8 4.4 4.6 7.5 4.9-.4 1.5-.3 3.1.5 4.5 1 1.9 3 3 5.2 3h1.5c2.2 0 4.2-1.1 5.2-3 .8-1.4.9-3 .5-4.5 3.1-.3 6-2.1 7.5-4.9 1.1-2.3 1-5-.3-7.3-1.1-2.1-3-3.6-5.2-4.4.3-.9.5-1.9.5-2.9 0-1.9-.5-3.7-1.5-5.3C25.8 7.6 23.2 6 20 6Z"
-        fill="currentColor"
-      />
-      <ellipse cx="15" cy="16.5" rx="1.6" ry="2" fill="white" />
-      <ellipse cx="25" cy="16.5" rx="1.6" ry="2" fill="white" />
-      <path d="M16 21.5c2 1.6 4.5 1.6 6.5 0" stroke="white" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M20 6v-1.5M14 8l-1.2-1.2M26 8l1.2-1.2" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-    </svg>
-  );
-}
+const logos = [
+  "Ordnance Survey",
+  "HM Land Registry",
+  "Companies House",
+  "Historic England",
+  "Environment Agency",
+  "planning.data.gov.uk",
+  "Police.uk",
+  "EPC Register",
+];
 
-const NAV_ITEMS = [
-  { label: "Solutions", dropdown: true, to: undefined as string | undefined },
-  { label: "Products", dropdown: true, to: undefined },
-  { label: "Company", dropdown: true, to: undefined },
-  { label: "Evidence", dropdown: false, to: "/validate" },
-  { label: "Book a demo", dropdown: false, to: undefined },
+const packages = [
+  {
+    icon: iconSeed,
+    name: "Underwriting",
+    blurb: "Pre-bind exposure profiling for any insured address.",
+    policies: ["Building profile", "Tenant recon", "Risk score"],
+  },
+  {
+    icon: iconPlant,
+    name: "Portfolio Sweeps",
+    blurb: "Continuously scan an entire book of insured locations.",
+    policies: ["Bulk scan", "Drift alerts", "Concentration risk"],
+  },
+  {
+    icon: iconTree,
+    name: "Claims Context",
+    blurb: "Reconstruct the attacker-view of a site at time of loss.",
+    policies: ["Timeline", "Evidence pack", "Sourced findings"],
+  },
+  {
+    icon: iconHands,
+    name: "Risk Engineering",
+    blurb: "Hand policyholders a remediation list they can actually use.",
+    policies: ["Exposure map", "Fix list", "Audit trail"],
+  },
+];
+
+const streams = [
+  { name: "Planning record", blurb: "Geocode → PlanIt/Idox → drawings, floor plans, history. What's actually inside the building." },
+  { name: "Building Intelligence Engine", blurb: "Police crime, food hygiene, EA flood, conservation area, listed grade, Article 4, TPO, green belt — keyless and live." },
+  { name: "Corporate OSINT", blurb: "Company → domain → subdomains via cert transparency + passive DNS, tech stack, exposed infra, employees." },
+  { name: "Live wireless", blurb: "Passive WiFi + Bluetooth of the surrounding RF environment. Real SSIDs, signal heatmap, device-to-employee correlation." },
+  { name: "CCTV discovery", blurb: "Surfaces RTSP cameras visible on the local network and streams them in-browser for site walk-throughs." },
+  { name: "3D schematics", blurb: "Lazy-loaded react-three-fiber viewer for floorplate context, opened as a dark overlay on the dashboard." },
+];
+
+const traditional = [
+  "Postcode-level averages",
+  "Stale third-party scores",
+  "Black-box risk grades",
+  "Address ≠ building ≠ tenant",
+  "Manual broker questionnaires",
+  "Synthetic or modelled signals",
+];
+const ours = [
+  "Building-level, tenant-level intelligence",
+  "Live public sources, re-pulled on demand",
+  "Every finding cites its source",
+  "One address → one unified profile",
+  "Natural-language command bar",
+  "Real data or an honest gap — never synthetic",
 ];
 
 export function GermanShepherdLanding() {
-  const [bannerOpen, setBannerOpen] = useState(true);
+  const [demoOpen, setDemoOpen] = useState(false);
+  const openDemo = () => setDemoOpen(true);
 
   return (
-    <div className="min-h-screen bg-white font-inter text-[#111] antialiased">
-      {bannerOpen && (
-        <div
-          className="relative px-4 py-2.5 text-center text-[13px] font-medium text-white"
-          style={{ backgroundColor: ORANGE }}
-        >
-          Announcing our $50K LOIs Fundraise
-          <button
-            type="button"
-            onClick={() => setBannerOpen(false)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 rounded p-0.5 text-white/90 hover:bg-white/15"
-            aria-label="Dismiss announcement"
+    <div className="gs-landing min-h-screen bg-background text-foreground">
+      {/* Announcement bar */}
+      <button
+        onClick={openDemo}
+        className="block w-full bg-primary text-primary-foreground text-sm py-2.5 text-center px-4 hover:opacity-95"
+      >
+        <span className="font-medium">New</span> · Public + passive intelligence for insurers — request access →
+      </button>
+
+      {/* Nav */}
+      <header className="sticky top-0 z-40 backdrop-blur-md bg-background/70 border-b border-border/60">
+        <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+          <a href="#top" className="flex items-center gap-2">
+            <span className="text-2xl">🐾</span>
+            <span className="font-display text-2xl text-primary">German Shepherd</span>
+          </a>
+          <ul className="hidden md:flex items-center gap-8 text-sm text-foreground/80">
+            <li><a href="#product" className="hover:text-foreground">Product</a></li>
+            <li><a href="#streams" className="hover:text-foreground">Intelligence streams</a></li>
+            <li><a href="#principle" className="hover:text-foreground">Principles</a></li>
+            <li><a href="#use-cases" className="hover:text-foreground">Use cases</a></li>
+            <li><a href="#demo" className="hover:text-foreground">Book a demo</a></li>
+          </ul>
+          <div className="flex items-center gap-2">
+            <a href="/app" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-foreground text-background text-sm font-medium hover:opacity-90">
+              Launch platform →
+            </a>
+            <button onClick={openDemo} className="hidden sm:inline-flex items-center px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90">Book a demo</button>
+          </div>
+        </nav>
+      </header>
+
+      {/* Hero */}
+      <section id="top" className="relative w-full">
+        <img src={HERO} alt="See your policyholders the way attackers do" className="w-full h-auto block" />
+      </section>
+
+      {/* Launch CTA */}
+      <section className="bg-background py-8 text-center">
+        <div className="max-w-3xl mx-auto px-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          <a
+            href="/app"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/20 hover:opacity-90"
           >
-            <X className="size-4" />
+            Launch the platform →
+          </a>
+          <button
+            onClick={openDemo}
+            className="inline-flex items-center gap-2 rounded-full border border-border px-8 py-3.5 text-base font-semibold text-foreground hover:bg-secondary"
+          >
+            Book a demo
           </button>
         </div>
-      )}
+      </section>
 
-      <div className="relative min-h-[calc(100vh-42px)] overflow-hidden">
-        <img
-          src="/landing/hero-sky-bg.jpg"
-          alt=""
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
-        />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.45)_0%,rgba(255,255,255,0.08)_55%,transparent_100%)]" />
-
-        {/* Decorative layers — blend modes remove baked-in black/white backdrops */}
-        <img
-          src="/landing/hero-dog-cape.png"
-          alt=""
-          className="pointer-events-none absolute right-[-2%] top-[14%] z-[5] w-[min(46vw,540px)] max-w-none -scale-x-100 select-none object-contain mix-blend-screen lg:right-[4%] lg:top-[12%] xl:w-[520px]"
-        />
-        <img
-          src="/landing/hero-vintage-hand.png"
-          alt=""
-          className="pointer-events-none absolute bottom-[-4%] left-[-3%] z-[5] w-[min(36vw,320px)] select-none object-contain mix-blend-multiply lg:bottom-0 lg:left-0 lg:w-[300px]"
-        />
-
-        <header className="relative z-20 px-6 pt-5 md:px-12 lg:px-16 lg:pt-6">
-          <nav className="flex items-center justify-between gap-4">
-            <a href="/" className="flex shrink-0 items-center gap-2">
-              <DogLogo className="size-9 shrink-0" style={{ color: ORANGE }} />
-              <span
-                className="font-serif text-[1.35rem] font-bold leading-none tracking-[-0.01em] md:text-[1.65rem]"
-                style={{ color: ORANGE }}
-              >
-                German Shepherd
-              </span>
-            </a>
-
-            <ul className="hidden items-center gap-8 xl:flex">
-              {NAV_ITEMS.map((item) =>
-                item.to ? (
-                  <li key={item.label}>
-                    <Link
-                      to={item.to}
-                      className="flex items-center gap-0.5 text-[15px] font-medium text-[#222] hover:text-black"
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ) : (
-                  <li key={item.label}>
-                    <a
-                      href="#"
-                      className="flex items-center gap-0.5 text-[15px] font-normal text-[#222] hover:text-black"
-                    >
-                      {item.label}
-                      {item.dropdown && <ChevronDown className="size-3.5 stroke-[2.5] opacity-50" />}
-                    </a>
-                  </li>
-                ),
-              )}
-            </ul>
-
-            <div className="flex shrink-0 items-center gap-2">
-              <button
-                type="button"
-                className="rounded-lg bg-[#111] px-4 py-2 text-[14px] font-medium text-white hover:bg-black md:px-5 md:py-2.5"
-              >
-                Login
-              </button>
-              <Link
-                to="/app"
-                className="rounded-lg px-4 py-2 text-[14px] font-medium text-white md:px-5 md:py-2.5"
-                style={{ backgroundColor: ORANGE }}
-              >
-                Get insured
-              </Link>
-            </div>
-          </nav>
-        </header>
-
-        <div className="relative z-20 mx-auto flex min-h-[calc(100vh-130px)] max-w-[920px] flex-col items-center justify-center px-6 pb-20 pt-6 text-center md:px-10">
-          <h1 className="text-[clamp(2.5rem,5.8vw,4.75rem)] font-semibold leading-[1.06] tracking-[-0.025em] text-[#111]">
-            See your policyholders
-            <br />
-            the way{" "}
-            <span className="font-serif font-bold italic" style={{ color: ORANGE }}>
-              attackers do.
-            </span>
-          </h1>
-
-          <p className="mt-7 max-w-[680px] text-[15px] leading-[1.7] text-[#444] md:text-[16px]">
-            The intelligence layer that profiles a building, its tenants, and their exposure,
-            from public data alone, every finding sourced and audit-ready.
-          </p>
-
-          <Link
-            to="/app"
-            className="mt-10 inline-flex items-center justify-center rounded-lg px-9 py-3.5 text-[15px] font-semibold text-white shadow-[0_8px_24px_rgba(255,84,0,0.28)] transition hover:brightness-95"
-            style={{ backgroundColor: ORANGE }}
-          >
-            Get insured now
-          </Link>
+      {/* Logo marquee */}
+      <section className="border-y border-border/60 bg-background py-10 overflow-hidden">
+        <p className="text-center text-xs uppercase tracking-[0.18em] text-muted-foreground mb-6">
+          Built for underwriters, risk engineers, and claims teams
+        </p>
+        <div className="relative">
+          <div className="flex gap-16 animate-marquee whitespace-nowrap w-max">
+            {[...logos, ...logos, ...logos].map((l, i) => (
+              <span key={i} className="font-display text-2xl text-foreground/40">{l}</span>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Product pitch */}
+      <section id="product" className="max-w-5xl mx-auto px-6 py-24 md:py-32 text-center">
+        <h2 className="text-4xl md:text-6xl leading-tight">
+          Any insured address becomes an{" "}
+          <em className="text-primary font-display italic">intelligence surface.</em>
+        </h2>
+        <p className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto">
+          German Shepherd reconstructs the same picture an attacker would build about a site and the
+          company inside it — assembled entirely from public records and passively-observed signals.
+          So an underwriter can price and reduce that risk before it becomes a claim.
+        </p>
+      </section>
+
+      {/* Use cases */}
+      <section id="use-cases" className="bg-secondary/50 py-24 md:py-32">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-2xl mb-16">
+            <h2 className="text-4xl md:text-5xl leading-tight">Built for the <em className="font-display italic text-primary">insurance stack.</em></h2>
+            <p className="mt-4 text-lg text-muted-foreground">The buyer is the insurer. The subject is their policyholder's building and the company inside it.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {packages.map((p) => (
+              <div key={p.name} className="group bg-card rounded-3xl p-7 border border-border/60 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                <img src={p.icon} alt="" width={120} height={120} loading="lazy" className="w-24 h-24 object-contain mb-6 group-hover:scale-110 transition-transform" />
+                <h3 className="text-2xl mb-2">{p.name}</h3>
+                <p className="text-sm text-muted-foreground mb-5">{p.blurb}</p>
+                <div className="flex flex-wrap gap-1.5 mb-6">
+                  {p.policies.map((pol) => (
+                    <span key={pol} className="inline-flex items-center px-2.5 py-1 rounded-full bg-secondary text-xs font-medium text-secondary-foreground border border-border/60">{pol}</span>
+                  ))}
+                </div>
+                <a href="#demo" className="mt-auto text-sm font-semibold text-primary hover:underline">See it on your book →</a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Intelligence streams */}
+      <section id="streams" className="max-w-7xl mx-auto px-6 py-24 md:py-32">
+        <div className="max-w-2xl mb-16">
+          <h2 className="text-4xl md:text-5xl leading-tight">Six streams, <em className="font-display italic text-primary">one unified profile.</em></h2>
+          <p className="mt-4 text-lg text-muted-foreground">A frosted-glass command dashboard with a natural-language command bar fuses every signal into one picture of the site.</p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {streams.map((s) => (
+            <div key={s.name} className="bg-card rounded-2xl p-7 border border-border/60">
+              <h3 className="text-xl mb-2 text-primary font-display">{s.name}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{s.blurb}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Principle */}
+      <section id="principle" className="max-w-5xl mx-auto px-6 py-24 md:py-32">
+        <div className="rounded-3xl bg-accent p-10 md:p-16 text-center">
+          <p className="text-2xl md:text-4xl leading-snug font-display italic text-ink">
+            "Public + passive only. Real data, or an honest gap — never synthetic. Every finding is
+            sourced; a missing key shows up as a skipped chip, not fake data."
+          </p>
+          <div className="mt-8 text-sm text-muted-foreground">
+            The ethics boundary and the selling point. Audit-ready for the underwriting file.
+          </div>
+        </div>
+      </section>
+
+      {/* Advantage / comparison */}
+      <section id="advantage" className="bg-secondary/50 py-24 md:py-32">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl text-center mb-16">Why insurers choose <em className="font-display italic text-primary">German Shepherd.</em></h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-card rounded-3xl p-8 border border-border/60">
+              <h3 className="text-2xl mb-4 text-muted-foreground">Traditional risk data</h3>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                {traditional.map((t) => (
+                  <li key={t} className="flex items-start gap-2">
+                    <span className="text-destructive mt-0.5">✕</span> {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-card rounded-3xl p-8 border-2 border-primary shadow-xl shadow-primary/10">
+              <h3 className="text-2xl mb-4 text-primary">German Shepherd</h3>
+              <ul className="space-y-3 text-sm">
+                {ours.map((t) => (
+                  <li key={t} className="flex items-start gap-2">
+                    <span className="text-primary mt-0.5">✓</span> {t}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 text-sm text-muted-foreground">
+                We unify planning, building, corporate OSINT, RF, and CCTV into one pane — so
+                underwriters price the actual risk, not a postcode proxy.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Demo CTA */}
+      <section id="demo" className="max-w-6xl mx-auto px-6 py-24 md:py-32">
+        <h2 className="text-4xl md:text-5xl text-center mb-16">See it run against your <em className="font-display italic text-primary">own book.</em></h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="rounded-3xl p-10 bg-card border border-border/60">
+            <div className="text-xs uppercase tracking-widest text-primary mb-3">Demo</div>
+            <h3 className="text-3xl mb-3">Bring one address. We'll show you everything.</h3>
+            <p className="text-muted-foreground mb-6">Give us a single insured location. We'll run the full unified profile live on the call — planning record, building intelligence, corporate OSINT, RF, and CCTV discovery — every finding sourced.</p>
+            <p className="text-sm text-muted-foreground mb-8"><strong className="text-foreground">Best for:</strong> Underwriters and risk engineers who want to see attacker-view intelligence on a real risk.</p>
+            <button onClick={openDemo} className="inline-flex items-center px-6 py-3 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90">Book a demo →</button>
+          </div>
+          <div className="rounded-3xl p-10 bg-foreground text-background">
+            <div className="text-xs uppercase tracking-widest text-primary mb-3">Portfolio sweep</div>
+            <h3 className="text-3xl mb-3 text-background">Run it across your full book.</h3>
+            <p className="text-background/70 mb-6">Bulk-profile thousands of locations. Surface concentration risk, exposed infrastructure, and drift since bind — all from public + passive sources, all audit-ready.</p>
+            <p className="text-sm text-background/70 mb-8"><strong className="text-background">Best for:</strong> Portfolio managers and reinsurers who need exposure visibility across the book.</p>
+            <button onClick={openDemo} className="inline-flex items-center px-6 py-3 rounded-full bg-background text-foreground text-sm font-semibold hover:opacity-90">Talk to us →</button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-border/60 py-12">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-2">
+            <span className="text-xl">🐾</span>
+            <span className="font-display text-xl text-primary">German Shepherd</span>
+          </div>
+          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} German Shepherd. Public + passive intelligence for insurers.</p>
+          <div className="flex gap-6 text-sm text-muted-foreground">
+            <a href="#" className="hover:text-foreground">Privacy</a>
+            <a href="#" className="hover:text-foreground">Terms</a>
+            <a href="#" className="hover:text-foreground">Contact</a>
+          </div>
+        </div>
+      </footer>
+
+      <DemoModal open={demoOpen} onClose={() => setDemoOpen(false)} />
     </div>
   );
 }

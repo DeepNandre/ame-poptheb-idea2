@@ -1,0 +1,63 @@
+/* German Shepherd landing theme — ported from the corgi-clone-buddy Lovable app
+   (Tailwind v4 / oklch) into our Tailwind v3 setup. The palette is scoped to
+   `.gs-landing`: because CSS custom properties inherit from the nearest
+   ancestor, redefining the tokens here makes our v3 `bg-background` / `text-primary`
+   utilities render the corgi palette inside the landing only — the scanner and
+   the rest of the app keep their own theme. oklch values approximated to HSL. */
+.gs-landing {
+  --background: 48 33% 99%;
+  --foreground: 24 18% 13%;
+  --ink: 24 18% 13%;
+  --card: 0 0% 100%;
+  --card-foreground: 24 18% 13%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 24 18% 13%;
+  --primary: 17 83% 60%;
+  --primary-foreground: 0 0% 99%;
+  --secondary: 45 24% 95%;
+  --secondary-foreground: 24 18% 13%;
+  --muted: 45 24% 95%;
+  --muted-foreground: 34 8% 44%;
+  --accent: 212 48% 90%;
+  --accent-foreground: 24 18% 13%;
+  --destructive: 6 78% 55%;
+  --destructive-foreground: 0 0% 99%;
+  --border: 45 16% 88%;
+  --input: 45 16% 88%;
+  --ring: 17 83% 60%;
+
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Display serif for headings + the .font-display utility the markup uses. */
+.gs-landing h1,
+.gs-landing h2,
+.gs-landing h3 {
+  font-family: "Instrument Serif", ui-serif, Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.gs-landing .font-display {
+  font-family: "Instrument Serif", ui-serif, Georgia, serif;
+}
+
+/* Tokens our v3 config doesn't generate as utilities. */
+.gs-landing .text-ink {
+  color: hsl(var(--ink));
+}
+
+/* Logo marquee (the markup triples the list, so -33.333% loops seamlessly). */
+@keyframes gs-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+.gs-landing .animate-marquee {
+  animation: gs-marquee 40s linear infinite;
+}
