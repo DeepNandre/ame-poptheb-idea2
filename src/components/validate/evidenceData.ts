@@ -115,6 +115,19 @@ export const claims: Claim[] = [
     status: "self",
   },
   {
+    id: "field-sites",
+    claim: "Field validation hit named, real sites — not anonymous anecdotes.",
+    evidence:
+      "During the sprint the team accessed real London sites (King's College London, let in legally overnight) and visited an insurer directly — filming live from Konsilio Insurance's London head office — documented publicly on X as it happened.",
+    source: {
+      label: "Team X posts · @Vedaant_k, @BathoIsaac",
+      href: "https://x.com/Vedaant_k",
+      dated: "2026-06-06",
+    },
+    verify: "Open the team's X feeds (dated during the hack): posts name King's College London and Konsilio Insurance with photos and video on site.",
+    status: "verified",
+  },
+  {
     id: "build-in-public",
     claim: "The team builds in public and ships under pressure.",
     evidence:
@@ -235,21 +248,69 @@ export interface Post {
 }
 export const buildInPublic: Post[] = [
   {
-    platform: "LinkedIn",
+    platform: "LinkedIn · Isaac Batho",
     href: "https://www.linkedin.com/feed/update/urn:li:activity:7469163045601218560/",
     summary:
-      "“The BUBBLE has been POPPED.” Pop the Bubble launch — we broke into buildings, now we'll insure them. #popthebubble",
+      "“The BUBBLE has been POPPED.” Pop the Bubble launch — we break into buildings, now we'll insure them. #popthebubble",
     dated: "2026-06-07",
     status: "verified",
   },
   {
-    platform: "X / Twitter",
+    platform: "X · @BathoIsaac",
     href: "https://x.com/BathoIsaac",
     summary:
-      "Founder's live build-in-public feed — Pop the Bubble updates posted through the hack.",
+      "Live from Konsilio Insurance's London head office: “The BUBBLE has been POPPED” → spectre-peach.vercel.app. #popthebubble",
     dated: "2026-06-07",
     status: "verified",
   },
-  // TEAMMATES: add teammates' dated Pop the Bubble posts here as their URLs come in.
-  // { platform: "LinkedIn", href: "https://...", summary: "...", dated: "2026-06-07", status: "verified" },
+  {
+    platform: "X · @BathoIsaac",
+    href: "https://x.com/BathoIsaac",
+    summary:
+      "“Taking Corgi for a walk with German Shepherd at the Pop the Bubble Hackathon to help secure buildings and events.”",
+    dated: "2026-06-07",
+    status: "verified",
+  },
+  {
+    platform: "X · @Vedaant_k",
+    href: "https://x.com/Vedaant_k",
+    summary:
+      "“We did indeed break in to some of the coolest places in London, signed an LOI, and now we're going to sell German Shepherd to the places we cooked.” (~439 views)",
+    dated: "2026-06-07",
+    status: "verified",
+  },
+  {
+    platform: "X · @BathoIsaac",
+    href: "https://x.com/BathoIsaac",
+    summary:
+      "“We're testing how secure your event is by breaking in. Let me know if you want us to try break in!!!” Tagged @nvidia, @hoaqclub and others.",
+    dated: "2026-06-07",
+    status: "verified",
+  },
+  {
+    platform: "X · @Vedaant_k",
+    href: "https://x.com/Vedaant_k",
+    summary:
+      "“Thank you Kings for letting us in last night completely legally” — King's College London site access, photographed. (~1K views)",
+    dated: "2026-06-07",
+    status: "verified",
+  },
+  {
+    platform: "X · @Vedaant_k",
+    href: "https://x.com/Vedaant_k",
+    summary:
+      "“At the Pop the Bubble hackathon and we're speaking to our end users right now.” Live customer discovery.",
+    dated: "2026-06-06",
+    status: "verified",
+  },
+  {
+    platform: "X · @Deepnsec",
+    href: "https://x.com/Deepnsec",
+    summary:
+      "Team build-in-public thread amplifying the Pop the Bubble field sprint. #popthebubble",
+    dated: "2026-06-07",
+    status: "verified",
+  },
+  // TEAMMATES: add more dated Pop the Bubble posts here. Prefer permalinks over profile roots.
+  // { platform: "X · @handle", href: "https://x.com/handle/status/...", summary: "...", dated: "2026-06-07", status: "verified" },
 ];
