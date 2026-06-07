@@ -9,7 +9,8 @@ import { earlyAccessMiddleware } from "./earlyAccess.mjs";
 import { buildingMiddleware } from "./building.mjs";
 import { staticMiddleware, hasStaticBuild } from "./static.mjs";
 
-const PORT = Number(process.env.PLANNING_PORT || 8787);
+// Hosts (Render/Railway/Fly) inject PORT; fall back to PLANNING_PORT / 8787 locally.
+const PORT = Number(process.env.PORT || process.env.PLANNING_PORT || 8787);
 
 const server = http.createServer((req, res) => {
   earlyAccessMiddleware(req, res, () => {

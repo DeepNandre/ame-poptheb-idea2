@@ -28,13 +28,14 @@ export interface CommandOutcome {
   answer?: string | null;
 }
 
+// London sites only — the demo footprint.
 const EXAMPLES = [
   "Take me to the Shard",
   "Fly to Canary Wharf",
   "Show me Arbor, Bankside Yards",
   "Floor plans of 22 Bishopsgate",
-  "Corporate recon for the building",
-  "Who works here right now?",
+  "Recon on 30 St Mary Axe (the Gherkin)",
+  "Who's inside One Canada Square?",
 ];
 
 export function CommandBar({
@@ -57,10 +58,11 @@ export function CommandBar({
   const inputRef = useRef<HTMLInputElement>(null);
   const [value, setValue] = useState("");
   const [focused, setFocused] = useState(false);
-  const [hovered, setHovered] = useState(false);
 
-  const expanded = focused || hovered || running || !!outcome || !!error || value.length > 0;
-  const showChips = expanded && !outcome && !error && !running && value.trim() === "";
+  // Keep the bar expanded and the prompt chips visible at all times (idle state),
+  // hiding them only while a query is running or a result/error is showing.
+  const expanded = true;
+  const showChips = !outcome && !error && !running && value.trim() === "";
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -83,13 +85,7 @@ export function CommandBar({
 
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-5 z-30 flex justify-center px-4">
-      {/* One hover surface for the whole cluster — moving between the pills and
-          the input no longer crosses a dead gap, so it stays expanded. */}
-      <div
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        className="pointer-events-auto flex w-fit flex-col items-center gap-2.5"
-      >
+      <div className="pointer-events-auto flex w-fit flex-col items-center gap-2.5">
         {(outcome || error) && !running ? (
           <ResultCard outcome={outcome} error={error} onClear={onClear} onOpenTarget={onOpenTarget} />
         ) : null}

@@ -1,0 +1,42 @@
+# Render Blueprint — one Node service that serves the SPA (landing + /app +
+# /validate) AND the live backend (/api/* + scanner WebSocket) from one box.
+#
+# Deploy: render.com → New → Blueprint → connect this repo → set the env vars
+# below (VITE_MAPBOX_TOKEN is required) → Apply.
+#
+# What goes live: planning lookup, Building Intelligence Engine, and the LLM
+# command bar (with OPENROUTER_API_KEY). Corporate OSINT needs Python on the
+# host (see note at bottom); live WiFi/Bluetooth/CCTV are local-machine only.
+services:
+  - type: web
+    name: german-shepherd
+    runtime: node
+    plan: starter # "free" works too but cold-starts after inactivity
+    # --include=dev so vite/tsc (devDependencies) are available for the build.
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: npm run api
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      # Mapbox publishable token — needed at BUILD (client map) AND RUNTIME
+      # (server-side geocode in the building engine). Set the value in the dashboard.
+      - key: VITE_MAPBOX_TOKEN
+        sync: false
+      # Optional — enables the natural-language command bar (falls back to
+      # keyword parsing if unset).
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_MODEL
+        value: anthropic/claude-sonnet-4.6
+      # Optional — exposed-infrastructure sources for Corporate OSINT.
+      - key: SHODAN_API_KEY
+        sync: false
+      - key: CENSYS_API_TOKEN
+        sync: false
+# ──────────────────────────────────────────────────────────────────────────────
+# Corporate OSINT (osint_engine.py) needs python3 on the host, which the Node
+# runtime above does NOT provide. To enable it, switch this service to a Docker
+# build (node + python3) — ask and I'll add a Dockerfile. Planning + Building
+# Intelligence + the LLM command bar all work on the Node runtime as-is.
