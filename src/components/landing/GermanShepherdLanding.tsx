@@ -100,6 +100,7 @@ export function GermanShepherdLanding() {
             <li><a href="#principle" className="hover:text-foreground">Principles</a></li>
             <li><a href="#use-cases" className="hover:text-foreground">Use cases</a></li>
             <li><a href="#demo" className="hover:text-foreground">Book a demo</a></li>
+            <li><a href="/validate" className="font-medium text-primary hover:opacity-80">Validation</a></li>
           </ul>
           <div className="flex items-center gap-2">
             <a href="/app" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-foreground text-background text-sm font-medium hover:opacity-90">
