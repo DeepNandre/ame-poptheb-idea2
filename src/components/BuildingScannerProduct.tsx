@@ -512,6 +512,27 @@ export function BuildingScannerProduct() {
   const reconActive = dashOpen && (dashTab === "recon" || dashTab === "cctv");
   const token = import.meta.env.VITE_MAPBOX_TOKEN as string | undefined;
 
+  // Is the Node backend reachable? On a static deploy (e.g. Vercel) there's no
+  // /api server, so we skip the live scan/recon/CCTV auto-start and show a calm
+  // "hosted preview" note instead of connection errors. null = still checking.
+  const [backendOk, setBackendOk] = useState<boolean | null>(null);
+  useEffect(() => {
+    let alive = true;
+    (async () => {
+      try {
+        const res = await fetch("/api/agent/status", { headers: { Accept: "application/json" } });
+        const ctype = res.headers.get("content-type") || "";
+        const data = res.ok && ctype.includes("json") ? await res.json() : null;
+        if (alive) setBackendOk(!!data && typeof data.llm === "boolean");
+      } catch {
+        if (alive) setBackendOk(false);
+      }
+    })();
+    return () => {
+      alive = false;
+    };
+  }, []);
+
   // Ask the server whether an LLM is configured — drives the command-bar badge.
   useEffect(() => {
     getLlmStatus().then(setLlmEnabled);
@@ -588,7 +609,8 @@ export function BuildingScannerProduct() {
 
       ws.onerror = () => {
         clearTimeout(timeout);
-        const msg = "Could not connect to scanner backend — restart npm run dev";
+        const msg =
+          "Live scanning needs the local backend. This hosted preview shows the map, intelligence and 3D schematics; run the desktop build for live WiFi / Bluetooth / CCTV.";
         setConnectionError(msg);
         reject(new Error(msg));
       };
@@ -784,7 +806,9 @@ export function BuildingScannerProduct() {
   // recon restores instantly from cache (or runs once for the default target).
   const didAutoLoad = useRef(false);
   useEffect(() => {
-    if (didAutoLoad.current || !token) return;
+    // Wait until we know the backend is reachable; never auto-fire on a static
+    // deploy (it would just produce connection errors).
+    if (didAutoLoad.current || !token || backendOk !== true) return;
     didAutoLoad.current = true;
 
     // Instant: show the last recon (cached this session) with no re-query.
@@ -807,9 +831,9 @@ export function BuildingScannerProduct() {
     setTimeout(() => {
       if (!hadCache) runCorporateRecon(); // OSINT for the default target
     }, 2200);
-    // Depend only on token; the mount-time closures are exactly what we want.
+    // Runs once the backend check resolves to true; mount-time closures are fine.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [token]);
+  }, [token, backendOk]);
 
   useEffect(() => {
     if (!token || !mapContainer.current || mapRef.current) return;
@@ -1268,6 +1292,11 @@ export function BuildingScannerProduct() {
         {connectionError ? (
           <div className="glass rounded-xl px-3 py-2 text-[11px] text-amber-200/90 border border-amber-400/30">
             {connectionError}
+          </div>
+        ) : backendOk === false ? (
+          <div className="glass rounded-xl px-3 py-2 text-[11px] text-sky-100/90 border border-sky-300/30">
+            Hosted preview — map, intelligence &amp; 3D schematics work here. Live WiFi / Bluetooth /
+            CCTV scanning runs in the local desktop build.
           </div>
         ) : null}
 
