@@ -15,6 +15,7 @@ import {
   claims,
   loi,
   fieldLog,
+  fieldFootage,
   significance,
   verifySteps,
   pendingEvidence,
@@ -289,6 +290,27 @@ export function EvidenceDashboard() {
                   <p className="mt-1.5 text-[12.5px] leading-[1.55] text-[#777]">{f.detail}</p>
                 </div>
               ))}
+            </div>
+
+            {/* Primary-source footage */}
+            <div className="mt-7 grid gap-5 border-t border-[#eee] pt-7 md:grid-cols-[1.4fr_1fr] md:items-center">
+              <video
+                src={fieldFootage.src}
+                controls
+                playsInline
+                preload="metadata"
+                className="w-full rounded-xl border border-[#eee] bg-black"
+              />
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#999]">
+                    Primary-source footage
+                  </span>
+                  <StatusBadge status={fieldFootage.status} />
+                </div>
+                <p className="mt-3 text-[13.5px] leading-[1.6] text-[#555]">{fieldFootage.caption}</p>
+                <p className="mt-2 text-[12px] text-[#aaa]">Captured {fieldFootage.dated}</p>
+              </div>
             </div>
           </div>
         </section>

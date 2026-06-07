@@ -204,6 +204,15 @@ export const fieldLog: FieldEntry[] = [
   },
 ];
 
+// ── Field footage — primary-source video from the sprint ─────────────────────
+export const fieldFootage = {
+  src: "/evidence/field-footage.mp4",
+  caption:
+    "On-site field footage, captured during the 24-hour sprint — the team gaining access to real London buildings.",
+  dated: "2026-06-06",
+  status: "verified" as Status,
+};
+
 // ── Why the truth matters (market significance) ──────────────────────────────
 export const significance = {
   narrative:
