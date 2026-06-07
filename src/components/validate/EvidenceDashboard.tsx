@@ -22,6 +22,7 @@ import {
   loi,
   pricingSummary,
   pricingReport,
+  dataCostBase,
   externalSources,
   sourcesNote,
   fieldLog,
@@ -393,6 +394,55 @@ export function EvidenceDashboard() {
                 Bottom line ·{" "}
               </span>
               {pricingReport.costStack.takeaway}
+            </p>
+          </div>
+
+          {/* (a.2) Data cost base & moat */}
+          <div className="mt-10">
+            <h3 className="text-[15px] font-semibold tracking-[-0.01em]">{dataCostBase.label}</h3>
+            <p className="mt-1.5 max-w-[760px] text-[13px] leading-[1.6] text-[#777]">{dataCostBase.intro}</p>
+            <p className="mt-4 rounded-xl bg-[#0f0f0f] px-4 py-3.5 text-[13.5px] leading-[1.6] text-white/90">
+              <span className="font-semibold" style={{ color: ORANGE }}>
+                The point ·{" "}
+              </span>
+              {dataCostBase.headline}
+            </p>
+            <div className="mt-5 space-y-5">
+              {dataCostBase.groups.map((g) => (
+                <div key={g.category}>
+                  <p className="mb-2 font-mono text-[10.5px] uppercase tracking-[0.16em] text-[#aaa]">{g.category}</p>
+                  <div className="overflow-hidden rounded-2xl border border-[#eee]">
+                    {g.items.map((it, i) => (
+                      <div
+                        key={it.provider}
+                        className={`grid gap-2 p-4 md:grid-cols-[1.5fr_1fr] md:items-center md:p-5 ${
+                          i > 0 ? "border-t border-[#eee]" : ""
+                        }`}
+                      >
+                        <div>
+                          <a
+                            href={it.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-1 text-[13.5px] font-semibold tracking-[-0.01em] underline decoration-[#ddd] underline-offset-2 hover:decoration-black"
+                          >
+                            {it.provider}
+                            <ExternalLink className="size-3 shrink-0 text-[#bbb]" />
+                          </a>
+                          <p className="mt-1 text-[12.5px] leading-[1.5] text-[#777]">{it.what}</p>
+                        </div>
+                        <p className="text-[12.5px] font-medium text-[#222] md:text-right">{it.price}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-4 rounded-xl bg-[#fafafa] px-4 py-3 text-[13px] leading-[1.6] text-[#444]">
+              <span className="font-semibold" style={{ color: ORANGE }}>
+                Moat ·{" "}
+              </span>
+              {dataCostBase.takeaway}
             </p>
           </div>
 

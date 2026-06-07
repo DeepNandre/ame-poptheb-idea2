@@ -115,6 +115,31 @@ The pilot covers an agreed set of buildings. A manual physical assessment costs 
 
 ---
 
+## 6a. The data cost base & moat — £20k doesn't even cover the data bill
+
+German Shepherd's building intelligence runs on **licensed, paid UK property data**, not scraping. The inputs behind a single building profile, at providers' public rates:
+
+| Category | Provider | What it provides | Price |
+|---|---|---|---|
+| **Ownership & boundaries** (HM Land Registry) | Title Register / Title Plan | Authoritative ownership + plan | **~£3 / title** |
+| | National Polygon Service | Every property boundary in England & Wales | **£20,000 / year** |
+| | Commercial & Corporate Ownership Data | Who owns what, incl. overseas owners | Bulk licensed (POA) |
+| **Ordnance Survey Premium** | AddressBase Premium | Full UPRN/address lifecycle + cross-refs | OS Data Hub Premium (usage) |
+| | MasterMap Topography + Building Height | Real footprints and heights | OS Data Hub Premium (usage) |
+| **Commercial property intelligence** | CoStar | Tenancies, leases, valuations, ownership | **£10k+ / year** |
+| | LandInsight / LandTech | Site sourcing, ownership, planning history | ~£100–£300 / mo per seat |
+| | Nimbus Maps | Site intelligence, ownership, lease data | SaaS / mo per seat |
+| | Beauhurst | Company/owner intel for occupants | Enterprise annual |
+| **Environmental & risk** | Landmark Information Group | Contaminated land, flood, ground stability | ~£40–£60 / report |
+| | Groundsure | Environmental / climate risk | Per report |
+| **Business & credit (occupants)** | Companies House Premium / bulk | Full data beyond the free API | Bulk / licensed |
+| | D&B · Creditsafe · Red Flag Alert | Financial health, credit, director networks | Annual subscriptions |
+| **Footfall & mobility** | Huq · Placer.ai · SafeGraph/Advan | Real footfall / visit data | Enterprise licensing |
+
+**The point:** two fixed licences alone — **National Polygon Service (£20,000/yr)** and **CoStar (£10k+/yr)** — already exceed the entire pilot fee, before a single per-report or per-seat cost. So **£20,000 is a strategic land price, not a margin play**: it buys the marquee relationship and the resale channel into 230+ insurers, while the licensed data layer is the part that makes German Shepherd **hard to copy** (a scraper can't replicate licensed Land Registry, OS Premium and CoStar feeds). This both *justifies* the price floor and *strengthens* the moat in the "what it grows into" story — the cost base is also the defensibility.
+
+---
+
 ## 7. Pricing decision & recommendation
 
 **Hold the £20,000 for *this* pilot — but treat it as a land price, not the value price.**

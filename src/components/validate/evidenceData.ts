@@ -825,6 +825,147 @@ export const externalSources: ExternalSource[] = [
 export const sourcesNote =
   "German Shepherd is physical-security intelligence (in-person penetration testing), so figures here are physical losses — burglary, intrusion, theft, business interruption — not cyber. Independent = government, regulator, or trade-body data; Vendor = published by a firm selling a related service (directional, used as supporting colour); Secondary = reputable reporting of a primary source. Two widely-repeated claims are deliberately excluded as unreliable: the \"£12.9bn business-crime\" figure (unverified, retailer-sourced) and \"80% of businesses close within 18 months of a disaster\" (US FEMA, not UK).";
 
+// ── The licensed data layer (cost of goods + moat) ───────────────────────────
+// The paid UK property/building data that German Shepherd licenses to turn an
+// address into a risk surface. The point: input data alone costs more per year
+// than the £20k pilot — so the price is a strategic land deal, and the licensed
+// layer is a moat a scraper cannot copy. Prices are providers' public/list rates.
+export interface DataSource {
+  provider: string;
+  what: string;
+  price: string;
+  href: string;
+}
+export interface DataGroup {
+  category: string;
+  items: DataSource[];
+}
+export const dataCostBase = {
+  label: "The data cost base behind the platform",
+  intro:
+    "German Shepherd's building intelligence runs on licensed, paid UK property data — not scraping. These are the inputs behind a single building profile, at providers' public rates.",
+  headline:
+    "£20,000 does not even cover our data bill. HM Land Registry's National Polygon Service alone is £20,000/year — the entire pilot fee — before CoStar, Ordnance Survey Premium, environmental, credit and footfall data. That is why the pilot is a strategic land price, not a margin play: the licensed data layer is a moat a scraper can't copy.",
+  groups: [
+    {
+      category: "Property ownership & boundaries — HM Land Registry",
+      items: [
+        {
+          provider: "Title Register / Title Plan",
+          what: "Authoritative ownership + plan behind the free price-paid feed.",
+          price: "~£3 per title",
+          href: "https://www.gov.uk/search-property-information-land-registry",
+        },
+        {
+          provider: "National Polygon Service",
+          what: "Every property boundary in England & Wales.",
+          price: "£20,000 / year",
+          href: "https://use-land-property-data.service.gov.uk/datasets/nps",
+        },
+        {
+          provider: "Commercial & Corporate Ownership Data",
+          what: "Who owns what, including overseas owners.",
+          price: "Bulk licensed — price on application",
+          href: "https://use-land-property-data.service.gov.uk/",
+        },
+      ],
+    },
+    {
+      category: "Ordnance Survey Premium",
+      items: [
+        {
+          provider: "AddressBase Premium",
+          what: "Full UPRN/address with lifecycle and cross-references.",
+          price: "OS Data Hub Premium / partner — scales with usage",
+          href: "https://osdatahub.os.uk/",
+        },
+        {
+          provider: "MasterMap Topography + Building Height",
+          what: "Actual building footprints and heights.",
+          price: "OS Data Hub Premium / partner — scales with usage",
+          href: "https://osdatahub.os.uk/",
+        },
+      ],
+    },
+    {
+      category: "Commercial property intelligence",
+      items: [
+        {
+          provider: "CoStar",
+          what: "Dominant CRE database — tenancies, lease events, valuations, ownership.",
+          price: "Enterprise — typically £10k+ / year",
+          href: "https://www.costar.co.uk/",
+        },
+        {
+          provider: "LandInsight / LandTech",
+          what: "Site sourcing, ownership, planning history in one UI.",
+          price: "~£100–£300 / month per seat",
+          href: "https://land.tech/",
+        },
+        {
+          provider: "Nimbus Maps",
+          what: "Site intelligence, ownership, lease data.",
+          price: "SaaS — monthly per seat",
+          href: "https://www.nimbusmaps.co.uk/",
+        },
+        {
+          provider: "Beauhurst",
+          what: "Company/owner intelligence for the businesses inside buildings.",
+          price: "Enterprise annual licence",
+          href: "https://www.beauhurst.com/",
+        },
+      ],
+    },
+    {
+      category: "Environmental & risk",
+      items: [
+        {
+          provider: "Landmark Information Group",
+          what: "Contaminated land, flood, ground stability, full environmental search.",
+          price: "~£40–£60 per report, or licence",
+          href: "https://www.landmark.co.uk/",
+        },
+        {
+          provider: "Groundsure",
+          what: "Environmental / climate risk reports.",
+          price: "Per report",
+          href: "https://www.groundsure.com/",
+        },
+      ],
+    },
+    {
+      category: "Business & credit data (occupants)",
+      items: [
+        {
+          provider: "Companies House Premium / bulk",
+          what: "Full data products beyond the free API.",
+          price: "Bulk / licensed",
+          href: "https://find-and-update.company-information.service.gov.uk/",
+        },
+        {
+          provider: "Dun & Bradstreet · Creditsafe · Red Flag Alert",
+          what: "Financial health, credit scores, director networks for occupants.",
+          price: "Annual subscriptions",
+          href: "https://www.redflagalert.com/",
+        },
+      ],
+    },
+    {
+      category: "Footfall & mobility",
+      items: [
+        {
+          provider: "Huq Industries · Placer.ai · SafeGraph / Advan",
+          what: "Real footfall and visit data for locations.",
+          price: "Enterprise licensing",
+          href: "https://huq.io/",
+        },
+      ],
+    },
+  ] as DataGroup[],
+  takeaway:
+    "Two fixed licences alone — National Polygon (£20,000/yr) and CoStar (£10k+/yr) — exceed the pilot fee before a single per-report or per-seat cost. The £20k buys the relationship and the resale channel; the data layer is what makes the product hard to copy.",
+};
+
 // ── Build-in-public (bonus +12) — real, dated posts only ─────────────────────
 export interface Post {
   platform: string;
