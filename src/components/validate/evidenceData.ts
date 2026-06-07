@@ -39,29 +39,29 @@ export interface Claim {
 // ── The one thing we are proving ─────────────────────────────────────────────
 export const thesis = {
   kicker: "Validation evidence pack",
-  headline: "German Shepherd has real, paid commercial demand from the insurance market.",
-  sub: "Every claim below traces to a dated, independently checkable source. This page is the proof, not the pitch.",
+  headline: "German Shepherd has real, paid commercial demand — including money in the bank.",
+  sub: "Two signed LOIs (£60k), a paying customer already in (TMC deposit, LOI finalising this morning), and more LOIs in motion. Every claim below traces to a dated, independently checkable source. This page is the proof, not the pitch.",
   asOf: "2026-06-07",
 };
 
 // ── Headline metrics ─────────────────────────────────────────────────────────
 export const kpis: Kpi[] = [
   {
-    value: "£20,000",
-    label: "Pilot value committed",
-    sub: "Bolttech, 12-month platform access + 1 free month",
+    value: "£500",
+    label: "First revenue received",
+    sub: "TMC Solicitors deposit — real money, Stripe, 3D-Secure",
     status: "verified",
-    source: { label: "Bolttech LOI · GS-LOI-2026-001", href: "/evidence/bolttech-loi.pdf", dated: "2026-06-06" },
+    source: { label: "Stripe receipt (payment succeeded)", href: "/evidence/tmc-deposit-stripe.pdf", dated: "2026-06-06" },
   },
   {
-    value: "1",
-    label: "Signed Letter of Intent",
-    sub: "Named signatory, regional GM / Chief Growth Officer",
+    value: "£60k",
+    label: "Signed LOIs (2) + a paid pilot",
+    sub: "Bolttech £30k + Upahaar £30k signed · TMC £20k pilot (deposit paid, finalising)",
     status: "verified",
-    source: { label: "Bolttech LOI · GS-LOI-2026-001", href: "/evidence/bolttech-loi.pdf", dated: "2026-06-06" },
+    source: { label: "Signed LOIs on file", href: "/evidence/upahaar-loi-signed.pdf", dated: "2026-06-07" },
   },
   {
-    value: "24h",
+    value: "36h",
     label: "Field validation sprint",
     sub: "Buildings & events entered, staff interviewed on-site",
     status: "self",
@@ -79,12 +79,30 @@ export const kpis: Kpi[] = [
 // ── Claims ledger — the heart of the rigour score ────────────────────────────
 export const claims: Claim[] = [
   {
+    id: "revenue-tmc",
+    claim: "A customer has paid us real money — this is revenue, not just intent.",
+    evidence:
+      "TMC Solicitors (a Manchester law firm with two break-in attempts in the past year) paid a £500 deposit — 5% of the £20,000 pilot — via Stripe, 3D-Secure authenticated, status Succeeded. The full LOI is being finalised with the principal, Muazzam Chughtai, at a meeting this morning.",
+    source: { label: "Stripe receipt (payment succeeded)", href: "/evidence/tmc-deposit-stripe.pdf", dated: "2026-06-06" },
+    verify: "Open the Stripe receipt: £500.00 GBP, Succeeded, 3D-Secure, charged 6 Jun 23:52. The LOI finalisation meeting is listed under Upcoming meetings.",
+    status: "verified",
+  },
+  {
     id: "loi-bolttech",
     claim: "A global insurer has committed to a paid pilot.",
     evidence:
-      "Bolttech signed a non-binding Letter of Intent: £20,000 pilot, 12 months full platform access + 1 free month on launch, plus reseller rights into their insurance-provider network.",
-    source: { label: "Bolttech LOI · GS-LOI-2026-001", href: "/evidence/bolttech-loi.pdf", dated: "2026-06-06" },
-    verify: "Open the LOI PDF. Check the signatory (Baldev Singh), role, value (£20,000), reference (GS-LOI-2026-001) and date (6 Jun 2026).",
+      "Bolttech signed a Letter of Intent: £30,000 pilot, 12 months full platform access + 1 free month on launch, plus reseller rights into their insurance-provider network.",
+    source: { label: "Bolttech LOI · GS-LOI-2026-001", href: "/evidence/bolttech-loi.pdf", dated: "2026-06-07" },
+    verify: "Open the LOI PDF. Check the signatory (Baldev Singh), role, value (£30,000), reference (GS-LOI-2026-001) and date (signed 7 Jun 2026).",
+    status: "verified",
+  },
+  {
+    id: "loi-upahaar",
+    claim: "A paying customer signed because the pain is real, not hypothetical.",
+    evidence:
+      "Upahaar — a marketing & gifting company in Nashik whose office had repeated break-ins — countersigned a £30,000 signed LOI (GS-LOI-2026-002) the same morning it was sent. The thesis landed because the break-ins made the value tangible.",
+    source: { label: "Upahaar signed LOI + email confirmation", href: "/evidence/upahaar-loi-signed.pdf", dated: "2026-06-07" },
+    verify: "Open the signed PDF (signatory Aditya Kakuste, Founder's Office) and the email thread: sent 05:47, signed reply 06:08 — “Please find the signed LOI attached.”",
     status: "verified",
   },
   {
@@ -142,36 +160,157 @@ export const claims: Claim[] = [
   },
 ];
 
-// ── Featured artifact: the Bolttech LOI ──────────────────────────────────────
-export const loi = {
-  company: "Bolttech",
-  reference: "GS-LOI-2026-001",
-  date: "6 June 2026",
-  type: "Non-binding Letter of Intent",
-  signatory: "Baldev Singh",
-  signatoryRole:
-    "Regional General Manager (Thailand, Singapore, Philippines) · Chief Growth Officer (Asia & Middle East)",
-  pilotValue: "£20,000",
-  access: "12 months full platform access + 1 free month on product launch",
-  pdfUrl: "/evidence/bolttech-loi.pdf",
-  terms: [
-    "£20,000 pilot covering an agreed set of policyholder building profiles.",
-    "12 months of full platform access: live wireless scanning, corporate OSINT, exposed-infrastructure mapping, planning-record lookup, building intelligence graph.",
-    "One additional free month of access on full product launch.",
-    "Reseller rights: Bolttech may distribute the platform to its insurance-provider network (formal terms TBC).",
-    "Joint use-case scoping, technical integration, and signal-to-risk mapping across embedded protection & SME risk.",
-    "Progress toward a formal commercial agreement subject to satisfactory pilot outcomes.",
-  ],
-  deliverables: [
-    "Building intelligence reports — risk profiles per policyholder site.",
-    "Signal-to-risk mapping — our data signals mapped to Bolttech underwriting variables.",
-    "Integration specification — how outputs connect to their underwriting/distribution stack.",
-    "Pilot evaluation report — coverage, data quality, signal accuracy, rollout recommendation.",
-    "Reseller onboarding pack — tooling for Bolttech to distribute the platform.",
-  ],
-};
+// ── Featured artifacts: the signed LOIs ──────────────────────────────────────
+export interface Loi {
+  company: string;
+  reference: string;
+  date: string;
+  type: string;
+  signatory: string;
+  signatoryRole: string;
+  pilotValue: string;
+  access: string;
+  pdfUrl: string;
+  docLabel?: string; // button label for the PDF (defaults to "Open the signed document")
+  emailUrl?: string; // email confirmation, where available
+  payment?: { amount: string; note: string; method: string; receiptUrl: string; dated: string };
+  context?: string;
+  terms: string[];
+  deliverables: string[];
+  furtherEvidence?: { label: string; source: string; quotes: string[]; note?: string };
+}
 
-// ── Field validation log — the 24h method, reproducible ──────────────────────
+export const lois: Loi[] = [
+  {
+    company: "TMC Solicitors",
+    reference: "GS-LOI-2026-002",
+    date: "7 June 2026",
+    type: "Paid pilot · signed LOI to follow",
+    signatory: "Muazzam Chughtai",
+    signatoryRole: "Principal Solicitor & Director, TMC Solicitors Ltd — 4 Central Buildings, Kingsway, Manchester",
+    pilotValue: "£20,000",
+    access: "Month 1 free pilot, then £20k unlocks 12 months full access + 1 free month on launch",
+    pdfUrl: "/evidence/tmc-loi.pdf",
+    docLabel: "Open the LOI document",
+    payment: {
+      amount: "£500",
+      note: "deposit toward the £20k pilot — first revenue received",
+      method: "Stripe · Visa · 3D-Secure authenticated",
+      receiptUrl: "/evidence/tmc-deposit-stripe.pdf",
+      dated: "2026-06-06",
+    },
+    context:
+      "Reached via Moeed Chughtai (AMe cohort). His father, Muazzam, runs a Manchester law firm that had two break-in attempts in the past year — high stakes for an immigration/asylum practice handling confidential files. The firm agreed to come on as an early paying pilot — a lower £20k rate in exchange for being a pilot site — and paid a deposit to lock it in (Moeed paid on his father's behalf). The signed LOI is still to come (see Upcoming meetings).",
+    terms: [
+      "Month 1 free pilot — full platform access at no cost for the initial evaluation period.",
+      "£20,000 triggered at the end of Month 1, contingent on satisfactory pilot outcomes.",
+      "On payment: 12 months of continued full access (wireless scanning, OSINT, exposed-infra mapping, planning lookup, intelligence graph).",
+      "One additional free month of access on full product launch.",
+      "Joint use-case scoping and signal-to-risk interpretation for a legal-practice environment.",
+      "Progress toward a formal commercial agreement subject to satisfactory pilot outcomes.",
+    ],
+    deliverables: [
+      "Building intelligence report — risk profile of the TMC office (wireless exposure, OSINT, infrastructure, planning history).",
+      "Signal-to-risk summary — plain-English mapping of findings to legal-practice risk categories.",
+      "Pilot evaluation report (Month 1) — coverage, data quality, mutual go/no-go recommendation.",
+      "12 months platform access on payment confirmation, + 1 free month on launch.",
+    ],
+  },
+  {
+    company: "Upahaar",
+    reference: "GS-LOI-2026-002",
+    date: "7 June 2026",
+    type: "Signed LOI — customer-countersigned",
+    signatory: "Aditya Kakuste",
+    signatoryRole: "Founder's Office, Upahaar (marketing & gifting, Nashik, India)",
+    pilotValue: "£30,000",
+    access: "12 months full platform access + 1 free month on product launch",
+    pdfUrl: "/evidence/upahaar-loi-signed.pdf",
+    emailUrl: "/evidence/upahaar-email-confirmation.pdf",
+    context:
+      "Upahaar's Nashik office had suffered repeated break-ins, leaving the team worried about physical security. The German Shepherd thesis — we surface what anyone can already see about your building before you do — made the value immediate and tangible. Countersigned the same morning the LOI was sent (sent 05:47, signed reply 06:08).",
+    terms: [
+      "£30,000 pilot covering full evaluation and delivery across Upahaar's Nashik office and any additional agreed sites.",
+      "12 months of full platform access: live wireless scanning, corporate OSINT, exposed-infrastructure mapping, planning-record lookup, building intelligence graph.",
+      "One additional free month of access on full product launch.",
+      "A complete intelligence report on the Nashik office, in a structured, actionable format.",
+      "Joint scoping of additional sites or use cases identified during the pilot.",
+      "Progress toward a formal commercial agreement subject to satisfactory pilot outcomes.",
+    ],
+    deliverables: [
+      "Building intelligence report — full risk profile of the Nashik office (wireless, visible infrastructure, OSINT, planning/structural record).",
+      "Wireless signal scan — live SSID/signal mapping showing what's visible to anyone in range.",
+      "Corporate OSINT profile — subdomains, exposed infrastructure, tech stack, public corporate data.",
+      "Infrastructure visibility report — what's publicly exposed at the network/infrastructure level.",
+      "Pilot evaluation summary — findings, coverage, and recommendations for expansion.",
+    ],
+  },
+  {
+    company: "Bolttech",
+    reference: "GS-LOI-2026-001",
+    date: "Signed 7 June 2026",
+    type: "Letter of Intent",
+    signatory: "Baldev Singh",
+    signatoryRole:
+      "Regional General Manager (Thailand, Singapore, Philippines) · Chief Growth Officer (Asia & Middle East)",
+    pilotValue: "£30,000",
+    access: "12 months full platform access + 1 free month on product launch",
+    pdfUrl: "/evidence/bolttech-loi.pdf",
+    context:
+      "A global embedded-insurance platform: validates the channel play — building-level risk that existing underwriting data doesn't cover, with reseller rights into Bolttech's insurer network.",
+    terms: [
+      "£30,000 pilot covering an agreed set of policyholder building profiles.",
+      "12 months of full platform access: live wireless scanning, corporate OSINT, exposed-infrastructure mapping, planning-record lookup, building intelligence graph.",
+      "One additional free month of access on full product launch.",
+      "Reseller rights: Bolttech may distribute the platform to its insurance-provider network (formal terms TBC).",
+      "Joint use-case scoping, technical integration, and signal-to-risk mapping across embedded protection & SME risk.",
+      "Progress toward a formal commercial agreement subject to satisfactory pilot outcomes.",
+    ],
+    deliverables: [
+      "Building intelligence reports — risk profiles per policyholder site.",
+      "Signal-to-risk mapping — our data signals mapped to Bolttech underwriting variables.",
+      "Integration specification — how outputs connect to their underwriting/distribution stack.",
+      "Pilot evaluation report — coverage, data quality, signal accuracy, rollout recommendation.",
+      "Reseller onboarding pack — tooling for Bolttech to distribute the platform.",
+    ],
+    furtherEvidence: {
+      label: "Further evidence — follow-up email from Baldev Singh",
+      source: "Email from Baldev Singh (Bolttech) with the signed LOI attached · 7 Jun 2026",
+      quotes: [
+        "Very pleased to see the developing idea. In my experience, I have seen a few other loss mitigation ideas deployed to scale where both the customer and the insurance industry benefit from reduced losses through early prevention, triggered by tools similar to your project's concept.",
+        "I certainly believe there is a positive conversation to be had once your team has worked out the details and a demo of the use case is ready.",
+        "I look forward to hearing from you and would be happy to take this further with the industry to socialize it and gain interest. In my vast experience, initiatives such as these are certainly at the forefront of new tech development powered by AI.",
+      ],
+      note: "Full email available to judges on request (contact details omitted here).",
+    },
+  },
+];
+
+// ── Upcoming meetings — live pipeline, forward-looking (not closed proof) ─────
+export interface Meeting {
+  who: string;
+  what: string;
+  when: string;
+  detail: string;
+}
+export const meetings: Meeting[] = [
+  {
+    who: "TMC Solicitors · Muazzam Chughtai",
+    what: "Get the signed LOI sorted",
+    when: "This morning · 7 Jun 2026",
+    detail:
+      "Deposit already paid (£500). Meeting to officially sort and countersign the £20k pilot LOI with the principal.",
+  },
+  {
+    who: "Eric · insurance",
+    what: "Scope a further LOI",
+    when: "This morning · 7 Jun 2026",
+    detail:
+      "Introduced by Lyndon; Eric works in insurance. We called last night — interested but busy, and asked us to call back this morning to talk through how he'd use German Shepherd.",
+  },
+];
+
+// ── Field validation log — the 36h method, reproducible ──────────────────────
 export interface FieldEntry {
   when: string;
   action: string;
@@ -197,7 +336,7 @@ export const fieldLog: FieldEntry[] = [
       "Turned the interviews into a clear need statement, then reached out via direct links to the right people to test whether the solution was useful.",
   },
   {
-    when: "Within 24h",
+    when: "Within 36h",
     action: "Captured intent",
     detail:
       "Converted conversations into Letters of Intent — including the Bolttech LOI featured above.",
@@ -349,7 +488,7 @@ export const insight = {
 export const fieldFootage = {
   src: "/evidence/field-footage.mp4",
   caption:
-    "On-site field footage, captured during the 24-hour sprint — the team gaining access to real London buildings.",
+    "On-site field footage, captured during the 36-hour sprint — the team gaining access to real London buildings.",
   dated: "2026-06-06",
   status: "verified" as Status,
 };
@@ -359,6 +498,7 @@ export const significance = {
   narrative:
     "We insure the insurer: we show insurers what attackers already know about their policyholders, so clients are more secure and insurers pay out less.",
   points: [
+    "Three customers across two go-to-market paths — the insurer channel (Bolttech) and direct enterprise (Upahaar, TMC Solicitors) — £60k in signed LOIs plus a paid pilot, first cash already received, and more LOIs in motion (meetings today).",
     "Building-level physical risk, drawn from passive signals + OSINT + the planning record, is a risk dimension existing underwriting data does not cover.",
     "Bolttech operates across device, property and SME risk products — a distribution channel into a whole insurer network, not a single team.",
     "Reseller rights in the LOI mean validated demand can scale market-wide, not just one pilot.",
@@ -382,7 +522,7 @@ export interface Pending {
   note: string;
 }
 export const pendingEvidence: Pending[] = [
-  { label: "Additional LOIs", note: "More Letters of Intent toward the $50K LOI raise — add each as a verified claim + PDF when signed." },
+  { label: "Further LOIs", note: "Two signed (£60k committed) + TMC paid pilot; add each new Letter of Intent as a verified claim + PDF as it lands." },
   { label: "Product usage logs", note: "Scan counts / sessions from /app — wire in once captured for a depth-of-proof artifact." },
   { label: "Public data corroboration", note: "Public datasets backing specific risk findings — add source links per claim." },
   { label: "Teammates' social posts", note: "Dated Pop the Bubble posts from the rest of the team — add real URLs under Build-in-public as they come in." },

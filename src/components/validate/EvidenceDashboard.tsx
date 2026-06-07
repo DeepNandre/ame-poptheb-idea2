@@ -11,6 +11,7 @@ import {
   PoundSterling,
   TrendingUp,
   ArrowDown,
+  ChevronDown,
 } from "lucide-react";
 import type { Status, Source, SourceKind } from "./evidenceData";
 import {
@@ -19,7 +20,8 @@ import {
   claims,
   features,
   productNote,
-  loi,
+  lois,
+  meetings,
   pricingSummary,
   pricingReport,
   dataCostBase,
@@ -143,7 +145,7 @@ export function EvidenceDashboard() {
               style={{ backgroundColor: ORANGE }}
             >
               <FileText className="size-4" />
-              View the LOI
+              View the LOIs
             </a>
           </div>
         </div>
@@ -255,74 +257,173 @@ export function EvidenceDashboard() {
           <p className="mt-3 text-[12px] leading-[1.55] text-[#999]">{productNote}</p>
         </section>
 
-        {/* Featured LOI */}
+        {/* Featured LOIs */}
         <section className="py-10">
-          <SectionLabel>Featured artifact</SectionLabel>
-          <div className="grid gap-px overflow-hidden rounded-2xl bg-[#eee] lg:grid-cols-[1fr_1.1fr]">
-            {/* Left: the headline terms */}
-            <div className="bg-[#0f0f0f] p-7 text-white md:p-9">
-              <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.18em] text-white/50">
-                <ShieldCheck className="size-3.5" style={{ color: ORANGE }} />
-                Letter of Intent · {loi.reference}
-              </div>
-              <p className="mt-5 text-[clamp(1.8rem,3.4vw,2.6rem)] font-semibold leading-none">
-                {loi.company}
-              </p>
-              <p className="mt-2 text-[14px] text-white/60">{loi.type} · {loi.date}</p>
-
-              <dl className="mt-7 space-y-4">
-                <div>
-                  <dt className="text-[11px] uppercase tracking-wide text-white/40">Pilot value</dt>
-                  <dd className="text-[1.5rem] font-semibold" style={{ color: ORANGE }}>
-                    {loi.pilotValue}
-                  </dd>
-                </div>
-                <div>
-                  <dt className="text-[11px] uppercase tracking-wide text-white/40">Access granted</dt>
-                  <dd className="text-[14px] text-white/90">{loi.access}</dd>
-                </div>
-                <div>
-                  <dt className="text-[11px] uppercase tracking-wide text-white/40">Signed by</dt>
-                  <dd className="text-[14px] font-medium text-white">{loi.signatory}</dd>
-                  <dd className="text-[12px] leading-snug text-white/55">{loi.signatoryRole}</dd>
-                </div>
-              </dl>
-
-              <a
-                href={loi.pdfUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-7 inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-[14px] font-semibold text-white"
-                style={{ backgroundColor: ORANGE }}
+          <SectionLabel>Featured artifacts — 2 signed LOIs + a paid pilot · first revenue in</SectionLabel>
+          <div className="space-y-6">
+            {lois.map((loi) => (
+              <div
+                key={loi.reference + loi.company}
+                className="grid gap-px overflow-hidden rounded-2xl bg-[#eee] lg:grid-cols-[1fr_1.1fr]"
               >
-                <FileText className="size-4" />
-                Open the signed document
-                <ArrowUpRight className="size-4" />
-              </a>
-            </div>
+                {/* Left: the headline terms */}
+                <div className="bg-[#0f0f0f] p-7 text-white md:p-9">
+                  <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.18em] text-white/50">
+                    <ShieldCheck className="size-3.5" style={{ color: ORANGE }} />
+                    {loi.type} · {loi.reference}
+                  </div>
+                  <p className="mt-5 text-[clamp(1.8rem,3.4vw,2.6rem)] font-semibold leading-none">
+                    {loi.company}
+                  </p>
+                  <p className="mt-2 text-[14px] text-white/60">{loi.date}</p>
 
-            {/* Right: terms + deliverables */}
-            <div className="bg-white p-7 md:p-9">
-              <p className="text-[13px] font-semibold text-[#222]">Key terms</p>
-              <ul className="mt-3 space-y-2.5">
-                {loi.terms.map((t) => (
-                  <li key={t} className="flex gap-2.5 text-[13px] leading-[1.55] text-[#555]">
-                    <CheckCircle2 className="mt-0.5 size-4 shrink-0" style={{ color: ORANGE }} />
-                    {t}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-6 text-[13px] font-semibold text-[#222]">Agreed deliverables</p>
-              <ul className="mt-3 space-y-1.5">
-                {loi.deliverables.map((d) => (
-                  <li key={d} className="flex gap-2.5 text-[12.5px] leading-[1.5] text-[#777]">
-                    <span className="mt-1.5 size-1 shrink-0 rounded-full bg-[#ccc]" />
-                    {d}
-                  </li>
-                ))}
-              </ul>
-            </div>
+                  {loi.payment && (
+                    <div className="mt-5 rounded-xl border border-emerald-400/30 bg-emerald-400/10 p-4">
+                      <div className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-300">
+                        <CheckCircle2 className="size-3.5" /> Deposit paid · first revenue
+                      </div>
+                      <p className="mt-1.5 text-[1.5rem] font-semibold text-white">
+                        {loi.payment.amount}{" "}
+                        <span className="text-[13px] font-normal text-white/55">{loi.payment.note}</span>
+                      </p>
+                      <p className="mt-1 text-[12px] text-white/55">{loi.payment.method} · {loi.payment.dated}</p>
+                      <a
+                        href={loi.payment.receiptUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-2 inline-flex items-center gap-1 text-[12px] font-medium text-emerald-300 underline decoration-emerald-300/40 underline-offset-2 hover:text-emerald-200"
+                      >
+                        View Stripe receipt <ArrowUpRight className="size-3" />
+                      </a>
+                    </div>
+                  )}
+
+                  <dl className="mt-7 space-y-4">
+                    <div>
+                      <dt className="text-[11px] uppercase tracking-wide text-white/40">Pilot value</dt>
+                      <dd className="text-[1.5rem] font-semibold" style={{ color: ORANGE }}>
+                        {loi.pilotValue}
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="text-[11px] uppercase tracking-wide text-white/40">Access granted</dt>
+                      <dd className="text-[14px] text-white/90">{loi.access}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-[11px] uppercase tracking-wide text-white/40">Signed by</dt>
+                      <dd className="text-[14px] font-medium text-white">{loi.signatory}</dd>
+                      <dd className="text-[12px] leading-snug text-white/55">{loi.signatoryRole}</dd>
+                    </div>
+                  </dl>
+
+                  <div className="mt-7 flex flex-wrap gap-2">
+                    <a
+                      href={loi.pdfUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-[14px] font-semibold text-white"
+                      style={{ backgroundColor: ORANGE }}
+                    >
+                      <FileText className="size-4" />
+                      {loi.docLabel ?? "Open the signed document"}
+                      <ArrowUpRight className="size-4" />
+                    </a>
+                    {loi.emailUrl && (
+                      <a
+                        href={loi.emailUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 rounded-lg border border-white/20 px-4 py-2.5 text-[13px] font-medium text-white/85 hover:bg-white/10"
+                      >
+                        Email confirmation
+                        <ArrowUpRight className="size-3.5" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                {/* Right: context + terms + deliverables */}
+                <div className="bg-white p-7 md:p-9">
+                  {loi.context && (
+                    <p className="mb-5 border-l-2 pl-3 text-[12.5px] leading-[1.6] text-[#555]" style={{ borderColor: ORANGE }}>
+                      {loi.context}
+                    </p>
+                  )}
+                  <p className="text-[13px] font-semibold text-[#222]">Key terms</p>
+                  <ul className="mt-3 space-y-2.5">
+                    {loi.terms.map((t) => (
+                      <li key={t} className="flex gap-2.5 text-[13px] leading-[1.55] text-[#555]">
+                        <CheckCircle2 className="mt-0.5 size-4 shrink-0" style={{ color: ORANGE }} />
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-6 text-[13px] font-semibold text-[#222]">Agreed deliverables</p>
+                  <ul className="mt-3 space-y-1.5">
+                    {loi.deliverables.map((d) => (
+                      <li key={d} className="flex gap-2.5 text-[12.5px] leading-[1.5] text-[#777]">
+                        <span className="mt-1.5 size-1 shrink-0 rounded-full bg-[#ccc]" />
+                        {d}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {loi.furtherEvidence && (
+                    <details className="group mt-6 rounded-xl border border-[#eee] bg-[#fafafa] p-4 open:bg-white">
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-2 text-[13px] font-semibold text-[#333] [&::-webkit-details-marker]:hidden">
+                        <span>{loi.furtherEvidence.label}</span>
+                        <span className="flex items-center gap-1 text-[11px] font-normal text-[#999]">
+                          <span className="group-open:hidden">Show</span>
+                          <span className="hidden group-open:inline">Hide</span>
+                          <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
+                        </span>
+                      </summary>
+                      <div className="mt-3 space-y-2.5">
+                        <p className="font-mono text-[11px] uppercase tracking-wide text-[#999]">
+                          {loi.furtherEvidence.source}
+                        </p>
+                        {loi.furtherEvidence.quotes.map((q) => (
+                          <blockquote
+                            key={q}
+                            className="border-l-2 pl-3 text-[12.5px] italic leading-[1.6] text-[#555]"
+                            style={{ borderColor: ORANGE }}
+                          >
+                            “{q}”
+                          </blockquote>
+                        ))}
+                        {loi.furtherEvidence.note && (
+                          <p className="text-[11.5px] text-[#999]">{loi.furtherEvidence.note}</p>
+                        )}
+                      </div>
+                    </details>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
+        </section>
+
+        {/* Upcoming meetings */}
+        <section className="py-10">
+          <SectionLabel>Upcoming meetings — live pipeline (this morning)</SectionLabel>
+          <div className="grid gap-5 sm:grid-cols-2">
+            {meetings.map((m) => (
+              <div key={m.who} className="rounded-2xl border border-dashed border-[#ddd] bg-[#fafafa] p-6">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-0.5 text-[11px] font-medium text-[#666] ring-1 ring-inset ring-[#e5e5e5]">
+                    <Clock className="size-3" style={{ color: ORANGE }} />
+                    {m.when}
+                  </span>
+                </div>
+                <h3 className="mt-3 text-[16px] font-semibold tracking-[-0.01em]">{m.what}</h3>
+                <p className="mt-0.5 text-[12.5px] font-medium text-[#888]">{m.who}</p>
+                <p className="mt-2.5 text-[13px] leading-[1.55] text-[#666]">{m.detail}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 text-[12px] leading-[1.5] text-[#999]">
+            Forward-looking pipeline, shown for transparency — not counted as closed proof.
+          </p>
         </section>
 
         {/* Pricing — Part 1: the brief */}
@@ -646,7 +747,7 @@ export function EvidenceDashboard() {
 
         {/* Field validation log */}
         <section id="field-log" className="scroll-mt-20 py-10">
-          <SectionLabel>Field validation — 24-hour demand-discovery method</SectionLabel>
+          <SectionLabel>Field validation — 36-hour demand-discovery method</SectionLabel>
           <p className="-mt-1 mb-4 max-w-[760px] text-[13px] leading-[1.6] text-[#777]">
             The sprint ran on two tracks. The <span className="font-semibold text-[#444]">consent-based research</span>{" "}
             below — interviews, footage, and the LOI — is the rigorous evidence. The playful{" "}
