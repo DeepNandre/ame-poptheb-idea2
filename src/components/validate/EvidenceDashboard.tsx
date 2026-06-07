@@ -403,7 +403,7 @@ export function EvidenceDashboard() {
 
         {/* Field validation log */}
         <section id="field-log" className="scroll-mt-20 py-10">
-          <SectionLabel>Field validation — 24-hour demand-discovery method</SectionLabel>
+          <SectionLabel>Field validation — 36-hour demand-discovery method</SectionLabel>
           <p className="-mt-1 mb-4 max-w-[760px] text-[13px] leading-[1.6] text-[#777]">
             The sprint ran on two tracks. The <span className="font-semibold text-[#444]">consent-based research</span>{" "}
             below — interviews, footage, and the LOI — is the rigorous evidence. The playful{" "}

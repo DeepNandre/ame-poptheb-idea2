@@ -61,7 +61,7 @@ export const kpis: Kpi[] = [
     source: { label: "Signed LOIs on file", href: "/evidence/upahaar-loi-signed.pdf", dated: "2026-06-07" },
   },
   {
-    value: "24h",
+    value: "36h",
     label: "Field validation sprint",
     sub: "Buildings & events entered, staff interviewed on-site",
     status: "self",
@@ -185,26 +185,26 @@ export const lois: Loi[] = [
     company: "TMC Solicitors",
     reference: "GS-LOI-2026-002",
     date: "7 June 2026",
-    type: "Paid pilot · LOI finalising today",
+    type: "Paid pilot · signed LOI to follow",
     signatory: "Muazzam Chughtai",
     signatoryRole: "Principal Solicitor & Director, TMC Solicitors Ltd — 4 Central Buildings, Kingsway, Manchester",
     pilotValue: "£20,000",
-    access: "Month 1 free pilot, then £20k unlocks 24 months full access + 1 free month on launch",
+    access: "Month 1 free pilot, then £20k unlocks 12 months full access + 1 free month on launch",
     pdfUrl: "/evidence/tmc-loi.pdf",
     docLabel: "Open the LOI document",
     payment: {
       amount: "£500",
-      note: "5% deposit of the £20k pilot value — first revenue received",
+      note: "deposit toward the £20k pilot — first revenue received",
       method: "Stripe · Visa · 3D-Secure authenticated",
       receiptUrl: "/evidence/tmc-deposit-stripe.pdf",
       dated: "2026-06-06",
     },
     context:
-      "Reached via Moeed Chughtai (AMe cohort). His father, Muazzam, runs a Manchester law firm that had two break-in attempts in the past year — high stakes for an immigration/asylum practice handling confidential files. He agreed to test and pay based on real benefit; Moeed paid the deposit on his father's behalf. The LOI is being officially finalised at a meeting this morning (see Upcoming meetings).",
+      "Reached via Moeed Chughtai (AMe cohort). His father, Muazzam, runs a Manchester law firm that had two break-in attempts in the past year — high stakes for an immigration/asylum practice handling confidential files. The firm agreed to come on as an early paying pilot — a lower £20k rate in exchange for being a pilot site — and paid a deposit to lock it in (Moeed paid on his father's behalf). The signed LOI is still to come (see Upcoming meetings).",
     terms: [
       "Month 1 free pilot — full platform access at no cost for the initial evaluation period.",
       "£20,000 triggered at the end of Month 1, contingent on satisfactory pilot outcomes.",
-      "On payment: 24 months of continued full access (wireless scanning, OSINT, exposed-infra mapping, planning lookup, intelligence graph).",
+      "On payment: 12 months of continued full access (wireless scanning, OSINT, exposed-infra mapping, planning lookup, intelligence graph).",
       "One additional free month of access on full product launch.",
       "Joint use-case scoping and signal-to-risk interpretation for a legal-practice environment.",
       "Progress toward a formal commercial agreement subject to satisfactory pilot outcomes.",
@@ -213,7 +213,7 @@ export const lois: Loi[] = [
       "Building intelligence report — risk profile of the TMC office (wireless exposure, OSINT, infrastructure, planning history).",
       "Signal-to-risk summary — plain-English mapping of findings to legal-practice risk categories.",
       "Pilot evaluation report (Month 1) — coverage, data quality, mutual go/no-go recommendation.",
-      "24 months platform access on payment confirmation, + 1 free month on launch.",
+      "12 months platform access on payment confirmation, + 1 free month on launch.",
     ],
   },
   {
@@ -296,7 +296,7 @@ export interface Meeting {
 export const meetings: Meeting[] = [
   {
     who: "TMC Solicitors · Muazzam Chughtai",
-    what: "Officially finalise the signed LOI",
+    what: "Get the signed LOI sorted",
     when: "This morning · 7 Jun 2026",
     detail:
       "Deposit already paid (£500). Meeting to officially sort and countersign the £20k pilot LOI with the principal.",
@@ -310,7 +310,7 @@ export const meetings: Meeting[] = [
   },
 ];
 
-// ── Field validation log — the 24h method, reproducible ──────────────────────
+// ── Field validation log — the 36h method, reproducible ──────────────────────
 export interface FieldEntry {
   when: string;
   action: string;
@@ -336,7 +336,7 @@ export const fieldLog: FieldEntry[] = [
       "Turned the interviews into a clear need statement, then reached out via direct links to the right people to test whether the solution was useful.",
   },
   {
-    when: "Within 24h",
+    when: "Within 36h",
     action: "Captured intent",
     detail:
       "Converted conversations into Letters of Intent — including the Bolttech LOI featured above.",
@@ -488,7 +488,7 @@ export const insight = {
 export const fieldFootage = {
   src: "/evidence/field-footage.mp4",
   caption:
-    "On-site field footage, captured during the 24-hour sprint — the team gaining access to real London buildings.",
+    "On-site field footage, captured during the 36-hour sprint — the team gaining access to real London buildings.",
   dated: "2026-06-06",
   status: "verified" as Status,
 };
@@ -522,7 +522,7 @@ export interface Pending {
   note: string;
 }
 export const pendingEvidence: Pending[] = [
-  { label: "Further LOIs", note: "Two signed (£50k committed); add each new Letter of Intent as a verified claim + PDF as it lands." },
+  { label: "Further LOIs", note: "Two signed (£60k committed) + TMC paid pilot; add each new Letter of Intent as a verified claim + PDF as it lands." },
   { label: "Product usage logs", note: "Scan counts / sessions from /app — wire in once captured for a depth-of-proof artifact." },
   { label: "Public data corroboration", note: "Public datasets backing specific risk findings — add source links per claim." },
   { label: "Teammates' social posts", note: "Dated Pop the Bubble posts from the rest of the team — add real URLs under Build-in-public as they come in." },
