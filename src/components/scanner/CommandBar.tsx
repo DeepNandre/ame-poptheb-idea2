@@ -28,14 +28,15 @@ export interface CommandOutcome {
   answer?: string | null;
 }
 
-// London sites only — the demo footprint.
+// London sites only — each chip shows a real, live capability of the
+// intelligence engine (risk scoring, crime, flood, listed status, planning).
 const EXAMPLES = [
-  "Take me to the Shard",
-  "Fly to Canary Wharf",
-  "Show me Arbor, Bankside Yards",
-  "Floor plans of 22 Bishopsgate",
-  "Recon on 30 St Mary Axe (the Gherkin)",
-  "Who's inside One Canada Square?",
+  "Risk analysis of the Shard",
+  "Crime & flood exposure around Canary Wharf",
+  "Is 22 Bishopsgate a listed building?",
+  "Full intelligence on 30 St Mary Axe",
+  "How safe is One Canada Square?",
+  "Floor plans of Arbor, Bankside Yards",
 ];
 
 export function CommandBar({

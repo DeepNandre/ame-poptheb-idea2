@@ -117,7 +117,6 @@ const RECON_HINTS = [
   "people here",
   "who works",
   "osint",
-  "intel",
   "social engineering",
   "subdomain",
   "exposed",
@@ -169,6 +168,13 @@ const INTELLIGENCE_HINTS = [
   "intel on",
   "designation",
   "green belt",
+  "risk analysis",
+  "risk",
+  "attack surface",
+  "exposure",
+  "full intelligence",
+  "intelligence",
+  "profile",
 ];
 
 const IP_RANGE_RE =
@@ -204,7 +210,7 @@ function keywordInterpret(query: string): CommandPlan {
     )
     // strip intelligence topic words so the place geocodes cleanly in fallback
     .replace(
-      /\b(listed|conservation area|flood zones?|flood risk|crime|how safe|safety|epc|energy rating|council tax|business rates|rateable value|transport|nearest (tube|station)|companies|charities|food hygiene|hygiene|owns?|owner|who owns|sold for|sale price)\b/gi,
+      /\b(listed|conservation area|flood zones?|flood risk|crime|how safe|safety|epc|energy rating|council tax|business rates|rateable value|transport|nearest (tube|station)|companies|charities|food hygiene|hygiene|owns?|owner|who owns|sold for|sale price|risk analysis|risk|attack surface|exposure|full intelligence|intelligence|profile)\b/gi,
       "",
     )
     .replace(/\bof\b/gi, " ")
