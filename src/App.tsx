@@ -10,6 +10,13 @@ const BuildingScannerProduct = lazy(() =>
   })),
 );
 
+// Judge-facing validation evidence pack, linked from the landing nav.
+const EvidenceDashboard = lazy(() =>
+  import("./components/validate/EvidenceDashboard").then((m) => ({
+    default: m.EvidenceDashboard,
+  })),
+);
+
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +29,15 @@ function App() {
           element={
             <Suspense fallback={<div className="min-h-screen bg-black" />}>
               <BuildingScannerProduct />
+            </Suspense>
+          }
+        />
+        {/* Validation evidence pack for judges & investors */}
+        <Route
+          path="/validate"
+          element={
+            <Suspense fallback={<div className="min-h-screen bg-white" />}>
+              <EvidenceDashboard />
             </Suspense>
           }
         />
