@@ -1,14 +1,14 @@
 {
   "building": "20 Fenchurch Street",
-  "legacy_address": "20 Fenchurch Street, London, EC3M 3BY",
+  "legacy_address": "20 Fenchurch Street, City of London, London EC3M 3BY",
   "authority": "City of London Corporation",
   "portal_url": "https://www.planning2.cityoflondon.gov.uk/online-applications/",
   "application_ref": "08/01061/FULMAJ",
   "keyVal": null,
   "documents_tab_url": null,
   "ga_plans": [],
-  "das_available": true,
-  "download_notes": "Planning reference identified via GLA referral and City Corporation committee report. Portal navigation not yet performed to retrieve keyVal or documents.",
+  "das_available": null,
+  "download_notes": "Portal navigation to retrieve keyVal and documents not yet attempted; reference and details established via GLA strategic planning report and City Corporation committee records, but documents retrieval remains pending.",
   "confidence": "medium",
-  "notes": "The main planning application reference for 20 Fenchurch Street is 08/01061/FULMAJ, granting full planning permission for the tall building scheme. Developer: City of London Real Property Company Ltd (Land Securities and Canary Wharf Group), architect: Rafael Vi\u00f1oly Architects; approved October 6, 2009 ([london.gov.uk] and committee report) ([london.gov.uk](https://www.london.gov.uk/sites/default/files/public%3A/public%3A/PAWS/media_id_1236/20_fenchurch_street_report.pdf?utm_source=openai)). Built as 38\u2011storey, 160\u202fm office tower with sky garden, completed in 2014\u20132015 ([en.wikipedia.org](https://en.wikipedia.org/wiki/20_Fenchurch_Street?utm_source=openai)). Next step: navigate the City of London planning portal to locate application details and download PDF drawings."
+  "notes": "Identified main full planning application reference for redevelopment of 20 Fenchurch Street as 08/01061/FULMAJ, granted October 2009 under City of London jurisdiction ([democracy.cityoflondon.gov.uk](https://democracy.cityoflondon.gov.uk/CeConvert2PDF.aspx?A=1&F=17b+-+Redevelopment+of+20+Fenchurch+Street+%E2%80%93+Potential+Acquisition+of+Land+for+Planning+Purposes.doc&MID=6425&R=0&utm_source=openai)). Applicant was The City of London Real Property Company Ltd with Rafael Vi\u00f1oly Architects as architect; building completed 2014 ([london.gov.uk](https://www.london.gov.uk/sites/default/files/public%3A/public%3A/PAWS/media_id_1236/20_fenchurch_street_report.pdf?utm_source=openai)). A subsequent full application 14/00110/FULL for brise soleil on south elevation was granted April 2014 ([democracy.cityoflondon.gov.uk](https://democracy.cityoflondon.gov.uk/mgAi.aspx?ID=25642&utm_source=openai)). Retrieval of planning documents from City of London online portal in progress."
 }

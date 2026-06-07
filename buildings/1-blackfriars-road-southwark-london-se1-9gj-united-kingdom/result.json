@@ -1,14 +1,14 @@
 {
   "building": "One Blackfriars",
-  "legacy_address": "1\u201316 Blackfriars Road, London SE1",
+  "legacy_address": "1\u201116 Blackfriars Road, London SE1",
   "authority": "London Borough of Southwark",
-  "portal_url": "https://planning.southwark.gov.uk/online-applications/search.do?action=simple&searchType=Application",
+  "portal_url": "https://planning.southwark.gov.uk/online-applications/",
   "application_ref": "12/AP/1784",
   "keyVal": null,
   "documents_tab_url": null,
   "ga_plans": [],
   "das_available": true,
-  "download_notes": "Southwark portal returned 502 error; planning reference reliably confirmed via GLA stage\u20111 report and council notices but portal navigation and document retrieval not executed.",
+  "download_notes": "No live portal navigation performed; application reference identified via secondary sources only.",
   "confidence": "medium",
-  "notes": "Full planning permission granted for One Blackfriars (50\u2011storey tower plus Rennie Street and Podium buildings) under application 12/AP/1784 approved 14 December 2012. Applicant: St George South London Ltd; architect: Ian Simpson Architects ([docslib.org](https://docslib.org/doc/7867109/one-blackfriars-road-lb-southwark-planning-statement?utm_source=openai))"
+  "notes": "Full planning permission for One Blackfriars (50\u2011storey tower plus two low\u2011rise buildings) was granted in October 2012 under Southwark reference 12/AP/1784. Developer: St George South London Ltd; Architect: Ian Simpson (SimpsonHaugh)\u202f([docslib.org](https://docslib.org/doc/138424/one-blackfriars-in-the-london-borough-of-southwark-planning-application-no-12-ap-1784?utm_source=openai)). The development comprises a 50\u2011storey tower to 170\u202fm AOD with hotel, residential and retail uses\u202f([docslib.org](https://docslib.org/doc/138424/one-blackfriars-in-the-london-borough-of-southwark-planning-application-no-12-ap-1784?utm_source=openai)). No multi\u2011phase masterplan or outline consent applies. Not in a London Enterprise Zone. Live portal not accessed for keyVal or documents\u2014requires browser navigation to download GA plans and D&A Statement from Southwark's application detail page."
 }

@@ -20,7 +20,9 @@ from pathlib import Path
 BACKEND_DIR = Path(__file__).resolve().parent
 ROOT = BACKEND_DIR.parent  # building-scanner/
 BUILDINGS_DIR = ROOT / "buildings"
-SCHEMATIC_DIR = ROOT / "dev" / "arbor-graph" / "dev" / "schematic-scanning"
+# A1 schematic-scanning pipeline modules are vendored into the backend so it's
+# self-contained (extract/graph_builder/door_graph_builder/route_graph_builder/vector_extract).
+SCHEMATIC_DIR = BACKEND_DIR / "vendor" / "schematic-scanning"
 PLANNING_SCOUT_MAIN = ROOT.parent / "toolings" / "planning-scout" / "main.py"
 JOBS_FILE = BACKEND_DIR / "jobs.json"
 
