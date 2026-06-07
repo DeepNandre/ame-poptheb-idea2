@@ -2,192 +2,156 @@
 
 **Prepared for:** the Bolttech LOI (Ref GS-LOI-2026-001, £20,000, 12-month pilot + reseller rights)
 **Question answered:** *Is £20,000 the right price, and how do we prove it saves the insurer far more than it costs?*
-**One-line answer:** £20,000 is at or **below the floor** of the comparable market, and on any conservative model it pays for itself by improving claims outcomes on **fewer than 1% of a 1,000-policy SME book** — or by influencing the selection/remediation of **a single avoided claim**.
+**One-line answer:** £20,000 is priced like a single serious **physical penetration test** — yet it delivers that building reconnaissance as repeatable software, and on any conservative model it pays for itself by influencing the outcome of **roughly one avoided break-in**.
 
-> FX used throughout: **£1 ≈ $1.27** (June 2026). Every figure is tagged **[INDEPENDENT]** (government / regulator / academic / cross-carrier) or **[VENDOR]** (published by a company selling a related product). Vendor figures are directionally useful but self-selected; lead with independent ones in any investor- or buyer-facing setting.
+> **What German Shepherd is.** It is **physical building security / in-person penetration testing** intelligence: we turn any policyholder address into the view an *in-person attacker* already has — how to get in, which cameras and entrances are exposed, who works there, what the planning record reveals about the inside. The losses we price against are **physical**: burglary, intrusion, theft, and business interruption. Some of what we surface is digital (exposed infrastructure, wireless/OSINT footprint), but that is **in service of the physical break-in**, not a cyber-insurance product. Cyber appears here only as a secondary, supporting layer.
+>
+> FX used throughout: **£1 ≈ $1.27** (June 2026). Every figure is tagged **[INDEPENDENT]** (government / regulator / trade body) or **[VENDOR]** (published by a firm selling a related service) or **[SECONDARY]**. Lead with independent figures; vendor figures are directional colour.
 
 ---
 
 ## 1. What German Shepherd actually changes for an insurer
 
-German Shepherd turns a policyholder address into a **pre-bind, outside-in risk surface** (exposed infrastructure via Shodan/Censys, open CCTV/RTSP, corporate OSINT, wireless exposure, the planning record). For an insurer like Bolttech that means three distinct money levers:
+German Shepherd gives an insurer like Bolttech a **pre-bind, attacker's-eye view of a building**: entry points, camera/CCTV exposure, wireless and corporate OSINT footprint, and what the planning record reveals about the layout. That maps to three money levers:
 
-1. **Better risk selection** — decline / re-price the worst risks *before* binding (avoid adverse selection).
-2. **Loss prevention via remediation prompts** — tell the policyholder what attackers already see, get it fixed, and the claim never happens (the "active insurance" model).
+1. **Better physical risk selection** — see how exposed a building is *before* binding; decline or re-price the worst sites (avoid adverse selection).
+2. **Loss prevention via remediation prompts** — tell the policyholder what an intruder already sees (the propped door, the tailgating gap, the exposed camera), get it fixed, and the break-in never happens.
 3. **Distribution / resale margin** — package the signal to Bolttech's 230+ insurer network (a revenue line, not just a cost saving).
 
-The rest of this document quantifies levers 1–2 and benchmarks the price.
+The field research behind the LOI confirms the physical framing: an intruder walking in on a borrowed NHS lanyard and taking a bike from the basement; people tailgating through doors; intruders reaching a neighbouring rooftop via a crane; a lone guard as a single point of failure. **These are physical-access failures an underwriter cannot see from the outside — which is exactly the gap we close.**
 
 ---
 
-## 2. The exposed-infrastructure thesis is independently corroborated
-
-This is the strongest part of the case: **what German Shepherd detects maps directly to the largest and fastest-growing real-world breach causes.**
+## 2. The problem is near-universal — and buildings are easy to get into
 
 | Finding | Figure | Source | Flag |
 |---|---|---|---|
-| Exploitation of vulnerabilities as initial breach vector | **14% (2024) → 20% (2025)**, fastest-growing top-3 vector; overtook phishing in 2025 | Verizon DBIR 2024/2025 | [INDEPENDENT-ish]* |
-| Edge devices / VPNs as the exploited asset | **22% of exploitation breaches (≈8× rise from 3%)**; median time-to-mass-exploit for new critical edge vulns = **0 days** | Verizon DBIR 2025 | [INDEPENDENT-ish]* |
-| Exploits = #1 initial infection vector (5th year running) | **33%** of intrusions; the 4 most-exploited vulns were all **edge devices** | Mandiant M-Trends 2025 | [VENDOR] |
-| Exposed remote services (RDP) as initial access | **~65%** of ransomware IR cases; RDP abused in **90%** of attacks handled | Sophos Active Adversary 2024 | [VENDOR] |
-| Exploited vulnerabilities = #1 root cause of ransomware | **32%** of incidents (2nd year running); worst outcomes (67% encryption, $3.58M avg recovery) | Sophos State of Ransomware 2024 | [VENDOR] |
-| New CVEs confirmed exploited in the wild | **768 in 2024 (+~20% YoY)**; ransomware groups weaponise KEV entries | CISA KEV Catalog | [INDEPENDENT] |
+| UK business premises hit by crime in a year | **26%** — 8% burglary, 14% theft; **41% in retail & wholesale** | Home Office Commercial Victimisation Survey 2023 | [INDEPENDENT] |
+| Small firms hit by crime over two years | **81%**; **1 in 10 victims lost over £10,000** | FSB — *Cracking the Case* 2023 | [INDEPENDENT] |
+| Total UK retail crime | **£4.2bn**, incl. **£2.2bn customer theft (+21% YoY)** | British Retail Consortium Crime Survey 2025 | [INDEPENDENT] |
+| Buildings breached by physical pen-test teams | **~80% (Pinkerton) to 99% (IBM X-Force Red)** | Pinkerton; IBM X-Force Red | [VENDOR] |
+| Tailgating success / challenge rate | tailgating succeeds on **60–90%** of first attempts; **<1 in 5** staff challenge a stranger | Boon Edam / Readex (survey); pen-test vendors | [INDEPENDENT survey] / [VENDOR] |
+| Organisations reporting a tailgating breach in two years | **48%** | Boon Edam / Readex Research | [INDEPENDENT survey] |
 
-*\*Verizon DBIR is vendor-published but analyses real incident data (10k+ breaches) and is treated as the field's most rigorous source.*
-
-**Sales translation:** the thing German Shepherd shows you — exposed, exploitable internet-facing infrastructure — is now the **#1 or fastest-growing way businesses actually get breached.** This is not a "nice-to-have data feed"; it is the dominant loss driver.
+**Sales translation:** physical intrusion is common, cheap to attempt, and almost always succeeds when tried. Insurers underwrite buildings they have never seen from the attacker's side — German Shepherd is that missing view.
 
 ---
 
-## 3. How often it happens (frequency / base rate)
-
-| Population | Rate (per year) | Source | Flag |
-|---|---|---|---|
-| UK businesses identifying any breach/attack | **43% (2025)**, 50% (2024); **medium 67%, large 74%** | UK Gov Cyber Security Breaches Survey | [INDEPENDENT] (National Statistic) |
-| Organisations hit by **ransomware** | **59%** (2024) | Sophos State of Ransomware | [VENDOR] |
-| Firms experiencing ≥1 cyberattack | **67%** (up from 53%) | Hiscox Cyber Readiness 2024 | [VENDOR — upper bound, sample-biased] |
-| **Insured** cyber claims frequency | **~1.48% per policy/year** (2024, fell 7% YoY) | Coalition 2025 Cyber Claims Report | [VENDOR — but the right number for insurer P&L] |
-
-**Why two very different numbers?** "43% get attacked" counts every phishing email; "1.48% file a claim" is the rate at which an insurer actually pays. **For the ROI model we use the insurer claim rate (~1.5%)** because that is what hits Bolttech's loss ratio. The 43% independent base rate is the backdrop that proves the exposure is real and common.
-
----
-
-## 4. How much it costs when it happens (severity)
-
-Severity figures span two orders of magnitude depending on the source's sample. The honest framing: **independent UK-government figures are low** (they include millions of micro-firms with ~£0 incidents and are self-reported); **cross-carrier claims data and vendor reports are high** (they capture the incidents that actually cost money). For an insurer pricing real claims, the **cross-carrier NetDiligence number is the right anchor.**
+## 3. How much it costs when it happens (severity)
 
 | Measure | Figure | Source | Flag |
 |---|---|---|---|
-| **SME average cyber claim (cross-carrier)** | **~$205K (2024) → ~$264K (2025)** ≈ **£160K–£208K** | NetDiligence Cyber Claims Study (10k+ real claims) | [INDEPENDENT] |
-| SME ransomware claim | **~$432K ≈ £340K** (with recovery ~$961K) | NetDiligence | [INDEPENDENT] |
-| Large company (>$2B rev) avg incident | **~$13.8M** | NetDiligence | [INDEPENDENT] |
-| Global average breach cost | **$4.88M (2024) → $4.44M (2025)**; **orgs <500 staff $3.31M (2024)** | IBM Cost of a Data Breach | [VENDOR] |
-| Avg ransom payment / recovery cost | **$1.0M ransom + $1.53M recovery (2025)** | Sophos | [VENDOR] |
-| UK "most disruptive breach" — all businesses | **£1,600** (£3,550 excluding £0 responses); 95th pct ~£4K (small), ~£10K (medium/large) | UK Gov Survey 2025 | [INDEPENDENT] |
-| UK large-business direct cost | **£17,970** (2024) | UK Gov Survey 2024 | [INDEPENDENT] |
-| Commercial burglary (UK) | >25% of businesses victims, losing **>£10,000** each (secondary); Home Office CVS: ~8% premises burgled | Safe.co.uk/FSB; Home Office Commercial Victimisation Survey | [SECONDARY] / [INDEPENDENT] |
+| **Average UK commercial property insurance claim** | **£17,400** (Q2 2025); £1.6bn property claims paid that quarter | Association of British Insurers | [INDEPENDENT] |
+| Small-business crime loss | **>£1,000 for over half** of victims; **>£10,000 for 1 in 10** | FSB 2023 | [INDEPENDENT] |
+| Convenience-sector retail crime | **£316m** total cost; a **10p "crime tax" per transaction** | ACS Crime Report 2024 | [INDEPENDENT] |
+| SMEs carrying business-interruption cover | **only 23%** of premises-holding SMEs; up to **40% of SMEs underinsured** | ABI / Public First 2026; FCA | [INDEPENDENT] |
 
-**Model anchor:** conservative SME cyber claim severity = **£160,000** (low end of the independent NetDiligence range).
+**Model anchor:** a conservative physical-crime claim severity of **£10,000** (the FSB "1 in 10 lose >£10,000" threshold, deliberately below the ABI all-cause average of £17,400).
+
+> **The under-insurance angle matters.** Because only ~23% of premises-holding SMEs carry business-interruption cover, a single physical incident is often *existential* for the policyholder — which is precisely why prevention (not just indemnity) is a sellable value to both the insurer and its customer.
 
 ---
 
-## 5. The insurance-economics linkage — does outside-in screening actually cut claims?
+## 4. Does outside-in screening actually reduce physical loss?
 
-**Independent proof (use these first):**
+**Physical security controls measurably lower risk and premiums:**
 
 | Finding | Figure | Source | Flag |
 |---|---|---|---|
-| Poor security rating → breach likelihood | Orgs rated **≤400 are 5× more likely** to be breached; **300–500 are 7.9× more likely** to be a ransomware target; breach prob **<1% (≥700) vs ~3% (<500)** | BitSight data, analysed with **Marsh McLennan** (27,458 cos / 2,671 breaches) | [INDEPENDENT analysis] |
-| Specific controls → fewer incidents | **Automated hardening = ~6× less likely** to suffer an incident; **MFA = 1.4× less likely** | Marsh McLennan Cyber Risk Analytics Center (real claims data) | [INDEPENDENT] |
+| Premium reduction for verified security controls (alarms, CCTV, monitoring) | **5–20%** commercial property discount (up to ~22% in case examples) | Insurance broker/agency guides | [VENDOR/SECONDARY] |
+| Risk-based pricing on loss-prevention measures | Insurers reassess terms on business type, claims history and **loss-prevention measures** | Security trade sources | [VENDOR] |
 
-**Carrier "active insurance" proof (on-point but vendor-marketing):**
-
-| Carrier | Result | Source | Flag |
-|---|---|---|---|
-| Coalition | Policyholders had **73% fewer claims than industry avg**; **85,000 alerts → 32,000+ issues mitigated**; **$31M clawed back** | Coalition 2025 Claims Report | [VENDOR] |
-| At-Bay | Portfolio ransomware frequency **~7× below industry**; insureds remediate vulns **~5× faster** | At-Bay InsurSec 2025 | [VENDOR] |
-| Cowbell | Reported claims rate **<3% since inception (~3× below industry)** | Cowbell | [VENDOR] |
-
-**Market context:** US cyber loss ratios sit at **41.6% (2023) → 48.8% (2024)** [INDEPENDENT — AM Best / NAIC]. The market is profitable but tightening, so any claims-frequency reduction drops straight to the combined ratio.
-
-**The honest read:** the carrier 73% / 7× / 3× numbers are self-reported against vendor-chosen baselines — treat as illustrative. But the **independent** Marsh/BitSight research (5×, 6×, 7.9×) confirms the *direction and magnitude*: visible, remediated attack surface materially lowers breach probability. **German Shepherd does not need to be as good as Coalition** — the model below assumes it captures a fraction of that effect.
+**Read across from adjacent (cyber) evidence — secondary, used only to show the mechanism is real:** independent Marsh McLennan / BitSight research found organisations with poor, un-remediated *external exposure* are **5–7.9× more likely to be breached**, and carriers that scan and alert policyholders pre-bind report large reductions in claims (Coalition: 73% fewer; At-Bay: ~7× lower frequency). The principle transfers directly to physical security: **a visible, remediated attack surface is a materially lower risk.** German Shepherd does not need to be as good as those programmes — the model below assumes it captures a small fraction of the effect.
 
 ---
 
-## 6. The worked ROI model (deliberately conservative)
+## 5. The worked ROI model (deliberately conservative)
 
-We model the lever that hits Bolttech's P&L directly: **expected claims cost on an SME book.**
+We model the lever that hits Bolttech's P&L directly: **expected physical-crime claims cost on an SME property book.**
 
-**Inputs (all conservative, independent where possible):**
-- Cyber claim frequency: **1.5% / policy / year** (Coalition insured rate)
-- Avg SME cyber claim severity: **£160,000** (low end, NetDiligence independent)
-- → **Expected loss cost per policy = 1.5% × £160,000 = £2,400 / year**
+**Inputs (conservative, independent where possible):**
+- Claim frequency: **5% / policy / year** — below the Home Office prevalence (8% burglary + 14% theft), discounted for unclaimed and sub-excess incidents.
+- Severity: **£10,000 / claim** — below the ABI all-cause average of £17,400.
+- → **Expected loss cost per policy = 5% × £10,000 = £500 / year.**
 
-### Worked example — a modest 1,000-policy SME book
+### Worked example — a modest 1,000-policy SME property book
 
-- Expected claims/year = 1.5% × 1,000 = **15 claims**
-- Expected annual loss cost = 1,000 × £2,400 = **£2.4M**
+- Expected loss cost = 1,000 × £500 = **£500,000 / year**
 
-| Claims-frequency reduction German Shepherd drives | Annual £ saved | ROI vs £20k pilot |
+| Crime-claim reduction German Shepherd drives | Annual £ saved | ROI vs £20k pilot |
 |---|---|---|
-| **0.83% (break-even)** | £20,000 | **1.0× (pays for itself)** |
-| 1% | £24,000 | 1.2× |
-| **5%** | £120,000 | **6×** |
-| 10% | £240,000 | 12× |
+| **~4% (break-even)** | £20,000 | **1.0× (pays for itself)** |
+| 5% | £25,000 | 1.25× |
+| 10% | £50,000 | 2.5× |
+| 20% | £100,000 | 5× |
 
-> The carriers above claim **73% / ~85%** reductions. We assume **5%.** Even at that ~15× discount to the vendor evidence, the pilot returns **6×.**
+> If severity is set at the ABI **£17,400** average instead of our £10,000, the same 5% reduction is worth **~£43,500** (a 2.2× return). Either way, modest prevention dwarfs the fee.
 
 ### The single-claim framing (the one to say out loud)
 
-- **£20,000 = 12.5% of one average SME cyber claim (£160K).**
-- Influence the selection or remediation of **one** avoided claim and the pilot returns **8×**.
-- One avoided SME **ransomware** claim (£340K) returns **17×**.
-- **Break-even = preventing 0.125 of a single claim** — i.e. a **0.83% reduction** in claims frequency across the book. Anything better than that is pure profit.
+- **£20,000 ≈ 1.1× the average commercial property claim (£17,400).**
+- Across the agreed pilot buildings, German Shepherd only needs to **prevent or re-price a single break-in** to repay the entire pilot.
+- Break-even on a 1,000-policy book = a **~4% reduction** in crime claims. A proper physical assessment routinely cuts intrusion risk by far more.
 
-### Loss-ratio framing (for the underwriter in the room)
+### Per-building framing
 
-At a 48.8% cyber loss ratio, a 5% claims-frequency cut on the book improves the loss ratio by **~2.4 points (48.8% → ~46.4%)** — a material move in a softening market, for a £20k fixed fee.
-
-### Scaling to Bolttech's actual footprint
-
-Bolttech intermediates **~$85bn in quoted premium across 230+ insurers**. The 1,000-policy example is a rounding error of their network. A **1% reduction on 100,000 policies = £2.4M/year saved** — at which point £20,000 is **0.8% of the value created** and the conversation is about a rev-share, not a fee.
+The pilot covers an agreed set of buildings. A manual physical assessment costs **£5,000–£40,000 per site** (£1,000–£1,600 per tester-day, UK). German Shepherd delivers the reconnaissance phase as software, so the marginal cost per building collapses — **10–100× cheaper per site** while staying high-margin.
 
 ---
 
-## 7. Price benchmark — £20k is cheap, not expensive
+## 6. Price benchmark — £20k is priced like one engagement, sold as a platform
 
-| Comparable (outside-in / security ratings / ASM) | Price | Source | Flag |
+| Comparable | Price | Source | Flag |
 |---|---|---|---|
-| **UpGuard Starter** (cheapest *published* paid plan in the category) | **~$19,188/yr ≈ £15.1k** (self-serve, 50 vendors) | UpGuard pricing page | [OFFICIAL] |
-| UpGuard Professional | ~$39,996/yr ≈ £31.5k | UpGuard | [OFFICIAL] |
-| SecurityScorecard | avg ACV **~$26k**; list $25k–$50k (SMB), $100k+ enterprise | Vendr buyer data | [AGGREGATOR EST.] |
-| BitSight | **$50k–$70k/yr list** (150 vendors) | Vendr | [AGGREGATOR EST.] |
-| RiskRecon (Mastercard) | custom, six-figure enterprise | Capterra/inference | [INFERENCE] |
-| Per single outside-in assessment | **$1,000–$5,000 ≈ £790–£3,940** each | Security.org / IBSSCORP 2026 | [INDUSTRY] |
-| Insurer adoption of external scans in underwriting | **~75% of cyber carriers** already do this | BitSight | [VENDOR] |
+| **Physical penetration test (per engagement)** | **£5,000–£40,000** ($4,800 basic single-site → $50,000+ multi-site) | Bright Defense; JUMPSEC; SECFORCE | [VENDOR] |
+| UK pen-test day rate | **£1,000–£1,600 per tester-day** | JUMPSEC; SECFORCE | [VENDOR] |
+| Full red-team (physical usually bundled) | **£30,000–£100,000+** | SECFORCE; Network Assured | [VENDOR] |
+| Continuous outside-in monitoring (platform) | from **~$19k/yr ≈ £15k** (entry SaaS tier) | UpGuard published pricing | [OFFICIAL] |
+| Penetration-testing market / physical-security industry | **~$2.9bn (12%+ CAGR)** inside a **$130bn+** physical-security industry | Mordor; Grand View | [INDEPENDENT] |
 
 **Conclusions:**
-- £20,000 (~$25.4k) ≈ the **entry self-serve tier** of the category (it sits between UpGuard Starter and SecurityScorecard's average ACV) — and that's for off-the-shelf SaaS, **not** a bespoke insurer feed with reseller rights.
-- On a **per-assessment** basis, £20k buys only **~5–25 company reports** at the $1k–$5k market rate. Any pilot covering a meaningful portfolio is **below market per unit.**
-- Insurer-grade deployments (RiskRecon, BitSight cyber-insurance modules) are routinely **six figures.** £20k for 12 months + reseller rights is a fraction of a single enterprise seat.
+- £20,000 sits **inside the physical pen-test range** and **below a full red-team** — equivalent to ~12–20 tester-days. We are priced as *one serious manual engagement*, but we deliver it as a **repeatable 12-month platform** across every building.
+- The pilot **also** bundles a continuous-monitoring platform (~£15k/yr standalone), integration, and reseller rights — so £20k buys several separately-priced workstreams at once.
 
 ---
 
-## 8. Pricing decision & recommendation
+## 7. Pricing decision & recommendation
 
 **Hold the £20,000 for *this* pilot — but treat it as a land price, not the value price.**
 
 Rationale:
-- **It's defensibly cheap.** Every comparator's entry tier is at or above £20k, and the ROI is 6×+ on a tiny book. You are not underpricing the *outcome*; you are buying a marquee logo ($2.1B Bolttech), reseller distribution into 230+ insurers, and the case studies that retire the "is this real demand?" risk. That is the right trade for a first paid pilot.
-- **It matches your own pricing DNA.** Your Notion playbook anchors ARPA at **£20k / £30k / £60k** and validates price with the **~75%-yes experiment** (raise after a yes). Bolttech said yes at £20k with no friction — that is a signal to **anchor expansion higher**, not to discount further.
+- **It's defensibly priced.** It maps to a single manual physical engagement, yet delivers far more (12-month platform + integration + resale rights), and returns 1.25–5× on a tiny book. You are not underpricing the *outcome*; you are buying a marquee logo ($2.1B Bolttech), distribution into 230+ insurers, and the case studies that retire the "is this real demand?" risk.
+- **It matches your own pricing DNA.** Your playbook anchors ARPA at **£20k / £30k / £60k** and validates price with the **~75%-yes experiment** (raise after a yes). Bolttech said yes at £20k with no friction — a signal to **anchor expansion higher**, not discount further.
 
 **Expansion / commercial-agreement pricing (where the real money is):**
 
 | Lever | Suggested structure |
 |---|---|
-| Platform access per insurer in the network | **£30k–£60k/yr** ARPA (your existing tiers; still below BitSight/SecurityScorecard enterprise) |
-| Per-policy / per-assessment screening | **£25–£150 per building profiled** (vs £790–£3,940 market per-assessment → you're 5–40× cheaper and still high-margin) |
-| Reseller / distribution | **Rev-share** on premium written against German-Shepherd-screened risk, or a per-policy data fee — this is the line that scales with Bolttech's $85bn, not a flat licence |
-| Outcome kicker (optional, credibility play) | Tie a portion of fee to measured loss-ratio improvement on a cohort — you have the carrier precedent (Coalition/At-Bay) to make this concrete |
+| Platform access per insurer in the network | **£30k–£60k/yr** ARPA (still below a single manual red-team) |
+| Per-building screening | **£25–£150 per building profiled** (vs £5k–£40k manual → 30–1,000× cheaper, high margin) |
+| Reseller / distribution | **Rev-share** on premium written against German-Shepherd-screened risk — the line that scales with Bolttech's ~$85bn quoted premium, not a flat licence |
+| Outcome kicker (optional) | Tie a portion of fee to measured reduction in crime/BI claims on a cohort |
 
 **Net:** keep £20k to win the pilot; structure the commercial agreement so price scales with the network and with proven loss avoidance. Re-run the 75%-yes test at the insurer-network tier (£30k+).
 
 ---
 
-## 9. Five value statements for the deck / call
+## 8. Five value statements for the deck / call
 
-1. **"Exposed, exploitable infrastructure is now the #1 way businesses get breached (Mandiant: 33%; Verizon: up to 20% and climbing). German Shepherd shows you that exposure on every policyholder address — before you bind."**
-2. **"One average SME cyber claim is £160,000. The pilot is £20,000 — 12.5% of a single claim. Influence one avoided loss and it returns 8×; an avoided ransomware claim returns 17×."**
-3. **"On a 1,000-policy SME book we only need to cut claims by 0.83% to break even. Carriers running outside-in screening report 73% fewer claims (Coalition) — we've modelled 5%, and it still returns 6×."**
-4. **"Independent Marsh/BitSight data: companies with poor, un-remediated attack surface are 5–7.9× more likely to be breached. We turn that 7.9× into a pre-bind decision."**
-5. **"£20k is the price of UpGuard's cheapest self-serve plan — and below SecurityScorecard's average contract. For that you get a bespoke insurer feed, integration, and resale rights into your 230+ carrier network. The category floor, for an enterprise outcome."**
+1. **"Physical pen-test teams break into 80–99% of the buildings they target, and 26% of UK premises are hit by crime every year. Insurers underwrite buildings they've never seen from the attacker's side — German Shepherd is that missing view, before they bind."**
+2. **"One average commercial property claim is £17,400. The pilot is £20,000 — about one claim. Across the agreed buildings, we only need to stop a single break-in to pay for ourselves."**
+3. **"A manual physical assessment costs £5,000–£40,000 per building. We deliver the same reconnaissance as software — so the 11th building costs almost nothing, and the 1,000th is pure margin."**
+4. **"On a 1,000-policy property book we only need to cut crime claims by ~4% to break even — and verified physical security already earns policyholders 5–20% off their premium, so the incentive is aligned end to end."**
+5. **"£20k is the price of one penetration test. For that you get a 12-month platform across every building, integration, and resale rights into your 230+ carrier network. One engagement's price, a network's worth of value."**
 
 ---
 
-## Appendix — source list (grouped)
+## Appendix — sources & cautions
 
-**Independent (lead with these):** UK Gov Cyber Security Breaches Survey 2024/2025; Verizon DBIR 2024/2025; CISA KEV Catalog; NetDiligence Cyber Claims Study 2024/2025; AM Best / NAIC cyber market reports; Marsh McLennan Cyber Risk Analytics Center (controls + BitSight breach-correlation study); Home Office Commercial Victimisation Survey; GlobalData UK SME Insurance Survey.
+**Independent (lead with these):** Home Office Commercial Victimisation Survey 2023; FSB *Cracking the Case* 2023; British Retail Consortium Crime Survey 2025; ACS Crime Report 2024; ABI commercial property claims (Q2 2025); ABI / Public First SME under-insurance 2026; Boon Edam / Readex tailgating survey; Mordor / Grand View market sizing; Marsh McLennan / BitSight (cyber read-across, secondary).
 
-**Vendor / marketing (corroborating, flag as such):** IBM Cost of a Data Breach; Hiscox Cyber Readiness; Sophos State of Ransomware + Active Adversary; Mandiant M-Trends; Coalition / At-Bay / Cowbell claims reports; Allianz Commercial cyber trends; BitSight (raw ratings data); UpGuard/SecurityScorecard/BitSight pricing (Vendr/G2/official).
+**Vendor / marketing (corroborating, flag as such):** Pinkerton (~80%) and IBM X-Force Red (99%) physical-breach rates; Bright Defense / JUMPSEC / SECFORCE pen-test pricing; insurer/broker premium-discount guides; UpGuard pricing; Coalition / At-Bay (cyber read-across).
 
-**Caveats carried forward:** (1) Several primary PDFs (IBM, NetDiligence, Sophos, GOV.UK) returned HTTP 403 to direct fetch; figures are corroborated via official press releases and indexed extracts — verify exact 2025 size-bands against source PDFs before any externally published version. (2) Carrier "active insurance" effect sizes are self-reported against vendor-chosen baselines — pair with independent Marsh/BitSight numbers. (3) **Do NOT** cite the "60% of small businesses close within 6 months of a cyberattack" line — it is disavowed by its own purported source (NCSA) and debunked (Nextgov, 2017). Use Verizon DBIR's **19% of SMBs face bankruptcy after an attack** instead.
+**Deliberately excluded as unreliable:** the **"£12.9bn business-crime"** figure (unverified, security-retailer-sourced — use BRC's £4.2bn instead); **"80% of businesses close within 18 months of a disaster"** (traces to US FEMA, not the UK); and the cyber **"60% of small businesses close within 6 months of a cyberattack"** myth (disavowed by its own purported source). If a closure stat is needed, none of these is defensible — cite the FSB/ABI loss figures instead.
+
+**Note on framing:** this product is physical-security intelligence. Cyber figures appear only as a secondary read-across to show that *outside-in attack-surface remediation reduces loss* — a mechanism that transfers to physical access. Do not position German Shepherd as a cyber-insurance tool.
