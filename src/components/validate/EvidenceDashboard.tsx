@@ -7,12 +7,15 @@ import {
   FileText,
   ShieldCheck,
   Building2,
+  Radar,
 } from "lucide-react";
 import type { Status, Source } from "./evidenceData";
 import {
   thesis,
   kpis,
   claims,
+  features,
+  productNote,
   loi,
   fieldLog,
   fieldFootage,
@@ -198,6 +201,33 @@ export function EvidenceDashboard() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Product capabilities */}
+        <section className="py-10">
+          <div className="mb-3 flex items-center justify-between gap-3">
+            <SectionLabel>Product capabilities — verified live at /app</SectionLabel>
+            <a
+              href="/app"
+              className="inline-flex items-center gap-1 text-[12px] font-medium text-[#666] underline decoration-[#ccc] underline-offset-2 hover:text-black"
+            >
+              Open the live product <ArrowUpRight className="size-3.5" />
+            </a>
+          </div>
+          <div className="grid gap-px overflow-hidden rounded-2xl bg-[#eee] sm:grid-cols-2">
+            {features.map((f) => (
+              <div key={f.title} className="bg-white p-5">
+                <div className="flex items-start gap-2.5">
+                  <Radar className="mt-0.5 size-4 shrink-0" style={{ color: ORANGE }} />
+                  <div>
+                    <h3 className="text-[14px] font-semibold tracking-[-0.01em]">{f.title}</h3>
+                    <p className="mt-1 text-[12.5px] leading-[1.55] text-[#666]">{f.detail}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 text-[12px] leading-[1.55] text-[#999]">{productNote}</p>
         </section>
 
         {/* Featured LOI */}

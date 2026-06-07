@@ -204,6 +204,57 @@ export const fieldLog: FieldEntry[] = [
   },
 ];
 
+// ── Product capabilities — what German Shepherd actually does ────────────────
+// Verified against the live product at /app (tabs: Overview · WiFi · Bluetooth ·
+// Recon · CCTV · Graph) and the source. Real-data-only by design.
+export interface Feature {
+  title: string;
+  detail: string;
+}
+export const productNote =
+  "Real-data-only: missing keys or tools return an honest empty state, never mock data. The hosted build demonstrates the full UI and public-data flows; live radio, CCTV and OSINT scanning run against the local backend + engines (npm run dev, real API keys).";
+export const features: Feature[] = [
+  {
+    title: "Natural-language command bar",
+    detail:
+      "“Ask anything” — an LLM interprets intent (locate, investigate, recon) and drives the map and panels.",
+  },
+  {
+    title: "3D map & planning-record lookup",
+    detail:
+      "Mapbox 3D city view plus live council registers (PlanIt / Idox) — public drawings classified by what they reveal. “Google shows the outside; the planning record shows the inside.”",
+  },
+  {
+    title: "Corporate OSINT recon",
+    detail:
+      "Exposed infrastructure (Shodan / Censys), subdomains, harvested contacts and tech stack — each source shown as live or skipped (provenance, no black box).",
+  },
+  {
+    title: "Live WiFi heatmap",
+    detail:
+      "Real device signals mapped by RSSI → distance (log-distance path-loss) — an honest estimate, not fabricated GPS.",
+  },
+  {
+    title: "Live Bluetooth (BLE) heatmap",
+    detail: "Nearby BLE devices scanned and rendered as a distinct purple heat layer.",
+  },
+  {
+    title: "CCTV discovery + live feed",
+    detail:
+      "Discovers cameras on the local network and streams an RTSP → MJPEG feed with honest connection states.",
+  },
+  {
+    title: "Crime & planning-designation overlays",
+    detail:
+      "data.police.uk crime heat plus conservation areas, listed buildings, Article 4, TPO and green-belt polygons from planning.data.gov.uk.",
+  },
+  {
+    title: "Building intelligence graph + evidence report",
+    detail:
+      "Relationships across signals into one graph, exportable as a sourced, audit-ready evidence report.",
+  },
+];
+
 // ── Field research — consent-based frontline interviews ──────────────────────
 export interface Interview {
   name: string;
@@ -233,6 +284,42 @@ export const interviews: Interview[] = [
     opportunity: "Voice-to-incident-report with escalation guidance and training insights.",
     quote:
       "We have cameras. We have sensors. If someone tries to open the door, it alerts the control room. The moment you open the door, control gets the signal.",
+    confidence: "high",
+    dated: "2026-06-05",
+  },
+  {
+    name: "Security officer · ex-Peninsula 5★",
+    role: "~2.5 years in security; previously Peninsula Hotel (5-star)",
+    locationType: "Commercial / residential building, London",
+    consent: "Anonymous research — consented",
+    keyIncident:
+      "A calculated intruder wore an NHS lanyard to pass as a contractor, walked in unchallenged, went to the basement bike racks and stole a bike. Procedures were tightened afterwards; the gate-open window was cut from 15 seconds to 2.",
+    existingControls:
+      "CCTV (“eyes everywhere”, #1), radio comms (#2), front-of-house officer with a red panic/lockdown button, SOPs (fire first, 90-second window), card/app access with reception verification, and a facilities-manager permit flow for contractors.",
+    painPoint:
+      "Impersonation / tailgating (the lanyard trick) and miscommunication between tenants, facilities managers, cleaners and engineers — plus app-access verification friction.",
+    opportunity:
+      "Attacker's-eye view: surface how someone could impersonate, tailgate or learn access patterns from the outside — exactly the exposure underwriters can't see.",
+    quote:
+      "He had a lanyard, so it seemed like he worked for the NHS… he didn't look suspicious, he just went in, went downstairs, took the bike.",
+    confidence: "high",
+    dated: "2026-06-05",
+  },
+  {
+    name: "Security officer · residential high-rise",
+    role: "On shift, speaking for the security team (SIA-licensed)",
+    locationType: "Residential high-rise, London (opposite 255)",
+    consent: "Anonymous research — consented",
+    keyIncident:
+      "Intruders reached the top of a neighbouring tower (255) via a crane to film stunts — police attended and used this building to monitor them. Since then, locked-door checks keep even residents off the roof.",
+    existingControls:
+      "CCTV (the most-relied-on system), full alarm coverage with door-open triggers and location indication, NFC patrol touch-points that log timestamps, lone-worker check-ins (hourly call / panic button), and visitor verification (sit and text your host).",
+    painPoint:
+      "Lone-worker vulnerability — a single guard is a single point of failure — plus roof/height access and verifying who actually belongs.",
+    opportunity:
+      "Passive external risk view + lone-worker monitoring: see the exposure before an incident, not after.",
+    quote:
+      "Without CCTV you cannot function as security — that is how you deduce what is going on.",
     confidence: "high",
     dated: "2026-06-05",
   },
