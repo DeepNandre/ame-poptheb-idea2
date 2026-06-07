@@ -16,6 +16,7 @@ import {
   loi,
   fieldLog,
   fieldFootage,
+  interviews,
   significance,
   verifySteps,
   pendingEvidence,
@@ -312,6 +313,72 @@ export function EvidenceDashboard() {
                 <p className="mt-2 text-[12px] text-[#aaa]">Captured {fieldFootage.dated}</p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Field research — interviews */}
+        <section id="field-research" className="scroll-mt-20 py-10">
+          <SectionLabel>Field research — consent-based frontline interviews</SectionLabel>
+          <div className="grid gap-5 md:grid-cols-2">
+            {interviews.map((iv) => (
+              <div key={iv.name} className="rounded-2xl border border-[#eee] p-6">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <h3 className="text-[17px] font-semibold tracking-[-0.01em]">{iv.name}</h3>
+                    <p className="text-[12.5px] text-[#888]">{iv.role}</p>
+                  </div>
+                  <span
+                    className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ring-inset ${
+                      iv.confidence === "high"
+                        ? "bg-emerald-50 text-emerald-700 ring-emerald-600/20"
+                        : iv.confidence === "medium"
+                          ? "bg-amber-50 text-amber-700 ring-amber-600/20"
+                          : "bg-slate-100 text-slate-600 ring-slate-500/20"
+                    }`}
+                  >
+                    {iv.confidence} confidence
+                  </span>
+                </div>
+
+                <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[11.5px] text-[#999]">
+                  <span>{iv.locationType}</span>
+                  <span>·</span>
+                  <span>{iv.consent}</span>
+                  <span>·</span>
+                  <span>{iv.dated}</span>
+                </div>
+
+                {iv.quote && (
+                  <blockquote
+                    className="mt-4 border-l-2 pl-3 text-[13.5px] italic leading-[1.6] text-[#444]"
+                    style={{ borderColor: ORANGE }}
+                  >
+                    “{iv.quote}”
+                  </blockquote>
+                )}
+
+                <dl className="mt-4 space-y-3 text-[12.5px] leading-[1.55]">
+                  <div>
+                    <dt className="font-semibold text-[#333]">Key incident</dt>
+                    <dd className="text-[#666]">{iv.keyIncident}</dd>
+                  </div>
+                  {iv.existingControls && (
+                    <div>
+                      <dt className="font-semibold text-[#333]">Existing controls</dt>
+                      <dd className="text-[#666]">{iv.existingControls}</dd>
+                    </div>
+                  )}
+                  <div>
+                    <dt className="font-semibold text-[#333]">Pain point</dt>
+                    <dd className="text-[#666]">{iv.painPoint}</dd>
+                  </div>
+                  <div>
+                    <dt className="font-semibold text-[#333]">Opportunity</dt>
+                    <dd className="text-[#666]">{iv.opportunity}</dd>
+                  </div>
+                </dl>
+              </div>
+            ))}
           </div>
         </section>
 

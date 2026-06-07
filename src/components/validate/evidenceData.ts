@@ -109,9 +109,9 @@ export const claims: Claim[] = [
     id: "field-demand",
     claim: "Demand was validated in person, not just inferred.",
     evidence:
-      "Over a 24-hour sprint we entered real buildings and events, interviewed security guards and reception staff about what they actually do, then converted that into outbound conversations and Letters of Intent.",
-    source: { label: "Field validation log", href: "#field-log", dated: "2026-06-06" },
-    verify: "See the timeline below. Method is reproducible: enter site → interview front-line staff → map needs → outbound → capture intent.",
+      "We ran consent-based frontline interviews with building security and reception staff — Shahab detailed real incidents and the controls already in place; Aziz declined recording. Those findings shaped the product direction and the outbound that produced the LOI.",
+    source: { label: "Field research interviews", href: "#field-research", dated: "2026-06-05" },
+    verify: "See the field research section: structured per-interview findings, consent status and verbatim quotes, dated 5 Jun 2026.",
     status: "self",
   },
   {
@@ -201,6 +201,53 @@ export const fieldLog: FieldEntry[] = [
     action: "Captured intent",
     detail:
       "Converted conversations into Letters of Intent — including the Bolttech LOI featured above.",
+  },
+];
+
+// ── Field research — consent-based frontline interviews ──────────────────────
+export interface Interview {
+  name: string;
+  role: string;
+  locationType: string;
+  consent: string;
+  keyIncident: string;
+  existingControls?: string;
+  painPoint: string;
+  opportunity: string;
+  quote?: string;
+  confidence: "high" | "medium" | "low";
+  dated: string;
+}
+export const interviews: Interview[] = [
+  {
+    name: "Shahab",
+    role: "Frontline restaurant / building security staff",
+    locationType: "Restaurant inside a managed building, London",
+    consent: "Consented — conversation captured",
+    keyIncident:
+      "A group entered the restaurant with no money or food and refused to leave; staff felt limited to calling police or asking them to go. The risk was an ambiguous human moment, not a locked door.",
+    existingControls:
+      "Cameras, sensors, control-room alerts, radio checks, access-controlled doors, and a routine where staff notify control before entering restricted areas.",
+    painPoint:
+      "Handling, escalating and learning from ambiguous incidents — not a lack of physical security.",
+    opportunity: "Voice-to-incident-report with escalation guidance and training insights.",
+    quote:
+      "We have cameras. We have sensors. If someone tries to open the door, it alerts the control room. The moment you open the door, control gets the signal.",
+    confidence: "high",
+    dated: "2026-06-05",
+  },
+  {
+    name: "Aziz",
+    role: "Frontline / reception staff",
+    locationType: "Building reception, London",
+    consent: "Declined recording — written notes only",
+    keyIncident:
+      "Short interaction; no detailed security insight gathered before recording was declined.",
+    painPoint:
+      "Research-process learning: asking for a name and to record too early created friction with frontline staff.",
+    opportunity: "Lead with anonymous, two-question framing; ask to record only after rapport.",
+    confidence: "low",
+    dated: "2026-06-05",
   },
 ];
 
