@@ -397,17 +397,44 @@ export function EvidenceDashboard() {
             </p>
           </div>
 
-          {/* (a.2) Data cost base & moat */}
+          {/* (a.2) Data layer — today + expansion */}
           <div className="mt-10">
-            <h3 className="text-[15px] font-semibold tracking-[-0.01em]">{dataCostBase.label}</h3>
+            <div className="flex flex-wrap items-center gap-2.5">
+              <h3 className="text-[15px] font-semibold tracking-[-0.01em]">{dataCostBase.label}</h3>
+              <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-medium text-slate-600 ring-1 ring-inset ring-slate-500/20">
+                {dataCostBase.tag}
+              </span>
+            </div>
             <p className="mt-1.5 max-w-[760px] text-[13px] leading-[1.6] text-[#777]">{dataCostBase.intro}</p>
+
+            {/* What it runs on today */}
+            <div className="mt-4 rounded-2xl border border-[#eee] bg-[#fafafa] p-5">
+              <p className="font-mono text-[10.5px] uppercase tracking-[0.16em] text-[#999]">
+                {dataCostBase.runsOnNowLabel}
+              </p>
+              <div className="mt-2.5 flex flex-wrap gap-2">
+                {dataCostBase.runsOnNow.map((r) => (
+                  <span
+                    key={r}
+                    className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-[12px] text-[#555] ring-1 ring-inset ring-[#eee]"
+                  >
+                    <CheckCircle2 className="size-3.5" style={{ color: ORANGE }} />
+                    {r}
+                  </span>
+                ))}
+              </div>
+            </div>
+
             <p className="mt-4 rounded-xl bg-[#0f0f0f] px-4 py-3.5 text-[13.5px] leading-[1.6] text-white/90">
               <span className="font-semibold" style={{ color: ORANGE }}>
                 The point ·{" "}
               </span>
               {dataCostBase.headline}
             </p>
-            <div className="mt-5 space-y-5">
+            <p className="mb-3 mt-5 font-mono text-[10.5px] uppercase tracking-[0.16em] text-[#999]">
+              The licensed expansion layer (planned) — providers' public rates
+            </p>
+            <div className="space-y-5">
               {dataCostBase.groups.map((g) => (
                 <div key={g.category}>
                   <p className="mb-2 font-mono text-[10.5px] uppercase tracking-[0.16em] text-[#aaa]">{g.category}</p>

@@ -115,9 +115,11 @@ The pilot covers an agreed set of buildings. A manual physical assessment costs 
 
 ---
 
-## 6a. The data cost base & moat — £20k doesn't even cover the data bill
+## 6a. The data layer — working today, licensed to scale (the moat)
 
-German Shepherd's building intelligence runs on **licensed, paid UK property data**, not scraping. The inputs behind a single building profile, at providers' public rates:
+**What it runs on today (free / public / passive):** German Shepherd already works on the UK planning record (PlanIt/Idox), live wireless & Bluetooth scanning, corporate OSINT, exposed infrastructure (Shodan/Censys free tier), open CCTV/RTSP discovery, and crime/planning-designation overlays. **No premium data is required for the product to function.**
+
+**The expansion layer (planned — not yet licensed):** to become production-ready and scale, we layer in licensed premium UK property data. These are providers' public rates, for planning — **not current cost-of-goods**:
 
 | Category | Provider | What it provides | Price |
 |---|---|---|---|
@@ -136,7 +138,7 @@ German Shepherd's building intelligence runs on **licensed, paid UK property dat
 | | D&B · Creditsafe · Red Flag Alert | Financial health, credit, director networks | Annual subscriptions |
 | **Footfall & mobility** | Huq · Placer.ai · SafeGraph/Advan | Real footfall / visit data | Enterprise licensing |
 
-**The point:** two fixed licences alone — **National Polygon Service (£20,000/yr)** and **CoStar (£10k+/yr)** — already exceed the entire pilot fee, before a single per-report or per-seat cost. So **£20,000 is a strategic land price, not a margin play**: it buys the marquee relationship and the resale channel into 230+ insurers, while the licensed data layer is the part that makes German Shepherd **hard to copy** (a scraper can't replicate licensed Land Registry, OS Premium and CoStar feeds). This both *justifies* the price floor and *strengthens* the moat in the "what it grows into" story — the cost base is also the defensibility.
+**The point — this is the smart-money sequencing, not a sunk cost.** Because the product already works on free/public data, the £20,000 pilot lets us **validate demand before committing to the licensed data bill**. At scale, two fixed licences alone — **National Polygon Service (£20,000/yr)** and **CoStar (£10k+/yr)** — would exceed the entire pilot fee, before any per-report or per-seat cost. So **£20,000 is a strategic land price**: it wins the marquee relationship and the resale channel into 230+ insurers and proves the demand; the licensed layer is then **funded by — and justifies — the higher expansion pricing** (£30k–£60k/insurer, per-building, rev-share). It is also the **moat**: a scraper can't replicate licensed Land Registry, OS Premium and CoStar feeds. The cost base is the defensibility — once we take it on.
 
 ---
 

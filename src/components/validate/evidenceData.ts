@@ -825,11 +825,13 @@ export const externalSources: ExternalSource[] = [
 export const sourcesNote =
   "German Shepherd is physical-security intelligence (in-person penetration testing), so figures here are physical losses — burglary, intrusion, theft, business interruption — not cyber. Independent = government, regulator, or trade-body data; Vendor = published by a firm selling a related service (directional, used as supporting colour); Secondary = reputable reporting of a primary source. Two widely-repeated claims are deliberately excluded as unreliable: the \"£12.9bn business-crime\" figure (unverified, retailer-sourced) and \"80% of businesses close within 18 months of a disaster\" (US FEMA, not UK).";
 
-// ── The licensed data layer (cost of goods + moat) ───────────────────────────
-// The paid UK property/building data that German Shepherd licenses to turn an
-// address into a risk surface. The point: input data alone costs more per year
-// than the £20k pilot — so the price is a strategic land deal, and the licensed
-// layer is a moat a scraper cannot copy. Prices are providers' public/list rates.
+// ── The data layer: working now (free/public) + licensed layer to scale ──────
+// HONEST FRAMING: German Shepherd already works today on free + passively
+// gathered data. The paid sources below are NOT yet licensed — they are the
+// expansion layer that takes the product production-ready and to scale. The
+// pilot validates demand BEFORE we commit to that data bill, which at scale
+// exceeds the pilot fee. The licensed layer is also the moat. Prices are
+// providers' public/list rates, for planning — not current cost-of-goods.
 export interface DataSource {
   provider: string;
   what: string;
@@ -841,11 +843,21 @@ export interface DataGroup {
   items: DataSource[];
 }
 export const dataCostBase = {
-  label: "The data cost base behind the platform",
+  label: "The data layer — working today, licensed to scale",
+  tag: "Expansion layer — not yet licensed",
   intro:
-    "German Shepherd's building intelligence runs on licensed, paid UK property data — not scraping. These are the inputs behind a single building profile, at providers' public rates.",
+    "German Shepherd already works today on free and passively gathered data — the UK planning record, live wireless/Bluetooth signals, corporate OSINT, and exposed infrastructure (Shodan/Censys free tier). The paid sources below are the expansion layer we license to become production-ready and scale; they are planned, not current costs.",
+  runsOnNowLabel: "What it runs on today (free / public / passive)",
+  runsOnNow: [
+    "UK planning record (PlanIt / Idox)",
+    "Live wireless & Bluetooth signal scan",
+    "Corporate OSINT (subdomains, contacts, tech stack)",
+    "Exposed infrastructure — Shodan / Censys free tier",
+    "Open CCTV / RTSP discovery",
+    "Crime & planning-designation overlays (data.police.uk, planning.data.gov.uk)",
+  ],
   headline:
-    "£20,000 does not even cover our data bill. HM Land Registry's National Polygon Service alone is £20,000/year — the entire pilot fee — before CoStar, Ordnance Survey Premium, environmental, credit and footfall data. That is why the pilot is a strategic land price, not a margin play: the licensed data layer is a moat a scraper can't copy.",
+    "These aren't sunk costs — they're the expansion layer. Because the product already works on free/public data, the £20,000 pilot lets us validate demand BEFORE committing to a licensed data bill that, at scale, costs more per year than the pilot itself (HM Land Registry's National Polygon Service alone is £20,000/year; CoStar £10k+/year). That sequencing is the smart-money case — and the licensed layer is the moat a scraper can't copy.",
   groups: [
     {
       category: "Property ownership & boundaries — HM Land Registry",
@@ -963,7 +975,7 @@ export const dataCostBase = {
     },
   ] as DataGroup[],
   takeaway:
-    "Two fixed licences alone — National Polygon (£20,000/yr) and CoStar (£10k+/yr) — exceed the pilot fee before a single per-report or per-seat cost. The £20k buys the relationship and the resale channel; the data layer is what makes the product hard to copy.",
+    "At scale, two fixed licences alone — National Polygon (£20,000/yr) and CoStar (£10k+/yr) — would exceed the pilot fee before a single per-report or per-seat cost. So the pilot is priced to win the relationship and resale channel and to prove demand first; the licensed layer is then funded by — and justifies — the higher expansion pricing, and is what makes the product hard to copy.",
 };
 
 // ── Build-in-public (bonus +12) — real, dated posts only ─────────────────────
