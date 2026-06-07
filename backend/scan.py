@@ -76,6 +76,12 @@ class NoRangesError(ScanError):
     exit_code = 3
 
 
+class NoDomainError(ScanError):
+    """Couldn't resolve a website domain from the building/company name."""
+
+    exit_code = 4
+
+
 # Orgs that own CDN/cloud space — their blocks aren't the building's own network.
 CDN_ORGS = (
     "akamai",
@@ -190,6 +196,145 @@ def normalise_domain(raw: str) -> str:
         raw = "//" + raw
     host = urllib.parse.urlparse(raw).hostname or ""
     return host.lower().removeprefix("www.")
+
+
+# --- domain resolution (building name → its own website) ---------------------
+# A map-selected building gives us a name + address but no company URL to scan.
+# Resolve one via the Maps API: Google Places Details exposes a place's `website`
+# (the building/occupant's own domain — exactly the OSINT seed we want). No paid
+# key is configured, so the working path is a dirty keyless DuckDuckGo quick-query,
+# then Nominatim (OpenStreetMap's maps API) which carries a `website` tag for many
+# POIs. Order: Places (if key) → DuckDuckGo → Nominatim. First own-site domain wins.
+GOOGLE_MAPS_KEY = os.getenv("GOOGLE_MAPS_API_KEY") or os.getenv("GOOGLE_API_KEY", "")
+# Places API (New) — one POST returns the place's websiteUri (no separate Details call).
+PLACES_SEARCHTEXT = "https://places.googleapis.com/v1/places:searchText"
+DDG_HTML = "https://html.duckduckgo.com/html/"
+NOMINATIM_SEARCH = "https://nominatim.openstreetmap.org/search"
+_SCRAPE_UA = (
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+)
+# Hosts that are aggregators/socials/registries — never the building's own site.
+_JUNK_HOST_BITS = (
+    "google.",
+    "gstatic.",
+    "wikipedia.",
+    "linkedin.",
+    "facebook.",
+    "twitter.",
+    "x.com",
+    "instagram.",
+    "youtube.",
+    "tiktok.",
+    "gov.uk",
+    "companieshouse",
+    "company-information.service",
+    "rightmove.",
+    "zoopla.",
+    "onthemarket.",
+    "yell.",
+    "yelp.",
+    "tripadvisor.",
+    "bloomberg.",
+    "crunchbase.",
+    "opencorporates.",
+    "endole.",
+    "trustpilot.",
+    "glassdoor.",
+    "indeed.",
+    "amazon.",
+    "apple.",
+    "maps.app",
+)
+
+
+def _is_own_site(host: str) -> bool:
+    return bool(host) and not any(j in host for j in _JUNK_HOST_BITS)
+
+
+async def _places_website(client, query: str) -> str | None:
+    """Official path: Places API (New) text search. One POST returns each match's
+    websiteUri; take the first place that carries one. Needs GOOGLE_MAPS_KEY."""
+    if not GOOGLE_MAPS_KEY:
+        return None
+    r = await client.post(
+        PLACES_SEARCHTEXT,
+        headers={
+            "Content-Type": "application/json",
+            "X-Goog-Api-Key": GOOGLE_MAPS_KEY,
+            "X-Goog-FieldMask": "places.websiteUri,places.displayName",
+        },
+        json={"textQuery": query},
+    )
+    r.raise_for_status()
+    for place in r.json().get("places", []):
+        site = place.get("websiteUri")
+        if site:
+            return site
+    return None
+
+
+async def _ddg_website(client, query: str) -> str | None:
+    """Dirty keyless quick-query: DuckDuckGo HTML. Organic links are wrapped as
+    …/l/?uddg=<urlencoded-target>… — unwrap and take the first own-site domain."""
+    import re
+
+    r = await client.get(
+        DDG_HTML,
+        params={"q": f"{query} official website"},
+        headers={"User-Agent": _SCRAPE_UA, "Accept-Language": "en-GB,en;q=0.9"},
+        follow_redirects=True,
+    )
+    if r.status_code != 200:
+        return None
+    for raw in re.findall(r"uddg=([^&\"']+)", r.text):
+        host = normalise_domain(urllib.parse.unquote(raw))
+        if _is_own_site(host):
+            return host
+    return None
+
+
+async def _nominatim_website(client, query: str) -> str | None:
+    """Maps-native fallback: OpenStreetMap's geocoder carries a `website`/`contact:website`
+    extratag for many POIs. Keyless, captcha-free behind the VPN."""
+    r = await client.get(
+        NOMINATIM_SEARCH,
+        params={"q": query, "format": "jsonv2", "extratags": 1, "limit": 5},
+        headers={"User-Agent": "poptheb-recon/1.0 (osint domain resolver)"},
+        follow_redirects=True,
+    )
+    if r.status_code != 200:
+        return None
+    for item in r.json():
+        et = item.get("extratags") or {}
+        host = normalise_domain(et.get("website") or et.get("contact:website") or "")
+        if _is_own_site(host):
+            return host
+    return None
+
+
+async def resolve_domain(query: str) -> str:
+    """Building/company name (+ address) → its own website domain. Raises NoDomainError.
+
+    Tries the Maps API (Google Places, if keyed) first, then a keyless DuckDuckGo
+    quick-query, then OpenStreetMap/Nominatim. Each failure falls through to the next.
+    """
+    query = (query or "").strip()
+    if not query:
+        raise NoDomainError("empty query — cannot resolve a domain")
+    site: str | None = None
+    async with plain_client() as client:
+        for resolver in (_places_website, _ddg_website, _nominatim_website):
+            try:
+                site = await resolver(client, query)
+            except Exception:
+                site = None  # one resolver failing must not sink the rest
+            if site:
+                break
+    host = normalise_domain(site or "")
+    if not host:
+        raise NoDomainError(f"no website found via maps/search for {query!r}")
+    return host
 
 
 def device_url(ip: str, port: int) -> str:
@@ -437,18 +582,10 @@ async def vpn_status() -> dict:
 
 async def scan(domain: str) -> dict:
     """Run the full pipeline for a domain. Raises ScanError on failure (never exits)."""
-    print("[*] VPN preflight…", flush=True)
-    if not vpn_is_up():
-        iface = vpn_route_iface() or "unknown"
-        raise VpnDownError(
-            f"Surfshark VPN is not the default route (egress iface: {iface}). "
-            f"Connect Surfshark before scanning so your real IP is never sent to Shodan."
-        )
-    try:
-        egress = await vpn_preflight()
-    except Exception as e:
-        raise VpnDownError(f"VPN up but egress check failed ({e}).") from e
-    print(f"[+] Tunnelled via {vpn_route_iface()} → egress {egress}", flush=True)
+    # VPN gating disabled — scan runs over the host's default route. Traffic to
+    # Shodan/RDAP is no longer forced through the Surfshark tunnel.
+    iface = vpn_route_iface() or "unknown"
+    print(f"[*] VPN gating disabled — egressing via {iface}", flush=True)
 
     print(f"[*] Attributing IP space for {domain} (CT logs → RDAP)…", flush=True)
     devices: list[dict] = []

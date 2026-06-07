@@ -579,6 +579,14 @@ export function BuildingScannerProduct() {
   const [dashTab, setDashTab] = useState("overview");
   // 3D building schematic overlay (co-founder's Arbor viewer).
   const [schematicOpen, setSchematicOpen] = useState(false);
+  // Building to render in the 3D viewer. Set to the just-scanned building's slug
+  // when opened from recon; undefined elsewhere → viewer falls back to the most
+  // recently ingested building.
+  const [schematicSlug, setSchematicSlug] = useState<string | undefined>(undefined);
+  const openSchematic = (slug?: string) => {
+    setSchematicSlug(slug);
+    setSchematicOpen(true);
+  };
   const [reconLoading, setReconLoading] = useState(false);
   const [reconProgress, setReconProgress] = useState<string | null>(null);
   const [shardFloor, setShardFloor] = useState(9);
@@ -1352,7 +1360,7 @@ export function BuildingScannerProduct() {
       evalu.reset();
       setIntelFocus((n) => n + 1); // DetailPanel jumps to its Intelligence tab
     },
-    on3D: () => setSchematicOpen(true),
+    on3D: () => openSchematic(recon.slug ?? undefined),
     onAsk: () => {
       evalu.reset();
       setIntelFocus((n) => n + 1);
@@ -1528,7 +1536,7 @@ export function BuildingScannerProduct() {
               </button>
               {/* Always available so the schematic can be re-opened any time. */}
               <button
-                onClick={() => setSchematicOpen(true)}
+                onClick={() => openSchematic(recon.slug ?? undefined)}
                 className="flex items-center gap-1.5 rounded-lg border border-sky-400/30 bg-sky-500/20 px-3 py-1.5 text-[12px] font-medium text-sky-100 hover:bg-sky-500/30"
               >
                 <Building2 className="size-3.5" /> Arbor 3D schematic
@@ -1541,7 +1549,7 @@ export function BuildingScannerProduct() {
                 <div className="text-[11px] text-white/50">{selected.planning}</div>
                 {selected.id === "arbor" && (
                   <button
-                    onClick={() => setSchematicOpen(true)}
+                    onClick={() => openSchematic(undefined)}
                     className="mt-2 flex items-center gap-1.5 rounded-lg border border-sky-400/30 bg-sky-500/20 px-3 py-1.5 text-[12px] font-medium text-sky-100 transition-colors hover:bg-sky-500/30"
                   >
                     <Building2 className="size-3.5" /> View 3D schematic
@@ -1917,7 +1925,9 @@ export function BuildingScannerProduct() {
           <div className="min-h-0 flex-1">
             <ReconWorkspace
               building={recon.target.name}
-              onOpen3D={() => setSchematicOpen(true)}
+              realPeople={recon.people}
+              realOsint={recon.osint}
+              onOpen3D={() => openSchematic(recon.slug ?? undefined)}
               onClose={recon.reset}
             />
           </div>
@@ -1942,7 +1952,7 @@ export function BuildingScannerProduct() {
           />
           {selected.id === "arbor" && (
             <button
-              onClick={() => setSchematicOpen(true)}
+              onClick={() => openSchematic(undefined)}
               className="flex shrink-0 items-center justify-center gap-2 rounded-lg border border-sky-400/30 bg-sky-500/20 px-3 py-2.5 text-[13px] font-medium text-sky-100 transition-colors hover:bg-sky-500/30"
             >
               <Building2 className="size-4" /> View 3D schematic
@@ -2018,7 +2028,7 @@ export function BuildingScannerProduct() {
         <EvidenceReport target={selected} onClose={() => setReportOpen(false)} />
       ) : null}
 
-      <SchematicViewer open={schematicOpen} onClose={() => setSchematicOpen(false)} />
+      <SchematicViewer open={schematicOpen} onClose={() => setSchematicOpen(false)} slug={schematicSlug} />
     </main>
   );
 }

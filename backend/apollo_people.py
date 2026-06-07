@@ -234,6 +234,69 @@ async def company_roster(
     }
 
 
+async def _resolve_org_by_name(client, name: str) -> tuple[str | None, str | None]:
+    """Resolve an Apollo org id from a company NAME — for occupants we only know the
+    Companies House name, not a website. Returns (org_id, primary_domain)."""
+    r = await client.post(
+        SEARCH_COMPANIES,
+        json={"q_organization_name": name, "per_page": 1},
+        headers=_headers(),
+    )
+    r.raise_for_status()
+    body = r.json()
+    orgs = body.get("organizations") or body.get("accounts") or []
+    if not orgs:
+        return None, None
+    o = orgs[0]
+    return (o.get("id") or o.get("organization_id")), o.get("primary_domain")
+
+
+async def company_roster_by_name(
+    name: str,
+    max_people: int = 500,
+    max_reveal: int = 60,
+    high_value_titles: list[str] | None = None,
+    on_update=None,
+) -> dict:
+    """Full Apollo roster pull keyed on a company NAME instead of a domain — for building
+    occupants we only have the Companies House name, no website. No location filter: every
+    employee Apollo indexes for the org is a candidate. Same return shape as company_roster,
+    plus the resolved `domain`."""
+    high_value_titles = high_value_titles or []
+    emit = _emitter(on_update)
+
+    async with httpx.AsyncClient(timeout=30.0) as client:
+        org_id, domain = await _resolve_org_by_name(client, name)
+        if not org_id:
+            return {
+                "people": [],
+                "total_discovered": 0,
+                "revealed": 0,
+                "credits": 0,
+                "domain": None,
+                "coverage_note": f"No Apollo org found for {name!r}",
+            }
+        people, total, credits = await _roster_for_org(
+            client, org_id, None, max_people, max_reveal, high_value_titles, emit
+        )
+
+    with_li = sum(1 for p in people if p.get("linkedin_url"))
+    note = (
+        f"Apollo roster for {name!r}: discovered {total}, revealed {len(people)} "
+        f"({credits} credits, {with_li}/{len(people)} with LinkedIn)"
+    )
+    if len(people) < total:
+        note += f" — {total - len(people)} more available, raise max_reveal"
+    return {
+        "people": people,
+        "total_discovered": total,
+        "revealed": len(people),
+        "credits": credits,
+        "domain": domain,
+        "coverage_note": note,
+    }
+
+
 async def match_person(
     name: str,
     organization_name: str = "",

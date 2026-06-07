@@ -50,6 +50,10 @@ export function loadProjectEnv() {
   }
   loadEnvFile(path.join(PROJECT_ROOT, ".env"));
   loadEnvFile(path.join(PROJECT_ROOT, ".env.local"));
+  // The Python backend keeps its own env (GOOGLE_MAPS_API_KEY for the Places
+  // website resolver, etc.). Load it too so the spawned osint_engine can resolve
+  // a building's website from its name+address. Root .env wins (loaded first).
+  loadEnvFile(path.join(PROJECT_ROOT, "backend", ".env"));
 }
 
 loadProjectEnv();

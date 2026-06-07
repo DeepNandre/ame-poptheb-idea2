@@ -19,6 +19,7 @@
         "72190"
       ],
       "address": "Flat 241, One Blackfriars 1 Blackfriars Road, London, SE1 9GJ",
+      "postcode": "SE1 9GJ",
       "care_of": null
     },
     {
@@ -31,13 +32,318 @@
         "47910"
       ],
       "address": "Apartment 176 1 Blackfriars Road, London, SE1 9GJ",
+      "postcode": "SE1 9GJ",
+      "care_of": null
+    },
+    {
+      "number": "14940627",
+      "name": "WATER CAPITAL LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-06-16",
+      "sic": [
+        "64304"
+      ],
+      "address": "Apartment 253 1 Blackfriars Road, London, SE1 9GQ",
+      "postcode": "SE1 9GQ",
+      "care_of": null
+    },
+    {
+      "number": "16071442",
+      "name": "RUI'S FASHION LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2024-11-11",
+      "sic": [
+        "47799"
+      ],
+      "address": "Apartment 32 1 Blackfriars Road, London, SE1 9GD",
+      "postcode": "SE1 9GD",
+      "care_of": null
+    },
+    {
+      "number": "15305428",
+      "name": "MEN'S GROOMERY LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-11-23",
+      "sic": [
+        "47750"
+      ],
+      "address": "Apartment 258 1 Blackfriars Road, London, SE1 9GQ",
+      "postcode": "SE1 9GQ",
+      "care_of": null
+    },
+    {
+      "number": "14070048",
+      "name": "ONE BUBBLE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2022-04-26",
+      "sic": [
+        "47190"
+      ],
+      "address": "Apartment 253 1 Blackfriars Road, London, SE1 9GQ",
+      "postcode": "SE1 9GQ",
+      "care_of": null
+    },
+    {
+      "number": "16367496",
+      "name": "CLUBHOUSE PRODUCTIONS LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-04-05",
+      "sic": [
+        "59111",
+        "59113"
+      ],
+      "address": "Apartment 62 1 Blackfriars Road, London, SE1 9GD",
+      "postcode": "SE1 9GD",
+      "care_of": null
+    },
+    {
+      "number": "13589804",
+      "name": "BING CAPITAL MANAGEMENT LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-08-27",
+      "sic": [
+        "70221",
+        "70229"
+      ],
+      "address": "Suite 191 1 Blackfriars Road, London, SE1 9GQ",
+      "postcode": "SE1 9GQ",
+      "care_of": null
+    },
+    {
+      "number": "17213282",
+      "name": "FONTE GROUP LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2026-05-12",
+      "sic": [
+        "47990",
+        "70229",
+        "73110",
+        "82990"
+      ],
+      "address": "Apartment 229, 1 Blackfriars Road, London, SE1 9GQ",
+      "postcode": "SE1 9GQ",
+      "care_of": null
+    },
+    {
+      "number": "10737896",
+      "name": "JACOB WALL VENTURES LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2017-04-24",
+      "sic": [
+        "82990"
+      ],
+      "address": "Apartment 49 1 Blackfriars Road, London, SE1 9GD",
+      "postcode": "SE1 9GD",
+      "care_of": null
+    },
+    {
+      "number": "14665316",
+      "name": "RSD RESIDENTIAL LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-02-15",
+      "sic": [
+        "68100",
+        "68209"
+      ],
+      "address": "Apartment 257 1 Blackfriars Road, London, SE1 9GQ",
+      "postcode": "SE1 9GQ",
+      "care_of": null
+    },
+    {
+      "number": "12168959",
+      "name": "LORD & LADY HOLDINGS LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-08-22",
+      "sic": [
+        "47910",
+        "58110",
+        "60200",
+        "90030"
+      ],
+      "address": "116 St George One, 1 Blackfriars Road, London, SE1 9GD",
+      "postcode": "SE1 9GD",
+      "care_of": null
+    },
+    {
+      "number": "13917366",
+      "name": "EMRAD CONSULTING LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2022-02-15",
+      "sic": [
+        "68310"
+      ],
+      "address": "Apartment 14 1 Blackfriars Road, London, SE1 9GD",
+      "postcode": "SE1 9GD",
+      "care_of": null
+    },
+    {
+      "number": "08198824",
+      "name": "LOCKDOWN PICTURES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2012-09-03",
+      "sic": [
+        "59111",
+        "59112",
+        "59113"
+      ],
+      "address": "Apartment 62 1 Blackfriars Road, London, SE1 9GD",
+      "postcode": "SE1 9GD",
+      "care_of": null
+    },
+    {
+      "number": "15927899",
+      "name": "PLANET VIBES COLLECTIVE LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2024-08-31",
+      "sic": [
+        "64304"
+      ],
+      "address": "1 Blackfriars Road, London, SE1 9GD",
+      "postcode": "SE1 9GD",
+      "care_of": null
+    },
+    {
+      "number": "15702489",
+      "name": "COALVA VENTURES LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2024-05-03",
+      "sic": [
+        "68310"
+      ],
+      "address": "Apartment 58 1 Blackfriars Road, London, SE1 9GD",
+      "postcode": "SE1 9GD",
+      "care_of": null
+    },
+    {
+      "number": "16787938",
+      "name": "GALA CASA PROPERTY LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-10-15",
+      "sic": [
+        "68209",
+        "68310",
+        "68320",
+        "98000"
+      ],
+      "address": "Apartment 224 1 Blackfriars Road, London, SE1 9GQ",
+      "postcode": "SE1 9GQ",
+      "care_of": null
+    },
+    {
+      "number": "15415860",
+      "name": "LUXSHARE LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2024-01-16",
+      "sic": [
+        "79110"
+      ],
+      "address": "Apartment 215 1 Blackfriars Road, London, SE1 9GQ",
+      "postcode": "SE1 9GQ",
+      "care_of": null
+    },
+    {
+      "number": "16705643",
+      "name": "ALTON BEVERAGES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-09",
+      "sic": [
+        "11070"
+      ],
+      "address": "Apartment 264 1 Blackfriars Road, London, SE1 9GQ",
+      "postcode": "SE1 9GQ",
+      "care_of": null
+    },
+    {
+      "number": "17068210",
+      "name": "ASSET ATELIER LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2026-03-03",
+      "sic": [
+        "73110",
+        "82990"
+      ],
+      "address": "Apartment 229, 1 Blackfriars Road, London, SE1 9GQ",
+      "postcode": "SE1 9GQ",
+      "care_of": null
+    },
+    {
+      "number": "17071367",
+      "name": "ASMODE LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2026-03-04",
+      "sic": [
+        "47910",
+        "70229",
+        "73110",
+        "82990"
+      ],
+      "address": "229, 1, One Blackfriars Blackfriars Road, London, SE1 9GQ",
+      "postcode": "SE1 9GQ",
+      "care_of": null
+    },
+    {
+      "number": "14539526",
+      "name": "0UTLYER LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2022-12-13",
+      "sic": [
+        "59111",
+        "74909"
+      ],
+      "address": "One Blackfriars Apartment 193, London, SE1 9GD",
+      "postcode": "SE1 9GD",
       "care_of": null
     }
   ],
   "fhrs": [],
   "prime_target": {
     "care_of_agents": [],
-    "manager_named_companies": []
+    "manager_named_companies": [
+      {
+        "name": "BING CAPITAL MANAGEMENT LTD",
+        "number": "13589804"
+      },
+      {
+        "name": "JACOB WALL VENTURES LTD",
+        "number": "10737896"
+      },
+      {
+        "name": "LORD & LADY HOLDINGS LTD",
+        "number": "12168959"
+      },
+      {
+        "name": "COALVA VENTURES LTD",
+        "number": "15702489"
+      },
+      {
+        "name": "GALA CASA PROPERTY LTD",
+        "number": "16787938"
+      },
+      {
+        "name": "ASSET ATELIER LTD",
+        "number": "17068210"
+      }
+    ]
   },
   "owner_note": "Freeholder/owner not resolved \u2014 HM Land Registry CCOD/OCOD has no keyless API. Pivot any manager_named_company's registration number through Companies House PSCs/officers to reach named humans, or buy the title register (\u00a33, pay-as-you-go) for the registered proprietor."
 }

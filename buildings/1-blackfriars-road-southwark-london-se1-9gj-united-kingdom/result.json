@@ -1,0 +1,14 @@
+{
+  "building": "One Blackfriars",
+  "legacy_address": "1\u201316 Blackfriars Road, London SE1",
+  "authority": "London Borough of Southwark",
+  "portal_url": "https://planning.southwark.gov.uk/online-applications/search.do?action=simple&searchType=Application",
+  "application_ref": "12/AP/1784",
+  "keyVal": null,
+  "documents_tab_url": null,
+  "ga_plans": [],
+  "das_available": true,
+  "download_notes": "Southwark portal returned 502 error; planning reference reliably confirmed via GLA stage\u20111 report and council notices but portal navigation and document retrieval not executed.",
+  "confidence": "medium",
+  "notes": "Full planning permission granted for One Blackfriars (50\u2011storey tower plus Rennie Street and Podium buildings) under application 12/AP/1784 approved 14 December 2012. Applicant: St George South London Ltd; architect: Ian Simpson Architects ([docslib.org](https://docslib.org/doc/7867109/one-blackfriars-road-lb-southwark-planning-statement?utm_source=openai))"
+}

@@ -7,11 +7,19 @@
       "company": "LONGEVITY CONSULTING GROUP LTD",
       "company_number": "15126888",
       "appointed": "2023-09-10",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
       "email": null,
       "email_verified": false,
       "linkedin_url": null,
       "sources": [
         "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-75-to-100-percent",
+        "voting-rights-75-to-100-percent",
+        "right-to-appoint-and-remove-directors"
       ]
     },
     {
@@ -20,11 +28,646 @@
       "company": "BOUTIQUE KAOTIQUE LIMITED",
       "company_number": "11450366",
       "appointed": "2018-07-05",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
       "email": null,
       "email_verified": false,
       "linkedin_url": null,
       "sources": [
         "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-75-to-100-percent",
+        "voting-rights-75-to-100-percent",
+        "right-to-appoint-and-remove-directors"
+      ]
+    },
+    {
+      "name": "Dimitri John Goulandris",
+      "role": "director",
+      "company": "BOUTIQUE KAOTIQUE LIMITED",
+      "company_number": "11450366",
+      "appointed": "2018-07-05",
+      "resigned": "2019-11-27",
+      "active_officer": false,
+      "is_psc": false,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Pauline Hotelier",
+      "role": "director",
+      "company": "BOUTIQUE KAOTIQUE LIMITED",
+      "company_number": "11450366",
+      "appointed": "2018-07-05",
+      "resigned": "2024-10-16",
+      "active_officer": false,
+      "is_psc": false,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Shichuang Xie",
+      "role": "director",
+      "company": "WATER CAPITAL LTD",
+      "company_number": "14940627",
+      "appointed": "2023-06-16",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-75-to-100-percent",
+        "voting-rights-75-to-100-percent",
+        "right-to-appoint-and-remove-directors"
+      ]
+    },
+    {
+      "name": "Eoin Browne",
+      "role": "Reporting Manager",
+      "company": "WATER CAPITAL LTD",
+      "company_number": "14940627",
+      "appointed": null,
+      "email": "eoin@cwsl.ie",
+      "email_verified": true,
+      "linkedin_url": "http://www.linkedin.com/in/eoin-browne-92332117",
+      "sources": [
+        "apollo"
+      ]
+    },
+    {
+      "name": "Michael Hunt",
+      "role": "Owner",
+      "company": "WATER CAPITAL LTD",
+      "company_number": "14940627",
+      "appointed": null,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": "http://www.linkedin.com/in/michael-hunt-88978a22",
+      "sources": [
+        "apollo"
+      ]
+    },
+    {
+      "name": "Ruizhuo Wang",
+      "role": "director",
+      "company": "RUI'S FASHION LTD",
+      "company_number": "16071442",
+      "appointed": "2024-11-11",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-75-to-100-percent",
+        "voting-rights-75-to-100-percent",
+        "right-to-appoint-and-remove-directors"
+      ]
+    },
+    {
+      "name": "Nelson Cardim Adoglio",
+      "role": "director",
+      "company": "MEN'S GROOMERY LTD",
+      "company_number": "15305428",
+      "appointed": "2023-11-23",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-75-to-100-percent",
+        "voting-rights-75-to-100-percent",
+        "right-to-appoint-and-remove-directors"
+      ]
+    },
+    {
+      "name": "Shichuang Xie",
+      "role": "director",
+      "company": "ONE BUBBLE LIMITED",
+      "company_number": "14070048",
+      "appointed": "2022-04-26",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-75-to-100-percent",
+        "voting-rights-75-to-100-percent",
+        "right-to-appoint-and-remove-directors"
+      ]
+    },
+    {
+      "name": "Jack Frederick Clough",
+      "role": "director",
+      "company": "CLUBHOUSE PRODUCTIONS LTD",
+      "company_number": "16367496",
+      "appointed": "2025-04-05",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-25-to-50-percent",
+        "voting-rights-25-to-50-percent",
+        "right-to-appoint-and-remove-directors"
+      ]
+    },
+    {
+      "name": "Allan Mohammed Kamal Arif Mustafa",
+      "role": "director",
+      "company": "CLUBHOUSE PRODUCTIONS LTD",
+      "company_number": "16367496",
+      "appointed": "2025-04-05",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-25-to-50-percent",
+        "voting-rights-25-to-50-percent",
+        "right-to-appoint-and-remove-directors"
+      ]
+    },
+    {
+      "name": "Hugo Francis William Chegwin",
+      "role": "director",
+      "company": "CLUBHOUSE PRODUCTIONS LTD",
+      "company_number": "16367496",
+      "appointed": "2025-04-05",
+      "resigned": "2026-04-03",
+      "active_officer": false,
+      "is_psc": false,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ]
+    },
+    {
+      "name": "Bing Hu",
+      "role": "director",
+      "company": "BING CAPITAL MANAGEMENT LTD",
+      "company_number": "13589804",
+      "appointed": "2021-08-27",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-75-to-100-percent"
+      ]
+    },
+    {
+      "name": "Antonia Schultze-Mosgau",
+      "role": "director",
+      "company": "FONTE GROUP LTD",
+      "company_number": "17213282",
+      "appointed": "2026-05-12",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-75-to-100-percent",
+        "voting-rights-75-to-100-percent",
+        "right-to-appoint-and-remove-directors"
+      ]
+    },
+    {
+      "name": "Christopher Eddy",
+      "role": "Partner",
+      "company": "FONTE GROUP LTD",
+      "company_number": "17213282",
+      "appointed": null,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": "http://www.linkedin.com/in/christopher-eddy-",
+      "sources": [
+        "apollo"
+      ]
+    },
+    {
+      "name": "Tapiwanyasha Senah",
+      "role": "director",
+      "company": "JACOB WALL VENTURES LTD",
+      "company_number": "10737896",
+      "appointed": "2017-04-24",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-25-to-50-percent",
+        "voting-rights-25-to-50-percent",
+        "right-to-appoint-and-remove-directors"
+      ]
+    },
+    {
+      "name": "Yasmin Leonnie Senah",
+      "role": "director",
+      "company": "JACOB WALL VENTURES LTD",
+      "company_number": "10737896",
+      "appointed": "2017-04-24",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-25-to-50-percent",
+        "voting-rights-25-to-50-percent",
+        "right-to-appoint-and-remove-directors"
+      ]
+    },
+    {
+      "name": "Sylwia Renata Dobrzycka",
+      "role": "director",
+      "company": "RSD RESIDENTIAL LIMITED",
+      "company_number": "14665316",
+      "appointed": "2023-04-12",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-25-to-50-percent",
+        "voting-rights-25-to-50-percent"
+      ]
+    },
+    {
+      "name": "Robert Dobrzycki",
+      "role": "director",
+      "company": "RSD RESIDENTIAL LIMITED",
+      "company_number": "14665316",
+      "appointed": "2023-02-15",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-25-to-50-percent",
+        "voting-rights-25-to-50-percent"
+      ]
+    },
+    {
+      "name": "Charlotte Armstrong",
+      "role": "secretary",
+      "company": "LORD & LADY HOLDINGS LTD",
+      "company_number": "12168959",
+      "appointed": "2019-08-22",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-75-to-100-percent",
+        "voting-rights-75-to-100-percent",
+        "right-to-appoint-and-remove-directors"
+      ]
+    },
+    {
+      "name": "Sunand Kudhail",
+      "role": "director",
+      "company": "EMRAD CONSULTING LIMITED",
+      "company_number": "13917366",
+      "appointed": "2022-02-15",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-75-to-100-percent",
+        "voting-rights-75-to-100-percent",
+        "right-to-appoint-and-remove-directors"
+      ]
+    },
+    {
+      "name": "Jack Clough",
+      "role": "director",
+      "company": "LOCKDOWN PICTURES LIMITED",
+      "company_number": "08198824",
+      "appointed": "2012-09-03",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-75-to-100-percent",
+        "voting-rights-75-to-100-percent",
+        "right-to-appoint-and-remove-directors",
+        "significant-influence-or-control"
+      ]
+    },
+    {
+      "name": "Yukina Konishi",
+      "role": "director",
+      "company": "PLANET VIBES COLLECTIVE LTD",
+      "company_number": "15927899",
+      "appointed": "2024-08-31",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-75-to-100-percent",
+        "voting-rights-75-to-100-percent",
+        "right-to-appoint-and-remove-directors"
+      ]
+    },
+    {
+      "name": "Andy Coaquira Alvarez",
+      "role": "director",
+      "company": "COALVA VENTURES LTD",
+      "company_number": "15702489",
+      "appointed": "2024-05-03",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-75-to-100-percent",
+        "voting-rights-75-to-100-percent",
+        "right-to-appoint-and-remove-directors"
+      ]
+    },
+    {
+      "name": "Xinwei Li",
+      "role": "director",
+      "company": "GALA CASA PROPERTY LTD",
+      "company_number": "16787938",
+      "appointed": "2025-10-15",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-50-to-75-percent",
+        "voting-rights-50-to-75-percent",
+        "right-to-appoint-and-remove-directors"
+      ]
+    },
+    {
+      "name": "Mario Ruiz Fernandez",
+      "role": "director",
+      "company": "GALA CASA PROPERTY LTD",
+      "company_number": "16787938",
+      "appointed": "2025-10-15",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-25-to-50-percent",
+        "voting-rights-25-to-50-percent"
+      ]
+    },
+    {
+      "name": "Ching Lok",
+      "role": "director",
+      "company": "LUXSHARE LTD",
+      "company_number": "15415860",
+      "appointed": "2024-01-16",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-25-to-50-percent",
+        "voting-rights-25-to-50-percent",
+        "right-to-appoint-and-remove-directors"
+      ]
+    },
+    {
+      "name": "Minglang Wang",
+      "role": "director",
+      "company": "LUXSHARE LTD",
+      "company_number": "15415860",
+      "appointed": "2024-01-16",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-25-to-50-percent",
+        "voting-rights-25-to-50-percent",
+        "right-to-appoint-and-remove-directors"
+      ]
+    },
+    {
+      "name": "Oti Tongo",
+      "role": "director",
+      "company": "ALTON BEVERAGES LIMITED",
+      "company_number": "16705643",
+      "appointed": "2025-09-09",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-75-to-100-percent",
+        "voting-rights-75-to-100-percent",
+        "right-to-appoint-and-remove-directors"
+      ]
+    },
+    {
+      "name": "Antonia Schultze-Mosgau",
+      "role": "director",
+      "company": "ASSET ATELIER LTD",
+      "company_number": "17068210",
+      "appointed": "2026-03-03",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-75-to-100-percent",
+        "voting-rights-75-to-100-percent",
+        "right-to-appoint-and-remove-directors"
+      ]
+    },
+    {
+      "name": "Antonia Schultze-Mosgau",
+      "role": "director",
+      "company": "ASMODE LTD",
+      "company_number": "17071367",
+      "appointed": "2026-03-04",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-75-to-100-percent",
+        "voting-rights-75-to-100-percent",
+        "right-to-appoint-and-remove-directors"
+      ]
+    },
+    {
+      "name": "Emmanuel Matthew Kelly",
+      "role": "director",
+      "company": "0UTLYER LTD",
+      "company_number": "14539526",
+      "appointed": "2022-12-13",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-25-to-50-percent",
+        "voting-rights-25-to-50-percent"
+      ]
+    },
+    {
+      "name": "Joanne Moira Rosemarie Reay",
+      "role": "director",
+      "company": "0UTLYER LTD",
+      "company_number": "14539526",
+      "appointed": "2022-12-13",
+      "resigned": null,
+      "active_officer": true,
+      "is_psc": true,
+      "email": null,
+      "email_verified": false,
+      "linkedin_url": null,
+      "sources": [
+        "companies_house"
+      ],
+      "natures_of_control": [
+        "ownership-of-shares-25-to-50-percent",
+        "voting-rights-25-to-50-percent"
       ]
     }
   ],
@@ -38,9 +681,129 @@
     {
       "company": "BOUTIQUE KAOTIQUE LIMITED",
       "number": "11450366",
+      "people": 3,
+      "enriched": 0
+    },
+    {
+      "company": "WATER CAPITAL LTD",
+      "number": "14940627",
+      "people": 3,
+      "enriched": 2
+    },
+    {
+      "company": "RUI'S FASHION LTD",
+      "number": "16071442",
       "people": 1,
+      "enriched": 0
+    },
+    {
+      "company": "MEN'S GROOMERY LTD",
+      "number": "15305428",
+      "people": 1,
+      "enriched": 0
+    },
+    {
+      "company": "ONE BUBBLE LIMITED",
+      "number": "14070048",
+      "people": 1,
+      "enriched": 0
+    },
+    {
+      "company": "CLUBHOUSE PRODUCTIONS LTD",
+      "number": "16367496",
+      "people": 3,
+      "enriched": 0
+    },
+    {
+      "company": "BING CAPITAL MANAGEMENT LTD",
+      "number": "13589804",
+      "people": 1,
+      "enriched": 0
+    },
+    {
+      "company": "FONTE GROUP LTD",
+      "number": "17213282",
+      "people": 2,
+      "enriched": 1
+    },
+    {
+      "company": "JACOB WALL VENTURES LTD",
+      "number": "10737896",
+      "people": 2,
+      "enriched": 0
+    },
+    {
+      "company": "RSD RESIDENTIAL LIMITED",
+      "number": "14665316",
+      "people": 2,
+      "enriched": 0
+    },
+    {
+      "company": "LORD & LADY HOLDINGS LTD",
+      "number": "12168959",
+      "people": 1,
+      "enriched": 0
+    },
+    {
+      "company": "EMRAD CONSULTING LIMITED",
+      "number": "13917366",
+      "people": 1,
+      "enriched": 0
+    },
+    {
+      "company": "LOCKDOWN PICTURES LIMITED",
+      "number": "08198824",
+      "people": 1,
+      "enriched": 0
+    },
+    {
+      "company": "PLANET VIBES COLLECTIVE LTD",
+      "number": "15927899",
+      "people": 1,
+      "enriched": 0
+    },
+    {
+      "company": "COALVA VENTURES LTD",
+      "number": "15702489",
+      "people": 1,
+      "enriched": 0
+    },
+    {
+      "company": "GALA CASA PROPERTY LTD",
+      "number": "16787938",
+      "people": 2,
+      "enriched": 0
+    },
+    {
+      "company": "LUXSHARE LTD",
+      "number": "15415860",
+      "people": 2,
+      "enriched": 0
+    },
+    {
+      "company": "ALTON BEVERAGES LIMITED",
+      "number": "16705643",
+      "people": 1,
+      "enriched": 0
+    },
+    {
+      "company": "ASSET ATELIER LTD",
+      "number": "17068210",
+      "people": 1,
+      "enriched": 0
+    },
+    {
+      "company": "ASMODE LTD",
+      "number": "17071367",
+      "people": 1,
+      "enriched": 0
+    },
+    {
+      "company": "0UTLYER LTD",
+      "number": "14539526",
+      "people": 2,
       "enriched": 0
     }
   ],
-  "enriched": 0
+  "enriched": 3
 }

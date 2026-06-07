@@ -2,13 +2,15 @@
 //
 //   schematic → pipeline_app.py  POST /buildings → /discover → /ingest   (poll)
 //   people    → pipeline_app.py  /occupants → /people                     (poll)
-//   osint     → api.py           GET /health → POST /scan (VPN-gated, sync)
+//   osint     → api.py           GET /health → POST /scan (VPN-gated, sync). With no
+//               company URL it scans a query (name + address) the backend resolves
+//               to a website via the Maps API (Places → DuckDuckGo → Nominatim).
 //   memory    → no backend — gated, simulated on timers as a visual cap-off
 //
 // schematic · people · osint run in parallel from t=0; memory waits for whichever
 // of them are present in the run, then ticks through on timers. A · B · C each
 // degrade to a "skipped" (n/a) state rather than failing the whole run when their
-// backend isn't reachable / configured (no docs, no postcode, VPN down, no URL).
+// backend isn't reachable / configured (no docs, no postcode, VPN down, no domain).
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { LucideIcon } from "lucide-react";
@@ -17,10 +19,24 @@ import {
   addBuilding,
   runPipelinePhase,
   runScan,
-  scanHealth,
   ReconHttpError,
   type JobStatus,
+  type ScanResult,
 } from "./reconApi";
+
+/** A person as returned by the people phase (people.json `people[]`). */
+export interface ReconPerson {
+  name: string;
+  role?: string | null;
+  company?: string;
+  company_number?: string;
+  appointed?: string | null;
+  email?: string | null;
+  email_verified?: boolean;
+  linkedin_url?: string | null;
+  apollo_title?: string | null;
+  sources?: string[];
+}
 
 export type ReconMode = "idle" | "running";
 export type ReconStepStatus = "pending" | "running" | "ok" | "skipped" | "error";
@@ -72,8 +88,16 @@ export function useReconPipeline() {
   const [mode, setMode] = useState<ReconMode>("idle");
   const [phases, setPhases] = useState<ReconPhaseState[]>([]);
   const [target, setTarget] = useState<ReconTarget | null>(null);
+  // Slug of the building whose 3D model was actually built (set only once the
+  // schematic ingest succeeds). The 3D view loads this exact building rather
+  // than falling back to the most-recently-ingested one.
+  const [ingestedSlug, setIngestedSlug] = useState<string | null>(null);
   const [complete, setComplete] = useState(false);
   const [elapsed, setElapsed] = useState(0);
+  // Real scraped payloads from the people / OSINT phases — fed to the post-recon
+  // workspace so it shows actual findings, not seeded mock intel.
+  const [people, setPeople] = useState<ReconPerson[]>([]);
+  const [osint, setOsint] = useState<ScanResult | null>(null);
 
   const abort = useRef<AbortController | null>(null);
   const tick = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -91,8 +115,11 @@ export function useReconPipeline() {
     setMode("idle");
     setPhases([]);
     setTarget(null);
+    setIngestedSlug(null);
     setComplete(false);
     setElapsed(0);
+    setPeople([]);
+    setOsint(null);
   }, [stopClock]);
 
   const start = useCallback(
@@ -107,7 +134,10 @@ export function useReconPipeline() {
       const present = new Set(defs.map((d) => d.key));
 
       setTarget(t);
+      setIngestedSlug(null);
       setComplete(false);
+      setPeople([]);
+      setOsint(null);
       setMode("running");
       setPhases(
         defs.map((d) => ({
@@ -169,18 +199,38 @@ export function useReconPipeline() {
           const dis = await runPipelinePhase(slug, "discover", {
             signal,
             onTick: (j: JobStatus) => {
+              // Keep step 0 "running" and surface the agent's live phase note (which
+              // portal/FOI source it's working through) so the UI shows it's still
+              // scanning rather than sitting idle until the very end.
+              if (j.note) setPhase("schematic", "running", String(j.note));
               if (((j.docs_found as number) ?? 0) > 0) setStep("schematic", 0, "ok");
             },
           });
           if (dis.status === "failed") return degrade("schematic", new Error(dis.error || ""), 1);
           const docs = (dis.docs_found as number) ?? 0;
-          setStep("schematic", 0, "ok");
-          setStep("schematic", 1, docs > 0 ? "ok" : "skipped");
+          const recordsFound = Boolean(dis.records_found);
+          const ref = (dis.records as { application_ref?: string } | null)?.application_ref;
           if (docs === 0) {
-            setStep("schematic", 2, "skipped");
-            setStep("schematic", 3, "skipped");
-            return setPhase("schematic", "skipped", "no blueprints found");
+            if (recordsFound) {
+              // Portal search located the planning records (ref / DAS / GA refs) but no
+              // PDF was directly downloadable. That's a real result — show it as done, not
+              // n/a. Only the ingest/3D steps (which need actual PDFs) stay n/a.
+              setStep("schematic", 0, "ok"); // searched portals · FOI
+              setStep("schematic", 1, "ok"); // located the records
+              setStep("schematic", 2, "skipped");
+              setStep("schematic", 3, "skipped");
+              return setPhase(
+                "schematic",
+                "done",
+                ref ? `records found · ${ref}` : "records found",
+              );
+            }
+            // Nothing at all — genuine n/a.
+            setStepsFrom("schematic", 0, "skipped");
+            return setPhase("schematic", "skipped", "no records found");
           }
+          setStep("schematic", 0, "ok");
+          setStep("schematic", 1, "ok");
           setStep("schematic", 2, "running");
           const ing = await runPipelinePhase(slug, "ingest", {
             signal,
@@ -195,6 +245,8 @@ export function useReconPipeline() {
           }
           setStep("schematic", 2, "ok");
           setStep("schematic", 3, "ok");
+          // 3D model built from the ingested planning docs — point the viewer at it.
+          setIngestedSlug(slug);
           setPhase("schematic", "done");
         } catch (e) {
           degrade("schematic", e);
@@ -225,31 +277,39 @@ export function useReconPipeline() {
             return setPhase("people", "error", "enrich failed");
           }
           setStep("people", 2, "ok", undefined);
-          setPhase("people", "done", `${(ppl.people_count as number) ?? 0} people`);
+          const roster = (ppl.people as ReconPerson[] | undefined) ?? [];
+          setPeople(roster);
+          setPhase("people", "done", `${(ppl.people_count as number) ?? roster.length} people`);
         } catch (e) {
           degrade("people", e);
         }
       };
 
-      // ── C: OSINT (VPN-gated synchronous scan) ───────────────────────────────
+      // ── C: OSINT (synchronous scan — runs regardless of VPN state) ──────────
+      // No company URL on a map-selected building, so fall back to a query (name +
+      // address) the backend resolves to a website via the Maps API. A 422 (nothing
+      // resolvable / no org ranges) degrades to a soft "n/a", not an error.
       const runOsint = async () => {
-        if (!t.url) {
+        const query = [t.name, t.address].filter(Boolean).join(", ");
+        if (!t.url && !query) {
           setStepsFrom("osint", 0, "skipped");
-          return setPhase("osint", "skipped", "no company URL");
+          return setPhase("osint", "skipped", "no target");
         }
         try {
-          const health = await scanHealth().catch(() => null);
-          if (!health?.vpn_up) {
-            setStepsFrom("osint", 0, "skipped");
-            return setPhase("osint", "skipped", "VPN down");
-          }
+          // VPN gate removed — run the scan regardless of VPN state.
           setStepsFrom("osint", 0, "running");
-          const res = await runScan(t.url);
+          const res = await runScan(t.url ? { url: t.url } : { query });
+          setOsint(res);
           // One synchronous call returns everything; light each category step.
           setStep("osint", 0, "ok");
           setStep("osint", 1, "ok");
           setStep("osint", 2, "ok");
-          setPhase("osint", "done", `${res.devices.length} devices`);
+          const domain = res.resolved_domain;
+          setPhase(
+            "osint",
+            "done",
+            domain ? `${res.devices.length} devices · ${domain}` : `${res.devices.length} devices`,
+          );
         } catch (e) {
           degrade("osint", e);
         }
@@ -320,7 +380,7 @@ export function useReconPipeline() {
 
   useEffect(() => () => abort.current?.abort(), []);
 
-  return { mode, phases, target, complete, elapsed, start, reset };
+  return { mode, phases, target, slug: ingestedSlug, complete, elapsed, people, osint, start, reset };
 }
 
 export type Recon = ReturnType<typeof useReconPipeline>;

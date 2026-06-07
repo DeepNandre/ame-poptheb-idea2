@@ -1,0 +1,183 @@
+{
+  "building_id": "20-fenchurch-street-walkie-talkie",
+  "resolved_domain": "20fenchurchstreet.co.uk",
+  "resolved_from": null,
+  "domain": "20fenchurchstreet.co.uk",
+  "org": "Divya Quamara",
+  "cidrs": [
+    "51.140.0.0/16"
+  ],
+  "devices": [
+    {
+      "category": "remote_access",
+      "ip": "51.140.0.240",
+      "port": 3389,
+      "product": "Remote Desktop Protocol",
+      "version": "",
+      "url": "51.140.0.240:3389",
+      "shodan": "https://www.shodan.io/host/51.140.0.240"
+    },
+    {
+      "category": "remote_access",
+      "ip": "51.140.137.168",
+      "port": 3389,
+      "product": "Remote Desktop Protocol",
+      "version": "",
+      "url": "51.140.137.168:3389",
+      "shodan": "https://www.shodan.io/host/51.140.137.168"
+    },
+    {
+      "category": "remote_access",
+      "ip": "51.140.32.100",
+      "port": 3389,
+      "product": "Remote Desktop Protocol",
+      "version": "",
+      "url": "51.140.32.100:3389",
+      "shodan": "https://www.shodan.io/host/51.140.32.100"
+    },
+    {
+      "category": "remote_access",
+      "ip": "51.140.79.76",
+      "port": 3389,
+      "product": "Remote Desktop Protocol",
+      "version": "",
+      "url": "51.140.79.76:3389",
+      "shodan": "https://www.shodan.io/host/51.140.79.76"
+    },
+    {
+      "category": "remote_access",
+      "ip": "51.140.28.172",
+      "port": 3389,
+      "product": "Remote Desktop Protocol",
+      "version": "",
+      "url": "51.140.28.172:3389",
+      "shodan": "https://www.shodan.io/host/51.140.28.172"
+    },
+    {
+      "category": "remote_access",
+      "ip": "51.140.163.52",
+      "port": 3389,
+      "product": "Remote Desktop Protocol",
+      "version": "",
+      "url": "51.140.163.52:3389",
+      "shodan": "https://www.shodan.io/host/51.140.163.52"
+    },
+    {
+      "category": "remote_access",
+      "ip": "51.140.44.169",
+      "port": 3389,
+      "product": "Remote Desktop Protocol",
+      "version": "",
+      "url": "51.140.44.169:3389",
+      "shodan": "https://www.shodan.io/host/51.140.44.169"
+    },
+    {
+      "category": "remote_access",
+      "ip": "51.140.206.107",
+      "port": 3389,
+      "product": "Remote Desktop Protocol",
+      "version": "",
+      "url": "51.140.206.107:3389",
+      "shodan": "https://www.shodan.io/host/51.140.206.107"
+    },
+    {
+      "category": "remote_access",
+      "ip": "51.140.241.174",
+      "port": 3389,
+      "product": "Remote Desktop Protocol",
+      "version": "",
+      "url": "51.140.241.174:3389",
+      "shodan": "https://www.shodan.io/host/51.140.241.174"
+    },
+    {
+      "category": "remote_access",
+      "ip": "51.140.86.255",
+      "port": 3389,
+      "product": "Remote Desktop Protocol",
+      "version": "",
+      "url": "51.140.86.255:3389",
+      "shodan": "https://www.shodan.io/host/51.140.86.255"
+    },
+    {
+      "category": "remote_access",
+      "ip": "51.140.50.90",
+      "port": 3389,
+      "product": "Remote Desktop Protocol",
+      "version": "",
+      "url": "51.140.50.90:3389",
+      "shodan": "https://www.shodan.io/host/51.140.50.90"
+    },
+    {
+      "category": "remote_access",
+      "ip": "51.140.117.167",
+      "port": 3389,
+      "product": "Remote Desktop Protocol",
+      "version": "",
+      "url": "51.140.117.167:3389",
+      "shodan": "https://www.shodan.io/host/51.140.117.167"
+    },
+    {
+      "category": "remote_access",
+      "ip": "51.140.95.62",
+      "port": 3389,
+      "product": "Remote Desktop Protocol",
+      "version": "",
+      "url": "51.140.95.62:3389",
+      "shodan": "https://www.shodan.io/host/51.140.95.62"
+    },
+    {
+      "category": "remote_access",
+      "ip": "51.140.221.20",
+      "port": 3389,
+      "product": "Remote Desktop Protocol",
+      "version": "",
+      "url": "51.140.221.20:3389",
+      "shodan": "https://www.shodan.io/host/51.140.221.20"
+    },
+    {
+      "category": "remote_access",
+      "ip": "51.140.246.217",
+      "port": 3389,
+      "product": "Remote Desktop Protocol",
+      "version": "",
+      "url": "51.140.246.217:3389",
+      "shodan": "https://www.shodan.io/host/51.140.246.217"
+    },
+    {
+      "category": "remote_access",
+      "ip": "51.140.9.76",
+      "port": 3389,
+      "product": "Remote Desktop Protocol",
+      "version": "",
+      "url": "51.140.9.76:3389",
+      "shodan": "https://www.shodan.io/host/51.140.9.76"
+    },
+    {
+      "category": "remote_access",
+      "ip": "51.140.227.111",
+      "port": 3389,
+      "product": "Remote Desktop Protocol",
+      "version": "",
+      "url": "51.140.227.111:3389",
+      "shodan": "https://www.shodan.io/host/51.140.227.111"
+    },
+    {
+      "category": "camera",
+      "ip": "51.140.216.222",
+      "port": 554,
+      "product": "",
+      "version": "",
+      "url": "rtsp://51.140.216.222:554",
+      "shodan": "https://www.shodan.io/host/51.140.216.222"
+    },
+    {
+      "category": "building_service",
+      "ip": "51.140.216.222",
+      "port": 502,
+      "product": "",
+      "version": "",
+      "url": "51.140.216.222:502",
+      "shodan": "https://www.shodan.io/host/51.140.216.222"
+    }
+  ]
+}

@@ -17,11 +17,13 @@ import {
 import { cn } from "@/lib/utils";
 import {
   answerReconQuestion,
-  osintFor,
-  rosterFor,
+  osintFromScan,
+  peopleFromRecon,
   type OsintFinding,
   type Person,
 } from "./reconWorkspaceData";
+import type { ReconPerson } from "./useReconPipeline";
+import type { ScanResult } from "./reconApi";
 
 type Tab = "chat" | "people" | "osint";
 
@@ -34,22 +36,33 @@ interface ChatMsg {
  * Left-docked workspace that opens once the recon pipeline completes. Three
  * panes — a ChatGPT-style assistant that answers questions about the building,
  * a People roster with per-person enrichment, and an OSINT findings list — plus
- * a 3D View button that hands off to the schematic viewer. Everything is driven
- * frontend-side from seeded mock intel (reconWorkspaceData), matching the
- * simulated pipeline.
+ * a 3D View button that hands off to the schematic viewer.
+ *
+ * Prefers the ACTUAL scraped intel from the recon pipeline (Companies House +
+ * Apollo people, VPN-scanner OSINT). Falls back to seeded mock intel only for a
+ * section the pipeline returned nothing for (skipped phase / no data), so the
+ * panel is never empty during a demo.
  */
 export function ReconWorkspace({
   building,
+  realPeople,
+  realOsint,
   onOpen3D,
   onClose,
 }: {
   building: string;
+  realPeople?: ReconPerson[];
+  realOsint?: ScanResult | null;
   onOpen3D: () => void;
   onClose: () => void;
 }) {
   const [tab, setTab] = useState<Tab>("chat");
-  const people = useMemo(() => rosterFor(building), [building]);
-  const osint = useMemo(() => osintFor(building), [building]);
+  const people = useMemo(
+    () => (realPeople && realPeople.length ? peopleFromRecon(realPeople) : []),
+    [realPeople],
+  );
+  const osint = useMemo(() => (realOsint ? osintFromScan(realOsint) : []), [realOsint]);
+  const domain = realOsint?.resolved_domain || undefined;
 
   return (
     <div className="glass flex max-h-full min-h-0 w-[min(26rem,calc(100vw-2rem))] flex-col rounded-2xl text-white animate-fade-in">
@@ -91,7 +104,7 @@ export function ReconWorkspace({
 
       {/* body */}
       <div className="scroll-quiet min-h-0 flex-1 overflow-y-auto">
-        {tab === "chat" && <ChatPane building={building} people={people} />}
+        {tab === "chat" && <ChatPane building={building} people={people} domain={domain} />}
         {tab === "people" && <PeoplePane people={people} />}
         {tab === "osint" && <OsintPane findings={osint} />}
       </div>
@@ -133,7 +146,7 @@ function TabButton({
 
 // ---- Chat ------------------------------------------------------------------
 
-function ChatPane({ building, people }: { building: string; people: Person[] }) {
+function ChatPane({ building, people, domain }: { building: string; people: Person[]; domain?: string }) {
   const [msgs, setMsgs] = useState<ChatMsg[]>([
     {
       role: "assistant",
@@ -158,7 +171,7 @@ function ChatPane({ building, people }: { building: string; people: Person[] }) 
     setInput("");
     setThinking(true);
     timer.current = setTimeout(() => {
-      setMsgs((m) => [...m, { role: "assistant", text: answerReconQuestion(building, q, people) }]);
+      setMsgs((m) => [...m, { role: "assistant", text: answerReconQuestion(building, q, people, domain) }]);
       setThinking(false);
     }, 650 + Math.random() * 500);
   };
@@ -265,6 +278,15 @@ function PeoplePane({ people }: { people: Person[] }) {
 
   useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
 
+  if (people.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center gap-2 px-6 py-12 text-center">
+        <Users className="size-6 text-white/25" />
+        <div className="text-[12px] text-white/40">No people found for this building.</div>
+      </div>
+    );
+  }
+
   const q = query.trim().toLowerCase();
   const shown = q
     ? people.filter((p) => `${p.name} ${p.role} ${p.dept}`.toLowerCase().includes(q))
@@ -311,16 +333,43 @@ function PeoplePane({ people }: { people: Person[] }) {
 
               {isEnriched ? (
                 <div className="mt-2 grid gap-1 border-t border-white/[0.06] pt-2 text-[11px] text-white/65">
-                  <a href={`mailto:${p.email}`} className="flex items-center gap-1.5 hover:text-cyan-200">
-                    <Mail className="size-3 text-white/40" /> {p.email}
-                  </a>
-                  <span className="flex items-center gap-1.5">
-                    <Phone className="size-3 text-white/40" /> {p.phone}
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <MapPin className="size-3 text-white/40" /> {p.location} · {p.tenure} tenure
-                  </span>
-                  <span className="truncate text-white/45">{p.linkedin}</span>
+                  {p.email ? (
+                    <a href={`mailto:${p.email}`} className="flex items-center gap-1.5 hover:text-cyan-200">
+                      <Mail className="size-3 text-white/40" /> {p.email}
+                      {p.emailVerified && <span className="text-[9px] text-emerald-300">✓ verified</span>}
+                    </a>
+                  ) : (
+                    <span className="flex items-center gap-1.5 text-white/35">
+                      <Mail className="size-3 text-white/40" /> no email found
+                    </span>
+                  )}
+                  {p.phone && (
+                    <span className="flex items-center gap-1.5">
+                      <Phone className="size-3 text-white/40" /> {p.phone}
+                    </span>
+                  )}
+                  {(p.location || p.tenure) && (
+                    <span className="flex items-center gap-1.5">
+                      <MapPin className="size-3 text-white/40" />
+                      {[p.location, p.tenure && `${p.tenure} tenure`].filter(Boolean).join(" · ")}
+                    </span>
+                  )}
+                  {p.company && (
+                    <span className="flex items-center gap-1.5 text-white/55">
+                      <Boxes className="size-3 text-white/40" /> {p.company}
+                      {p.appointed && <span className="text-white/35">· appt. {p.appointed}</span>}
+                    </span>
+                  )}
+                  {p.linkedin && (
+                    <a
+                      href={`https://${p.linkedin}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="truncate text-white/45 hover:text-cyan-200"
+                    >
+                      {p.linkedin}
+                    </a>
+                  )}
                 </div>
               ) : (
                 <button
@@ -357,6 +406,14 @@ const TAG_STYLE: Record<OsintFinding["tag"], string> = {
 };
 
 function OsintPane({ findings }: { findings: OsintFinding[] }) {
+  if (findings.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center gap-2 px-6 py-12 text-center">
+        <Cctv className="size-6 text-white/25" />
+        <div className="text-[12px] text-white/40">No OSINT available for this building.</div>
+      </div>
+    );
+  }
   return (
     <div className="space-y-1.5 p-3">
       {findings.map((f, i) => (

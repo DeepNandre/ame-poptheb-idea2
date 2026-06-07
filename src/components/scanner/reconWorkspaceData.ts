@@ -11,18 +11,91 @@ export interface Person {
   role: string;
   dept: string;
   seniority: "exec" | "senior" | "staff" | "contractor";
-  // Revealed by "Enrich" — withheld until then so the action feels real.
-  email: string;
-  phone: string;
-  linkedin: string;
-  location: string;
-  tenure: string;
+  // Revealed by "Enrich" — withheld until then so the action feels real. Real
+  // scraped people only carry some of these (Companies House + Apollo); the
+  // mock seed fills all. Optional fields are simply hidden when absent.
+  email?: string;
+  phone?: string;
+  linkedin?: string;
+  location?: string;
+  tenure?: string;
+  /** Real-data extras (Companies House officer record). */
+  company?: string;
+  appointed?: string;
+  emailVerified?: boolean;
+  real?: boolean;
 }
 
 export interface OsintFinding {
   label: string;
   value: string;
   tag: "domain" | "service" | "access" | "social" | "device";
+}
+
+// ---- real-data adapters (Companies House + Apollo people, VPN scanner OSINT) -
+// The post-recon workspace prefers ACTUAL scraped intel from the pipeline; the
+// seeded mock below is only a fallback for phases that returned nothing.
+
+import type { ReconPerson } from "./useReconPipeline";
+import type { ScanResult } from "./reconApi";
+
+function seniorityFromRole(role: string | null | undefined): Person["seniority"] {
+  const r = (role || "").toLowerCase();
+  if (/chief|ceo|cfo|coo|cto|founder|president|owner|director|partner/.test(r)) return "exec";
+  if (/head|lead|manager|principal|senior|vp|vice/.test(r)) return "senior";
+  if (/contract|consultant|temporary|interim/.test(r)) return "contractor";
+  return "staff";
+}
+
+/** Map the people-phase output (people.json) into the workspace's Person shape. */
+export function peopleFromRecon(real: ReconPerson[]): Person[] {
+  return real.map((p, i) => {
+    const role = p.apollo_title || p.role || "Officer";
+    return {
+      id: `r${i}`,
+      name: p.name,
+      role,
+      dept: p.company || "—",
+      seniority: seniorityFromRole(role),
+      email: p.email || undefined,
+      linkedin: p.linkedin_url ? p.linkedin_url.replace(/^https?:\/\//, "") : undefined,
+      company: p.company,
+      appointed: p.appointed || undefined,
+      emailVerified: p.email_verified,
+      real: true,
+    };
+  });
+}
+
+const SCAN_TAG: Record<string, OsintFinding["tag"]> = {
+  camera: "device",
+  access_control: "access",
+  building_service: "device",
+  remote_access: "service",
+};
+
+function humanizeCategory(c: string): string {
+  return c.replace(/_/g, " ").replace(/\b\w/g, (m) => m.toUpperCase());
+}
+
+/** Map the OSINT scan result (api.py /scan) into workspace OsintFinding rows. */
+export function osintFromScan(res: ScanResult): OsintFinding[] {
+  const out: OsintFinding[] = [];
+  if (res.resolved_domain) {
+    out.push({ label: "Resolved domain", value: res.resolved_domain, tag: "domain" });
+  }
+  if (res.org) out.push({ label: "Organization", value: res.org, tag: "domain" });
+  for (const cidr of res.cidrs ?? []) {
+    out.push({ label: "Network range", value: cidr, tag: "service" });
+  }
+  for (const d of res.devices ?? []) {
+    out.push({
+      label: humanizeCategory(d.category),
+      value: d.url || `${d.ip}:${d.port}`,
+      tag: SCAN_TAG[d.category] ?? "device",
+    });
+  }
+  return out;
 }
 
 // ---- seeded PRNG (mulberry32) — stable list from a string seed -------------
@@ -149,12 +222,17 @@ export function osintFor(building: string): OsintFinding[] {
 
 // Keyword-routed responder. No LLM — just plausible, building-specific answers
 // composed from the same seeded intel the other tabs show.
-export function answerReconQuestion(building: string, question: string, people: Person[]): string {
+export function answerReconQuestion(
+  building: string,
+  question: string,
+  people: Person[],
+  realDomain?: string,
+): string {
   const q = question.toLowerCase();
   const exec = people.find((p) => p.seniority === "exec");
   const security = people.find((p) => p.dept === "Security");
   const facilities = people.find((p) => p.role.includes("Facilities"));
-  const domain = domainFor(building);
+  const domain = realDomain || domainFor(building);
 
   if (/entrance|door|access|badge|lobby|reception|enter|get in/.test(q)) {
     return `${building} uses badge-controlled entry at the main lobby (HID-class readers), with a staffed reception desk and a visitor sign-in kiosk. The schematic phase mapped a primary entrance, a service/loading entrance at the rear, and a fire-escape core. ${facilities ? `${facilities.name} (${facilities.role}) owns physical access here.` : ""} Tailgating risk is highest at shift-change and around the loading bay.`;

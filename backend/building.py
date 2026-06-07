@@ -69,7 +69,26 @@ POSTCODES_IO = "https://api.postcodes.io/postcodes"
 CH_ADVANCED = "https://api.company-information.service.gov.uk/advanced-search/companies"
 CH_SEARCH = "https://api.company-information.service.gov.uk/search/companies"
 CH_OFFICERS = "https://api.company-information.service.gov.uk/company/{number}/officers"
+CH_PSC = (
+    "https://api.company-information.service.gov.uk/company/{number}"
+    "/persons-with-significant-control"
+)
 FHRS_API = "https://api.ratings.food.gov.uk/Establishments"
+
+# Leading street numbers spelled out — tall developments brand the street as a word
+# ("120 One Blackfriars Road") as often as a digit, so we match both forms.
+NUM_WORDS = {
+    "1": "one",
+    "2": "two",
+    "3": "three",
+    "4": "four",
+    "5": "five",
+    "6": "six",
+    "7": "seven",
+    "8": "eight",
+    "9": "nine",
+    "10": "ten",
+}
 
 CH_PAGE = 100  # advanced-search max page size
 CH_MAX = 500  # safety cap on total companies pulled per search
@@ -170,15 +189,34 @@ def geocode_postcode(client: httpx.Client, postcode: str) -> dict | None:
         return None
 
 
-def companies_at(client: httpx.Client, key: str, postcode: str) -> list[dict]:
-    """Every company whose registered office is at the postcode, via advanced-search.
-    Paginates on start_index until the hit count is exhausted or CH_MAX is reached."""
+def _company_record(c: dict) -> dict:
+    a = c.get("registered_office_address") or {}
+    return {
+        "number": c.get("company_number"),
+        "name": c.get("company_name"),
+        "status": c.get("company_status"),
+        "type": c.get("company_type"),
+        "incorporated": c.get("date_of_creation"),
+        "sic": c.get("sic_codes") or [],
+        "address": _addr_line(c),
+        "postcode": (a.get("postal_code") or "").upper().strip() or None,
+        "care_of": _care_of(c),
+    }
+
+
+def companies_at(client: httpx.Client, key: str, location: str) -> list[dict]:
+    """Companies whose registered office matches `location` via advanced-search.
+    Paginates on start_index until the hit count is exhausted or CH_MAX is reached.
+
+    NB: Companies House `location` matching is fuzzy/token-based — a postcode query can
+    return a neighbouring postcode and a street query returns the street in every city.
+    Callers needing building precision must post-filter (see `companies_in_building`)."""
     out: list[dict] = []
     start = 0
     while len(out) < CH_MAX:
         r = client.get(
             CH_ADVANCED,
-            params={"location": postcode, "size": CH_PAGE, "start_index": start},
+            params={"location": location, "size": CH_PAGE, "start_index": start},
             auth=(key, ""),
             timeout=30,
         )
@@ -187,23 +225,72 @@ def companies_at(client: httpx.Client, key: str, postcode: str) -> list[dict]:
         items = body.get("items") or []
         if not items:
             break
-        for c in items:
-            out.append(
-                {
-                    "number": c.get("company_number"),
-                    "name": c.get("company_name"),
-                    "status": c.get("company_status"),
-                    "type": c.get("company_type"),
-                    "incorporated": c.get("date_of_creation"),
-                    "sic": c.get("sic_codes") or [],
-                    "address": _addr_line(c),
-                    "care_of": _care_of(c),
-                }
-            )
+        out.extend(_company_record(c) for c in items)
         start += CH_PAGE
         if start >= (body.get("hits") or 0):
             break
     return out[:CH_MAX]
+
+
+def _building_tokens(query: str) -> list[str]:
+    """Address-match tokens for the building, derived from its street line — used to filter
+    the fuzzy street-level CH search down to *this* building. e.g.
+    '1 Blackfriars Road, Southwark, London, SE1 9GJ' -> ['1 blackfriars road',
+    'one blackfriars']. Returns [] if the line has no leading house number."""
+    head = re.sub(r"\s+", " ", (query or "").split(",")[0].strip().lower())
+    m = re.match(r"(\d+)\s+(.+)", head)
+    if not m:
+        return []
+    num, street = m.group(1), m.group(2).strip()
+    tokens = [f"{num} {street}"]
+    word = NUM_WORDS.get(num)
+    if word and street:
+        tokens.append(f"{word} {street.split()[0]}")  # 'one blackfriars'
+    return tokens
+
+
+def _matches_building(address: str, tokens: list[str]) -> bool:
+    """Word-boundary match of any building token against an address — so '1 Blackfriars
+    Road' matches 'Apartment 253 1 Blackfriars Road' but not '21 Blackfriars Road'."""
+    a = re.sub(r"\s+", " ", (address or "").lower())
+    return any(re.search(rf"\b{re.escape(t)}\b", a) for t in tokens)
+
+
+def companies_in_building(
+    client: httpx.Client, key: str, postcode: str, query: str
+) -> list[dict]:
+    """Every company registered in the building — not just at the exact postcode.
+
+    A tall building spans several flat-level postcodes (One Blackfriars is SE1 9GD / 9GJ /
+    9GQ …), and CH advanced-search keys on one `location` token, so the exact-postcode query
+    misses most tenants. We also query by the street line ('1 Blackfriars Road') and union
+    the two. Because CH's location match is fuzzy (it returns other streets and cities), the
+    street hits are filtered to this building by address tokens; exact-postcode hits are
+    always kept. Deduped by company number."""
+    by_number: dict[str, dict] = {}
+    exact_pcs: set[str] = {postcode.upper()}
+    for c in companies_at(client, key, postcode):
+        by_number[c["number"]] = c
+        if c.get("postcode"):
+            exact_pcs.add(c["postcode"])
+
+    # The same street name + house number exists in other cities (Glasgow also has a
+    # '1 Blackfriars Road'), so a street hit only counts if it's in the building's postcode
+    # district (outward code, e.g. 'SE1') as well as matching the address tokens.
+    outward = postcode.split()[0].upper()
+    street = re.sub(r"\s+", " ", (query or "").split(",")[0].strip())
+    tokens = _building_tokens(query)
+    if street and tokens:
+        for c in companies_at(client, key, street):
+            if c["number"] in by_number:
+                continue
+            pc = (c.get("postcode") or "").upper()
+            same_district = pc.split(" ")[0] == outward
+            if pc in exact_pcs or (
+                same_district and _matches_building(c.get("address", ""), tokens)
+            ):
+                by_number[c["number"]] = c
+    return list(by_number.values())
 
 
 def _officer_name(raw: str) -> str:
@@ -221,13 +308,15 @@ def _officer_name(raw: str) -> str:
 def officers_at(
     client: httpx.Client, key: str, number: str, current_only: bool = True
 ) -> list[dict]:
-    """Current directors/officers of a company, by company number. These are real named
-    humans legally tied to the company — the roster for a building's micro-tenants, which
-    Apollo doesn't index but Companies House does."""
+    """Directors/officers of a company, by company number. These are real named humans
+    legally tied to the company — the roster for a building's micro-tenants, which Apollo
+    doesn't index but Companies House does. With `current_only=False` resigned officers are
+    included too (each carries its `resigned` date), widening the roster to everyone who has
+    ever served."""
     try:
         r = client.get(
             CH_OFFICERS.format(number=number),
-            params={"items_per_page": 35},
+            params={"items_per_page": 50},
             auth=(key, ""),
             timeout=20,
         )
@@ -244,8 +333,41 @@ def officers_at(
                     "raw_name": raw,
                     "role": o.get("officer_role"),
                     "appointed": o.get("appointed_on"),
+                    "resigned": o.get("resigned_on"),
                     "occupation": o.get("occupation"),
                     "nationality": o.get("nationality"),
+                }
+            )
+        return out
+    except Exception:
+        return []
+
+
+def pscs_at(client: httpx.Client, key: str, number: str) -> list[dict]:
+    """Persons with significant control of a company — the beneficial owners behind it.
+    Individuals only (corporate/legal-entity PSCs are skipped — we want humans), active
+    only (ceased PSCs dropped). PSC names are already 'Forename Surname', no normalising."""
+    try:
+        r = client.get(
+            CH_PSC.format(number=number),
+            params={"items_per_page": 50},
+            auth=(key, ""),
+            timeout=20,
+        )
+        if r.status_code != 200:
+            return []
+        out = []
+        for p in r.json().get("items") or []:
+            if p.get("ceased_on"):
+                continue
+            if "individual" not in (p.get("kind") or ""):
+                continue
+            out.append(
+                {
+                    "name": (p.get("name") or "").strip(),
+                    "role": "person with significant control",
+                    "appointed": p.get("notified_on"),
+                    "natures_of_control": p.get("natures_of_control") or [],
                 }
             )
         return out
@@ -341,11 +463,11 @@ def search_building(
                 f"[geo] postcodes.io could not validate {postcode!r} — searching anyway"
             )
 
-        companies = companies_at(client, key, postcode)
+        companies = companies_in_building(client, key, postcode, query)
         if active_only:
             companies = [c for c in companies if c.get("status") == "active"]
 
-        print(f"[ch] {len(companies)} companies registered at {postcode}")
+        print(f"[ch] {len(companies)} companies registered in building ({postcode})")
         for c in companies:
             flag = " ★" if _is_manager_name(c.get("name", "")) else ""
             print(

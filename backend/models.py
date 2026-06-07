@@ -26,6 +26,7 @@ class PeopleRequest(BaseModel):
 
     max_companies: int = 25
     enrich: bool = True
+    max_reveal: int = 25  # per-company Apollo reveal cap (1 credit each)
 
 
 class EnrichRequest(BaseModel):

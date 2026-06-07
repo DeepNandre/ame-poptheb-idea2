@@ -1,0 +1,5412 @@
+{
+  "query": "20 Fenchurch Street, City of London, London, EC3M 3BY, United Kingdom",
+  "postcode": "EC3M 3BY",
+  "geo": {
+    "postcode": "EC3M 3BY",
+    "lat": 51.511398,
+    "lon": -0.083507,
+    "admin_district": "City of London",
+    "ward": "Bridge"
+  },
+  "companies": [
+    {
+      "number": "12187812",
+      "name": "GREENCOAT YORK ASSETS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-09-03",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "05817088",
+      "name": "COVESTOR LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2006-05-15",
+      "sic": [
+        "82990"
+      ],
+      "address": "Level 12 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "02938183",
+      "name": "KILN UNDERWRITING LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1994-06-13",
+      "sic": [
+        "65110",
+        "65120",
+        "65201",
+        "66220"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP023425",
+      "name": "SERAPHIM SPACE VENTURES II LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2023-11-14",
+      "sic": [],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "03372107",
+      "name": "CATHEDRAL CAPITAL HOLDINGS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1997-05-16",
+      "sic": [
+        "66220",
+        "66290"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "02433456",
+      "name": "SAI AUTOMOTIVE FRADLEY LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1989-10-17",
+      "sic": [
+        "29320"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12647642",
+      "name": "SHED5 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2020-06-05",
+      "sic": [
+        "68209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "11318235",
+      "name": "DEFEND ASSIST LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2018-04-19",
+      "sic": [
+        "70229"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "02350937",
+      "name": "ARLINGTON BUSINESS PARKS (READING) MANAGEMENT LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1989-02-22",
+      "sic": [
+        "68320"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "06638251",
+      "name": "GREENCOAT LONDON ARRAY LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2008-07-04",
+      "sic": [
+        "82990"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "OC362751",
+      "name": "KENNEDYS INTERNATIONAL HOLDINGS LLP",
+      "status": "active",
+      "type": "llp",
+      "incorporated": "2011-03-15",
+      "sic": [],
+      "address": "Kennedys, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12006625",
+      "name": "MINING EQUIPMENT SUPPLIES AFRICA (UK) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-05-20",
+      "sic": [
+        "46140",
+        "46610",
+        "46630"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "11874946",
+      "name": "RIVERSTONE CREDIT OPPORTUNITIES INCOME PLC",
+      "status": "active",
+      "type": "plc",
+      "incorporated": "2019-03-11",
+      "sic": [
+        "64301"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "07249776",
+      "name": "ALLIED WORLD MANAGING AGENCY LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2010-05-11",
+      "sic": [
+        "82990"
+      ],
+      "address": "19th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "05890611",
+      "name": "XPE GROUP PLC",
+      "status": "active",
+      "type": "plc",
+      "incorporated": "2006-07-28",
+      "sic": [
+        "70100"
+      ],
+      "address": "C/O Pradera Lateral Limited 5th Floor, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": "Pradera Lateral"
+    },
+    {
+      "number": "09498614",
+      "name": "QUALIBEST EASTCHEAP LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2015-03-19",
+      "sic": [
+        "41100"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "11347235",
+      "name": "PREMIER PLACE PROPCO LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2018-05-04",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "05503289",
+      "name": "XPE ELDON SQUARE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2005-07-08",
+      "sic": [
+        "68209"
+      ],
+      "address": "C/O Pradera Lateral Limited 5th Floor, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": "Pradera Lateral"
+    },
+    {
+      "number": "08579415",
+      "name": "LCM MARKETING SERVICES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2013-06-21",
+      "sic": [
+        "66220"
+      ],
+      "address": "Level 29 - 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13681084",
+      "name": "GLOBALDRIVE DEALER FLOORPLAN UK 2021 PLC",
+      "status": "active",
+      "type": "plc",
+      "incorporated": "2021-10-14",
+      "sic": [
+        "82990"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "04472195",
+      "name": "POTTERIES (NOMINEE NO.2) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2002-06-27",
+      "sic": [
+        "74990"
+      ],
+      "address": "C/O Pradera Lateral Limited 5th Floor, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": "Pradera Lateral"
+    },
+    {
+      "number": "09174611",
+      "name": "INTERACTIVE BROKERS (U.K.) NOMINEE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2014-08-13",
+      "sic": [
+        "66110"
+      ],
+      "address": "20 Fenchurch Street (Floor 12), London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "15832655",
+      "name": "NAVIGATOR AMMONIA TERMINAL INVEST LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2024-07-11",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "07244510",
+      "name": "20 FENCHURCH STREET NOMINEE NO. 2 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2010-05-05",
+      "sic": [
+        "82990"
+      ],
+      "address": "20 Fenchurch Street Level 23, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "07243935",
+      "name": "20 FENCHURCH STREET (GP) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2010-05-05",
+      "sic": [
+        "82990"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "06245947",
+      "name": "GCUBE UNDERWRITING LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2007-05-14",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "11722343",
+      "name": "GREENCOAT BUCKINGHAM ASSETS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2018-12-11",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "09713276",
+      "name": "SUZAKU AVIATION ONE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2015-07-31",
+      "sic": [
+        "77351"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street,, London,, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14483335",
+      "name": "BALDER DALSTON 1 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2022-11-14",
+      "sic": [
+        "68100"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "01945061",
+      "name": "RJ KILN & CO. (NO.2) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1985-09-05",
+      "sic": [
+        "65120",
+        "65202"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "02949032",
+      "name": "TOKIO MARINE KILN GROUP LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1994-07-11",
+      "sic": [
+        "70100"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12185477",
+      "name": "GREENCOAT GRI ASSETS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-09-02",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "02903287",
+      "name": "CHARTERED INSTITUTE FOR SECURITIES & INVESTMENT (SERVICES) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1994-03-01",
+      "sic": [
+        "85310",
+        "85320",
+        "85410",
+        "85590"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "07263791",
+      "name": "NAVIGATOR GAS INVEST LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2010-05-25",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12190752",
+      "name": "LOCHAILORT NEWBURY LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-09-05",
+      "sic": [
+        "41100"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "09849484",
+      "name": "CNA HARDY INTERNATIONAL SERVICES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2015-10-30",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13259509",
+      "name": "BROMPTON HOLDCO LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-03-11",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12786482",
+      "name": "OCORIAN HOLDINGS (UK) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2020-08-02",
+      "sic": [
+        "64205"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14997531",
+      "name": "GREENCOAT LONDON ARRAY HOLDCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-07-12",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10325992",
+      "name": "LEEDS CALVERT & DANIELS NOM2 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-08-11",
+      "sic": [
+        "74990"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10323411",
+      "name": "BIRMINGHAM ASTON PLACE AROSA LIVING GP LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-08-10",
+      "sic": [
+        "68209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10326004",
+      "name": "BIRMINGHAM ASTON PLACE NOM2 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-08-11",
+      "sic": [
+        "74990"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10326001",
+      "name": "BIRMINGHAM ASTON PLACE NOM1 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-08-11",
+      "sic": [
+        "74990"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "07448203",
+      "name": "CGI EUROFIN UK LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2010-11-23",
+      "sic": [
+        "74990"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "01631639",
+      "name": "LOGICA LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1982-04-27",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "05910198",
+      "name": "NGT SERVICES (UK) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2006-08-18",
+      "sic": [
+        "82990"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP008348",
+      "name": "THE POTTERIES SHOPPING CENTRE LIMITED PARTNERSHIP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2002-09-30",
+      "sic": [],
+      "address": "C/O Pradera Lateral Limited 5th Floor, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": "Pradera Lateral"
+    },
+    {
+      "number": "LP013933",
+      "name": "20 FENCHURCH STREET LIMITED PARTNERSHIP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2010-05-21",
+      "sic": [],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP017311",
+      "name": "MANCHESTER CHAPMAN AROSA LIVING LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2016-03-16",
+      "sic": [],
+      "address": "C/O Ocorian (Uk) Limited 5th Floor, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": "Ocorian"
+    },
+    {
+      "number": "LP017543",
+      "name": "LEEDS AARON & BURTON AROSA LIVING LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2016-08-17",
+      "sic": [],
+      "address": "C/O Ocorian (Uk) Limited Level 5, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": "Ocorian"
+    },
+    {
+      "number": "LP020743",
+      "name": "BLACKBROOK CAPITAL (EUROPE) LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2019-12-17",
+      "sic": [],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "OC449678",
+      "name": "GENERATION SPACE VENTURES II GP LLP",
+      "status": "active",
+      "type": "llp",
+      "incorporated": "2023-10-26",
+      "sic": [],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12487865",
+      "name": "KWASA WARWICK LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2020-02-27",
+      "sic": [
+        "68100"
+      ],
+      "address": "C/O Ocorian (Uk) Limited, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": "Ocorian"
+    },
+    {
+      "number": "10360031",
+      "name": "ASCOT UNDERWRITING GROUP LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-09-05",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12488225",
+      "name": "KWASA WARWICK OPCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2020-02-27",
+      "sic": [
+        "68100"
+      ],
+      "address": "C/O Ocorian (Uk) Limited, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": "Ocorian"
+    },
+    {
+      "number": "07473349",
+      "name": "OCORIAN ADMINISTRATION (UK) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2010-12-20",
+      "sic": [
+        "82990"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "06870207",
+      "name": "INTERNATIONAL GENERAL INSURANCE COMPANY (UK) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2009-04-05",
+      "sic": [
+        "65120",
+        "65202"
+      ],
+      "address": "Floor 15, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "07400002",
+      "name": "KILDRUMMY WIND FARM LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2010-10-07",
+      "sic": [
+        "35110"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13123733",
+      "name": "PREMIA SOLUTIONS WARRANTY LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-01-11",
+      "sic": [
+        "82990"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "02780389",
+      "name": "E & M MANUFACTURING LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1993-01-12",
+      "sic": [
+        "13200",
+        "13300",
+        "13990"
+      ],
+      "address": "C/O Kennedys Law Llp, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": "Kennedys Law Llp"
+    },
+    {
+      "number": "07464348",
+      "name": "EARL\u2019S HALL FARM WIND FARM LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2010-12-08",
+      "sic": [
+        "35110"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "07541609",
+      "name": "GREENCOAT WALNEY HOLDCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2011-02-24",
+      "sic": [
+        "35130"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "05310656",
+      "name": "NORTH RHINS WIND FARM LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2004-12-10",
+      "sic": [
+        "35110"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "07886325",
+      "name": "ANDERSHAW WIND POWER LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2011-12-19",
+      "sic": [
+        "35110"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "11914689",
+      "name": "GLEN KYLLACHY WIND FARM LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-03-29",
+      "sic": [
+        "43120"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "03860226",
+      "name": "LANGHOPE RIG WIND FARM LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1999-10-12",
+      "sic": [
+        "35110"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "15918110",
+      "name": "UCAM LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2024-08-27",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "07138859",
+      "name": "KENNEDYS MANAGEMENT SERVICES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2010-01-28",
+      "sic": [
+        "78300"
+      ],
+      "address": "Kennedys, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "OC352675",
+      "name": "KENNEDYS DUBAI LLP",
+      "status": "active",
+      "type": "llp",
+      "incorporated": "2010-03-01",
+      "sic": [],
+      "address": "Kennedys, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16232584",
+      "name": "EVFARMER CAPITAL LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-02-05",
+      "sic": [
+        "01500",
+        "64201",
+        "66300"
+      ],
+      "address": "20 Fenchurch St, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13175504",
+      "name": "BATTERSEA CHIMNEY LIFT LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-02-03",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14769794",
+      "name": "TROY UK FINANCE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-03-30",
+      "sic": [
+        "64999"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13586073",
+      "name": "VICTORY HILL FLEXIBLE POWER LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-08-25",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "11797832",
+      "name": "GREENCOAT DUNMAGLASS HOLDCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-01-30",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "08318092",
+      "name": "GREENCOAT UK WIND PLC",
+      "status": "active",
+      "type": "plc",
+      "incorporated": "2012-12-04",
+      "sic": [
+        "82990"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "01499718",
+      "name": "IMRGLOBAL LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1980-06-03",
+      "sic": [
+        "99999"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "15748160",
+      "name": "GREENCOAT KME HOLDCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2024-05-29",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16343810",
+      "name": "ZD SHOP LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-03-26",
+      "sic": [
+        "47910"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16372251",
+      "name": "SG PICCADILLY HOLDCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-04-08",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "04211094",
+      "name": "ASCOT UNDERWRITING HOLDINGS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2001-05-04",
+      "sic": [
+        "65202"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP020479",
+      "name": "GREENCOAT EMBANKMENT LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2019-08-29",
+      "sic": [],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP020973",
+      "name": "GREENCOAT WILTON LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2020-05-01",
+      "sic": [],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14814390",
+      "name": "CPP CARTER LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-04-19",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "02777575",
+      "name": "BJSS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1993-01-06",
+      "sic": [
+        "62012"
+      ],
+      "address": "20 Fenchurch Street 14th Floor, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16745532",
+      "name": "NAVIGATOR GALAXY LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-26",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16655257",
+      "name": "CARTER INVESTMENT TOPCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-08-18",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16742746",
+      "name": "NAVIGATOR ATLAS LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-25",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16745161",
+      "name": "NAVIGATOR NOVA LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-26",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16745966",
+      "name": "NAVIGATOR JORF LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-26",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16746331",
+      "name": "NAVIGATOR PROMINENCE LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-26",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16750049",
+      "name": "NAVIGATOR UMBRIO LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-29",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16743794",
+      "name": "NAVIGATOR ECLIPSE LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-25",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16754347",
+      "name": "NAVIGATOR LUGA LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-10-01",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16754515",
+      "name": "NAVIGATOR PEGASUS LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-10-01",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16745288",
+      "name": "NAVIGATOR OBERON LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-26",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16746209",
+      "name": "NAVIGATOR GUSTO LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-26",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16751058",
+      "name": "NAVIGATOR CERES LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-29",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16745589",
+      "name": "NAVIGATOR LIBRA LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-26",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16749784",
+      "name": "NAVIGATOR CENTAURI LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-29",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16727210",
+      "name": "NAVIGATOR GAS (UK) LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-18",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16806672",
+      "name": "FORTIUMFX LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-10-23",
+      "sic": [
+        "62090",
+        "64205",
+        "64303",
+        "64999"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16746485",
+      "name": "NAVIGATOR COPERNICO LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-26",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16808907",
+      "name": "ART MEDIA SOLUTIONS LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-10-24",
+      "sic": [
+        "62020",
+        "62090",
+        "73110"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16033042",
+      "name": "SG EMERALD HOLDCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2024-10-22",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP024190",
+      "name": "SCHRODERS GREENCOAT BEAUFORT LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2025-06-03",
+      "sic": [],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "09921228",
+      "name": "ANGEL GARDENS OPCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2015-12-17",
+      "sic": [
+        "68209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16838222",
+      "name": "PENMARKETING LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-11-06",
+      "sic": [
+        "70221"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13289144",
+      "name": "PETERSHILL PARTNERS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-03-24",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "07538114",
+      "name": "INGENASYS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2011-02-22",
+      "sic": [
+        "99999"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16415111",
+      "name": "ARKAS BIDCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-04-29",
+      "sic": [
+        "64209"
+      ],
+      "address": "Floor 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16708430",
+      "name": "ARKAS MIDCO 2 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-10",
+      "sic": [
+        "64209"
+      ],
+      "address": "Floor 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16325088",
+      "name": "ELEND48 UK LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-03-18",
+      "sic": [
+        "64929"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10764093",
+      "name": "ORBITAL COMMUNITIES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2017-05-10",
+      "sic": [
+        "68209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "09355828",
+      "name": "CRIMSON DORSET LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2014-12-15",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16725878",
+      "name": "NAVIGATOR GAS HOLDINGS LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-18",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "17025193",
+      "name": "NAVIGATOR HYPERION LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2026-02-10",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13098723",
+      "name": "SACKVILLE STREET OPCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2020-12-23",
+      "sic": [
+        "68209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "FC038409",
+      "name": "AG SCIENCE PARKS B.V.",
+      "status": "active",
+      "type": "oversea-company",
+      "incorporated": "2020-11-30",
+      "sic": [],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP021185",
+      "name": "HSRE TORSION JV LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2020-08-21",
+      "sic": [],
+      "address": "Floor 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP022505",
+      "name": "HSRE CAV JV 2 LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2022-03-29",
+      "sic": [],
+      "address": "Floor 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP022481",
+      "name": "HSRE TORSION JV II LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2022-03-16",
+      "sic": [],
+      "address": "Floor 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "17072396",
+      "name": "BALDER WELLS & MORE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2026-03-05",
+      "sic": [
+        "68100"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "17158549",
+      "name": "WESTBROOKE FML FINCO 1 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2026-04-15",
+      "sic": [
+        "64921"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14761814",
+      "name": "KOSHANCE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-03-27",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "FC038416",
+      "name": "AG TECHNOPOLE B.V.",
+      "status": "active",
+      "type": "oversea-company",
+      "incorporated": "2020-11-30",
+      "sic": [],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP017542",
+      "name": "LEEDS CALVERT & DANIELS ECE LIVING LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2016-08-17",
+      "sic": [],
+      "address": "C/O Ocorian (Uk) Limited Level 5, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": "Ocorian"
+    },
+    {
+      "number": "LP015638",
+      "name": "ROSSINGTON UNIT 1 LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2013-07-15",
+      "sic": [],
+      "address": "Level 5, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP017541",
+      "name": "MANCHESTER DOODSON AROSA LIVING LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2016-08-17",
+      "sic": [],
+      "address": "C/O Ocorian (Uk) Limited 5th Floor, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": "Ocorian"
+    },
+    {
+      "number": "05659931",
+      "name": "LS 20 FENCHURCH STREET LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2005-12-21",
+      "sic": [
+        "41100"
+      ],
+      "address": "20 Fenchurch Street Level 23, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12624172",
+      "name": "LUNA POOL AGENCY LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2020-05-27",
+      "sic": [
+        "52290"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "09214491",
+      "name": "CAHILL GORDON & REINDEL LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2014-09-11",
+      "sic": [
+        "69102"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "08795416",
+      "name": "NEWGATE COMPLIANCE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2013-11-28",
+      "sic": [
+        "82990"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "05448332",
+      "name": "CGI NORDIC INVESTMENTS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2005-05-10",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10857579",
+      "name": "FOXLAND 20FS (UK) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2017-07-10",
+      "sic": [
+        "82990"
+      ],
+      "address": "20 Fenchurch Street Level 23, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "03958476",
+      "name": "INTERACTIVE BROKERS (U.K.) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2000-03-28",
+      "sic": [
+        "66120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "07227195",
+      "name": "ALLIED WORLD CAPITAL (EUROPE) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2010-04-19",
+      "sic": [
+        "82990"
+      ],
+      "address": "19th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "05078141",
+      "name": "FENLAND WINDFARMS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2004-03-19",
+      "sic": [
+        "35110"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "03526047",
+      "name": "CNA EUROPE HOLDINGS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1998-03-06",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "08592378",
+      "name": "ROSSINGTON UNIT 1 GP LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2013-07-01",
+      "sic": [
+        "41100"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10325987",
+      "name": "LEEDS CALVERT & DANIELS NOM1 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-08-11",
+      "sic": [
+        "74990"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10325578",
+      "name": "MANCHESTER ALCOCK & BRADSHAW NOM2 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-08-11",
+      "sic": [
+        "74990"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "05121836",
+      "name": "TOKIO MARINE KILN INSURANCE SERVICES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2004-05-07",
+      "sic": [
+        "82990"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "05091865",
+      "name": "KILN PENSION GUARANTEE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2004-04-02",
+      "sic": [
+        "65300"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "05596194",
+      "name": "KILN UNDERWRITING (510) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2005-10-18",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "06734010",
+      "name": "TOKIO MARINE UNDERWRITING LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2008-10-27",
+      "sic": [
+        "65120",
+        "65202"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "09200213",
+      "name": "R J KILN & CO (NO.4) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2014-09-02",
+      "sic": [
+        "99999"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "08565121",
+      "name": "ETRAWLER UK LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2013-06-11",
+      "sic": [
+        "82990"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "04268348",
+      "name": "ASCOT CORPORATE NAME LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2001-08-10",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "15002413",
+      "name": "PANAMA INFRASTRUCTURE RECEIVABLE PURCHASER PLC",
+      "status": "active",
+      "type": "plc",
+      "incorporated": "2023-07-13",
+      "sic": [
+        "82990"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10325843",
+      "name": "LEEDS AARON & BURTON NOM1 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-08-11",
+      "sic": [
+        "74990"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10325767",
+      "name": "MANCHESTER CHAPMAN NOM1 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-08-11",
+      "sic": [
+        "74990"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10325720",
+      "name": "MANCHESTER CHAPMAN NOM2 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-08-11",
+      "sic": [
+        "74990"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10325735",
+      "name": "MANCHESTER DOODSON NOM1 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-08-11",
+      "sic": [
+        "74990"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "04690989",
+      "name": "XPE BRAEHEAD LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2003-03-07",
+      "sic": [
+        "41100"
+      ],
+      "address": "C/O Pradera Lateral Limited 5th Floor, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": "Pradera Lateral"
+    },
+    {
+      "number": "04424007",
+      "name": "XPE BRAEHEAD LEISURE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2002-04-24",
+      "sic": [
+        "64209"
+      ],
+      "address": "C/O Pradera Lateral Limited 5th Floor, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": "Pradera Lateral"
+    },
+    {
+      "number": "02218171",
+      "name": "XPE 2027 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1988-02-05",
+      "sic": [
+        "64209"
+      ],
+      "address": "C/O Pradera Lateral Limited 5th Floor, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": "Pradera Lateral"
+    },
+    {
+      "number": "03290026",
+      "name": "CGI GROUP HOLDINGS EUROPE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1996-12-10",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "15286917",
+      "name": "BELLERO MIDCO LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-11-15",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10774749",
+      "name": "KENNEDYS IQ LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2017-05-17",
+      "sic": [
+        "62020"
+      ],
+      "address": "Kennedys, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "00930965",
+      "name": "CMG LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1968-04-24",
+      "sic": [
+        "99999"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "08575830",
+      "name": "OCORIAN DEPOSITARY (UK) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2013-06-19",
+      "sic": [
+        "69201"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "07276984",
+      "name": "OCORIAN SERVICES (UK) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2010-06-08",
+      "sic": [
+        "74909"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "09875518",
+      "name": "NAVIGATOR GAS SHIPMANAGEMENT LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2015-11-17",
+      "sic": [
+        "82990"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14826986",
+      "name": "BLUESTREAK CO2 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-04-25",
+      "sic": [
+        "82990"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "11734582",
+      "name": "CI FCL FUNDING 2 HOLDING LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2018-12-19",
+      "sic": [
+        "64999"
+      ],
+      "address": "5th Floor 20, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "05586830",
+      "name": "LANCASHIRE INSURANCE MARKETING SERVICES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2005-10-07",
+      "sic": [
+        "66220"
+      ],
+      "address": "Level 29 - 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10350364",
+      "name": "ALDGATE ADVISORS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-08-30",
+      "sic": [
+        "82990"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "09318123",
+      "name": "ITC COMPLIANCE GRP LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2014-11-19",
+      "sic": [
+        "66190"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "08791006",
+      "name": "KYPE EXTENSION WIND FARM LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2013-11-26",
+      "sic": [
+        "35110"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "06367470",
+      "name": "YELVERTOFT WIND FARM LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2007-09-11",
+      "sic": [
+        "82990"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "04874285",
+      "name": "ITC COMPLIANCE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2003-08-21",
+      "sic": [
+        "66220"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "05105872",
+      "name": "SIXPENNY WOOD WINDFARM LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2004-04-19",
+      "sic": [
+        "35110"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "09986233",
+      "name": "GREENCOAT BURBO EXTENSION HOLDING (UK) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-02-03",
+      "sic": [
+        "82990"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "06690244",
+      "name": "MAERDY WINDFARM LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2008-09-05",
+      "sic": [
+        "35110"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12980043",
+      "name": "GREENCOAT HUMBER LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2020-10-28",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "02534139",
+      "name": "TOKIO MARINE ASSET MANAGEMENT (LONDON) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1990-08-24",
+      "sic": [
+        "66300"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "05593045",
+      "name": "OCORIAN CORPORATE SERVICES (UK) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2005-10-14",
+      "sic": [
+        "82110"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "05628358",
+      "name": "NANCLACH LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2005-11-18",
+      "sic": [
+        "42220"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12337679",
+      "name": "KWASA PREMIER PLACE BIDCO (UK) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-11-28",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10023297",
+      "name": "MANCHESTER CHAPMAN AROSA LIVING GP LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-02-24",
+      "sic": [
+        "68209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "OC333302",
+      "name": "BAKER BOTTS (UK) LLP",
+      "status": "active",
+      "type": "llp",
+      "incorporated": "2007-12-03",
+      "sic": [],
+      "address": "Level 30 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14570735",
+      "name": "ALTASIA LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-01-04",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14873940",
+      "name": "SG GREEN HYDROGEN BIDCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-05-16",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "08715620",
+      "name": "COMPLIANCE CONSULTING HOLDINGS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2013-10-02",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10073644",
+      "name": "OCORIAN TRUSTEE (UK) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-03-21",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13814645",
+      "name": "OCORIAN INVESTMENTS (UK) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-12-22",
+      "sic": [
+        "64205"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13126386",
+      "name": "GENESIS JVCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-01-11",
+      "sic": [
+        "68209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "15213143",
+      "name": "SCHRODERS GREENCOAT WOODMONT RENEWABLES ASSETS (EUR) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-10-16",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12884638",
+      "name": "WEERTS LOGISTIC PARK XI LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2020-09-16",
+      "sic": [
+        "68100"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13698389",
+      "name": "WEERTS LOGISTIC PARK XXI LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-10-22",
+      "sic": [
+        "68100"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "04098461",
+      "name": "ASCOT UNDERWRITING LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2000-10-30",
+      "sic": [
+        "65120",
+        "65202"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13019926",
+      "name": "RHODESIA POWER LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2020-11-15",
+      "sic": [
+        "35110"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10208262",
+      "name": "NIIF LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-06-01",
+      "sic": [
+        "64999"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "04575038",
+      "name": "NORTH STAR UNDERWRITING LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2002-10-28",
+      "sic": [
+        "65120"
+      ],
+      "address": "Floor 15, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "15238592",
+      "name": "SSV II GP LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-10-26",
+      "sic": [
+        "64303"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "OC305968",
+      "name": "KENNEDYS BRUSSELS LLP",
+      "status": "active",
+      "type": "llp",
+      "incorporated": "2003-11-05",
+      "sic": [],
+      "address": "Kennedys, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13358730",
+      "name": "MAHDEV HOLDINGS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-04-26",
+      "sic": [
+        "55100"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP020520",
+      "name": "GREENCOAT SEJONG LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2019-09-24",
+      "sic": [],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP023442",
+      "name": "SCHRODERS GREENCOAT GLASGOW TERRACE LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2023-11-22",
+      "sic": [],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP022498",
+      "name": "GREENCOAT TACHBROOK LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2022-03-23",
+      "sic": [],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP020519",
+      "name": "GREENCOAT VILLIERS LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2019-09-24",
+      "sic": [],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP019827",
+      "name": "GREENCOAT BUCKINGHAM LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2018-10-31",
+      "sic": [],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "15346300",
+      "name": "GPM RI COMMUNITY HOUSING TRUSTEE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-12-12",
+      "sic": [
+        "82990"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16137680",
+      "name": "BEST EVER EVER PRODUCTIONS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2024-12-16",
+      "sic": [
+        "18203"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "05113369",
+      "name": "ASCOT INSURANCE SERVICES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2004-04-27",
+      "sic": [
+        "65120",
+        "65202"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "OC353214",
+      "name": "KENNEDYS LAW LLP",
+      "status": "active",
+      "type": "llp",
+      "incorporated": "2010-03-15",
+      "sic": [],
+      "address": "Kennedys, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "09922296",
+      "name": "KENNEDYS GLOBAL EMPLOYMENT LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2015-12-18",
+      "sic": [
+        "82990"
+      ],
+      "address": "Kennedys, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16232300",
+      "name": "ABERDEEN FORBES PLACE AROSA LIVING LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-02-05",
+      "sic": [
+        "68209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP017576",
+      "name": "GREENCOAT SOLAR I LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2016-09-09",
+      "sic": [],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP017823",
+      "name": "GREENCOAT SOLAR II LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2017-01-24",
+      "sic": [],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16264820",
+      "name": "WISDOM THREE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-02-20",
+      "sic": [
+        "70221"
+      ],
+      "address": "13 Fenchurch St, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13429404",
+      "name": "BJSS ENVIRONMENTAL LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-05-31",
+      "sic": [
+        "01290"
+      ],
+      "address": "20 Fenchurch Street 14th Floor, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16361124",
+      "name": "SIMBOTI CAPITAL LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-04-02",
+      "sic": [
+        "64999"
+      ],
+      "address": "Floor 5, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16033413",
+      "name": "SG EMERALD TOPCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2024-10-22",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14523415",
+      "name": "GREAT CHARLES STREET OPCO (NOMINEE) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2022-12-05",
+      "sic": [
+        "68209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14503287",
+      "name": "GREAT CHARLES STREET OPCO (GENERAL PARTNER) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2022-11-24",
+      "sic": [
+        "68209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "11410901",
+      "name": "TOWER ONE OPCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2018-06-12",
+      "sic": [
+        "68209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14274396",
+      "name": "SPRINGSIDE OPCO (BLOCK E) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2022-08-03",
+      "sic": [
+        "68209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "11850864",
+      "name": "BROAD STREET OPCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-02-27",
+      "sic": [
+        "68209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16575144",
+      "name": "NAVIGATOR GAS INVEST II LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-07-10",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "01264271",
+      "name": "HARDY (UNDERWRITING AGENCIES) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1976-06-21",
+      "sic": [
+        "65120",
+        "65202"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "15182608",
+      "name": "FORTEGRA INSURANCE UK LTD.",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-10-03",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "17017892",
+      "name": "NAVIGATOR TITAN LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2026-02-06",
+      "sic": [
+        "64209"
+      ],
+      "address": "Floor 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13676784",
+      "name": "TORSION (TRAFFIC ST) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-10-13",
+      "sic": [
+        "41100"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13689206",
+      "name": "SACKVILLE STREET COMMERCIAL PROPCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-10-19",
+      "sic": [
+        "68209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "17025605",
+      "name": "NAVIGATOR ARIES LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2026-02-11",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "17077249",
+      "name": "INTERACTIVE BROKERS (U.K.) SIPP SERVICES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2026-03-09",
+      "sic": [
+        "64999"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "09323208",
+      "name": "OCORIAN CONSULTING HOLDING LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2014-11-21",
+      "sic": [
+        "82990"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "15453575",
+      "name": "SIMBOTI PLC",
+      "status": "active",
+      "type": "plc",
+      "incorporated": "2024-01-30",
+      "sic": [
+        "64999"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16868753",
+      "name": "EPICUREAN CAPITAL LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-11-21",
+      "sic": [
+        "64999"
+      ],
+      "address": "Floor 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16708157",
+      "name": "ARKAS TOPCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-10",
+      "sic": [
+        "64209"
+      ],
+      "address": "Floor 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP021594",
+      "name": "HSRE TORSION JV (TRITTON ROAD) OPCO LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2021-03-02",
+      "sic": [],
+      "address": "Floor 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP022475",
+      "name": "CASL LISBON ST (LEEDS) PROPERTY OPERATOR LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2022-03-14",
+      "sic": [],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16444809",
+      "name": "16444809 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-05-12",
+      "sic": [
+        "46160",
+        "46180",
+        "46190"
+      ],
+      "address": "20 Fenchurch St, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP022650",
+      "name": "HSRE TORSION JV (TRAFFIC ST) OPCO LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2022-06-07",
+      "sic": [],
+      "address": "Floor 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16727233",
+      "name": "NAVIGATOR GAS TERMINALS LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-18",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10832036",
+      "name": "FORTEGRA EUROPE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2017-06-22",
+      "sic": [
+        "82990"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16745248",
+      "name": "NAVIGATOR POLARIS LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-26",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16745429",
+      "name": "NAVIGATOR PLEIONE LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-26",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16745021",
+      "name": "NAVIGATOR GENESIS LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-26",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16745385",
+      "name": "NAVIGATOR EUROPA LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-26",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16746499",
+      "name": "NAVIGATOR TRITON LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-26",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16749588",
+      "name": "NAVIGATOR VIRGO LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-29",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16743544",
+      "name": "NAVIGATOR CAPRICORN LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-25",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16745738",
+      "name": "NAVIGATOR GLORY LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-26",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16745801",
+      "name": "NAVIGATOR PROXIMA LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-26",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16746287",
+      "name": "NAVIGATOR VENUS LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-26",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16746439",
+      "name": "NAVIGATOR SATURN LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-26",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16660151",
+      "name": "CARTER INVESTMENT TWO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-08-19",
+      "sic": [
+        "68209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16658734",
+      "name": "CARTER INVESTMENT HOLDINGS TWO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-08-19",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16750812",
+      "name": "NAVIGATOR CETO LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-29",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16751170",
+      "name": "NAVIGATOR LEO LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-09-29",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "03815134",
+      "name": "OCORIAN CONSULTING (UK) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1999-07-28",
+      "sic": [
+        "82990"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP023028",
+      "name": "GREAT CHARLES STREET OPCO LIMITED PARTNERSHIP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2023-01-10",
+      "sic": [],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "09355855",
+      "name": "CRIMSON DORSET PROPERTIES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2014-12-15",
+      "sic": [
+        "68209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "09638143",
+      "name": "EGLISE PROPERTIES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2015-06-15",
+      "sic": [
+        "68209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12353666",
+      "name": "HSRE-TRINITY KENT LAND HOLDCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-12-09",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13199847",
+      "name": "HSRE TORSION JV (TRITTON ROAD) OPCO GP LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-02-15",
+      "sic": [
+        "64209"
+      ],
+      "address": "Floor 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16129769",
+      "name": "VENTAS UK OPCO HOLDINGS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2024-12-11",
+      "sic": [
+        "84120",
+        "86900"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16135129",
+      "name": "VENTAS UK OPCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2024-12-13",
+      "sic": [
+        "84120",
+        "86900"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12291746",
+      "name": "HSRE-TRINITY FRONTIER HOLDCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-10-31",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13225323",
+      "name": "HSRE-TRINITY CARDIFF EDGE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-02-25",
+      "sic": [
+        "68209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13310056",
+      "name": "HSRE-TRINITY CARDIFF EDGE LAND LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-04-01",
+      "sic": [
+        "68209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12272548",
+      "name": "HSRE-TRINITY GENERAL PARTNER LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-10-21",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14176791",
+      "name": "HSRE CASL LEEDS HOLDCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2022-06-16",
+      "sic": [
+        "68209"
+      ],
+      "address": "Floor 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13937945",
+      "name": "CASL NEWCROSS (LONDON) PROPERTY OPERATOR GP LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2022-02-24",
+      "sic": [
+        "68320"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13100791",
+      "name": "BIOCITY HSRE-TRINITY HOLDCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2020-12-29",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12800916",
+      "name": "HSRE TORSION JV GP LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2020-08-10",
+      "sic": [
+        "64209"
+      ],
+      "address": "Floor 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14519371",
+      "name": "HSRE-TORSION JV (TRITTON ROAD) OPCO NOMINEE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2022-12-01",
+      "sic": [
+        "68209"
+      ],
+      "address": "Floor 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16915384",
+      "name": "SHC (UK) I LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-12-16",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "FC038407",
+      "name": "AG HEXAGON B.V.",
+      "status": "active",
+      "type": "oversea-company",
+      "incorporated": "2020-11-30",
+      "sic": [],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "FC038408",
+      "name": "AG COLWORTH PARK B.V.",
+      "status": "active",
+      "type": "oversea-company",
+      "incorporated": "2020-11-30",
+      "sic": [],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "FC038414",
+      "name": "AG KENT B.V.",
+      "status": "active",
+      "type": "oversea-company",
+      "incorporated": "2020-11-30",
+      "sic": [],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "FC038487",
+      "name": "AG WILTON B.V.",
+      "status": "active",
+      "type": "oversea-company",
+      "incorporated": "2020-11-30",
+      "sic": [],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "FC038417",
+      "name": "KENT HOLDING B.V.",
+      "status": "active",
+      "type": "oversea-company",
+      "incorporated": "2020-11-30",
+      "sic": [],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "17261538",
+      "name": "NAVIGATOR BALEARIC LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2026-06-04",
+      "sic": [
+        "64209"
+      ],
+      "address": "Floor 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10777970",
+      "name": "GREENCOAT SOLAR ASSETS II LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2017-05-18",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "01466606",
+      "name": "ADMIRAL LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1979-12-13",
+      "sic": [
+        "99999"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "06708662",
+      "name": "BICKER FEN WINDFARM LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2008-09-26",
+      "sic": [
+        "35110"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "00989421",
+      "name": "TOKIO MARINE KILN INSURANCE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1970-09-15",
+      "sic": [
+        "65120",
+        "65202"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10372919",
+      "name": "GREENCOAT SOLAR ASSETS I LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-09-13",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "09572392",
+      "name": "HADSTON SOUTHWARK LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2015-05-01",
+      "sic": [
+        "41100"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "01134772",
+      "name": "CMG PENSION TRUSTEES LIMITED",
+      "status": "active",
+      "type": "private-limited-guarant-nsc",
+      "incorporated": "1973-09-18",
+      "sic": [
+        "99999"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP015751",
+      "name": "BATTERSEA PROJECT PHASE 2 OFFICE LIMITED PARTNERSHIP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2013-10-22",
+      "sic": [],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP017544",
+      "name": "BIRMINGHAM ASTON PLACE AROSA LIVING LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2016-08-17",
+      "sic": [],
+      "address": "C/O Ocorian (Uk) Limited Level 5, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": "Ocorian"
+    },
+    {
+      "number": "LP017310",
+      "name": "MANCHESTER ALCOCK & BRADSHAW ECE LIVING LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2016-03-16",
+      "sic": [],
+      "address": "C/O Ocorian (Uk) Limited 5th Floor, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": "Ocorian"
+    },
+    {
+      "number": "LP019854",
+      "name": "BATTERSEA PROJECT PHASE 2 RETAIL, LEISURE, F&B LIMITED PARTNERSHIP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2018-11-12",
+      "sic": [],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP023161",
+      "name": "CARTER LIMITED PARTNERSHIP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2023-04-28",
+      "sic": [],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13395698",
+      "name": "SERAPHIM SPACE INVESTMENT TRUST PLC",
+      "status": "active",
+      "type": "plc",
+      "incorporated": "2021-05-14",
+      "sic": [
+        "64301"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "11462020",
+      "name": "HAMMER INVESTMENT LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2018-07-12",
+      "sic": [
+        "64999"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12210693",
+      "name": "OCAPITAL GLOBAL LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-09-17",
+      "sic": [
+        "46190"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "04088720",
+      "name": "PREMIA SOLUTIONS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2000-10-12",
+      "sic": [
+        "62090"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12605396",
+      "name": "BADMORE LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2020-05-15",
+      "sic": [
+        "43290"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "11734670",
+      "name": "CI FCL FUNDING 2 PLC",
+      "status": "active",
+      "type": "plc",
+      "incorporated": "2018-12-19",
+      "sic": [
+        "64999"
+      ],
+      "address": "5th Floor 20, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14928922",
+      "name": "ALTASIA (MANAGEMENT) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-06-12",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14134422",
+      "name": "FOXKNOLL LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2022-05-26",
+      "sic": [
+        "68320"
+      ],
+      "address": "20 Fenchurch Street Level 23, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "02145693",
+      "name": "FAURECIA MIDLANDS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1987-07-01",
+      "sic": [
+        "29320"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12029015",
+      "name": "HABITARE HOMES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-06-03",
+      "sic": [
+        "68201"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "08359703",
+      "name": "GREENCOAT UK WIND HOLDCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2013-01-14",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "03580518",
+      "name": "CATHEDRAL CAPITAL (1999) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1998-06-12",
+      "sic": [
+        "74990"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14966030",
+      "name": "MATRIX ENERGY DISTRIBUTION LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-06-27",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 30 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "08836589",
+      "name": "CNA SERVICES (UK) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2014-01-08",
+      "sic": [
+        "82990"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "02981735",
+      "name": "HARDY UNDERWRITING LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1994-10-21",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "00947968",
+      "name": "CGI IT UK LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1969-02-13",
+      "sic": [
+        "62020"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "04944297",
+      "name": "CGI CORPORATE HOLDINGS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2003-10-27",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "08224462",
+      "name": "ASCOT EMPLOYEES CORPORATE MEMBER LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2012-09-21",
+      "sic": [
+        "99999"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10903598",
+      "name": "ASCOT INSURANCE HOLDINGS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2017-08-07",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "04423980",
+      "name": "XPE POTTERIES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2002-04-24",
+      "sic": [
+        "64209"
+      ],
+      "address": "C/O Pradera Lateral Limited 5th Floor, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": "Pradera Lateral"
+    },
+    {
+      "number": "04471666",
+      "name": "POTTERIES (NOMINEE NO.1) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2002-06-27",
+      "sic": [
+        "74990"
+      ],
+      "address": "C/O Pradera Lateral Limited 5th Floor, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": "Pradera Lateral"
+    },
+    {
+      "number": "00729671",
+      "name": "TOKIO MARINE KILN SYNDICATES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1962-07-12",
+      "sic": [
+        "65110",
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "01811628",
+      "name": "RJ KILN & CO. (NO.1) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1984-04-26",
+      "sic": [
+        "99999"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12169598",
+      "name": "CATHEDRAL UNDERWRITING LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-08-22",
+      "sic": [
+        "65120",
+        "65202"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "07504904",
+      "name": "CONNECT ADMINISTRATION LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2011-01-25",
+      "sic": [
+        "66220",
+        "66290"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10361590",
+      "name": "BREEZE BIDCO (TNC) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-09-06",
+      "sic": [
+        "42220"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "05747877",
+      "name": "LANCASHIRE INSURANCE COMPANY (UK) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2006-03-17",
+      "sic": [
+        "65120"
+      ],
+      "address": "Level 29 - 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "05747874",
+      "name": "LANCASHIRE INSURANCE SERVICES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2006-03-17",
+      "sic": [
+        "66290"
+      ],
+      "address": "Level 29 - 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14017002",
+      "name": "NEWBRIDGE WAREHOUSE ONE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2022-03-31",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10323379",
+      "name": "LEEDS CALVERT & DANIELS ECE LIVING GP LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-08-10",
+      "sic": [
+        "68209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10325997",
+      "name": "LEEDS AARON & BURTON NOM2 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-08-11",
+      "sic": [
+        "74990"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10325729",
+      "name": "MANCHESTER DOODSON NOM2 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-08-11",
+      "sic": [
+        "74990"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10323298",
+      "name": "MANCHESTER DOODSON AROSA LIVING GP LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-08-10",
+      "sic": [
+        "68209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "00292093",
+      "name": "LANCASHIRE SYNDICATES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1934-09-14",
+      "sic": [
+        "65120",
+        "65202"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "09174515",
+      "name": "SYND HOLDCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2014-08-13",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10323336",
+      "name": "LEEDS AARON & BURTON AROSA LIVING GP LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-08-10",
+      "sic": [
+        "68209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14550801",
+      "name": "HFI (UK) I LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2022-12-20",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20, Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "15963651",
+      "name": "INCLINE II B ROCHA UK LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2024-09-18",
+      "sic": [
+        "77351",
+        "77352"
+      ],
+      "address": "Level 5, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "15250010",
+      "name": "SCHRODERS GREENCOAT SOLAR BIDCO 2023 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-10-31",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "15198656",
+      "name": "SCHRODERS GREENCOAT SOLAR HOLDCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-10-09",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "07244509",
+      "name": "20 FENCHURCH STREET NOMINEE NO.1 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2010-05-05",
+      "sic": [
+        "82990"
+      ],
+      "address": "20 Fenchurch Street Level 23, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "04000324",
+      "name": "MARITIME INSURANCE COMPANY LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2000-05-18",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12329502",
+      "name": "BLACKBROOK CAPITAL (EUROPE) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-11-22",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "02556213",
+      "name": "FAURECIA AUTOMOTIVE SEATING UK LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1990-11-07",
+      "sic": [
+        "29320"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "06163599",
+      "name": "FAURECIA EMISSIONS CONTROL TECHNOLOGIES UK LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2007-03-15",
+      "sic": [
+        "29320"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "11721639",
+      "name": "ALJUBARROTA LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2018-12-11",
+      "sic": [
+        "64999"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "05777440",
+      "name": "LANCASHIRE INSURANCE HOLDINGS (UK) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2006-04-11",
+      "sic": [
+        "66290"
+      ],
+      "address": "Level 29 - 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "10325575",
+      "name": "MANCHESTER ALCOCK & BRADSHAW NOM1 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-08-11",
+      "sic": [
+        "74990"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "03402448",
+      "name": "CATHEDRAL CAPITAL (1998) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1997-07-11",
+      "sic": [
+        "66290"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "08208699",
+      "name": "CGI FINANCE (UK) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2012-09-10",
+      "sic": [
+        "74990"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "11092782",
+      "name": "NAVIGATOR TERMINAL INVEST LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2017-12-01",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "15583258",
+      "name": "BADMORE INFRA 1 LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2024-03-21",
+      "sic": [
+        "64304"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP022489",
+      "name": "REALFLOW WOLVERHAMPTON MANAGEMENT LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2022-03-18",
+      "sic": [],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "09802052",
+      "name": "WINDY RIG WIND FARM LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2015-09-30",
+      "sic": [
+        "35110"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "03114872",
+      "name": "KENNEDYS MANAGEMENT HOLDINGS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1995-10-17",
+      "sic": [
+        "96090"
+      ],
+      "address": "Kennedys, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "07990781",
+      "name": "TWENTYSHILLING LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2012-03-14",
+      "sic": [
+        "35110"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13701484",
+      "name": "HOYLAKE WIND LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-10-25",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "15247231",
+      "name": "SCHRODERS GREENCOAT SOLAR JVCO 2023 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-10-30",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "07590439",
+      "name": "BISHOPTHORPE WIND FARM LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2011-04-04",
+      "sic": [
+        "35110"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "07830966",
+      "name": "COTTON FARM WIND FARM LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2011-11-01",
+      "sic": [
+        "35110"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "09512544",
+      "name": "BUTTON PROPERTY UK LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2015-03-26",
+      "sic": [
+        "64209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "02904841",
+      "name": "NORTH HOYLE WIND FARM LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1994-03-04",
+      "sic": [
+        "35110"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "15317373",
+      "name": "SCHRODERS GREENCOAT CORNWALL SOLAR LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-11-29",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "15317427",
+      "name": "SCHRODERS GREENCOAT WESSEX SOLAR LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-11-29",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "08254673",
+      "name": "STROUPSTER CAITHNESS WIND FARM LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2012-10-16",
+      "sic": [
+        "35110"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "04361558",
+      "name": "POTTERIES (GP) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2002-01-28",
+      "sic": [
+        "68209"
+      ],
+      "address": "C/O Pradera Lateral Limited 5th Floor, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": "Pradera Lateral"
+    },
+    {
+      "number": "10023284",
+      "name": "MANCHESTER ALCOCK & BRADSHAW ECE LIVING GP LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2016-02-24",
+      "sic": [
+        "68209"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "15058059",
+      "name": "SCHRODERS GREENCOAT GRI HOLDCO 1 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-08-08",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "07373556",
+      "name": "IGI SERVICES LONDON LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2010-09-13",
+      "sic": [
+        "74990"
+      ],
+      "address": "Floor 15, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16122816",
+      "name": "SCHRODERS GREENCOAT ACS LTAF HOLDCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2024-12-09",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13319693",
+      "name": "VICTORY HILL DISTRIBUTED ENERGY INVESTMENTS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-04-07",
+      "sic": [
+        "64209",
+        "64301"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "00000950",
+      "name": "CNA INSURANCE COMPANY LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1864-02-08",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13358784",
+      "name": "MAHDEV FINANCE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-04-26",
+      "sic": [
+        "70221"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13293027",
+      "name": "VH ENRG UK HOLDINGS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-03-25",
+      "sic": [
+        "64301"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14816588",
+      "name": "CARTER GP LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-04-20",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14842890",
+      "name": "CARTER INVESTMENT ONE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-05-03",
+      "sic": [
+        "68209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "14839140",
+      "name": "CARTER INVESTMENT HOLDINGS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2023-05-02",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "OC352676",
+      "name": "KENNEDYS SINGAPORE LLP",
+      "status": "active",
+      "type": "llp",
+      "incorporated": "2010-03-01",
+      "sic": [],
+      "address": "Kennedys, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "LP020158",
+      "name": "GREENCOAT YORK LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2019-04-11",
+      "sic": [],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "11797835",
+      "name": "GREENCOAT STRONELAIRG HOLDCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-01-30",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor, 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "11310530",
+      "name": "SAMVARDHANA MOTHERSON EMPLOYEES NOMINEE COMPANY UK LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2018-04-16",
+      "sic": [
+        "82990"
+      ],
+      "address": "Level 5 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16033043",
+      "name": "SG EMERALD INVESTORCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2024-10-22",
+      "sic": [
+        "64209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16568390",
+      "name": "MINDUNIONAI (MUA) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-07-08",
+      "sic": [
+        "62012",
+        "62090",
+        "63110"
+      ],
+      "address": "20 Fenchurch St, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "08320945",
+      "name": "GREAT CHARLES STREET LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2012-12-06",
+      "sic": [
+        "68320"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12166423",
+      "name": "SOYO OPCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-08-20",
+      "sic": [
+        "68209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "12363551",
+      "name": "SPRINGSIDE OPCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2019-12-13",
+      "sic": [
+        "68209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "11680168",
+      "name": "HOLLAND STREET OPCO LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2018-11-15",
+      "sic": [
+        "68209"
+      ],
+      "address": "5th Floor 20 Fenchurch Street, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "16624518",
+      "name": "CR INCREASES POPULARITY LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-08-04",
+      "sic": [
+        "62020",
+        "73110",
+        "73120"
+      ],
+      "address": "20 Fenchurch St, London, EC3M 3BY",
+      "postcode": "EC3M 3BY",
+      "care_of": null
+    },
+    {
+      "number": "13396833",
+      "name": "DWF CONNECTED SERVICES INVESTMENTS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2021-05-14",
+      "sic": [
+        "64209"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AG",
+      "postcode": "EC3M 3AG",
+      "care_of": null
+    },
+    {
+      "number": "03003606",
+      "name": "LIBERTY MANAGING AGENCY LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1994-12-20",
+      "sic": [
+        "65120",
+        "65202"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AW",
+      "postcode": "EC3M 3AW",
+      "care_of": null
+    },
+    {
+      "number": "00932977",
+      "name": "MARKEL INTERNATIONAL SERVICES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1968-05-30",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "01230968",
+      "name": "WAUSAU INSURANCE COMPANY (U.K.) LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1975-10-23",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AW",
+      "postcode": "EC3M 3AW",
+      "care_of": null
+    },
+    {
+      "number": "06630334",
+      "name": "LIBERTY CORPORATE CAPITAL (TWO) LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2008-06-25",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AW",
+      "postcode": "EC3M 3AW",
+      "care_of": null
+    },
+    {
+      "number": "02993038",
+      "name": "LIBERTY CORPORATE CAPITAL LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1994-11-22",
+      "sic": [
+        "65120",
+        "65202"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AW",
+      "postcode": "EC3M 3AW",
+      "care_of": null
+    },
+    {
+      "number": "10831430",
+      "name": "FSB INSURANCE SERVICE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2017-06-22",
+      "sic": [
+        "66220"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "02112236",
+      "name": "TERRA NOVA PENSION TRUSTEE LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1987-03-19",
+      "sic": [
+        "96090"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "11561594",
+      "name": "DWF GROUP LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2018-09-10",
+      "sic": [
+        "64209",
+        "82990"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AG",
+      "postcode": "EC3M 3AG",
+      "care_of": null
+    },
+    {
+      "number": "03114572",
+      "name": "MARKEL CAPITAL LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1995-10-17",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "04959808",
+      "name": "MARKEL PROTECTION LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2003-11-11",
+      "sic": [
+        "66220"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "05800142",
+      "name": "ALTERRA CAPITAL UK LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2006-04-28",
+      "sic": [
+        "70100"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "08246256",
+      "name": "MARKEL CONSULTANCY SERVICES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2012-10-09",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "06500806",
+      "name": "ACCOUNTAX LAW LTD",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2008-02-12",
+      "sic": [
+        "99999"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "11314497",
+      "name": "MARKEL INTERNATIONAL HOLDINGS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2018-04-17",
+      "sic": [
+        "64205"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "06169386",
+      "name": "THE MECO GROUP LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2007-03-19",
+      "sic": [
+        "70100"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "16483280",
+      "name": "LUEH HOLDINGS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2025-05-29",
+      "sic": [
+        "64205"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AW",
+      "postcode": "EC3M 3AW",
+      "care_of": null
+    },
+    {
+      "number": "03114590",
+      "name": "MARKEL SYNDICATE MANAGEMENT LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1995-10-17",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "03703210",
+      "name": "ALTERRA CORPORATE CAPITAL 2 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1999-01-28",
+      "sic": [
+        "82990"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "02430992",
+      "name": "MARKEL (UK) LIMITED",
+      "status": "active",
+      "type": "private-limited-guarant-nsc",
+      "incorporated": "1989-10-10",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "03304600",
+      "name": "ALTERRA AT LLOYD'S LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1997-01-20",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "06352358",
+      "name": "ABBEY PROTECTION LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2007-08-24",
+      "sic": [
+        "64205"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "08426762",
+      "name": "CAUNCE O'HARA LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2013-03-01",
+      "sic": [
+        "62090"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "03842083",
+      "name": "ACCTX CONSULTING LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1999-09-15",
+      "sic": [
+        "99999"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "03246351",
+      "name": "ACCTX UK LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1996-09-05",
+      "sic": [
+        "99999"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "07343517",
+      "name": "ALTERRA CAPITAL BRAZIL LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2010-08-12",
+      "sic": [
+        "70100"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "00966670",
+      "name": "MARKEL INTERNATIONAL INSURANCE COMPANY LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "1969-11-20",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "08540346",
+      "name": "AVASANT LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2013-05-22",
+      "sic": [
+        "62020",
+        "70229"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AG",
+      "postcode": "EC3M 3AG",
+      "care_of": null
+    },
+    {
+      "number": "09347341",
+      "name": "BLADNOCH DISTILLERY LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2014-12-09",
+      "sic": [
+        "11010"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AG",
+      "postcode": "EC3M 3AG",
+      "care_of": null
+    },
+    {
+      "number": "04845458",
+      "name": "LIBERTY SPECIALTY SERVICES LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2003-07-25",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AW",
+      "postcode": "EC3M 3AW",
+      "care_of": null
+    },
+    {
+      "number": "09023400",
+      "name": "LIBERTY SPECIALTY MARKETS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2014-05-02",
+      "sic": [
+        "70100"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AW",
+      "postcode": "EC3M 3AW",
+      "care_of": null
+    },
+    {
+      "number": "LP017786",
+      "name": "BLUE ROCK MEXICO LP",
+      "status": "active",
+      "type": "limited-partnership",
+      "incorporated": "2016-12-21",
+      "sic": [],
+      "address": "20 Fenchurch Street, London, EC3M 3AG",
+      "postcode": "EC3M 3AG",
+      "care_of": null
+    },
+    {
+      "number": "04513846",
+      "name": "ALTERRA CORPORATE CAPITAL 3 LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2002-08-16",
+      "sic": [
+        "66290"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "07396259",
+      "name": "ALTERRA CAPITAL AMERICA LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2010-10-04",
+      "sic": [
+        "70100"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "07151088",
+      "name": "GALLEON MARINE INSURANCE AGENCY LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2010-02-09",
+      "sic": [
+        "65120"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AZ",
+      "postcode": "EC3M 3AZ",
+      "care_of": null
+    },
+    {
+      "number": "07062171",
+      "name": "LIBERTY UK AND EUROPE HOLDINGS LIMITED",
+      "status": "active",
+      "type": "ltd",
+      "incorporated": "2009-10-30",
+      "sic": [
+        "74990"
+      ],
+      "address": "20 Fenchurch Street, London, EC3M 3AW",
+      "postcode": "EC3M 3AW",
+      "care_of": null
+    }
+  ],
+  "fhrs": [
+    {
+      "name": "Baxterstorey,Liberty Specialist MKT",
+      "type": "Restaurant/Cafe/Canteen",
+      "address": "20 Fenchurch Street, London, EC3M 3BY"
+    },
+    {
+      "name": "Larch",
+      "type": "Restaurant/Cafe/Canteen",
+      "address": "20 Fenchurch Street, London, EC3M 3BY"
+    },
+    {
+      "name": "Restaurant Associates, Tokio Marine",
+      "type": "Restaurant/Cafe/Canteen",
+      "address": "20 Fenchurch Street, London, EC3M 3BY"
+    },
+    {
+      "name": "Sam's Cafe, Markel International",
+      "type": "Restaurant/Cafe/Canteen",
+      "address": "20 Fenchurch Street, London, EC3M 3BY"
+    },
+    {
+      "name": "Skygarden - Darwin Brasserie 36 FLR",
+      "type": "Restaurant/Cafe/Canteen",
+      "address": "20 Fenchurch Street, London, EC3M 3BY"
+    },
+    {
+      "name": "Skygarden - Fenchurch Restaurant",
+      "type": "Restaurant/Cafe/Canteen",
+      "address": "20 Fenchurch Street, London, EC3M 3BY"
+    },
+    {
+      "name": "Skygarden - Sky Pod Caf\u00c9/Bar",
+      "type": "Restaurant/Cafe/Canteen",
+      "address": "20 Fenchurch Street, London, EC3M 3BY"
+    }
+  ],
+  "prime_target": {
+    "care_of_agents": [
+      {
+        "agent": "Pradera Lateral",
+        "tenants": 10
+      },
+      {
+        "agent": "Ocorian",
+        "tenants": 8
+      },
+      {
+        "agent": "Kennedys Law Llp",
+        "tenants": 1
+      }
+    ],
+    "manager_named_companies": [
+      {
+        "name": "GREENCOAT YORK ASSETS LIMITED",
+        "number": "12187812"
+      },
+      {
+        "name": "SERAPHIM SPACE VENTURES II LP",
+        "number": "LP023425"
+      },
+      {
+        "name": "CATHEDRAL CAPITAL HOLDINGS LIMITED",
+        "number": "03372107"
+      },
+      {
+        "name": "ARLINGTON BUSINESS PARKS (READING) MANAGEMENT LIMITED",
+        "number": "02350937"
+      },
+      {
+        "name": "KENNEDYS INTERNATIONAL HOLDINGS LLP",
+        "number": "OC362751"
+      },
+      {
+        "name": "GREENCOAT BUCKINGHAM ASSETS LIMITED",
+        "number": "11722343"
+      },
+      {
+        "name": "GREENCOAT GRI ASSETS LIMITED",
+        "number": "12185477"
+      },
+      {
+        "name": "OCORIAN HOLDINGS (UK) LIMITED",
+        "number": "12786482"
+      },
+      {
+        "name": "GENERATION SPACE VENTURES II GP LLP",
+        "number": "OC449678"
+      },
+      {
+        "name": "KENNEDYS MANAGEMENT SERVICES LIMITED",
+        "number": "07138859"
+      }
+    ]
+  },
+  "owner_note": "Freeholder/owner not resolved \u2014 HM Land Registry CCOD/OCOD has no keyless API. Pivot any manager_named_company's registration number through Companies House PSCs/officers to reach named humans, or buy the title register (\u00a33, pay-as-you-go) for the registered proprietor."
+}

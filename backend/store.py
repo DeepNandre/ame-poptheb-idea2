@@ -122,6 +122,19 @@ def list_slugs() -> list[str]:
     return sorted(p.name for p in BUILDINGS_DIR.iterdir() if p.is_dir())
 
 
+def latest_ingested_slug() -> str | None:
+    """The most recently ingested building — newest building.json mtime. Drives the
+    3D viewer's "whatever was last ingested" default when no slug is supplied."""
+    ingested = [
+        (s, building_dir(s) / "building.json")
+        for s in list_slugs()
+        if (building_dir(s) / "building.json").exists()
+    ]
+    if not ingested:
+        return None
+    return max(ingested, key=lambda sf: sf[1].stat().st_mtime)[0]
+
+
 # ── Per-building metadata (the address the building was added with) ──────────────
 def read_meta(slug: str) -> dict:
     f = building_dir(slug) / "meta.json"

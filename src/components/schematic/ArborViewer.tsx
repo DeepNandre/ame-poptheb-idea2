@@ -12,6 +12,7 @@ import { Canvas } from '@react-three/fiber';
 import type { LoadedData, UnitMeta, ViewerState } from '@/components/schematic/lib/types';
 import { DEFAULT_VIEWER_STATE } from '@/components/schematic/lib/scene/constants';
 import { loadData } from '@/components/schematic/lib/loader';
+import { fetchLatestIngestedSlug, schematicBase } from '@/components/scanner/reconApi';
 import { hideReducer, initialHideState } from '@/components/schematic/lib/interaction';
 import { Scene } from './scene/Scene';
 import { Header } from './ui/Header';
@@ -21,7 +22,7 @@ import { SidePanel } from './ui/SidePanel';
 import type { DetailKey } from './ui/DetailToggles';
 import { StackHud } from './ui/StackHud';
 
-export default function ArborViewer() {
+export default function ArborViewer({ slug }: { slug?: string } = {}) {
   const [data, setData] = useState<LoadedData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [state, setState] = useState<ViewerState>(DEFAULT_VIEWER_STATE);
@@ -34,15 +35,26 @@ export default function ArborViewer() {
 
 
   // ── Load data ───────────────────────────────────────────────────────────────
+  // Source priority: explicit `slug` → most recently ingested building → the bundled
+  // static demo. Always renders whatever was freshly ingested, not the hardcoded Arbor.
   useEffect(() => {
     let alive = true;
-    loadData('/schematic')
-      .then((d) => alive && setData(d))
-      .catch((e) => alive && setError(String(e)));
+    (async () => {
+      setData(null);
+      setError(null);
+      try {
+        const target = slug ?? (await fetchLatestIngestedSlug());
+        const base = target ? schematicBase(target) : '/schematic';
+        const d = await loadData(base);
+        if (alive) setData(d);
+      } catch (e) {
+        if (alive) setError(String(e));
+      }
+    })();
     return () => {
       alive = false;
     };
-  }, []);
+  }, [slug]);
 
   // ── Keyboard: B undo · N redo · R reset ──────────────────────────────────────
   useEffect(() => {

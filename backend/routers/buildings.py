@@ -87,6 +87,16 @@ def list_buildings():
     ]
 
 
+@router.get("/latest-ingested")
+def latest_ingested():
+    """Slug of the most recently ingested building (newest building.json). The 3D
+    viewer hits this to render whatever was last ingested without being told which."""
+    slug = store.latest_ingested_slug()
+    if not slug:
+        raise HTTPException(404, "no_ingested_buildings")
+    return {"slug": slug}
+
+
 @router.get("/{slug}")
 def get_building(slug: str):
     _require(slug)
@@ -139,6 +149,34 @@ def discover_status(slug: str):
             prog = json.loads(pf.read_text())
         except (json.JSONDecodeError, OSError):
             prog = {}
+
+    # The agent often locates real planning records (application ref, DAS, GA plan
+    # refs) without a directly downloadable PDF — it writes them to result.json. Surface
+    # that so the UI can show "records found" instead of n/a when docs_found is still 0.
+    records = {}
+    rf = store.building_dir(slug) / "result.json"
+    if rf.exists():
+        try:
+            r = json.loads(rf.read_text())
+            ga = r.get("ga_plans") or []
+            records = {
+                "application_ref": r.get("application_ref"),
+                "portal_url": r.get("portal_url"),
+                "documents_tab_url": r.get("documents_tab_url"),
+                "das_available": bool(r.get("das_available")),
+                "ga_plan_count": len(ga) if isinstance(ga, list) else 0,
+                "confidence": r.get("confidence"),
+            }
+        except (json.JSONDecodeError, OSError):
+            records = {}
+    # "Found planning records" = any concrete portal reference, DAS, or GA plan ref.
+    records_found = bool(
+        records.get("application_ref")
+        or records.get("documents_tab_url")
+        or records.get("das_available")
+        or records.get("ga_plan_count")
+    )
+
     return {
         "status": job.get("status", "pending"),
         "phase": prog.get("phase"),
@@ -147,6 +185,8 @@ def discover_status(slug: str):
         "note": prog.get("note"),
         # max(): the agent's self-report vs. what actually landed on disk — trust the higher.
         "docs_found": max(prog.get("docs_found", 0), store.doc_count(slug)),
+        "records_found": records_found,
+        "records": records or None,
         "error": job.get("error"),
     }
 
@@ -269,7 +309,7 @@ def start_people(slug: str, bg: BackgroundTasks, body: PeopleRequest | None = No
     job = store.set_job(
         slug, "people", status="running", started_at=store.now(), error=None
     )
-    bg.add_task(run_people, slug, body.max_companies, body.enrich)
+    bg.add_task(run_people, slug, body.max_companies, body.enrich, body.max_reveal)
     return {
         "job_id": f"{slug}:people",
         "building": slug,
@@ -346,3 +386,21 @@ def get_graph(slug: str):
 def get_routes(slug: str):
     """Traversal skeleton: {floors, connectors, rooms, entrances, edges}."""
     return _serve_json(slug, "routes.json")
+
+
+# ── Schematic file trio for the 3D loader ──────────────────────────────────────────
+# The Arbor viewer's loadData() fetches {base}/graph.json, walls.json, building.json.
+# Point its base at /buildings/{slug}/schematic and serve the freshly-ingested files.
+@router.get("/{slug}/schematic/graph.json")
+def schematic_graph(slug: str):
+    return _serve_json(slug, "graph.json")
+
+
+@router.get("/{slug}/schematic/walls.json")
+def schematic_walls(slug: str):
+    return _serve_json(slug, "walls.json")
+
+
+@router.get("/{slug}/schematic/building.json")
+def schematic_building(slug: str):
+    return _serve_json(slug, "building.json")

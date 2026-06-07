@@ -51,6 +51,22 @@ export interface AddBuildingResponse {
 export const addBuilding = (address: string) =>
   jpost<AddBuildingResponse>(`${PIPELINE}/buildings`, { address });
 
+// ── Pipeline: 3D schematic ────────────────────────────────────────────────────
+/** Base path the Arbor loader points at — serves the ingested graph/walls/building JSON. */
+export const schematicBase = (slug: string) =>
+  `${PIPELINE}/buildings/${encodeURIComponent(slug)}/schematic`;
+
+/** Slug of the most recently ingested building, or null if none has been ingested yet. */
+export const fetchLatestIngestedSlug = async (): Promise<string | null> => {
+  try {
+    const { slug } = await jget<{ slug: string }>(`${PIPELINE}/buildings/latest-ingested`);
+    return slug;
+  } catch (e) {
+    if (e instanceof ReconHttpError && e.status === 404) return null;
+    throw e;
+  }
+};
+
 // ── Pipeline: pollable phases (discover / ingest / occupants / people) ────────
 type Phase = "discover" | "ingest" | "occupants" | "people";
 
@@ -118,13 +134,21 @@ export interface ScanResult {
   org: string | null;
   cidrs: string[];
   devices: ScanDevice[];
+  /** When scanned via a `query`, the domain the Maps API resolved to, and the query. */
+  resolved_domain?: string | null;
+  resolved_from?: string | null;
 }
 
 export const scanHealth = () => jget<VpnHealth>(`${SCAN}/health`);
 
-/** Synchronous device scan. Blocks 60–120s. Throws ReconHttpError(503) if VPN is down. */
-export const runScan = (url: string, id?: string) =>
-  jpost<ScanResult>(`${SCAN}/scan`, { url, ...(id ? { id } : {}) });
+/**
+ * Synchronous device scan. Blocks 60–120s. Throws ReconHttpError(503) if VPN is down,
+ * or ReconHttpError(422) if neither a direct domain nor a resolvable query is given.
+ * Pass `url` for a known domain, or `query` (building/company name) to let the backend
+ * resolve a website via the Maps API first.
+ */
+export const runScan = (opts: { url?: string; query?: string; id?: string }) =>
+  jpost<ScanResult>(`${SCAN}/scan`, opts);
 
 // ── util ──────────────────────────────────────────────────────────────────────
 function sleep(ms: number, signal?: AbortSignal): Promise<void> {

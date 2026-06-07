@@ -9,6 +9,8 @@ interface SchematicViewerProps {
   open: boolean;
   onClose: () => void;
   title?: string;
+  /** Building to render. Omit to fall back to the most recently ingested building. */
+  slug?: string;
 }
 
 /**
@@ -16,7 +18,7 @@ interface SchematicViewerProps {
  * Dark on purpose — the schematic reads as a lit model against black, which is
  * why it gets its own surface instead of being drawn over the light map.
  */
-export function SchematicViewer({ open, onClose, title = "Arbor 22 — 3D schematic" }: SchematicViewerProps) {
+export function SchematicViewer({ open, onClose, title = "3D schematic — last ingested building", slug }: SchematicViewerProps) {
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
@@ -52,7 +54,7 @@ export function SchematicViewer({ open, onClose, title = "Arbor 22 — 3D schema
           </div>
         }
       >
-        <ArborViewer />
+        <ArborViewer slug={slug} />
       </Suspense>
     </div>
   );

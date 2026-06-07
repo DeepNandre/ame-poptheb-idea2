@@ -22,6 +22,9 @@ The scan is synchronous: POST /scan blocks ~60-120s (Shodan is rate-limited to
 ~1 req/sec) and returns the full result in one response. No job store or polling.
 """
 
+import json
+import pathlib
+
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
@@ -33,9 +36,41 @@ app = FastAPI(
     description="Passive, VPN-gated OSINT scan: company URL -> exposed devices (IP:port + URL).",
 )
 
+# ── Demo fixtures ─────────────────────────────────────────────────────────────
+# Example buildings with hard-coded scan results so the UI returns instantly
+# instead of waiting on the live 60-120s Shodan sweep. Each fixture is a real
+# captured /scan response. Matched by substring against the incoming url/query.
+_FIXTURE_DIR = pathlib.Path(__file__).resolve().parent / "fixtures"
+_DEMO_FIXTURES = [
+    {
+        "keys": ("fenchurch", "walkie", "20fenchurchstreet", "skygarden", "sky garden"),
+        "file": "walkie_talkie.json",
+    },
+]
+
+
+def _demo_fixture(req: "ScanRequest") -> dict | None:
+    """Return a hard-coded scan result if the request targets a known demo building."""
+    haystack = " ".join(s for s in (req.url, req.query) if s).lower()
+    if not haystack:
+        return None
+    for entry in _DEMO_FIXTURES:
+        if any(k in haystack for k in entry["keys"]):
+            result = json.loads((_FIXTURE_DIR / entry["file"]).read_text())
+            # Echo back what the caller actually asked with, so the UI's
+            # "from <query>" attribution stays accurate.
+            result["resolved_from"] = req.query or req.url
+            if req.id:
+                result["building_id"] = req.id.strip().lower()
+            return result
+    return None
+
 
 class ScanRequest(BaseModel):
-    url: str  # company URL or bare domain, e.g. "mit.edu"
+    # Either a direct URL/domain, OR a free-text query (building/company name +
+    # address) we resolve to a website via the Maps API. At least one is required.
+    url: str | None = None  # company URL or bare domain, e.g. "mit.edu"
+    query: str | None = None  # e.g. "1 Blackfriars Road, London" → resolve a domain
     id: str | None = None  # building id to cache under (defaults to the domain)
 
 
@@ -49,11 +84,25 @@ async def health() -> dict:
 async def run_scan(req: ScanRequest) -> dict:
     """Attribute the domain's IP space, scan it for devices, cache, and return the result.
 
-    503 if the VPN is down, 422 if the URL is unparseable or no org ranges resolve.
+    Accepts a direct `url` or a free-text `query` (building/company name) we resolve
+    to a website via the Maps API. 503 if the VPN is down, 422 if no domain resolves
+    or no org ranges attribute.
     """
-    domain = engine.normalise_domain(req.url)
+    # Demo buildings short-circuit to a hard-coded result (no live scan).
+    fixture = _demo_fixture(req)
+    if fixture is not None:
+        return fixture
+
+    domain = engine.normalise_domain(req.url) if req.url else ""
+    resolved_from: str | None = None
     if not domain:
-        raise HTTPException(422, f"Could not parse a domain from {req.url!r}")
+        if not req.query:
+            raise HTTPException(422, "Provide a url or a query to scan.")
+        try:
+            domain = await engine.resolve_domain(req.query)
+            resolved_from = req.query
+        except engine.NoDomainError as e:
+            raise HTTPException(422, str(e))
     try:
         result = await engine.scan(domain)
     except engine.VpnDownError as e:
@@ -65,7 +114,13 @@ async def run_scan(req: ScanRequest) -> dict:
 
     building_id = (req.id or domain).strip().lower()
     engine.save_to_index(building_id, result)
-    return {"building_id": building_id, **result}
+    # Surface what we resolved so the UI can show "scanned acme.com (from <query>)".
+    return {
+        "building_id": building_id,
+        "resolved_domain": domain,
+        "resolved_from": resolved_from,
+        **result,
+    }
 
 
 @app.get("/buildings")

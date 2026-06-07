@@ -64,23 +64,31 @@ logging.basicConfig(
 )
 logger = logging.getLogger("osint_engine")
 
+
 def _now() -> str:
     return datetime.now(timezone.utc).isoformat()
+
 
 def log(msg: str):
     logger.info(msg)
 
+
 def warn(msg: str):
     logger.warning(msg)
 
+
 def err(msg: str):
     logger.error(msg)
+
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Output schema helpers
 # ──────────────────────────────────────────────────────────────────────────────
 
-def make_empty_result(company: str, building: str, company_domain: str) -> Dict[str, Any]:
+
+def make_empty_result(
+    company: str, building: str, company_domain: str
+) -> Dict[str, Any]:
     return {
         "company": company,
         "building": building,
@@ -101,28 +109,35 @@ def make_empty_result(company: str, building: str, company_domain: str) -> Dict[
         "generated_at": _now(),
     }
 
+
 def add_note(result: Dict[str, Any], note: str):
     if note not in result["notes"]:
         result["notes"].append(note)
 
+
 # ──────────────────────────────────────────────────────────────────────────────
 # Domain inference (very lightweight)
 # ──────────────────────────────────────────────────────────────────────────────
+
 
 def slugify(s: str) -> str:
     s = s.lower().strip()
     s = re.sub(r"[^a-z0-9]+", "", s)
     return s
 
+
 # Browser-like UA — some public endpoints (crt.sh, Clearbit) reject the default.
 _HTTP_HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; BuildingScanner/1.0)"}
+
 
 def _get_json(url: str, timeout: int = 20):
     req = urlrequest.Request(url, headers=_HTTP_HEADERS)
     with urlrequest.urlopen(req, timeout=timeout) as resp:
         return json.loads(resp.read().decode("utf-8", "replace"))
 
+
 _DOMAIN_RE = re.compile(r"^(?:https?://)?(?:www\.)?([a-z0-9-]+(?:\.[a-z0-9-]+)+)", re.I)
+
 
 def clean_domain(value: str) -> Optional[str]:
     """Extract a bare registrable domain from a URL/domain-ish string, else None."""
@@ -131,10 +146,54 @@ def clean_domain(value: str) -> Optional[str]:
     m = _DOMAIN_RE.match(value.strip().lower())
     return m.group(1) if m else None
 
-def resolve_company_domain(company: str) -> Optional[str]:
-    """Company name -> primary domain via Clearbit's free autocomplete API."""
+
+_PLACES_SEARCHTEXT = "https://places.googleapis.com/v1/places:searchText"
+
+
+def resolve_domain_via_places(query: str) -> Optional[str]:
+    """Building/company (+address) -> its own website domain via Google Places API (New).
+
+    One text-search POST returns each match's websiteUri; we take the first place that
+    carries one and reduce it to a bare registrable domain. This is the location->website
+    path: feed it "<name> <address>" and it finds the building's site. Needs
+    GOOGLE_MAPS_API_KEY with the Places API (New) enabled."""
+    key = os.environ.get("GOOGLE_MAPS_API_KEY")
+    if not key or not query.strip():
+        return None
     try:
-        url = "https://autocomplete.clearbit.com/v1/companies/suggest?" + urlencode({"query": company})
+        body = json.dumps({"textQuery": query}).encode("utf-8")
+        req = urlrequest.Request(
+            _PLACES_SEARCHTEXT,
+            data=body,
+            method="POST",
+            headers={
+                "Content-Type": "application/json",
+                "X-Goog-Api-Key": key,
+                "X-Goog-FieldMask": "places.websiteUri,places.displayName",
+            },
+        )
+        with urlrequest.urlopen(req, timeout=10) as resp:
+            data = json.loads(resp.read().decode("utf-8", "replace"))
+        for place in data.get("places", []):
+            site = place.get("websiteUri")
+            dom = clean_domain(site) if site else None
+            if dom:
+                return dom
+    except Exception as e:
+        warn(f"Google Places resolution failed: {e}")
+    return None
+
+
+def resolve_company_domain(company: str) -> Optional[str]:
+    """Company name -> primary domain via Clearbit's free autocomplete API.
+
+    NOTE: Clearbit's free autocomplete was discontinued after the HubSpot acquisition
+    and now returns an empty list — kept only as a last-ditch attempt; Google Places
+    (resolve_domain_via_places) is the primary resolver."""
+    try:
+        url = "https://autocomplete.clearbit.com/v1/companies/suggest?" + urlencode(
+            {"query": company}
+        )
         data = _get_json(url, timeout=8)
         if isinstance(data, list) and data:
             dom = (data[0] or {}).get("domain")
@@ -144,7 +203,10 @@ def resolve_company_domain(company: str) -> Optional[str]:
         warn(f"Clearbit lookup failed: {e}")
     return None
 
-def infer_domain(company: str, explicit: Optional[str] = None) -> str:
+
+def infer_domain(
+    company: str, explicit: Optional[str] = None, address: str = ""
+) -> str:
     # 1. Explicit domain wins (strip scheme/www/path).
     if explicit:
         return clean_domain(explicit) or explicit.lower().strip()
@@ -152,18 +214,27 @@ def infer_domain(company: str, explicit: Optional[str] = None) -> str:
     as_domain = clean_domain(company)
     if as_domain:
         return as_domain
-    # 3. Resolve the company NAME to a real domain (Clearbit, free, no key).
+    # 3. Primary: resolve the building's website via Google Places (name + address →
+    #    websiteUri). This is the location→website→domain path.
+    query = f"{company} {address}".strip() if address else company
+    resolved = resolve_domain_via_places(query)
+    if resolved:
+        log(f"Resolved {query!r} -> {resolved} via Google Places")
+        return resolved
+    # 4. Fallback: Clearbit autocomplete (largely defunct, but free + keyless).
     resolved = resolve_company_domain(company)
     if resolved:
         log(f"Resolved {company!r} -> {resolved} via Clearbit")
         return resolved
-    # 4. Last resort: naive slug + .com.
+    # 5. Last resort: naive slug + .com.
     base = slugify(company) or "example"
     return f"{base}.com"
+
 
 # ──────────────────────────────────────────────────────────────────────────────
 # 1. Subdomains via subfinder (CLI)
 # ──────────────────────────────────────────────────────────────────────────────
+
 
 def _raw_crtsh(domain: str, timeout: int = 15) -> Tuple[set, Optional[str]]:
     """Certificate Transparency logs (crt.sh). Retried — crt.sh 502s often."""
@@ -181,6 +252,7 @@ def _raw_crtsh(domain: str, timeout: int = 15) -> Tuple[set, Optional[str]]:
         except Exception as e:
             last = e
     return out, f"crt.sh unavailable ({last})"
+
 
 def _raw_hackertarget(domain: str, timeout: int = 12) -> Tuple[set, Optional[str]]:
     """HackerTarget hostsearch — CSV 'host,ip'. Free, ~daily rate-limited."""
@@ -200,19 +272,23 @@ def _raw_hackertarget(domain: str, timeout: int = 12) -> Tuple[set, Optional[str
     except Exception as e:
         return out, f"HackerTarget failed ({e})"
 
+
 def _raw_otx(domain: str, timeout: int = 12) -> Tuple[set, Optional[str]]:
     """AlienVault OTX passive DNS — free, no key."""
     out: set = set()
     try:
-        url = f"https://otx.alienvault.com/api/v1/indicators/domain/{domain}/passive_dns"
+        url = (
+            f"https://otx.alienvault.com/api/v1/indicators/domain/{domain}/passive_dns"
+        )
         data = _get_json(url, timeout=timeout)
-        for rec in (data.get("passive_dns", []) if isinstance(data, dict) else []):
+        for rec in data.get("passive_dns", []) if isinstance(data, dict) else []:
             h = (rec.get("hostname") or "").strip()
             if h:
                 out.add(h)
         return out, None
     except Exception as e:
         return out, f"OTX failed ({e})"
+
 
 def discover_subdomains(domain: str, timeout: int = 25) -> Tuple[List[str], List[str]]:
     """Resilient subdomain discovery from multiple FREE public-records sources
@@ -230,11 +306,12 @@ def discover_subdomains(domain: str, timeout: int = 25) -> Tuple[List[str], List
         raw, err = fn(domain)
         if err:
             notes.append(err)
+        clean = {s.strip().lower().lstrip("*.") for s in raw}
         clean = {
-            s.strip().lower().lstrip("*.")
-            for s in raw
+            s
+            for s in clean
+            if s and "@" not in s and (s == domain or s.endswith(suffix))
         }
-        clean = {s for s in clean if s and "@" not in s and (s == domain or s.endswith(suffix))}
         new = len(clean - subs)
         subs.update(clean)
         if clean:
@@ -244,7 +321,9 @@ def discover_subdomains(domain: str, timeout: int = 25) -> Tuple[List[str], List
     try:
         proc = subprocess.run(
             ["subfinder", "-d", domain, "-silent", "-timeout", "8"],
-            capture_output=True, text=True, timeout=45,
+            capture_output=True,
+            text=True,
+            timeout=45,
         )
         if proc.returncode == 0:
             extra = {l.strip().lower() for l in proc.stdout.splitlines() if l.strip()}
@@ -259,12 +338,14 @@ def discover_subdomains(domain: str, timeout: int = 25) -> Tuple[List[str], List
 
     return sorted(subs), notes
 
+
 # ──────────────────────────────────────────────────────────────────────────────
 # 2. theHarvester — emails + contacts
 # ──────────────────────────────────────────────────────────────────────────────
 
 EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 NAME_FROM_EMAIL_RE = re.compile(r"^([A-Za-z]+)[._-]?([A-Za-z]+)?@")
+
 
 def parse_theharvester_output(text: str) -> List[Dict[str, str]]:
     employees: List[Dict[str, str]] = []
@@ -289,25 +370,35 @@ def parse_theharvester_output(text: str) -> List[Dict[str, str]]:
                 parts = line.split(" - ", 1)
                 if len(parts) > 1:
                     title = parts[1].strip()[:60]
-            employees.append({
-                "name": name or email.split("@")[0].replace(".", " ").title(),
-                "email": email,
-                "title": title or "Employee",
-            })
+            employees.append(
+                {
+                    "name": name or email.split("@")[0].replace(".", " ").title(),
+                    "email": email,
+                    "title": title or "Employee",
+                }
+            )
     return employees
+
 
 # Curated keyless theHarvester sources. "-b all" pulls dozens of sources, many
 # of which need API keys or hang — this set is free, reliable, and yields emails
 # (search engines) plus hosts.
-THEHARVESTER_SOURCES = "bing,duckduckgo,brave,yahoo,crtsh,otx,rapiddns,urlscan,hackertarget"
+THEHARVESTER_SOURCES = (
+    "bing,duckduckgo,brave,yahoo,crtsh,otx,rapiddns,urlscan,hackertarget"
+)
 
-def harvest_contacts(domain: str, timeout: int = 60) -> Tuple[List[Dict[str, str]], List[str]]:
+
+def harvest_contacts(
+    domain: str, timeout: int = 60
+) -> Tuple[List[Dict[str, str]], List[str]]:
     notes: List[str] = []
     for cmd in ("theHarvester", "theharvester"):
         try:
             proc = subprocess.run(
                 [cmd, "-d", domain, "-b", THEHARVESTER_SOURCES],
-                capture_output=True, text=True, timeout=timeout,
+                capture_output=True,
+                text=True,
+                timeout=timeout,
             )
         except FileNotFoundError:
             continue
@@ -328,44 +419,75 @@ def harvest_contacts(domain: str, timeout: int = 60) -> Tuple[List[Dict[str, str
     notes.append("theHarvester not found in PATH — employee harvesting skipped")
     return [], notes
 
+
 # ──────────────────────────────────────────────────────────────────────────────
 # 3. Shodan + Censys — exposed infrastructure
 # ──────────────────────────────────────────────────────────────────────────────
 
+
 def shodan_search(org: str, api_key: str, limit: int = 8) -> List[Dict[str, Any]]:
     # Use Shodan REST search (no extra deps)
     q = f'org:"{org}"'
-    url = "https://api.shodan.io/shodan/host/search?" + urlencode({"key": api_key, "query": q, "limit": limit})
+    url = "https://api.shodan.io/shodan/host/search?" + urlencode(
+        {"key": api_key, "query": q, "limit": limit}
+    )
     try:
         with urlrequest.urlopen(url, timeout=12) as resp:
             data = json.loads(resp.read().decode("utf-8", "replace"))
         devices = []
         for m in data.get("matches", [])[:limit]:
-            devices.append({
-                "ip": m.get("ip_str"),
-                "port": m.get("port"),
-                "service": m.get("product") or m.get("os") or m.get("_shodan", {}).get("module", "unknown"),
-                "location": m.get("location", {}).get("city") or "unknown",
-                "org": org,
-            })
+            devices.append(
+                {
+                    "ip": m.get("ip_str"),
+                    "port": m.get("port"),
+                    "service": m.get("product")
+                    or m.get("os")
+                    or m.get("_shodan", {}).get("module", "unknown"),
+                    "location": m.get("location", {}).get("city") or "unknown",
+                    "org": org,
+                }
+            )
         return devices
     except Exception as e:
         warn(f"Shodan query failed: {e}")
         return []
 
-def _parse_censys_hits(hits: List[Dict[str, Any]], org: str, limit: int) -> List[Dict[str, Any]]:
+
+def _parse_censys_hits(
+    hits: List[Dict[str, Any]], org: str, limit: int
+) -> List[Dict[str, Any]]:
     devices: List[Dict[str, Any]] = []
     for hit in hits[:limit]:
         ip = hit.get("ip")
         location = (hit.get("location") or {}).get("city") or "unknown"
         services = hit.get("services") or []
         if not services:
-            devices.append({"ip": ip, "port": None, "service": "unknown", "location": location, "org": org})
+            devices.append(
+                {
+                    "ip": ip,
+                    "port": None,
+                    "service": "unknown",
+                    "location": location,
+                    "org": org,
+                }
+            )
             continue
         for s in services[:3]:
             software = s.get("software") or [{}]
-            service = s.get("service_name") or (software[0].get("product") if software else None) or "unknown"
-            devices.append({"ip": ip, "port": s.get("port"), "service": service, "location": location, "org": org})
+            service = (
+                s.get("service_name")
+                or (software[0].get("product") if software else None)
+                or "unknown"
+            )
+            devices.append(
+                {
+                    "ip": ip,
+                    "port": s.get("port"),
+                    "service": service,
+                    "location": location,
+                    "org": org,
+                }
+            )
     return devices
 
 
@@ -401,19 +523,27 @@ def censys_search(
             "X-Organization-ID": org_id,
             "Content-Type": "application/json",
         }
-        body = json.dumps({
-            "query": f'host.autonomous_system.name: "{org}"',
-            "page_size": limit,
-        }).encode()
+        body = json.dumps(
+            {
+                "query": f'host.autonomous_system.name: "{org}"',
+                "page_size": limit,
+            }
+        ).encode()
         req = urlrequest.Request(url, data=body, headers=headers, method="POST")
         try:
             with urlrequest.urlopen(req, timeout=18) as resp:
                 data = json.loads(resp.read().decode("utf-8", "replace"))
         except HTTPError as e:
             if e.code == 403:
-                return [], "Censys skipped — token/org lacks API search access (free plans are UI-only)."
+                return (
+                    [],
+                    "Censys skipped — token/org lacks API search access (free plans are UI-only).",
+                )
             if e.code == 401:
-                return [], "Censys skipped — token rejected (401); it may be expired or invalid."
+                return (
+                    [],
+                    "Censys skipped — token rejected (401); it may be expired or invalid.",
+                )
             return [], f"Censys Platform API error: HTTP {e.code}"
         except Exception as e:
             warn(f"Censys Platform query failed: {e}")
@@ -421,15 +551,20 @@ def censys_search(
         result = data.get("result") or data
         hits = result.get("hits") or result.get("results") or []
         devices = _parse_censys_hits(hits, org, limit)
-        return devices, (None if devices else "Censys returned no hosts for this organization.")
+        return devices, (
+            None if devices else "Censys returned no hosts for this organization."
+        )
 
     # ── Legacy classic Search API v2 (API ID + Secret) ───────────────────────
     if api_id and api_secret:
         import base64
+
         url = "https://search.censys.io/api/v2/hosts/search"
         auth = base64.b64encode(f"{api_id}:{api_secret}".encode()).decode()
         headers = {"Content-Type": "application/json", "Authorization": f"Basic {auth}"}
-        body = json.dumps({"q": f'autonomous_system.organization: "{org}"', "per_page": limit}).encode()
+        body = json.dumps(
+            {"q": f'autonomous_system.organization: "{org}"', "per_page": limit}
+        ).encode()
         req = urlrequest.Request(url, data=body, headers=headers, method="POST")
         try:
             with urlrequest.urlopen(req, timeout=18) as resp:
@@ -443,6 +578,7 @@ def censys_search(
         return devices, (None if devices else "Censys (legacy) returned no results.")
 
     return [], None
+
 
 def discover_exposed_devices(company: str) -> Tuple[List[Dict[str, Any]], List[str]]:
     notes: List[str] = []
@@ -464,7 +600,9 @@ def discover_exposed_devices(company: str) -> Tuple[List[Dict[str, Any]], List[s
             devices.extend(shodan_devices)
         else:
             # The call ran but returned nothing or errored inside the function
-            notes.append("Shodan call completed with no results (may be rate limit, bad key, or no matches for the org string)")
+            notes.append(
+                "Shodan call completed with no results (may be rate limit, bad key, or no matches for the org string)"
+            )
     else:
         notes.append("SHODAN_API_KEY not present — Shodan skipped")
 
@@ -497,11 +635,16 @@ def discover_exposed_devices(company: str) -> Tuple[List[Dict[str, Any]], List[s
 
     # Real-data-only: never inject demo devices. Be explicit about why it's empty.
     if not unique and not shodan_attempted and not censys_attempted:
-        notes.append("No Shodan or Censys credentials configured — exposed-infrastructure scan skipped")
+        notes.append(
+            "No Shodan or Censys credentials configured — exposed-infrastructure scan skipped"
+        )
     elif not unique:
-        notes.append("Shodan/Censys returned no exposed devices (check org name spelling, credits, or rate limits)")
+        notes.append(
+            "Shodan/Censys returned no exposed devices (check org name spelling, credits, or rate limits)"
+        )
 
     return unique, notes
+
 
 # ──────────────────────────────────────────────────────────────────────────────
 # 4. Tech stack — tiny built-in detector + optional wappalyzer CLI
@@ -526,6 +669,7 @@ TECH_SIGNATURES = [
     (r"shopify", "Shopify"),
 ]
 
+
 def detect_tech_from_html(html: str, headers: Dict[str, str]) -> List[str]:
     found = set()
     lower = (html or "").lower()
@@ -540,6 +684,7 @@ def detect_tech_from_html(html: str, headers: Dict[str, str]) -> List[str]:
         found.add("Cloudflare")
     return sorted(found)
 
+
 def detect_tech_stack(domain: str) -> Tuple[List[str], List[str]]:
     notes: List[str] = []
     tech: List[str] = []
@@ -549,7 +694,9 @@ def detect_tech_stack(domain: str) -> Tuple[List[str], List[str]]:
         try:
             proc = subprocess.run(
                 [cmd, f"https://{domain}"],
-                capture_output=True, text=True, timeout=18,
+                capture_output=True,
+                text=True,
+                timeout=18,
             )
             if proc.returncode == 0 and proc.stdout:
                 # Many CLIs output JSON array of tech names
@@ -561,7 +708,9 @@ def detect_tech_stack(domain: str) -> Tuple[List[str], List[str]]:
                 except Exception:
                     pass
                 # Fallback: space separated
-                tech = [t.strip() for t in proc.stdout.split() if len(t.strip()) > 1][:12]
+                tech = [t.strip() for t in proc.stdout.split() if len(t.strip()) > 1][
+                    :12
+                ]
                 return tech, notes
         except FileNotFoundError:
             continue
@@ -571,7 +720,9 @@ def detect_tech_stack(domain: str) -> Tuple[List[str], List[str]]:
     # Fallback: fetch homepage and run our tiny signature engine
     url = f"https://{domain}"
     try:
-        req = urlrequest.Request(url, headers={"User-Agent": "Launch-OSINT/0.1 (recon)"})
+        req = urlrequest.Request(
+            url, headers={"User-Agent": "Launch-OSINT/0.1 (recon)"}
+        )
         with urlrequest.urlopen(req, timeout=10) as resp:
             html = resp.read().decode("utf-8", "replace")[:200_000]
             headers = {k: v for k, v in resp.headers.items()}
@@ -586,14 +737,17 @@ def detect_tech_stack(domain: str) -> Tuple[List[str], List[str]]:
         tech = ["Unknown / static site"]
     return tech, notes
 
+
 # ──────────────────────────────────────────────────────────────────────────────
 # 5. CCTV — Cameradar RTSP discovery (see cameradar_engine.py)
 # ──────────────────────────────────────────────────────────────────────────────
+
 
 def _run_cctv_layer(ip_range: Optional[str], use_cctv_sample: bool):
     if use_cctv_sample:
         return scan_cameras(ip_range or "sample", use_sample=True)
     return discover_cctv(ip_range)
+
 
 def run_osint(
     company: str,
@@ -603,11 +757,15 @@ def run_osint(
     use_cctv_sample: bool = False,
 ) -> Dict[str, Any]:
     t0 = time.time()
-    domain = infer_domain(company, explicit_domain)
-    result = make_empty_result(company or "Unknown Company", address or "Unknown Building", domain)
+    domain = infer_domain(company, explicit_domain, address)
+    result = make_empty_result(
+        company or "Unknown Company", address or "Unknown Building", domain
+    )
 
     if not ip_range:
-        ip_range = os.environ.get("CAMERADAR_IP_RANGE") or os.environ.get("CCTV_IP_RANGE")
+        ip_range = os.environ.get("CAMERADAR_IP_RANGE") or os.environ.get(
+            "CCTV_IP_RANGE"
+        )
 
     log(f"Starting OSINT for {company!r} (domain guess: {domain})")
     if ip_range:
@@ -634,11 +792,16 @@ def run_osint(
     # Fill result — no fake data; empty arrays when tools/keys unavailable
     result["subdomains"] = subs or []
     if not subs:
-        add_note(result, "No subdomains found in certificate transparency for this domain")
+        add_note(
+            result, "No subdomains found in certificate transparency for this domain"
+        )
 
     result["employees"] = emps or []
     if not emps:
-        add_note(result, "No employees discovered (install theHarvester for email/name harvesting)")
+        add_note(
+            result,
+            "No employees discovered (install theHarvester for email/name harvesting)",
+        )
 
     result["exposed_devices"] = devs
 
@@ -674,7 +837,10 @@ def run_osint(
     # Per-source "simulated data" tracking. The only opt-in simulated source is the
     # offline CCTV reference dataset (--use-cctv-sample). Everything else is real.
     mocked_sources: List[str] = []
-    if any("sample file" in n.lower() or "reference dataset" in n.lower() for n in result["notes"]):
+    if any(
+        "sample file" in n.lower() or "reference dataset" in n.lower()
+        for n in result["notes"]
+    ):
         mocked_sources.append("cctv")
 
     result["mocked_sources"] = mocked_sources
@@ -687,23 +853,43 @@ def run_osint(
     )
     return result
 
+
 # ──────────────────────────────────────────────────────────────────────────────
 # CLI
 # ──────────────────────────────────────────────────────────────────────────────
+
 
 def main():
     p = argparse.ArgumentParser(
         description="Corporate OSINT engine for Building Scanner (Phase 1)."
     )
-    p.add_argument("--company", required=True, help="Company or tenant name (e.g. 'Acme Corp')")
-    p.add_argument("--address", "--building", default="", help="Building address (for context)")
-    p.add_argument("--domain", default=None, help="Explicit primary domain (overrides inference)")
-    p.add_argument("--ip-range", default=None, help="IP/CIDR for Cameradar CCTV scan (e.g. 192.168.1.0/24)")
-    p.add_argument("--use-cctv-sample", action="store_true", help="Use server/samples/cameradar_sample.json for offline CCTV demo")
+    p.add_argument(
+        "--company", required=True, help="Company or tenant name (e.g. 'Acme Corp')"
+    )
+    p.add_argument(
+        "--address", "--building", default="", help="Building address (for context)"
+    )
+    p.add_argument(
+        "--domain", default=None, help="Explicit primary domain (overrides inference)"
+    )
+    p.add_argument(
+        "--ip-range",
+        default=None,
+        help="IP/CIDR for Cameradar CCTV scan (e.g. 192.168.1.0/24)",
+    )
+    p.add_argument(
+        "--use-cctv-sample",
+        action="store_true",
+        help="Use server/samples/cameradar_sample.json for offline CCTV demo",
+    )
     p.add_argument("--pretty", action="store_true", help="Pretty-print the JSON")
     args = p.parse_args()
 
-    ip_range = args.ip_range or os.environ.get("CAMERADAR_IP_RANGE") or os.environ.get("CCTV_IP_RANGE")
+    ip_range = (
+        args.ip_range
+        or os.environ.get("CAMERADAR_IP_RANGE")
+        or os.environ.get("CCTV_IP_RANGE")
+    )
     result = run_osint(
         company=args.company,
         address=args.address,
@@ -715,6 +901,7 @@ def main():
     json_str = json.dumps(result, indent=2 if args.pretty else None, sort_keys=False)
     # Single JSON blob to stdout — exactly like the scanner emits lines
     print(json_str)
+
 
 if __name__ == "__main__":
     main()
