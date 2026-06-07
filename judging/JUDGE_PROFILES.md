@@ -245,12 +245,32 @@ the stated scope/ethics. Don't let the offensive flavour overshadow the evidence
   substantive posts (a real bug, a real finding, a method demo, a decision-maker
   reaction). **Tag @popthebubble.hack and Aruzhan first.** Most teams forget this —
   it's +12 for narrating work we're already doing.
-- **Mubit SDK (+10):** wire Mubit as the **operational memory of the recon agent** —
-  persist each investigation (what sources hit, what worked/failed per company/building)
-  and feed it into the next run so recon *improves over time*. Make it **verifiable**
-  (show the memory being read/written live). Bolt-on use is only +4; core-reliance is
-  +10, and it genuinely strengthens the product story. *Confirm Mubit is the sponsor
-  SDK and grab API access early.*
+- **Mubit SDK (+10 / +4) — DEPRIORITISED (confirmed flaky, hours left):** we tried;
+  it's slow and unreliable. Do **not** re-architect the product around it now — the
+  expected value (+4 bolt-on realistically, not +10) is lower and riskier than the
+  certain points below. Only attempt a **<30-min bolt-on** (+4) if everything in §12
+  above the line is already done. A broken Mubit integration also risks the
+  *Does-it-work* score, so don't let it destabilise the deployed build.
+
+---
+
+## 12. Final-hours priority (time-boxed — do in THIS order)
+
+With only a few hours left, spend them where points are most **certain** and
+**cheap**, not where they're biggest-but-risky. Expected gains in (parentheses).
+
+| # | Action | Point lever | Why now |
+|---|--------|-------------|---------|
+| 1 | **Post "build in public" updates** — 6 dated, substantive posts (a real finding, a method demo, a bug, a decision-maker reaction). Tag **@popthebubble.hack + Aruzhan first.** | **Bonus +12** | Nearly free, ~5 min each, narrates work you've already done. Most teams forget it. Start immediately and keep going. |
+| 2 | **Deploy a judge-reachable URL** (not localhost). | **Does-it-work 4→7 (+3)**, →10 if judges can run the full flow themselves (**+6**) | Single biggest certain baseline gain; we're capped at 4 while localhost-only. |
+| 3 | **Make every dashboard claim show its source** — visible citation/trail for each finding (planning record, Shodan/Censys, dated). | **Rigour 16→25, Depth 8→12, Honesty →8** | Leverages the no-mock posture we already have; pushes three criteria toward top band at once. |
+| 4 | **Get ONE real decision-maker to acknowledge it** — underwriter / security lead / investor quote or logged reaction. | **Decision-maker 11→15 (+4)** | One message/email. The field will mostly skip this. |
+| 5 | **Tighten the "we're the engine, not one trade" framing** for the pitch (vs the short-a-company competitor Lyndon likes). | **Significance 14→20** | Cheap narrative change, directly targets the Lyndon threat in §9. |
+| — | *Below the line:* Mubit bolt-on (+4) only if 1–5 are done and <30 min spare. | Bonus +4 | Flaky; not worth destabilising the build. |
+
+**Rough ceiling if 1–5 land:** baseline ~27/30, Validate ~50–60/60, bonus ~+12 →
+a **~90–100/110** range, without betting on Mubit. That's the target to beat the
+short-the-stock team on Lyndon's own turf.
 
 ---
 
