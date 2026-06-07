@@ -365,3 +365,64 @@ export async function getBuilding(input) {
 
   return { ok: true, building };
 }
+
+/**
+ * Streaming variant of getBuilding — emits one event per source AS IT SETTLES so
+ * the UI can show honest, phased progress instead of an all-or-nothing spinner.
+ * Sources still run fully in parallel; each just reports the moment it lands.
+ *
+ *   onEvent({ type: "identity", identity })          // address resolved
+ *   onEvent({ type: "source", name, status, ms, cached, note })  // per source
+ *   onEvent({ type: "done", building })              // full UnifiedBuilding
+ *   onEvent({ type: "error", error })
+ *
+ * @param {{ address?: string, lat?: number, lng?: number, postcode?: string }} input
+ * @param {(event: object) => void} onEvent
+ * @param {string[]=} only  Restrict to these source names (e.g. a phase subset).
+ *                          Identity always resolves; omitted sources fall back to
+ *                          honest `unavailable` sections via pick().
+ */
+export async function getBuildingStream(input, onEvent, only) {
+  if (!input.address && (input.lat == null || input.lng == null)) {
+    onEvent({ type: "error", error: "Provide ?address= or ?lat=&lng=" });
+    return;
+  }
+
+  const resolved = await resolveIdentity(input);
+  if (!resolved) {
+    onEvent({ type: "error", error: "Could not resolve that address to a location." });
+    return;
+  }
+  const { identity, ctx } = resolved;
+  onEvent({ type: "identity", identity });
+
+  const wanted = only && only.length ? new Set(only) : null;
+  const active = wanted ? REGISTRY.filter((s) => wanted.has(s.name)) : REGISTRY;
+
+  const results = await Promise.all(
+    active.map(async (s) => {
+      const r = await runSource(s, ctx);
+      onEvent({
+        type: "source",
+        name: r.source,
+        status: r.status,
+        ms: r.ms,
+        cached: !!r.cached,
+        note: r.note,
+      });
+      return r;
+    }),
+  );
+
+  // pick() defaults any source we didn't run to an honest `unavailable`, so a
+  // partial (phase-subset) run still assembles a valid UnifiedBuilding.
+  const byName = new Map(results.map((r) => [r.source, r]));
+  const building = buildUnified(identity, byName, ctx);
+  building.meta = {
+    generatedAt: new Date().toISOString(),
+    ctx,
+    sources: results.map(meta),
+  };
+
+  onEvent({ type: "done", building });
+}

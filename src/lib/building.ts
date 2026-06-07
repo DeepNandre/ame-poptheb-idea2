@@ -315,6 +315,15 @@ function keyOf(q: BuildingQuery): string {
     : (q.address || q.postcode || "").toLowerCase().trim();
 }
 
+/**
+ * Seed the memo with a building already aggregated elsewhere (e.g. the streaming
+ * evaluation pipeline), so opening the Intelligence tab right after an evaluation
+ * is instant and doesn't re-hit the engine.
+ */
+export function primeBuilding(q: BuildingQuery, building: UnifiedBuilding): void {
+  memo.set(keyOf(q), Promise.resolve(building));
+}
+
 export async function fetchBuilding(q: BuildingQuery): Promise<UnifiedBuilding> {
   const key = keyOf(q);
   const hit = memo.get(key);

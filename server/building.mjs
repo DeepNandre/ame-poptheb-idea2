@@ -10,7 +10,7 @@
 // side. Missing keys degrade to honest `unavailable` sections — never mock data.
 
 import { loadProjectEnv } from "./scannerRelay.mjs";
-import { getBuilding } from "./aggregator.mjs";
+import { getBuilding, getBuildingStream } from "./aggregator.mjs";
 import { resolverKeyStatus } from "./sources/osPlaces.mjs";
 
 loadProjectEnv();
@@ -74,16 +74,47 @@ export async function buildingMiddleware(req, res, next) {
     return json(res, 200, keyStatus());
   }
 
-  if (url.pathname !== "/api/building") {
-    return json(res, 404, { error: "Unknown building endpoint" });
-  }
-
   const input = {
     address: (url.searchParams.get("address") || "").trim() || undefined,
     lat: num(url.searchParams.get("lat")),
     lng: num(url.searchParams.get("lng")),
     postcode: (url.searchParams.get("postcode") || "").trim() || undefined,
   };
+
+  // Server-Sent Events: one event per source as it settles, so the evaluation
+  // pipeline UI shows real phased progress. `?only=` restricts to a phase subset.
+  if (url.pathname === "/api/building/stream") {
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "text/event-stream");
+    res.setHeader("Cache-Control", "no-cache, no-transform");
+    res.setHeader("Connection", "keep-alive");
+    res.flushHeaders?.();
+
+    const send = (obj) => res.write(`data: ${JSON.stringify(obj)}\n\n`);
+    const only = (url.searchParams.get("only") || "")
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
+
+    let closed = false;
+    req.on("close", () => {
+      closed = true;
+    });
+
+    try {
+      await getBuildingStream(input, (ev) => {
+        if (!closed) send(ev);
+      }, only);
+    } catch (err) {
+      if (!closed) send({ type: "error", error: String(err?.message || err) });
+    }
+    if (!closed) res.end();
+    return;
+  }
+
+  if (url.pathname !== "/api/building") {
+    return json(res, 404, { error: "Unknown building endpoint" });
+  }
 
   try {
     const result = await getBuilding(input);

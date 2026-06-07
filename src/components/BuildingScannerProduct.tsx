@@ -5,7 +5,7 @@ import { ChevronDown, Radar, Camera, Loader2, RotateCw, Network, Building2 } fro
 
 import { cn } from "@/lib/utils";
 import { interpretCommand, getLlmStatus, answerBuilding, type CommandPlan } from "@/lib/agent";
-import { geocode } from "@/lib/geocode";
+import { geocode, reverseGeocode } from "@/lib/geocode";
 import { searchPlanning, getDocuments, type PlanningApp, type ProxyDoc } from "@/lib/planning";
 import {
   fetchBuilding,
@@ -20,6 +20,10 @@ import { EvidenceReport } from "./scanner/EvidenceReport";
 import { IntelligenceGraph } from "./scanner/IntelligenceGraph";
 import { showShardSchematic, removeShardSchematic, SHARD_FLOORS } from "./scanner/shardSchematic";
 import { ScannerDashboard } from "./scanner/ScannerDashboard";
+import { EvaluationTrigger } from "./scanner/EvaluationTrigger";
+import { EvaluationPipeline } from "./scanner/EvaluationPipeline";
+import { EvaluationResults, type ResultActions } from "./scanner/EvaluationResults";
+import { useBuildingEvaluation } from "./scanner/useBuildingEvaluation";
 import { SchematicViewer } from "./SchematicViewer";
 
 const DEFAULT_CCTV_RANGE =
@@ -41,6 +45,92 @@ function haversineM(a: [number, number], b: [number, number]): number {
     Math.sin(dLat / 2) ** 2 +
     Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
   return 2 * R * Math.asin(Math.sqrt(h));
+}
+
+/** Rough centroid of a building polygon — average of its exterior-ring coords.
+ *  Good enough to drop a pin on the building the user meant. */
+function polygonCentroid(geom: GeoJSON.Geometry | undefined): [number, number] | null {
+  if (!geom) return null;
+  let ring: GeoJSON.Position[] | null = null;
+  if (geom.type === "Polygon") ring = geom.coordinates[0];
+  else if (geom.type === "MultiPolygon") ring = geom.coordinates[0]?.[0];
+  if (!ring || ring.length === 0) return null;
+  let x = 0;
+  let y = 0;
+  for (const [lng, lat] of ring) {
+    x += lng;
+    y += lat;
+  }
+  return [x / ring.length, y / ring.length];
+}
+
+/**
+ * Snap a click to the nearest building footprint. Queries the Standard style's
+ * `buildings` featureset at the point (then a small box around it if the point
+ * missed), and returns the centroid of the closest building — so a click near or
+ * on a building always selects THAT building, not bare ground. Falls back to the
+ * raw click if no building is under/near the cursor.
+ */
+function snapToBuilding(
+  map: mapboxgl.Map,
+  point: mapboxgl.Point,
+  fallback: [number, number],
+): [number, number] {
+  const m = map as unknown as {
+    getFeaturesetDescriptors?: () => Array<{ featuresetId: string; importId?: string }>;
+    queryRenderedFeatures: (g: unknown, o: unknown) => mapboxgl.GeoJSONFeature[];
+  };
+
+  // The `buildings` featureset's importId depends on whether Standard is the root
+  // style (undefined scope) or imported (e.g. "basemap"). Discover the real target
+  // from the style; fall back to both common forms if discovery isn't available.
+  let targets: Array<{ featuresetId: string; importId?: string }> = [];
+  try {
+    const found = m.getFeaturesetDescriptors?.().filter((d) => d.featuresetId === "buildings");
+    if (found?.length) {
+      targets = found.map((d) => (d.importId ? { featuresetId: "buildings", importId: d.importId } : { featuresetId: "buildings" }));
+    }
+  } catch {
+    /* discovery unavailable — use fallbacks below */
+  }
+  if (!targets.length) {
+    targets = [{ featuresetId: "buildings" }, { featuresetId: "buildings", importId: "basemap" }];
+  }
+
+  const query = (geom: unknown): mapboxgl.GeoJSONFeature[] => {
+    for (const target of targets) {
+      try {
+        const r = m.queryRenderedFeatures(geom, { target });
+        if (r && r.length) return r;
+      } catch {
+        /* try next target form */
+      }
+    }
+    return [];
+  };
+
+  const px = 30;
+  let feats = query(point);
+  if (!feats.length) {
+    feats = query([
+      [point.x - px, point.y - px],
+      [point.x + px, point.y + px],
+    ]);
+  }
+  if (!feats.length) return fallback;
+
+  let best: [number, number] | null = null;
+  let bestD = Infinity;
+  for (const f of feats) {
+    const c = polygonCentroid(f.geometry as GeoJSON.Geometry);
+    if (!c) continue;
+    const d = (c[0] - fallback[0]) ** 2 + (c[1] - fallback[1]) ** 2;
+    if (d < bestD) {
+      bestD = d;
+      best = c;
+    }
+  }
+  return best ?? fallback;
 }
 
 /**
@@ -521,6 +611,10 @@ export function BuildingScannerProduct() {
     ? (liveTarget && liveTarget.id === selectedId ? liveTarget : TARGETS.find((t) => t.id === selectedId)) ?? null
     : null;
 
+  // Phased, streaming building evaluation (left-rail trigger → right-dock pipeline
+  // → results deck). Reuses the same aggregator the Intelligence tab does.
+  const evalu = useBuildingEvaluation();
+
   // Auto-fill the recon target from the currently selected building.
   useEffect(() => {
     const name = selected?.name;
@@ -839,6 +933,27 @@ export function BuildingScannerProduct() {
     // bottom-right so it never sits under the right-docked building inspector
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "bottom-right");
     map.on("error", (event) => setMapError(event.error?.message || "Mapbox failed to load."));
+
+    // Click ANY building (or anywhere) to pull live intelligence for that exact
+    // point — not just the curated markers. Drops a pin, reverse-geocodes a
+    // readable name, and selects it so the inspector + Evaluate trigger appear.
+    map.on("click", async (e) => {
+      // Snap to the nearest building footprint so a click near/on a building
+      // selects THAT building rather than the bare point under the cursor.
+      const [lng, lat] = snapToBuilding(map, e.point, [e.lngLat.lng, e.lngLat.lat]);
+      placeSearchMarker([lng, lat]);
+      const geo = token ? await reverseGeocode(lng, lat, token) : null;
+      const name = geo?.name || `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
+      const target = buildPlaceTarget(name, geo?.placeName || name, [lng, lat]);
+      setLiveTarget(target);
+      setSelectedId(target.id);
+      setIntelFocus((n) => n + 1); // DetailPanel opens straight to live Intelligence
+      setTargetsOpen(false);
+    });
+    // Signal that the map itself is pickable.
+    map.on("load", () => {
+      map.getCanvas().style.cursor = "pointer";
+    });
 
     map.on("style.load", () => {
       // Re-assert the Standard config in case the constructor didn't apply it.
@@ -1223,6 +1338,31 @@ export function BuildingScannerProduct() {
       : (corporateRecon?.osint_context?.cctv_cameras ?? []);
   const cctvCount = displayCameras.length;
 
+  // Results-deck tiles → existing views. Closing the deck (reset) leaves the
+  // building selected, so the DetailPanel takes over the right dock again.
+  const resultActions: ResultActions = {
+    onOpenIntelligence: () => {
+      evalu.reset();
+      setIntelFocus((n) => n + 1); // DetailPanel jumps to its Intelligence tab
+    },
+    on3D: () => setSchematicOpen(true),
+    onAsk: () => {
+      evalu.reset();
+      setIntelFocus((n) => n + 1);
+    },
+    onRecon: () => {
+      const company = evalu.target?.name || selected?.name;
+      evalu.reset();
+      setDashOpen(true);
+      setDashTab("recon");
+      if (company) runCorporateRecon({ company });
+    },
+    onReport: () => {
+      evalu.reset();
+      setReportOpen(true);
+    },
+  };
+
   return (
     <main className="relative h-screen w-screen overflow-hidden bg-canvas text-white">
       {/* Map canvas */}
@@ -1315,7 +1455,7 @@ export function BuildingScannerProduct() {
       </div>
 
       <p className="no-print pointer-events-none absolute left-1/2 top-5 z-10 hidden max-w-md -translate-x-1/2 text-center text-[13px] text-white/45 lg:block">
-        Google Maps shows the outside — the planning record shows the inside.
+        Click any building to pull its live record — the planning data shows the inside.
       </p>
 
       {/* Centered command dashboard — every section in one glass surface. */}
@@ -1735,11 +1875,37 @@ export function BuildingScannerProduct() {
 
       </ScannerDashboard>
 
+      {/* Evaluation pipeline / results — takes over the right dock while a phased
+          evaluation runs, then morphs into the results deck. Closing it (reset)
+          falls back to the building inspector below. */}
+      {evalu.mode !== "idle" && (
+        <div className="no-print fixed right-4 top-4 bottom-24 z-30 flex w-[min(24rem,calc(100vw-2rem))] flex-col">
+          <div className="min-h-0 flex-1">
+            {evalu.mode === "running" ? (
+              <EvaluationPipeline ev={evalu} />
+            ) : (
+              <EvaluationResults ev={evalu} actions={resultActions} />
+            )}
+          </div>
+        </div>
+      )}
+
       {/* Building inspector — its OWN docked panel on the right, separate from the
           scan dashboard, so the two never stack on top of each other. Shows for any
           selected building (curated, live planning result, or a chat lookup). */}
-      {selected && (
+      {selected && evalu.mode === "idle" && (
         <div className="no-print fixed right-4 top-4 bottom-24 z-30 flex w-[min(24rem,calc(100vw-2rem))] flex-col gap-2">
+          {/* Primary call to action — big and obvious, right where the eye lands
+              after selecting a building. Full run or à-la-carte phase subset. */}
+          <EvaluationTrigger
+            buildingName={selected.name}
+            onEvaluate={(keys) =>
+              evalu.start(
+                { name: selected.name, address: selected.address, coords: selected.coords },
+                keys,
+              )
+            }
+          />
           {selected.id === "arbor" && (
             <button
               onClick={() => setSchematicOpen(true)}
