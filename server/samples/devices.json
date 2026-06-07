@@ -1,0 +1,44 @@
+[
+  {
+    "mac": "aa:bb:cc:dd:ee:01",
+    "ssid": "iPhone-Alex",
+    "rssi": -58,
+    "signal_strength": 82,
+    "timestamp": "2026-06-06T06:12:00Z"
+  },
+  {
+    "mac": "aa:bb:cc:dd:ee:02",
+    "ssid": "MacBook-Priya",
+    "rssi": -71,
+    "signal_strength": 58,
+    "timestamp": "2026-06-06T06:12:03Z"
+  },
+  {
+    "mac": "aa:bb:cc:dd:ee:03",
+    "ssid": "Tower-Bridge-Kitchen",
+    "rssi": -82,
+    "signal_strength": 36,
+    "timestamp": "2026-06-06T06:12:01Z"
+  },
+  {
+    "mac": "aa:bb:cc:dd:ee:04",
+    "ssid": "Android-Jordan",
+    "rssi": -63,
+    "signal_strength": 74,
+    "timestamp": "2026-06-06T06:12:05Z"
+  },
+  {
+    "mac": "aa:bb:cc:dd:ee:05",
+    "ssid": "linux-prod-01",
+    "rssi": -55,
+    "signal_strength": 90,
+    "timestamp": "2026-06-06T06:12:02Z"
+  },
+  {
+    "mac": "aa:bb:cc:dd:ee:06",
+    "ssid": "Horselydown-Guest",
+    "rssi": -88,
+    "signal_strength": 24,
+    "timestamp": "2026-06-06T06:12:04Z"
+  }
+]

@@ -1,0 +1,1041 @@
+{
+  "nodes": [
+    {
+      "id": "L0a-01",
+      "kind": "space",
+      "label": "Hotel (Core C and D)",
+      "type": "amenity",
+      "floor": "L0a",
+      "x": 0.55,
+      "y": 0.475,
+      "z": 0.0,
+      "w": 0.3,
+      "h": 0.45,
+      "entrance_depth": 1
+    },
+    {
+      "id": "L0a-02",
+      "kind": "space",
+      "label": "Storage",
+      "type": "amenity",
+      "floor": "L0a",
+      "x": 0.37,
+      "y": 0.43,
+      "z": 0.0,
+      "w": 0.08,
+      "h": 0.06,
+      "entrance_depth": 3
+    },
+    {
+      "id": "L0a-03",
+      "kind": "space",
+      "label": "Plant",
+      "type": "plant",
+      "floor": "L0a",
+      "x": 0.37,
+      "y": 0.53,
+      "z": 0.0,
+      "w": 0.08,
+      "h": 0.1,
+      "entrance_depth": 3
+    },
+    {
+      "id": "L0a-04",
+      "kind": "space",
+      "label": "Plant",
+      "type": "plant",
+      "floor": "L0a",
+      "x": 0.38,
+      "y": 0.675,
+      "z": 0.0,
+      "w": 0.1,
+      "h": 0.15,
+      "entrance_depth": 3
+    },
+    {
+      "id": "L0a-05",
+      "kind": "space",
+      "label": "Power",
+      "type": "plant",
+      "floor": "L0a",
+      "x": 0.51,
+      "y": 0.585,
+      "z": 0.0,
+      "w": 0.06,
+      "h": 0.07,
+      "entrance_depth": 3
+    },
+    {
+      "id": "L0a-06",
+      "kind": "space",
+      "label": "Unisex Accessible WC",
+      "type": "amenity",
+      "floor": "L0a",
+      "x": 0.575,
+      "y": 0.585,
+      "z": 0.0,
+      "w": 0.05,
+      "h": 0.07,
+      "entrance_depth": 5
+    },
+    {
+      "id": "L0a-07",
+      "kind": "space",
+      "label": "Public WCs",
+      "type": "amenity",
+      "floor": "L0a",
+      "x": 0.59,
+      "y": 0.675,
+      "z": 0.0,
+      "w": 0.08,
+      "h": 0.09,
+      "entrance_depth": 5
+    },
+    {
+      "id": "PL0a-01",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": true,
+      "floor": "L0a",
+      "x": 0.5325,
+      "y": 0.3175,
+      "z": 0.0,
+      "core_id": null,
+      "via": "Thames Path",
+      "entrance_depth": 0
+    },
+    {
+      "id": "PL0a-02",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": true,
+      "floor": "L0a",
+      "x": 0.635,
+      "y": 0.4725,
+      "z": 0.0,
+      "core_id": null,
+      "via": "Short Stay Cycle Parking",
+      "entrance_depth": 0
+    },
+    {
+      "id": "PL0a-03",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": false,
+      "floor": "L0a",
+      "x": 0.46,
+      "y": 0.4525,
+      "z": 0.0,
+      "core_id": null,
+      "via": null,
+      "entrance_depth": 2
+    },
+    {
+      "id": "PL0a-04",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": false,
+      "floor": "L0a",
+      "x": 0.46,
+      "y": 0.5025,
+      "z": 0.0,
+      "core_id": null,
+      "via": null,
+      "entrance_depth": 2
+    },
+    {
+      "id": "PL0a-05",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": false,
+      "floor": "L0a",
+      "x": 0.465,
+      "y": 0.575,
+      "z": 0.0,
+      "core_id": null,
+      "via": null,
+      "entrance_depth": 2
+    },
+    {
+      "id": "PL0a-06",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": false,
+      "floor": "L0a",
+      "x": 0.53,
+      "y": 0.53,
+      "z": 0.0,
+      "core_id": null,
+      "via": null,
+      "entrance_depth": 2
+    },
+    {
+      "id": "PL0a-07",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": false,
+      "floor": "L0a",
+      "x": 0.37,
+      "y": 0.48,
+      "z": 0.0,
+      "core_id": null,
+      "via": null,
+      "entrance_depth": 4
+    },
+    {
+      "id": "PL0a-08",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": false,
+      "floor": "L0a",
+      "x": 0.375,
+      "y": 0.6025,
+      "z": 0.0,
+      "core_id": null,
+      "via": null,
+      "entrance_depth": 4
+    },
+    {
+      "id": "PL0a-09",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": false,
+      "floor": "L0a",
+      "x": 0.5425,
+      "y": 0.585,
+      "z": 0.0,
+      "core_id": null,
+      "via": null,
+      "entrance_depth": 4
+    },
+    {
+      "id": "PL0a-10",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": false,
+      "floor": "L0a",
+      "x": 0.55,
+      "y": 0.63,
+      "z": 0.0,
+      "core_id": null,
+      "via": null,
+      "entrance_depth": 4
+    },
+    {
+      "id": "PL0a-11",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": false,
+      "floor": "L0a",
+      "x": 0.5825,
+      "y": 0.63,
+      "z": 0.0,
+      "core_id": null,
+      "via": null,
+      "entrance_depth": 6
+    },
+    {
+      "id": "PL0a-12",
+      "kind": "portal",
+      "portal_kind": "lift",
+      "is_external": false,
+      "floor": "L0a",
+      "x": 0.6,
+      "y": 0.34,
+      "z": 0.0,
+      "core_id": "LIFT-01",
+      "via": null,
+      "entrance_depth": 2
+    },
+    {
+      "id": "PL0a-13",
+      "kind": "portal",
+      "portal_kind": "lift",
+      "is_external": false,
+      "floor": "L0a",
+      "x": 0.63,
+      "y": 0.34,
+      "z": 0.0,
+      "core_id": "LIFT-02",
+      "via": null,
+      "entrance_depth": 2
+    },
+    {
+      "id": "PL0a-14",
+      "kind": "portal",
+      "portal_kind": "stair",
+      "is_external": false,
+      "floor": "L0a",
+      "x": 0.41,
+      "y": 0.6,
+      "z": 0.0,
+      "core_id": "STAIR-01",
+      "via": null,
+      "entrance_depth": 3
+    },
+    {
+      "id": "PL0a-15",
+      "kind": "portal",
+      "portal_kind": "stair",
+      "is_external": false,
+      "floor": "L0a",
+      "x": 0.58,
+      "y": 0.44,
+      "z": 0.0,
+      "core_id": "STAIR-02",
+      "via": null,
+      "entrance_depth": 2
+    },
+    {
+      "id": "LL0b-01",
+      "kind": "space",
+      "label": "Office Reception & Event Space",
+      "type": "office",
+      "floor": "L0b",
+      "x": 0.57,
+      "y": 0.525,
+      "z": 1.75,
+      "w": 0.26,
+      "h": 0.35,
+      "entrance_depth": 3
+    },
+    {
+      "id": "LL0b-02",
+      "kind": "space",
+      "label": "Plant",
+      "type": "plant",
+      "floor": "L0b",
+      "x": 0.675,
+      "y": 0.7,
+      "z": 1.75,
+      "w": 0.05,
+      "h": 0.1,
+      "entrance_depth": 5
+    },
+    {
+      "id": "LL0b-03",
+      "kind": "space",
+      "label": "Public Lobby",
+      "type": "amenity",
+      "floor": "L0b",
+      "x": 0.545,
+      "y": 0.285,
+      "z": 1.75,
+      "w": 0.15,
+      "h": 0.07,
+      "entrance_depth": 1
+    },
+    {
+      "id": "LL0b-04",
+      "kind": "space",
+      "label": "Retail",
+      "type": "amenity",
+      "floor": "L0b",
+      "x": 0.65,
+      "y": 0.285,
+      "z": 1.75,
+      "w": 0.1,
+      "h": 0.07,
+      "entrance_depth": 1
+    },
+    {
+      "id": "LL0b-06",
+      "kind": "space",
+      "label": "Lift Lobby",
+      "type": "circulation",
+      "floor": "L0b",
+      "x": 0.55,
+      "y": 0.35,
+      "z": 1.75,
+      "w": 0.1,
+      "h": 0.06,
+      "entrance_depth": 3
+    },
+    {
+      "id": "PL0b-01",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": false,
+      "floor": "L0b",
+      "x": 0.6225,
+      "y": 0.6125,
+      "z": 1.75,
+      "core_id": null,
+      "via": null,
+      "entrance_depth": 4
+    },
+    {
+      "id": "PL0b-02",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": false,
+      "floor": "L0b",
+      "x": 0.5575,
+      "y": 0.405,
+      "z": 1.75,
+      "core_id": null,
+      "via": null,
+      "entrance_depth": 2
+    },
+    {
+      "id": "PL0b-03",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": false,
+      "floor": "L0b",
+      "x": 0.61,
+      "y": 0.405,
+      "z": 1.75,
+      "core_id": null,
+      "via": null,
+      "entrance_depth": 2
+    },
+    {
+      "id": "PL0b-04",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": false,
+      "floor": "L0b",
+      "x": 0.56,
+      "y": 0.4375,
+      "z": 1.75,
+      "core_id": null,
+      "via": null,
+      "entrance_depth": 4
+    },
+    {
+      "id": "PL0b-05",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": false,
+      "floor": "L0b",
+      "x": 0.5975,
+      "y": 0.285,
+      "z": 1.75,
+      "core_id": null,
+      "via": null,
+      "entrance_depth": 2
+    },
+    {
+      "id": "PL0b-06",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": false,
+      "floor": "L0b",
+      "x": 0.5475,
+      "y": 0.3175,
+      "z": 1.75,
+      "core_id": null,
+      "via": null,
+      "entrance_depth": 2
+    },
+    {
+      "id": "PL0b-07",
+      "kind": "portal",
+      "portal_kind": "lift",
+      "is_external": false,
+      "floor": "L0b",
+      "x": 0.52,
+      "y": 0.34,
+      "z": 1.75,
+      "core_id": "LIFT-01",
+      "via": null,
+      "entrance_depth": 3
+    },
+    {
+      "id": "PL0b-08",
+      "kind": "portal",
+      "portal_kind": "lift",
+      "is_external": false,
+      "floor": "L0b",
+      "x": 0.54,
+      "y": 0.34,
+      "z": 1.75,
+      "core_id": "LIFT-02",
+      "via": null,
+      "entrance_depth": 3
+    },
+    {
+      "id": "PL0b-09",
+      "kind": "portal",
+      "portal_kind": "lift",
+      "is_external": false,
+      "floor": "L0b",
+      "x": 0.56,
+      "y": 0.34,
+      "z": 1.75,
+      "core_id": "LIFT-03",
+      "via": null,
+      "entrance_depth": 4
+    },
+    {
+      "id": "PL0b-10",
+      "kind": "portal",
+      "portal_kind": "lift",
+      "is_external": false,
+      "floor": "L0b",
+      "x": 0.58,
+      "y": 0.34,
+      "z": 1.75,
+      "core_id": "LIFT-04",
+      "via": null,
+      "entrance_depth": 4
+    },
+    {
+      "id": "PL0b-11",
+      "kind": "portal",
+      "portal_kind": "lift",
+      "is_external": false,
+      "floor": "L0b",
+      "x": 0.52,
+      "y": 0.31,
+      "z": 1.75,
+      "core_id": "LIFT-05",
+      "via": null,
+      "entrance_depth": 2
+    },
+    {
+      "id": "PL0b-12",
+      "kind": "portal",
+      "portal_kind": "lift",
+      "is_external": false,
+      "floor": "L0b",
+      "x": 0.56,
+      "y": 0.31,
+      "z": 1.75,
+      "core_id": "LIFT-06",
+      "via": null,
+      "entrance_depth": 2
+    },
+    {
+      "id": "PL0b-13",
+      "kind": "portal",
+      "portal_kind": "stair",
+      "is_external": false,
+      "floor": "L0b",
+      "x": 0.42,
+      "y": 0.3,
+      "z": 1.75,
+      "core_id": "STAIR-01",
+      "via": null,
+      "entrance_depth": 2
+    },
+    {
+      "id": "PL0b-14",
+      "kind": "portal",
+      "portal_kind": "stair",
+      "is_external": false,
+      "floor": "L0b",
+      "x": 0.62,
+      "y": 0.54,
+      "z": 1.75,
+      "core_id": "STAIR-02",
+      "via": null,
+      "entrance_depth": 3
+    },
+    {
+      "id": "PL0b-15",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": true,
+      "floor": "L0b",
+      "x": 0.5,
+      "y": 0.21,
+      "z": 1.75,
+      "core_id": null,
+      "via": "Office Entrance",
+      "entrance_depth": 0
+    },
+    {
+      "id": "PL0b-16",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": true,
+      "floor": "L0b",
+      "x": 0.64,
+      "y": 0.21,
+      "z": 1.75,
+      "core_id": null,
+      "via": "Retail Entrance",
+      "entrance_depth": 0
+    },
+    {
+      "id": "L1-01",
+      "kind": "space",
+      "label": "Office",
+      "type": "office",
+      "floor": 1,
+      "x": 0.55,
+      "y": 0.44,
+      "z": 3.5,
+      "w": 0.26,
+      "h": 0.32,
+      "entrance_depth": 6
+    },
+    {
+      "id": "L1-02",
+      "kind": "space",
+      "label": "Plant",
+      "type": "plant",
+      "floor": 1,
+      "x": 0.69,
+      "y": 0.38,
+      "z": 3.5,
+      "w": 0.08,
+      "h": 0.12,
+      "entrance_depth": 8
+    },
+    {
+      "id": "L1-03",
+      "kind": "space",
+      "label": "WC Male",
+      "type": "amenity",
+      "floor": 1,
+      "x": 0.49,
+      "y": 0.525,
+      "z": 3.5,
+      "w": 0.08,
+      "h": 0.09,
+      "entrance_depth": 4
+    },
+    {
+      "id": "L1-04",
+      "kind": "space",
+      "label": "WC Female",
+      "type": "amenity",
+      "floor": 1,
+      "x": 0.57,
+      "y": 0.525,
+      "z": 3.5,
+      "w": 0.08,
+      "h": 0.09,
+      "entrance_depth": 8
+    },
+    {
+      "id": "L1-05",
+      "kind": "space",
+      "label": "Accessible WC",
+      "type": "amenity",
+      "floor": 1,
+      "x": 0.635,
+      "y": 0.525,
+      "z": 3.5,
+      "w": 0.05,
+      "h": 0.09,
+      "entrance_depth": 8
+    },
+    {
+      "id": "P1-01",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": false,
+      "floor": 1,
+      "x": 0.62,
+      "y": 0.41,
+      "z": 3.5,
+      "core_id": null,
+      "via": null,
+      "entrance_depth": 7
+    },
+    {
+      "id": "P1-02",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": false,
+      "floor": 1,
+      "x": 0.52,
+      "y": 0.4825,
+      "z": 3.5,
+      "core_id": null,
+      "via": null,
+      "entrance_depth": 5
+    },
+    {
+      "id": "P1-03",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": false,
+      "floor": 1,
+      "x": 0.56,
+      "y": 0.4825,
+      "z": 3.5,
+      "core_id": null,
+      "via": null,
+      "entrance_depth": 7
+    },
+    {
+      "id": "P1-04",
+      "kind": "portal",
+      "portal_kind": "door",
+      "is_external": false,
+      "floor": 1,
+      "x": 0.5925,
+      "y": 0.4825,
+      "z": 3.5,
+      "core_id": null,
+      "via": null,
+      "entrance_depth": 7
+    },
+    {
+      "id": "P1-05",
+      "kind": "portal",
+      "portal_kind": "stair",
+      "is_external": false,
+      "floor": 1,
+      "x": 0.38,
+      "y": 0.47,
+      "z": 3.5,
+      "core_id": "STAIR-01",
+      "via": null,
+      "entrance_depth": 3
+    },
+    {
+      "id": "P1-06",
+      "kind": "portal",
+      "portal_kind": "lift",
+      "is_external": false,
+      "floor": 1,
+      "x": 0.48,
+      "y": 0.59,
+      "z": 3.5,
+      "core_id": "LIFT-01",
+      "via": null,
+      "entrance_depth": 4
+    }
+  ],
+  "edges": [
+    {
+      "source": "L0a-01",
+      "target": "PL0a-01",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-01",
+      "target": "PL0a-02",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-01",
+      "target": "PL0a-03",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-01",
+      "target": "PL0a-04",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-01",
+      "target": "PL0a-05",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-01",
+      "target": "PL0a-06",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-01",
+      "target": "PL0a-12",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-01",
+      "target": "PL0a-13",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-01",
+      "target": "PL0a-15",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-02",
+      "target": "PL0a-03",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-02",
+      "target": "PL0a-07",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-03",
+      "target": "PL0a-04",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-03",
+      "target": "PL0a-07",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-03",
+      "target": "PL0a-08",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-03",
+      "target": "PL0a-14",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-04",
+      "target": "PL0a-05",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-04",
+      "target": "PL0a-08",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-05",
+      "target": "PL0a-06",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-05",
+      "target": "PL0a-09",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-05",
+      "target": "PL0a-10",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-06",
+      "target": "PL0a-09",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-06",
+      "target": "PL0a-11",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-07",
+      "target": "PL0a-10",
+      "type": "intra"
+    },
+    {
+      "source": "L0a-07",
+      "target": "PL0a-11",
+      "type": "intra"
+    },
+    {
+      "source": "PL0a-12",
+      "target": "PL0b-07",
+      "type": "inter",
+      "core_id": "LIFT-01"
+    },
+    {
+      "source": "PL0a-13",
+      "target": "PL0b-08",
+      "type": "inter",
+      "core_id": "LIFT-02"
+    },
+    {
+      "source": "PL0a-14",
+      "target": "PL0b-13",
+      "type": "inter",
+      "core_id": "STAIR-01"
+    },
+    {
+      "source": "PL0a-15",
+      "target": "PL0b-14",
+      "type": "inter",
+      "core_id": "STAIR-02"
+    },
+    {
+      "source": "LL0b-01",
+      "target": "PL0b-01",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-01",
+      "target": "PL0b-02",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-01",
+      "target": "PL0b-03",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-01",
+      "target": "PL0b-04",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-01",
+      "target": "PL0b-14",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-02",
+      "target": "PL0b-01",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-03",
+      "target": "PL0b-02",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-03",
+      "target": "PL0b-05",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-03",
+      "target": "PL0b-06",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-03",
+      "target": "PL0b-11",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-03",
+      "target": "PL0b-12",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-03",
+      "target": "PL0b-13",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-03",
+      "target": "PL0b-15",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-04",
+      "target": "PL0b-03",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-04",
+      "target": "PL0b-05",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-04",
+      "target": "PL0b-16",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-06",
+      "target": "PL0b-04",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-06",
+      "target": "PL0b-06",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-06",
+      "target": "PL0b-07",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-06",
+      "target": "PL0b-08",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-06",
+      "target": "PL0b-09",
+      "type": "intra"
+    },
+    {
+      "source": "LL0b-06",
+      "target": "PL0b-10",
+      "type": "intra"
+    },
+    {
+      "source": "PL0b-07",
+      "target": "P1-06",
+      "type": "inter",
+      "core_id": "LIFT-01"
+    },
+    {
+      "source": "PL0b-13",
+      "target": "P1-05",
+      "type": "inter",
+      "core_id": "STAIR-01"
+    },
+    {
+      "source": "L1-01",
+      "target": "P1-01",
+      "type": "intra"
+    },
+    {
+      "source": "L1-01",
+      "target": "P1-02",
+      "type": "intra"
+    },
+    {
+      "source": "L1-01",
+      "target": "P1-03",
+      "type": "intra"
+    },
+    {
+      "source": "L1-01",
+      "target": "P1-04",
+      "type": "intra"
+    },
+    {
+      "source": "L1-02",
+      "target": "P1-01",
+      "type": "intra"
+    },
+    {
+      "source": "L1-03",
+      "target": "P1-02",
+      "type": "intra"
+    },
+    {
+      "source": "L1-03",
+      "target": "P1-05",
+      "type": "intra"
+    },
+    {
+      "source": "L1-03",
+      "target": "P1-06",
+      "type": "intra"
+    },
+    {
+      "source": "L1-04",
+      "target": "P1-03",
+      "type": "intra"
+    },
+    {
+      "source": "L1-05",
+      "target": "P1-04",
+      "type": "intra"
+    }
+  ],
+  "floors": [
+    {
+      "level": "L0a",
+      "z": 0.0,
+      "label": "Level L0a"
+    },
+    {
+      "level": "L0b",
+      "z": 1.75,
+      "label": "Level L0b"
+    },
+    {
+      "level": 1,
+      "z": 3.5,
+      "label": "Level 1"
+    }
+  ]
+}

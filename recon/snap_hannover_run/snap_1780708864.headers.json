@@ -1,0 +1,20 @@
+{
+  "status": 200,
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "Content-Length": "922801",
+    "x-envoy-upstream-service-time": "30",
+    "server": "istio-envoy",
+    "strict-transport-security": "max-age=300; includeSubDomains, preload",
+    "Via": "1.1 google",
+    "Date": "Sat, 06 Jun 2026 01:20:04 GMT",
+    "Cache-Control": "public, max-age=85, s-maxage=85",
+    "ETag": "W/\"e14b1-9HHre3Q/tgis1Z7L26MT0unfgDk\"",
+    "Content-Type": "application/json; charset=utf-8",
+    "Vary": "Accept-Encoding",
+    "Age": "60",
+    "Alt-Svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "Connection": "close"
+  }
+}

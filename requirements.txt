@@ -1,0 +1,10 @@
+# Python deps for the Building Scanner engines.
+# Install into a project venv:  npm run setup:python   (or: pip install -r requirements.txt)
+
+# Live nearby-Bluetooth (BLE) advertisement scanning — server/scanner.py.
+# On macOS this pulls pyobjc CoreBluetooth bindings automatically.
+bleak>=0.22
+
+# Linux only: passive 802.11 beacon capture (needs sudo + a monitor-mode iface).
+# Uncomment if scanning WiFi on Linux.
+# scapy>=2.5

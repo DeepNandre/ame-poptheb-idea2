@@ -3,6 +3,77 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 42%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 92%;
+    --input: 0 0% 92%;
+    --ring: 0 0% 9%;
+
+    --radius: 0.5rem;
+
+    /* canvas tints used for the app shell (Notion-like off-white) */
+    --canvas: 0 0% 98.5%;
+  }
+
+  .dark {
+    --background: 0 0% 6%;
+    --foreground: 0 0% 96%;
+
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 0 0% 96%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 62%;
+
+    --accent: 0 0% 18%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 24%;
+    --ring: 0 0% 80%;
+
+    --canvas: 0 0% 4%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
   html {
     -webkit-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
@@ -10,20 +81,21 @@
   }
 
   body {
-    @apply bg-black text-white antialiased;
-    font-family: "Inter", sans-serif;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv01", "cv03", "ss01";
   }
 }
 
 @layer components {
+  /* Inter, scoped to the landing page so the scanner keeps Geist. */
   .font-inter {
     font-family: "Inter", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Liquid glass — navbar, buttons, cards, and the demo modal. The signature
-     edge is the ::before gradient hairline. */
+  /* Liquid glass — used by the teaser landing's navbar, buttons, and tag.
+     The signature edge is the ::before gradient hairline. */
   .liquid-glass {
     background: rgba(0, 0, 0, 0.4);
     background-blend-mode: luminosity;
@@ -55,5 +127,214 @@
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
+  }
+
+  /* Frosted glass — the floating UI sits in this over a dark map. */
+  .glass {
+    background: rgba(18, 18, 20, 0.55);
+    backdrop-filter: blur(22px) saturate(150%);
+    -webkit-backdrop-filter: blur(22px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+      0 16px 50px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  }
+
+  .glass-hover {
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease;
+  }
+  .glass-hover:hover {
+    background: rgba(26, 26, 30, 0.62);
+    border-color: rgba(255, 255, 255, 0.16);
+  }
+
+  /* Map target markers — minimal luminous dots over the dark map. */
+  .building-marker {
+    width: 11px;
+    height: 11px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.65);
+    border: 1.5px solid rgba(0, 0, 0, 0.55);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    transition:
+      transform 0.16s ease,
+      background 0.16s ease,
+      box-shadow 0.16s ease;
+  }
+
+  .building-marker:hover {
+    transform: scale(1.22);
+    background: #ffffff;
+  }
+
+  .building-marker.is-selected {
+    width: 13px;
+    height: 13px;
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.7);
+    box-shadow:
+      0 0 0 5px rgba(255, 255, 255, 0.16),
+      0 1px 6px rgba(0, 0, 0, 0.7);
+  }
+
+  /* Ground radar sweep at the scan origin — rotating beam + expanding rings. */
+  .scan-radar {
+    width: 280px;
+    height: 280px;
+    position: relative;
+    pointer-events: none;
+  }
+  .scan-radar__sweep {
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: conic-gradient(
+      from 0deg,
+      rgba(56, 189, 248, 0) 0deg,
+      rgba(56, 189, 248, 0) 295deg,
+      rgba(56, 189, 248, 0.12) 330deg,
+      rgba(56, 189, 248, 0.5) 358deg,
+      rgba(56, 189, 248, 0) 360deg
+    );
+    -webkit-mask: radial-gradient(closest-side, #000 0 78%, transparent 80%);
+    mask: radial-gradient(closest-side, #000 0 78%, transparent 80%);
+    animation: scan-rotate 3.4s linear infinite;
+  }
+  .scan-radar__ring {
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(56, 189, 248, 0.45);
+    border-radius: 9999px;
+    opacity: 0;
+    animation: scan-pulse 3.4s ease-out infinite;
+  }
+  .scan-radar__ring--2 {
+    animation-delay: 1.13s;
+  }
+  .scan-radar__ring--3 {
+    animation-delay: 2.26s;
+  }
+  .scan-radar__core {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 9px;
+    height: 9px;
+    transform: translate(-50%, -50%);
+    border-radius: 9999px;
+    background: #38bdf8;
+    box-shadow: 0 0 12px 3px rgba(56, 189, 248, 0.7);
+  }
+  @keyframes scan-rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes scan-pulse {
+    0% {
+      transform: scale(0.18);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+
+  /* Geocoded search result — accent pin. */
+  .search-marker {
+    width: 14px;
+    height: 14px;
+    border-radius: 9999px;
+    background: #38bdf8;
+    border: 2px solid #ffffff;
+    box-shadow:
+      0 0 0 5px rgba(56, 189, 248, 0.25),
+      0 2px 8px rgba(0, 0, 0, 0.6);
+  }
+
+  /* User's current GPS location — pulsing blue dot. */
+  .user-location-marker {
+    width: 14px;
+    height: 14px;
+    border-radius: 9999px;
+    background: #3b82f6;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.25), 0 2px 8px rgba(0, 0, 0, 0.5);
+    animation: user-location-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes user-location-pulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3), 0 2px 8px rgba(0, 0, 0, 0.5); }
+    50%       { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0.08), 0 2px 8px rgba(0, 0, 0, 0.5); }
+  }
+
+  /* Quiet the default Mapbox chrome to match the glass shell. */
+  .mapboxgl-ctrl-group {
+    background: rgba(18, 18, 20, 0.6) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+    border-radius: calc(var(--radius) - 2px) !important;
+    overflow: hidden;
+  }
+  .mapboxgl-ctrl-group button + button {
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+  .mapboxgl-ctrl-group button .mapboxgl-ctrl-icon {
+    filter: invert(1);
+  }
+  .mapboxgl-ctrl-attrib.mapboxgl-compact {
+    background: rgba(18, 18, 20, 0.6) !important;
+  }
+
+  .mapboxgl-popup-content {
+    background: rgba(18, 18, 20, 0.92);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: calc(var(--radius) - 2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    font-family: "Geist", system-ui, sans-serif;
+    font-size: 12px;
+  }
+}
+
+@layer utilities {
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Thin, unobtrusive scrollbars inside panels. */
+.scroll-quiet {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(0 0% 80%) transparent;
+}
+.scroll-quiet::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scroll-quiet::-webkit-scrollbar-thumb {
+  background: hsl(0 0% 85%);
+  border-radius: 9999px;
+}
+.scroll-quiet::-webkit-scrollbar-thumb:hover {
+  background: hsl(0 0% 72%);
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-report {
+    position: static !important;
+    inset: auto !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    color: #0a0a0a !important;
   }
 }

@@ -1,0 +1,29 @@
+{
+  "building_ip_range": "192.168.1.0/25",
+  "cameras": [
+    {
+      "ip": "192.168.1.64",
+      "port": 554,
+      "model": "DS-2CD2143G0-I",
+      "manufacturer": "Hikvision",
+      "route": "/ISAPI/Streaming/channels/101",
+      "credentials": { "username": "admin", "password": "12345" }
+    },
+    {
+      "ip": "192.168.1.108",
+      "port": 554,
+      "model": "IPC-HDBW4431R-ZS",
+      "manufacturer": "Dahua",
+      "route": "/cam/realmonitor?channel=1&subtype=0",
+      "credentials": { "username": "admin", "password": "admin" }
+    },
+    {
+      "ip": "192.168.1.50",
+      "port": 8554,
+      "model": "RLC-810A",
+      "manufacturer": "Reolink",
+      "route": "/h264Preview_01_main",
+      "credentials": { "username": "admin", "password": "password" }
+    }
+  ]
+}

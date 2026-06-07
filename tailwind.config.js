@@ -11,9 +11,15 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Geist", "ui-sans-serif", "system-ui", "sans-serif"],
+        inter: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        serif: ["Playfair Display", "Georgia", "Cambria", "serif"],
         mono: ["'Geist Mono'", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       colors: {
+        brand: {
+          orange: "#f05a28",
+          "orange-hover": "#d94e22",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

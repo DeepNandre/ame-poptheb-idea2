@@ -1,0 +1,19 @@
+{
+  "status": 200,
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "cache-control": "public, max-age=77, s-maxage=77",
+    "content-type": "application/json; charset=utf-8",
+    "Content-Length": "927317",
+    "etag": "W/\"e2655-ps2mMqE9eUJhB2HtBdsyb4sFEYA\"",
+    "vary": "Accept-Encoding",
+    "date": "Sat, 06 Jun 2026 01:58:12 GMT",
+    "x-envoy-upstream-service-time": "27",
+    "server": "istio-envoy",
+    "strict-transport-security": "max-age=300; includeSubDomains, preload",
+    "Via": "1.1 google",
+    "Alt-Svc": "h3=\":443\"; ma=2592000",
+    "Connection": "close"
+  }
+}

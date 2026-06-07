@@ -1,22 +1,40 @@
 # Logs
+logs
 *.log
 npm-debug.log*
 yarn-debug.log*
+yarn-error.log*
 pnpm-debug.log*
+lerna-debug.log*
 
-# Dependencies / build output
 node_modules
 dist
 dist-ssr
 *.local
 
-# Env / secrets
+# Python virtualenv (created by `npm run setup:python`)
+.venv
+__pycache__/
+*.pyc
+
+# Env / secrets — never commit real keys. .env.example (placeholders) is allowed.
 .env
 .env.*
 !.env.example
 
-# Editor / OS
+# Cameradar binary (installed locally via npm run install:cameradar)
+bin/cameradar
+
+# Early-access lead capture — contains visitor emails (PII)
+data/
+
+# Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
