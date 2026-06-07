@@ -113,6 +113,14 @@ export function EvidenceDashboard() {
               Live product
             </Link>
             <a
+              href="/evidence/germanshepherd-evidence-deck.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="hidden items-center gap-1.5 text-[14px] font-medium text-[#444] hover:text-black sm:inline-flex"
+            >
+              Evidence deck (PDF)
+            </a>
+            <a
               href="/evidence/upahaar-loi-signed.pdf"
               target="_blank"
               rel="noreferrer"
