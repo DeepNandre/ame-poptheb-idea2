@@ -40,7 +40,7 @@ export interface Claim {
 export const thesis = {
   kicker: "Validation evidence pack",
   headline: "German Shepherd has real, paid commercial demand — including money in the bank.",
-  sub: "Three signed LOIs (£80k committed) and a paying customer in the first 48 hours. Every claim below traces to a dated, independently checkable source. This page is the proof, not the pitch.",
+  sub: "Two signed LOIs (£60k), a paying customer already in (TMC deposit, LOI finalising this morning), and more LOIs in motion. Every claim below traces to a dated, independently checkable source. This page is the proof, not the pitch.",
   asOf: "2026-06-07",
 };
 
@@ -54,11 +54,11 @@ export const kpis: Kpi[] = [
     source: { label: "Stripe receipt (payment succeeded)", href: "/evidence/tmc-deposit-stripe.pdf", dated: "2026-06-06" },
   },
   {
-    value: "3",
-    label: "Signed LOIs · £80k committed",
-    sub: "TMC (paid) · Upahaar (£30k) · Bolttech (£30k)",
+    value: "£60k",
+    label: "Signed LOIs (2) + a paid pilot",
+    sub: "Bolttech £30k + Upahaar £30k signed · TMC £20k pilot (deposit paid, finalising)",
     status: "verified",
-    source: { label: "Signed LOIs on file", href: "/evidence/tmc-loi.pdf", dated: "2026-06-07" },
+    source: { label: "Signed LOIs on file", href: "/evidence/upahaar-loi-signed.pdf", dated: "2026-06-07" },
   },
   {
     value: "24h",
@@ -82,9 +82,9 @@ export const claims: Claim[] = [
     id: "revenue-tmc",
     claim: "A customer has paid us real money — this is revenue, not just intent.",
     evidence:
-      "TMC Solicitors (a Manchester law firm) paid a £500 deposit — 5% of the £20,000 pilot — via Stripe, 3D-Secure authenticated, status Succeeded. The firm had two break-in attempts in the past year, so the value was concrete. Signed LOI returned by the principal, Muazzam Chughtai.",
-    source: { label: "Stripe receipt + TMC signed LOI", href: "/evidence/tmc-deposit-stripe.pdf", dated: "2026-06-06" },
-    verify: "Open the Stripe receipt: £500.00 GBP, Succeeded, 3D-Secure, charged 6 Jun 23:52. Cross-check against the signed LOI (Muazzam Chughtai, Principal Solicitor & Director).",
+      "TMC Solicitors (a Manchester law firm with two break-in attempts in the past year) paid a £500 deposit — 5% of the £20,000 pilot — via Stripe, 3D-Secure authenticated, status Succeeded. The full LOI is being finalised with the principal, Muazzam Chughtai, at a meeting this morning.",
+    source: { label: "Stripe receipt (payment succeeded)", href: "/evidence/tmc-deposit-stripe.pdf", dated: "2026-06-06" },
+    verify: "Open the Stripe receipt: £500.00 GBP, Succeeded, 3D-Secure, charged 6 Jun 23:52. The LOI finalisation meeting is listed under Upcoming meetings.",
     status: "verified",
   },
   {
@@ -171,6 +171,7 @@ export interface Loi {
   pilotValue: string;
   access: string;
   pdfUrl: string;
+  docLabel?: string; // button label for the PDF (defaults to "Open the signed document")
   emailUrl?: string; // email confirmation, where available
   payment?: { amount: string; note: string; method: string; receiptUrl: string; dated: string };
   context?: string;
@@ -184,12 +185,13 @@ export const lois: Loi[] = [
     company: "TMC Solicitors",
     reference: "GS-LOI-2026-002",
     date: "7 June 2026",
-    type: "Signed LOI — deposit PAID",
+    type: "Paid pilot · LOI finalising today",
     signatory: "Muazzam Chughtai",
     signatoryRole: "Principal Solicitor & Director, TMC Solicitors Ltd — 4 Central Buildings, Kingsway, Manchester",
     pilotValue: "£20,000",
     access: "Month 1 free pilot, then £20k unlocks 24 months full access + 1 free month on launch",
     pdfUrl: "/evidence/tmc-loi.pdf",
+    docLabel: "Open the LOI document",
     payment: {
       amount: "£500",
       note: "5% deposit of the £20k pilot value — first revenue received",
@@ -198,7 +200,7 @@ export const lois: Loi[] = [
       dated: "2026-06-06",
     },
     context:
-      "Reached via Moeed Chughtai (AMe cohort). His father, Muazzam, runs a Manchester law firm that had two break-in attempts in the past year — high stakes for an immigration/asylum practice handling confidential files. He agreed to test and pay based on real benefit; Moeed paid the deposit on his father's behalf and his father returned the signed LOI.",
+      "Reached via Moeed Chughtai (AMe cohort). His father, Muazzam, runs a Manchester law firm that had two break-in attempts in the past year — high stakes for an immigration/asylum practice handling confidential files. He agreed to test and pay based on real benefit; Moeed paid the deposit on his father's behalf. The LOI is being officially finalised at a meeting this morning (see Upcoming meetings).",
     terms: [
       "Month 1 free pilot — full platform access at no cost for the initial evaluation period.",
       "£20,000 triggered at the end of Month 1, contingent on satisfactory pilot outcomes.",
@@ -281,6 +283,30 @@ export const lois: Loi[] = [
       ],
       note: "Full email available to judges on request (contact details omitted here).",
     },
+  },
+];
+
+// ── Upcoming meetings — live pipeline, forward-looking (not closed proof) ─────
+export interface Meeting {
+  who: string;
+  what: string;
+  when: string;
+  detail: string;
+}
+export const meetings: Meeting[] = [
+  {
+    who: "TMC Solicitors · Muazzam Chughtai",
+    what: "Officially finalise the signed LOI",
+    when: "This morning · 7 Jun 2026",
+    detail:
+      "Deposit already paid (£500). Meeting to officially sort and countersign the £20k pilot LOI with the principal.",
+  },
+  {
+    who: "Eric · insurance",
+    what: "Scope a further LOI",
+    when: "This morning · 7 Jun 2026",
+    detail:
+      "Introduced by Lyndon; Eric works in insurance. We called last night — interested but busy, and asked us to call back this morning to talk through how he'd use German Shepherd.",
   },
 ];
 
@@ -472,7 +498,7 @@ export const significance = {
   narrative:
     "We insure the insurer: we show insurers what attackers already know about their policyholders, so clients are more secure and insurers pay out less.",
   points: [
-    "Three customers across two go-to-market paths — the insurer channel (Bolttech) and direct enterprise (Upahaar, TMC Solicitors) — £80,000 committed and first cash already received.",
+    "Three customers across two go-to-market paths — the insurer channel (Bolttech) and direct enterprise (Upahaar, TMC Solicitors) — £60k in signed LOIs plus a paid pilot, first cash already received, and more LOIs in motion (meetings today).",
     "Building-level physical risk, drawn from passive signals + OSINT + the planning record, is a risk dimension existing underwriting data does not cover.",
     "Bolttech operates across device, property and SME risk products — a distribution channel into a whole insurer network, not a single team.",
     "Reseller rights in the LOI mean validated demand can scale market-wide, not just one pilot.",

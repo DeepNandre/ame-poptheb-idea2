@@ -18,6 +18,7 @@ import {
   features,
   productNote,
   lois,
+  meetings,
   fieldLog,
   fieldFootage,
   interviews,
@@ -233,7 +234,7 @@ export function EvidenceDashboard() {
 
         {/* Featured LOIs */}
         <section className="py-10">
-          <SectionLabel>Featured artifacts — 3 signed LOIs · £80k committed · first revenue paid</SectionLabel>
+          <SectionLabel>Featured artifacts — 2 signed LOIs + a paid pilot · first revenue in</SectionLabel>
           <div className="space-y-6">
             {lois.map((loi) => (
               <div
@@ -299,7 +300,7 @@ export function EvidenceDashboard() {
                       style={{ backgroundColor: ORANGE }}
                     >
                       <FileText className="size-4" />
-                      Open the signed document
+                      {loi.docLabel ?? "Open the signed document"}
                       <ArrowUpRight className="size-4" />
                     </a>
                     {loi.emailUrl && (
@@ -375,6 +376,29 @@ export function EvidenceDashboard() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Upcoming meetings */}
+        <section className="py-10">
+          <SectionLabel>Upcoming meetings — live pipeline (this morning)</SectionLabel>
+          <div className="grid gap-5 sm:grid-cols-2">
+            {meetings.map((m) => (
+              <div key={m.who} className="rounded-2xl border border-dashed border-[#ddd] bg-[#fafafa] p-6">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-0.5 text-[11px] font-medium text-[#666] ring-1 ring-inset ring-[#e5e5e5]">
+                    <Clock className="size-3" style={{ color: ORANGE }} />
+                    {m.when}
+                  </span>
+                </div>
+                <h3 className="mt-3 text-[16px] font-semibold tracking-[-0.01em]">{m.what}</h3>
+                <p className="mt-0.5 text-[12.5px] font-medium text-[#888]">{m.who}</p>
+                <p className="mt-2.5 text-[13px] leading-[1.55] text-[#666]">{m.detail}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 text-[12px] leading-[1.5] text-[#999]">
+            Forward-looking pipeline, shown for transparency — not counted as closed proof.
+          </p>
         </section>
 
         {/* Field validation log */}
