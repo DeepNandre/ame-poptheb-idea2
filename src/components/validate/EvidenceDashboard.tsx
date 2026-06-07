@@ -8,6 +8,7 @@ import {
   ShieldCheck,
   Building2,
   Radar,
+  ChevronDown,
 } from "lucide-react";
 import type { Status, Source } from "./evidenceData";
 import {
@@ -340,6 +341,36 @@ export function EvidenceDashboard() {
                       </li>
                     ))}
                   </ul>
+
+                  {loi.furtherEvidence && (
+                    <details className="group mt-6 rounded-xl border border-[#eee] bg-[#fafafa] p-4 open:bg-white">
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-2 text-[13px] font-semibold text-[#333] [&::-webkit-details-marker]:hidden">
+                        <span>{loi.furtherEvidence.label}</span>
+                        <span className="flex items-center gap-1 text-[11px] font-normal text-[#999]">
+                          <span className="group-open:hidden">Show</span>
+                          <span className="hidden group-open:inline">Hide</span>
+                          <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
+                        </span>
+                      </summary>
+                      <div className="mt-3 space-y-2.5">
+                        <p className="font-mono text-[11px] uppercase tracking-wide text-[#999]">
+                          {loi.furtherEvidence.source}
+                        </p>
+                        {loi.furtherEvidence.quotes.map((q) => (
+                          <blockquote
+                            key={q}
+                            className="border-l-2 pl-3 text-[12.5px] italic leading-[1.6] text-[#555]"
+                            style={{ borderColor: ORANGE }}
+                          >
+                            “{q}”
+                          </blockquote>
+                        ))}
+                        {loi.furtherEvidence.note && (
+                          <p className="text-[11.5px] text-[#999]">{loi.furtherEvidence.note}</p>
+                        )}
+                      </div>
+                    </details>
+                  )}
                 </div>
               </div>
             ))}

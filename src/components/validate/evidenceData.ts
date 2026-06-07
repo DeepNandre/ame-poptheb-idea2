@@ -176,6 +176,7 @@ export interface Loi {
   context?: string;
   terms: string[];
   deliverables: string[];
+  furtherEvidence?: { label: string; source: string; quotes: string[]; note?: string };
 }
 
 export const lois: Loi[] = [
@@ -270,6 +271,16 @@ export const lois: Loi[] = [
       "Pilot evaluation report — coverage, data quality, signal accuracy, rollout recommendation.",
       "Reseller onboarding pack — tooling for Bolttech to distribute the platform.",
     ],
+    furtherEvidence: {
+      label: "Further evidence — follow-up email from Baldev Singh",
+      source: "Email from Baldev Singh (Bolttech) with the signed LOI attached · 7 Jun 2026",
+      quotes: [
+        "Very pleased to see the developing idea. In my experience, I have seen a few other loss mitigation ideas deployed to scale where both the customer and the insurance industry benefit from reduced losses through early prevention, triggered by tools similar to your project's concept.",
+        "I certainly believe there is a positive conversation to be had once your team has worked out the details and a demo of the use case is ready.",
+        "I look forward to hearing from you and would be happy to take this further with the industry to socialize it and gain interest. In my vast experience, initiatives such as these are certainly at the forefront of new tech development powered by AI.",
+      ],
+      note: "Full email available to judges on request (contact details omitted here).",
+    },
   },
 ];
 
