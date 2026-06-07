@@ -8,8 +8,11 @@ import {
   ShieldCheck,
   Building2,
   Radar,
+  PoundSterling,
+  TrendingUp,
+  ArrowDown,
 } from "lucide-react";
-import type { Status, Source } from "./evidenceData";
+import type { Status, Source, SourceKind } from "./evidenceData";
 import {
   thesis,
   kpis,
@@ -17,6 +20,10 @@ import {
   features,
   productNote,
   loi,
+  pricingSummary,
+  pricingReport,
+  externalSources,
+  sourcesNote,
   fieldLog,
   fieldFootage,
   interviews,
@@ -57,6 +64,23 @@ function StatusBadge({ status }: { status: Status }) {
       className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ring-inset ${m.cls}`}
     >
       {status === "verified" && <CheckCircle2 className="size-3" />}
+      {m.label}
+    </span>
+  );
+}
+
+const KIND_META: Record<SourceKind, { label: string; cls: string }> = {
+  independent: { label: "Independent", cls: "bg-emerald-50 text-emerald-700 ring-emerald-600/20" },
+  vendor: { label: "Vendor", cls: "bg-amber-50 text-amber-700 ring-amber-600/20" },
+  secondary: { label: "Secondary", cls: "bg-slate-100 text-slate-600 ring-slate-500/20" },
+};
+
+function KindChip({ kind }: { kind: SourceKind }) {
+  const m = KIND_META[kind];
+  return (
+    <span
+      className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium ring-1 ring-inset ${m.cls}`}
+    >
       {m.label}
     </span>
   );
@@ -296,6 +320,249 @@ export function EvidenceDashboard() {
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing — Part 1: the brief */}
+        <section className="py-10">
+          <SectionLabel>{pricingSummary.kicker} — the short version</SectionLabel>
+          <h2 className="max-w-[760px] text-[clamp(1.5rem,3vw,2.2rem)] font-semibold leading-[1.12] tracking-[-0.02em]">
+            {pricingSummary.headline}
+          </h2>
+          <p className="mt-4 max-w-[720px] text-[14px] leading-[1.7] text-[#555]">{pricingSummary.lede}</p>
+          <div className="mt-7 grid gap-px overflow-hidden rounded-2xl bg-[#eee] sm:grid-cols-2">
+            {pricingSummary.points.map((p) => (
+              <div key={p.label} className="bg-white p-5">
+                <div className="flex items-start gap-2.5">
+                  <PoundSterling className="mt-0.5 size-4 shrink-0" style={{ color: ORANGE }} />
+                  <div>
+                    <h3 className="text-[14px] font-semibold tracking-[-0.01em]">{p.label}</h3>
+                    <p className="mt-1.5 text-[12.5px] leading-[1.55] text-[#666]">{p.body}</p>
+                    <div className="mt-2.5">
+                      <SourceLink source={p.source} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <a
+            href={pricingSummary.reportAnchor}
+            className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#444] hover:text-black"
+          >
+            Read the full cost breakdown & growth path <ArrowDown className="size-4" style={{ color: ORANGE }} />
+          </a>
+        </section>
+
+        {/* Pricing — Part 2: the larger report */}
+        <section id={pricingReport.anchorId} className="scroll-mt-20 py-10">
+          <SectionLabel>{pricingReport.kicker}</SectionLabel>
+          <h2 className="max-w-[820px] text-[clamp(1.5rem,3vw,2.2rem)] font-semibold leading-[1.12] tracking-[-0.02em]">
+            {pricingReport.headline}
+          </h2>
+          <p className="mt-4 max-w-[760px] text-[14px] leading-[1.7] text-[#555]">{pricingReport.intro}</p>
+
+          {/* (a) Cost stack */}
+          <div className="mt-8">
+            <h3 className="text-[15px] font-semibold tracking-[-0.01em]">{pricingReport.costStack.label}</h3>
+            <p className="mt-1.5 max-w-[760px] text-[13px] leading-[1.6] text-[#777]">{pricingReport.costStack.intro}</p>
+            <div className="mt-4 overflow-hidden rounded-2xl border border-[#eee]">
+              {pricingReport.costStack.lines.map((l, i) => (
+                <div
+                  key={l.item}
+                  className={`grid gap-3 p-5 md:grid-cols-[1.3fr_1fr] md:p-6 ${i > 0 ? "border-t border-[#eee]" : ""}`}
+                >
+                  <div>
+                    <h4 className="text-[14px] font-semibold leading-snug tracking-[-0.01em]">{l.item}</h4>
+                    <p className="mt-1.5 text-[12.5px] leading-[1.55] text-[#666]">{l.whatItIs}</p>
+                  </div>
+                  <div className="md:text-right">
+                    <p className="text-[13px] font-semibold text-[#222]">{l.marketRate}</p>
+                    {l.source && (
+                      <div className="mt-1.5 md:flex md:justify-end">
+                        <SourceLink source={l.source} />
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-3 rounded-xl bg-[#fafafa] px-4 py-3 text-[13px] leading-[1.6] text-[#444]">
+              <span className="font-semibold" style={{ color: ORANGE }}>
+                Bottom line ·{" "}
+              </span>
+              {pricingReport.costStack.takeaway}
+            </p>
+          </div>
+
+          {/* (b) Loss context */}
+          <div className="mt-10">
+            <h3 className="text-[15px] font-semibold tracking-[-0.01em]">{pricingReport.lossContext.label}</h3>
+            <p className="mt-1.5 max-w-[760px] text-[13px] leading-[1.6] text-[#777]">
+              {pricingReport.lossContext.intro}
+            </p>
+            <div className="mt-4 grid gap-px overflow-hidden rounded-2xl bg-[#eee] sm:grid-cols-2 lg:grid-cols-3">
+              {pricingReport.lossContext.rows.map((r) => (
+                <div key={r.stat} className="bg-white p-5">
+                  <div className="flex items-start justify-between gap-2">
+                    <span className="text-[clamp(1.4rem,2.6vw,1.9rem)] font-semibold leading-none tracking-[-0.02em]">
+                      {r.stat}
+                    </span>
+                    <KindChip kind={r.kind} />
+                  </div>
+                  <p className="mt-3 text-[12.5px] leading-[1.55] text-[#666]">{r.detail}</p>
+                  <div className="mt-2.5">
+                    <SourceLink source={r.source} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* (c) ROI model */}
+          <div className="mt-10">
+            <h3 className="text-[15px] font-semibold tracking-[-0.01em]">{pricingReport.roi.label}</h3>
+            <p className="mt-1.5 max-w-[760px] text-[13px] leading-[1.6] text-[#777]">{pricingReport.roi.intro}</p>
+            <div className="mt-4 grid gap-px overflow-hidden rounded-2xl bg-[#eee] lg:grid-cols-[1fr_1fr]">
+              {/* assumptions */}
+              <div className="bg-white p-6">
+                <p className="text-[12px] font-semibold uppercase tracking-wide text-[#999]">Assumptions (conservative)</p>
+                <ul className="mt-3 space-y-2">
+                  {pricingReport.roi.assumptions.map((a) => (
+                    <li key={a} className="flex gap-2.5 text-[12.5px] leading-[1.55] text-[#555]">
+                      <span className="mt-1.5 size-1 shrink-0 rounded-full" style={{ backgroundColor: ORANGE }} />
+                      {a}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {/* scenario table */}
+              <div className="bg-white p-6">
+                <p className="text-[12px] font-semibold uppercase tracking-wide text-[#999]">
+                  Return on a 1,000-policy book
+                </p>
+                <div className="mt-3 overflow-hidden rounded-xl border border-[#eee]">
+                  <div className="grid grid-cols-[1.6fr_1fr_0.9fr] bg-[#fafafa] px-3 py-2 text-[11px] font-semibold uppercase tracking-wide text-[#888]">
+                    <span>Scenario</span>
+                    <span className="text-right">Saved/yr</span>
+                    <span className="text-right">ROI</span>
+                  </div>
+                  {pricingReport.roi.rows.map((r, i) => (
+                    <div
+                      key={r.scenario}
+                      className={`grid grid-cols-[1.6fr_1fr_0.9fr] px-3 py-2.5 text-[12.5px] ${
+                        i > 0 ? "border-t border-[#eee]" : ""
+                      }`}
+                    >
+                      <span className="text-[#444]">{r.scenario}</span>
+                      <span className="text-right font-medium text-[#222]">{r.saved}</span>
+                      <span className="text-right font-semibold" style={{ color: ORANGE }}>
+                        {r.roi}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="mt-3 grid gap-3 sm:grid-cols-2">
+              <p className="rounded-xl bg-[#0f0f0f] px-4 py-3 text-[13px] leading-[1.6] text-white/90">
+                <span className="font-semibold" style={{ color: ORANGE }}>
+                  One claim ·{" "}
+                </span>
+                {pricingReport.roi.singleClaim}
+              </p>
+              <p className="rounded-xl bg-[#fafafa] px-4 py-3 text-[13px] leading-[1.6] text-[#444]">
+                <span className="font-semibold" style={{ color: ORANGE }}>
+                  Break-even ·{" "}
+                </span>
+                {pricingReport.roi.breakEven}
+              </p>
+            </div>
+          </div>
+
+          {/* (d) Growth */}
+          <div className="mt-10">
+            <h3 className="text-[15px] font-semibold tracking-[-0.01em]">{pricingReport.growth.label}</h3>
+            <p className="mt-1.5 max-w-[760px] text-[13px] leading-[1.6] text-[#777]">{pricingReport.growth.intro}</p>
+            <div className="mt-4 overflow-hidden rounded-2xl border border-[#eee]">
+              {pricingReport.growth.tiers.map((t, i) => (
+                <div
+                  key={t.stage}
+                  className={`grid gap-3 p-5 md:grid-cols-[1fr_1fr_1.3fr] md:items-center md:p-6 ${
+                    i > 0 ? "border-t border-[#eee]" : ""
+                  }`}
+                >
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span
+                        className="flex size-6 items-center justify-center rounded-full text-[11px] font-bold text-white"
+                        style={{ backgroundColor: i === 0 ? ORANGE : "#bbb" }}
+                      >
+                        {i}
+                      </span>
+                      <h4 className="text-[14px] font-semibold tracking-[-0.01em]">{t.stage}</h4>
+                    </div>
+                    <div className="mt-2">
+                      <StatusBadge status={t.status} />
+                    </div>
+                  </div>
+                  <p className="text-[15px] font-semibold tracking-[-0.01em]" style={{ color: i === 0 ? ORANGE : "#222" }}>
+                    {t.price}
+                  </p>
+                  <div className="text-[12.5px] leading-[1.55] text-[#666]">
+                    <p className="text-[#444]">{t.scope}</p>
+                    <p className="mt-1 text-[#999]">{t.rationale}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-4 grid gap-px overflow-hidden rounded-2xl bg-[#eee] sm:grid-cols-3">
+              {pricingReport.growth.marketBackdrop.map((b) => (
+                <div key={b.stat} className="bg-white p-5">
+                  <div className="flex items-center gap-2">
+                    <TrendingUp className="size-4 shrink-0" style={{ color: ORANGE }} />
+                    <span className="text-[15px] font-semibold tracking-[-0.01em]">{b.stat}</span>
+                  </div>
+                  <p className="mt-2 text-[12px] leading-[1.5] text-[#666]">{b.detail}</p>
+                  <div className="mt-2">
+                    <SourceLink source={b.source} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Sources & methodology */}
+          <div className="mt-10">
+            <h3 className="text-[15px] font-semibold tracking-[-0.01em]">Sources & methodology</h3>
+            <p className="mt-1.5 max-w-[820px] text-[12.5px] leading-[1.6] text-[#777]">{sourcesNote}</p>
+            <div className="mt-4 overflow-hidden rounded-2xl border border-[#eee]">
+              {externalSources.map((s, i) => (
+                <div
+                  key={s.id}
+                  className={`grid gap-2 p-4 md:grid-cols-[1.7fr_1fr_auto] md:items-center md:p-5 ${
+                    i > 0 ? "border-t border-[#eee]" : ""
+                  }`}
+                >
+                  <p className="text-[12.5px] leading-[1.5] text-[#444]">{s.label}</p>
+                  <div className="text-[12px] text-[#777]">
+                    <a
+                      href={s.href}
+                      target={s.href.startsWith("http") ? "_blank" : undefined}
+                      rel={s.href.startsWith("http") ? "noreferrer" : undefined}
+                      className="inline-flex items-center gap-1 font-medium underline decoration-[#ccc] underline-offset-2 hover:text-black"
+                    >
+                      {s.publisher}
+                      <ExternalLink className="size-3 shrink-0" />
+                    </a>
+                    <span className="text-[#aaa]"> · {s.dated}</span>
+                  </div>
+                  <div className="md:justify-self-end">
+                    <KindChip kind={s.kind} />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

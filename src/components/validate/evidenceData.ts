@@ -388,6 +388,443 @@ export const pendingEvidence: Pending[] = [
   { label: "Teammates' social posts", note: "Dated Pop the Bubble posts from the rest of the team — add real URLs under Build-in-public as they come in." },
 ];
 
+// ════════════════════════════════════════════════════════════════════════════
+// PRICING & ROI  —  why the LOI is priced at £20,000, and what it grows into.
+//
+// IMPORTANT FRAMING: German Shepherd is PHYSICAL building security / in-person
+// penetration testing (break-in, intrusion, tailgating, theft, business
+// interruption) — NOT cybersecurity. Every number below is sourced; sources are
+// tagged independent / vendor / secondary in `externalSources` so a judge can
+// weight them. Lead with independent (govt / ABI / trade-body) figures.
+// ════════════════════════════════════════════════════════════════════════════
+
+export type SourceKind = "independent" | "vendor" | "secondary";
+
+export interface ExternalSource {
+  id: string;
+  label: string; // what it is
+  publisher: string; // who published it
+  href: string;
+  dated: string;
+  kind: SourceKind;
+  note?: string;
+}
+
+// ── Part 1: the brief — why we priced the LOI as we did ──────────────────────
+export const pricingSummary = {
+  kicker: "Pricing rationale",
+  headline: "Why the pilot is priced at £20,000",
+  lede:
+    "German Shepherd does the reconnaissance an in-person penetration tester does — finding how a building can actually be entered — as software. We priced the pilot against two anchors: what that recon costs to do by hand, and what a single break-in costs an insurer. The full cost breakdown and growth path are below.",
+  points: [
+    {
+      label: "Priced like a real physical engagement",
+      body:
+        "£20,000 sits inside the published range for a physical penetration test (£5,000–£40,000 per engagement; £1,000–£1,600 per tester-day in the UK) and below a full red-team (£30,000–£100,000+). We're priced as a serious multi-day assessment — delivered at software margins and repeatable across every site.",
+      source: {
+        label: "UK pen-test price guides — JUMPSEC / SECFORCE",
+        href: "https://www.jumpsec.com/guides/how-much-does-penetration-testing-cost-in-the-uk/",
+        dated: "2026",
+      },
+    },
+    {
+      label: "Cheaper than one break-in",
+      body:
+        "The average UK commercial property insurance claim is £17,400. The whole 12-month pilot costs roughly 1.1× a single claim — so influencing the outcome of one break-in across the agreed buildings repays it.",
+      source: {
+        label: "ABI — UK property claims, Q2 2025",
+        href: "https://www.abi.org.uk/news/news-articles/2025/7/1.6-billion-paid-in-property-claims-in-q2-2025/",
+        dated: "2025-07",
+      },
+    },
+    {
+      label: "A risk insurers can't see",
+      body:
+        "26% of UK business premises are hit by crime each year, and physical pen-test teams breach 80–99% of the buildings they target. Insurers underwrite buildings they have never seen from an attacker's side — exactly the gap German Shepherd closes before a loss.",
+      source: {
+        label: "Home Office Commercial Victimisation Survey 2023; IBM X-Force Red",
+        href: "https://www.gov.uk/government/statistics/crime-against-businesses-findings-from-the-2023-commercial-victimisation-survey/crime-against-businesses-findings-from-the-2023-commercial-victimisation-survey",
+        dated: "2023",
+      },
+    },
+    {
+      label: "A land price, not the ceiling",
+      body:
+        "£20,000 is a deliberately low-friction entry for a marquee insurer that brings reseller rights into 230+ carriers. The value price scales per-building and per-insurer in the formal commercial agreement.",
+      source: { label: "Bolttech LOI · GS-LOI-2026-001", href: "/evidence/bolttech-loi.pdf", dated: "2026-06-06" },
+    },
+  ],
+  reportAnchor: "#pricing-report",
+};
+
+// ── Part 2: the larger report — cost breakdown & growth path ─────────────────
+export interface CostLine {
+  item: string; // the LOI deliverable
+  whatItIs: string; // plain-English what it is
+  marketRate: string; // what it costs bought separately
+  source?: Source;
+}
+
+export interface LossRow {
+  stat: string; // the headline number
+  detail: string;
+  source: Source;
+  kind: SourceKind;
+}
+
+export interface RoiRow {
+  scenario: string;
+  saved: string;
+  roi: string;
+}
+
+export interface GrowthTier {
+  stage: string;
+  price: string;
+  scope: string;
+  rationale: string;
+  status: Status;
+}
+
+export const pricingReport = {
+  anchorId: "pricing-report",
+  kicker: "Full cost breakdown & growth path",
+  headline: "Why this LOI was signed at £20,000 — and what it grows into",
+  intro:
+    "This is the breakdown behind the headline price: what £20,000 actually buys, the physical-security losses it is priced against, a deliberately conservative return model, and the tiered path from a single pilot to a network-wide revenue line. Numbers in this section are physical-security figures — burglary, intrusion, theft and business interruption — not cyber.",
+
+  // (a) what £20k buys — the cost stack vs market rates
+  costStack: {
+    label: "What £20,000 actually buys",
+    intro:
+      "Bought separately at market rates, the LOI deliverables cost many multiples of the pilot fee. German Shepherd delivers the same building reconnaissance as software, so the marginal cost per site collapses.",
+    lines: [
+      {
+        item: "Building intelligence reports (per-site physical risk profiles)",
+        whatItIs:
+          "The reconnaissance phase of a physical penetration test — entry points, cameras, wireless/OSINT footprint and the planning record — automated for every agreed building.",
+        marketRate: "£5,000–£40,000 per site by hand (£1,000–£1,600 per tester-day, UK)",
+        source: {
+          label: "Bright Defense; JUMPSEC; SECFORCE pen-test cost guides",
+          href: "https://www.brightdefense.com/resources/what-is-physical-penetration-testing/",
+          dated: "2026",
+        },
+      },
+      {
+        item: "12-month continuous platform access",
+        whatItIs:
+          "Always-on monitoring of each building's external risk surface — not a one-off snapshot — plus the building intelligence graph.",
+        marketRate: "≈ £15,000+/yr for comparable continuous outside-in monitoring (entry SaaS tier)",
+        source: {
+          label: "UpGuard published pricing (category benchmark)",
+          href: "https://www.upguard.com/pricing/",
+          dated: "2026",
+        },
+      },
+      {
+        item: "Signal-to-risk mapping → underwriting variables",
+        whatItIs:
+          "Bespoke work mapping our data signals onto Bolttech's underwriting model across property & SME risk lines.",
+        marketRate: "Custom risk-data consulting — typically £ tens of thousands",
+      },
+      {
+        item: "Integration spec + reseller onboarding pack",
+        whatItIs:
+          "Technical docs to wire outputs into their stack, plus tooling to distribute German Shepherd to their insurer network.",
+        marketRate: "Channel & integration enablement — normally a separate paid workstream",
+      },
+    ] as CostLine[],
+    takeaway:
+      "At market rates the building-assessment line alone — even a modest pilot scope of 10–25 sites — represents £50,000–£1,000,000 of manual physical pen-testing. £20,000 prices the entire 12-month engagement below a single comprehensive manual assessment.",
+  },
+
+  // (b) the loss we price against — all sourced, mostly independent
+  lossContext: {
+    label: "The physical-security loss we price against",
+    intro:
+      "Insurers pay these losses today because building-level physical risk is invisible to existing underwriting data. Each figure below is independently checkable.",
+    rows: [
+      {
+        stat: "£17,400",
+        detail: "Average UK commercial property insurance claim (Q2 2025); £1.6bn paid in property claims that quarter.",
+        source: {
+          label: "Association of British Insurers",
+          href: "https://www.abi.org.uk/news/news-articles/2025/7/1.6-billion-paid-in-property-claims-in-q2-2025/",
+          dated: "2025-07",
+        },
+        kind: "independent",
+      },
+      {
+        stat: "26%",
+        detail:
+          "of UK business premises were a victim of crime in the last year — 8% burglary, 14% theft; rising to 41% in retail & wholesale.",
+        source: {
+          label: "Home Office Commercial Victimisation Survey 2023",
+          href: "https://www.gov.uk/government/statistics/crime-against-businesses-findings-from-the-2023-commercial-victimisation-survey/crime-against-businesses-findings-from-the-2023-commercial-victimisation-survey",
+          dated: "2023",
+        },
+        kind: "independent",
+      },
+      {
+        stat: "1 in 10",
+        detail:
+          "small businesses that were victims of crime lost over £10,000; 81% of small firms were hit by crime over two years.",
+        source: {
+          label: "FSB — Cracking the Case",
+          href: "https://www.fsb.org.uk/resource-report/cracking-the-case-uncovering-the-cost-of-small-business-crime.html",
+          dated: "2023-12",
+        },
+        kind: "independent",
+      },
+      {
+        stat: "£4.2bn",
+        detail: "Total cost of UK retail crime — including £2.2bn of direct customer theft, up 21% year on year.",
+        source: {
+          label: "British Retail Consortium Crime Survey 2025",
+          href: "https://brc.org.uk/news-and-events/news/operations/2025/ungated/brc-retail-crime-survey-2025/",
+          dated: "2025",
+        },
+        kind: "independent",
+      },
+      {
+        stat: "80–99%",
+        detail:
+          "of buildings are successfully breached by physical pen-test teams; tailgating succeeds on 60–90% of first attempts, and fewer than 1 in 5 staff challenge a stranger.",
+        source: {
+          label: "Pinkerton (~80%); IBM X-Force Red (99%)",
+          href: "https://pinkerton.com/our-insights/blog/onsite-penetration-testing-and-social-engineering-for-physical-security",
+          dated: "2024",
+        },
+        kind: "vendor",
+      },
+      {
+        stat: "23%",
+        detail:
+          "Only 23% of premises-holding SMEs carry business-interruption cover, and up to 40% of UK SMEs are underinsured — so a single physical incident can be existential.",
+        source: {
+          label: "ABI / Public First — SME underinsurance; FCA",
+          href: "https://www.publicfirst.co.uk/smallbusbigrisk",
+          dated: "2026-01",
+        },
+        kind: "independent",
+      },
+    ] as LossRow[],
+  },
+
+  // (c) ROI model — deliberately conservative, physical-framed
+  roi: {
+    label: "The return model (deliberately conservative)",
+    intro:
+      "We model the lever that hits the insurer's P&L directly: better physical risk selection and remediation prompts that reduce break-in, theft and business-interruption claims on a property book.",
+    assumptions: [
+      "Claim frequency: 5% per commercial policy per year — below the Home Office prevalence (8% burglary + 14% theft), discounted for unclaimed and sub-excess incidents.",
+      "Severity: £10,000 per claim — conservative, below the ABI all-cause commercial average of £17,400 (FSB: 1 in 10 victims lose >£10,000).",
+      "Expected crime-loss cost = 5% × £10,000 = £500 per policy per year.",
+      "Worked on a modest book of 1,000 SME commercial-property policies → ≈ £500,000 expected crime-loss cost per year.",
+    ],
+    rows: [
+      { scenario: "Break-even (≈4% fewer crime claims)", saved: "£20,000", roi: "1.0× (pays for itself)" },
+      { scenario: "5% fewer crime claims", saved: "£25,000", roi: "1.25×" },
+      { scenario: "10% fewer crime claims", saved: "£50,000", roi: "2.5×" },
+      { scenario: "20% fewer crime claims", saved: "£100,000", roi: "5×" },
+    ] as RoiRow[],
+    singleClaim:
+      "£20,000 ≈ 1.1× the average commercial property claim (£17,400). Across the agreed pilot buildings, German Shepherd only needs to prevent or re-price a single break-in to repay the entire pilot.",
+    breakEven:
+      "On a 1,000-policy book the pilot breaks even at a ~4% reduction in crime claims. With severity at the ABI £17,400 average instead of our £10,000, the same 5% reduction is worth ~£43,500 — a 2.2× return. Either way, modest prevention dwarfs the fee.",
+  },
+
+  // (d) what it grows into — tiers + market backdrop
+  growth: {
+    label: "What it grows into",
+    intro:
+      "The pilot is the land price. Expansion is priced per-building, per-insurer, and as a share of premium written on screened risk — so revenue scales with Bolttech's network, not with our headcount.",
+    tiers: [
+      {
+        stage: "Pilot — signed",
+        price: "£20,000 / 12 months",
+        scope: "An agreed set of policyholder buildings, one insurer (Bolttech), + 1 free month on launch.",
+        rationale: "Low-friction entry that retires the demand risk and unlocks reseller rights.",
+        status: "verified",
+      },
+      {
+        stage: "Per-insurer platform licence",
+        price: "£30,000–£60,000 / yr per carrier",
+        scope: "Full platform access for each insurer in Bolttech's network.",
+        rationale: "Still below a single manual red-team and below enterprise security-ratings seats.",
+        status: "pending",
+      },
+      {
+        stage: "Per-building screening",
+        price: "£25–£150 per building profiled",
+        scope: "Usage-based screening at underwriting, embedded in the quote flow.",
+        rationale: "30–1,000× cheaper per building than a £5k–£40k manual assessment, at software margin.",
+        status: "pending",
+      },
+      {
+        stage: "Reseller revenue share",
+        price: "Per-policy data fee / share of premium",
+        scope: "Across Bolttech's 230+ insurers and 700+ distribution partners.",
+        rationale: "Scales with their ~$85bn of premiums quoted annually — the real prize in the LOI.",
+        status: "pending",
+      },
+    ] as GrowthTier[],
+    marketBackdrop: [
+      {
+        stat: "~$2.9bn → 12%+ CAGR",
+        detail:
+          "Penetration-testing market, growing inside a $130bn+ global physical-security industry.",
+        source: {
+          label: "Mordor Intelligence; Grand View Research",
+          href: "https://www.mordorintelligence.com/industry-reports/penetration-testing-market",
+          dated: "2026",
+        },
+        kind: "independent" as SourceKind,
+      },
+      {
+        stat: "$700bn–$950bn",
+        detail: "Forecast embedded-insurance gross written premium by 2030 — Bolttech's core market.",
+        source: {
+          label: "Strategy& / PwC; Mordor Intelligence",
+          href: "https://www.strategyand.pwc.com/de/en/industries/financial-services/embedded-insurance.html",
+          dated: "2025",
+        },
+        kind: "independent" as SourceKind,
+      },
+      {
+        stat: "$2.1bn",
+        detail: "Bolttech valuation (Series C) — 230+ insurers, 700+ distributors, ~$85bn premiums quoted/yr.",
+        source: {
+          label: "TechCrunch",
+          href: "https://techcrunch.com/2025/06/04/singapore-based-insurtech-bolttech-closes-147m-series-c-at-a-2-1b-valuation/",
+          dated: "2025-06",
+        },
+        kind: "independent" as SourceKind,
+      },
+    ],
+  },
+};
+
+// ── Sources & methodology — the full citation library for the pricing work ────
+export const externalSources: ExternalSource[] = [
+  {
+    id: "abi-claims",
+    label: "Average UK commercial property claim £17,400; £1.6bn property claims paid Q2 2025",
+    publisher: "Association of British Insurers (ABI)",
+    href: "https://www.abi.org.uk/news/news-articles/2025/7/1.6-billion-paid-in-property-claims-in-q2-2025/",
+    dated: "2025-07",
+    kind: "independent",
+  },
+  {
+    id: "cvs-2023",
+    label: "26% of business premises hit by crime/yr; 8% burglary, 14% theft, 41% retail & wholesale",
+    publisher: "Home Office — Commercial Victimisation Survey 2023",
+    href: "https://www.gov.uk/government/statistics/crime-against-businesses-findings-from-the-2023-commercial-victimisation-survey/crime-against-businesses-findings-from-the-2023-commercial-victimisation-survey",
+    dated: "2023",
+    kind: "independent",
+  },
+  {
+    id: "fsb-crime",
+    label: "81% of small firms hit by crime over two years; 1 in 10 victims lost >£10,000",
+    publisher: "Federation of Small Businesses — Cracking the Case",
+    href: "https://www.fsb.org.uk/resource-report/cracking-the-case-uncovering-the-cost-of-small-business-crime.html",
+    dated: "2023-12",
+    kind: "independent",
+  },
+  {
+    id: "brc-crime",
+    label: "Total UK retail crime £4.2bn incl. £2.2bn customer theft (+21% YoY)",
+    publisher: "British Retail Consortium — Crime Survey 2025",
+    href: "https://brc.org.uk/news-and-events/news/operations/2025/ungated/brc-retail-crime-survey-2025/",
+    dated: "2025",
+    kind: "independent",
+  },
+  {
+    id: "abi-underinsurance",
+    label: "Only 23% of premises-holding SMEs carry business-interruption cover",
+    publisher: "ABI / Public First — Small Business, Big Risk",
+    href: "https://www.publicfirst.co.uk/smallbusbigrisk",
+    dated: "2026-01",
+    kind: "independent",
+  },
+  {
+    id: "jumpsec-price",
+    label: "UK pen-test day rate £1,000–£1,600/tester; engagements typically 3–10 days",
+    publisher: "JUMPSEC; SECFORCE (UK pen-test price guides)",
+    href: "https://www.jumpsec.com/guides/how-much-does-penetration-testing-cost-in-the-uk/",
+    dated: "2026",
+    kind: "vendor",
+  },
+  {
+    id: "brightdefense-price",
+    label: "Physical pen test $4,800 (basic single-site) to $50,000+ (multi-site)",
+    publisher: "Bright Defense",
+    href: "https://www.brightdefense.com/resources/what-is-physical-penetration-testing/",
+    dated: "2026",
+    kind: "vendor",
+  },
+  {
+    id: "upguard-price",
+    label: "Continuous outside-in monitoring from ~$19k/yr (entry SaaS tier) — category benchmark",
+    publisher: "UpGuard (published pricing)",
+    href: "https://www.upguard.com/pricing/",
+    dated: "2026",
+    kind: "vendor",
+  },
+  {
+    id: "ibm-xforce",
+    label: "Social engineers physically compromise targets in 99% of engagements",
+    publisher: "IBM X-Force Red",
+    href: "https://www.ibm.com/services/social-engineering",
+    dated: "2024",
+    kind: "vendor",
+    note: "Widely cited but vendor-published; pair with the independent tailgating surveys.",
+  },
+  {
+    id: "pinkerton",
+    label: "~80% of onsite physical pen-tests succeed via the human element",
+    publisher: "Pinkerton",
+    href: "https://pinkerton.com/our-insights/blog/onsite-penetration-testing-and-social-engineering-for-physical-security",
+    dated: "2024",
+    kind: "vendor",
+  },
+  {
+    id: "boonedam-tailgating",
+    label: "48% of organisations reported ≥1 tailgating breach in two years (independent survey)",
+    publisher: "Boon Edam / Readex Research",
+    href: "https://blog.boonedam.com/en-us/hidden-risks-of-tailgating-and-piggybacking",
+    dated: "2023",
+    kind: "independent",
+  },
+  {
+    id: "pentest-market",
+    label: "Pen-test market ~$2.9bn, ~12%+ CAGR; physical-security industry $130bn+",
+    publisher: "Mordor Intelligence; Grand View Research",
+    href: "https://www.mordorintelligence.com/industry-reports/penetration-testing-market",
+    dated: "2026",
+    kind: "independent",
+  },
+  {
+    id: "embedded-market",
+    label: "Embedded-insurance GWP forecast $700bn–$950bn by 2030",
+    publisher: "Strategy& / PwC; Mordor Intelligence",
+    href: "https://www.strategyand.pwc.com/de/en/industries/financial-services/embedded-insurance.html",
+    dated: "2025",
+    kind: "independent",
+  },
+  {
+    id: "bolttech-valuation",
+    label: "Bolttech $2.1bn valuation; 230+ insurers, 700+ distributors, ~$85bn premiums quoted/yr",
+    publisher: "TechCrunch; bolttech.io",
+    href: "https://techcrunch.com/2025/06/04/singapore-based-insurtech-bolttech-closes-147m-series-c-at-a-2-1b-valuation/",
+    dated: "2025-06",
+    kind: "independent",
+  },
+];
+
+export const sourcesNote =
+  "German Shepherd is physical-security intelligence (in-person penetration testing), so figures here are physical losses — burglary, intrusion, theft, business interruption — not cyber. Independent = government, regulator, or trade-body data; Vendor = published by a firm selling a related service (directional, used as supporting colour); Secondary = reputable reporting of a primary source. Two widely-repeated claims are deliberately excluded as unreliable: the \"£12.9bn business-crime\" figure (unverified, retailer-sourced) and \"80% of businesses close within 18 months of a disaster\" (US FEMA, not UK).";
+
 // ── Build-in-public (bonus +12) — real, dated posts only ─────────────────────
 export interface Post {
   platform: string;
