@@ -12,6 +12,7 @@ import { Labels } from './Labels';
 import { VectorWalls } from './VectorWalls';
 import { Partitions } from './Partitions';
 import { Stairs } from './Stairs';
+import { StairFootprints } from './StairFootprints';
 import { Lifts } from './Lifts';
 import { Entrances } from './Entrances';
 
@@ -52,6 +53,7 @@ export const Scene = memo(function Scene({ data, ...h }: Props) {
       )}
 
       <Stairs graph={graph} {...h} />
+      <StairFootprints graph={graph} {...h} />
       <Lifts graph={graph} {...h} />
 
       {building && <Entrances building={building} {...h} />}

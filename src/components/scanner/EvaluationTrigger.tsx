@@ -1,20 +1,21 @@
 import { useState } from "react";
 import { ChevronDown, Crosshair, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { SELECTABLE_PHASES } from "./evaluationPhases";
+import { SELECTABLE_RECON } from "./reconPhases";
 
 /**
- * Floating trigger for the evaluation pipeline. Lives in the left rail under the
- * targets card whenever a building is selected. "Evaluate building" runs the full
- * pipeline; "Ask specific" opens a checklist so the user runs only the phases
- * they care about — the pipeline then shows ONLY those phases.
+ * Floating trigger for the recon pipeline. Lives on the right dock whenever a
+ * building is selected. "Run recon" launches all four phases in parallel; the
+ * chevron opens a checklist so the user runs only the phases they care about —
+ * the pipeline then shows ONLY those phases. (The legacy public-data evaluation
+ * still lives in the codebase but is no longer wired to this trigger.)
  */
 export function EvaluationTrigger({
   buildingName,
   onEvaluate,
 }: {
   buildingName: string;
-  /** keys === null → full evaluation; otherwise the selected phase subset. */
+  /** keys === null → all four phases; otherwise the selected phase subset. */
   onEvaluate: (keys: string[] | null) => void;
 }) {
   const [open, setOpen] = useState(false);
@@ -44,7 +45,7 @@ export function EvaluationTrigger({
         >
           {/* sweeping shine to draw the eye */}
           <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-          <Zap className="size-4 fill-black" /> Evaluate building
+          <Zap className="size-4 fill-black" /> Run recon
         </button>
         <button
           onClick={() => setOpen((o) => !o)}
@@ -62,7 +63,7 @@ export function EvaluationTrigger({
 
       {open && (
         <div className="space-y-0.5 px-2 pb-2 animate-fade-in">
-          {SELECTABLE_PHASES.map((p) => {
+          {SELECTABLE_RECON.map((p) => {
             const on = picked.has(p.key);
             const Icon = p.icon;
             return (

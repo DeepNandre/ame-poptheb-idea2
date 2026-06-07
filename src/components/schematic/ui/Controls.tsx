@@ -1,23 +1,14 @@
 import type { Floor } from '@/components/schematic/lib/types';
-import { TYPE_FILTER_ORDER } from '@/components/schematic/lib/scene/constants';
 
 interface Props {
   floors: Floor[];
   activeFloor: string;
   onFloor: (level: string) => void;
-  categoryEnabled: Record<string, boolean>;
-  onToggleCategory: (type: string) => void;
-  onResetHidden: () => void;
 }
 
-export function Controls({
-  floors,
-  activeFloor,
-  onFloor,
-  categoryEnabled,
-  onToggleCategory,
-  onResetHidden,
-}: Props) {
+/** Floor selector — a tall left column that spans to the bottom of the page.
+ *  Type filters / show-hide toggles live in the SidePanel to its right. */
+export function Controls({ floors, activeFloor, onFloor }: Props) {
   // Original lists floors top-down (reversed).
   const ordered = [...floors].reverse();
   return (
@@ -43,24 +34,6 @@ export function Controls({
           );
         })}
       </div>
-
-      <h3 className="sep">Show Types</h3>
-      <div id="type-filters">
-        {TYPE_FILTER_ORDER.map((t) => (
-          <label key={t} className="chk">
-            <input
-              type="checkbox"
-              checked={categoryEnabled[t] ?? true}
-              onChange={() => onToggleCategory(t)}
-            />{' '}
-            {t}
-          </label>
-        ))}
-      </div>
-
-      <button id="reset-btn" onClick={onResetHidden}>
-        Reset hidden
-      </button>
     </div>
   );
 }

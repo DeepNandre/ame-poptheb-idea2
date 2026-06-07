@@ -17,8 +17,8 @@ import { Scene } from './scene/Scene';
 import { Header } from './ui/Header';
 import { HoverReadout } from './ui/HoverReadout';
 import { Controls } from './ui/Controls';
-import { DetailToggles, type DetailKey } from './ui/DetailToggles';
-import { Legend } from './ui/Legend';
+import { SidePanel } from './ui/SidePanel';
+import type { DetailKey } from './ui/DetailToggles';
 import { StackHud } from './ui/StackHud';
 
 export default function ArborViewer() {
@@ -141,20 +141,21 @@ export default function ArborViewer() {
         <HoverReadout hovered={hovered} />
 
         {data && (
-          <Controls
-            floors={data.graph.floors}
-            activeFloor={state.activeFloor}
-            onFloor={onFloor}
-            categoryEnabled={state.categoryEnabled}
-            onToggleCategory={onToggleCategory}
-            onResetHidden={onResetHidden}
-          />
+          <>
+            <Controls
+              floors={data.graph.floors}
+              activeFloor={state.activeFloor}
+              onFloor={onFloor}
+            />
+            <SidePanel
+              state={state}
+              onToggleDetail={onToggleDetail}
+              categoryEnabled={state.categoryEnabled}
+              onToggleCategory={onToggleCategory}
+              onResetHidden={onResetHidden}
+            />
+          </>
         )}
-
-        <div id="bottom-left">
-          <DetailToggles state={state} onToggle={onToggleDetail} />
-          <Legend />
-        </div>
 
         <StackHud hiddenCount={hide.hidden.size} />
       </div>

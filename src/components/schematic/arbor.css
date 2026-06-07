@@ -25,7 +25,8 @@
   top: 0;
   left: 0;
   right: 0;
-  padding: 16px 20px;
+  /* Left pad clears the overlay's Back button so the place name sits to its right. */
+  padding: 16px 20px 16px 120px;
   background: linear-gradient(to bottom, rgba(10, 10, 15, 0.95), transparent);
   display: flex;
   align-items: center;
@@ -117,9 +118,12 @@
   flex-shrink: 0;
 }
 
+/* Floor list — a tall left column that spans down to the bottom of the page,
+   nudged below the header / Back-button row. */
 .arbor-viewer #controls {
   position: absolute;
-  top: 64px;
+  top: 96px;
+  bottom: 20px;
   left: 20px;
   width: 168px;
   background: rgba(10, 10, 15, 0.85);
@@ -128,8 +132,48 @@
   border-radius: 8px;
   padding: 12px 14px;
   pointer-events: auto;
-  max-height: calc(100vh - 200px);
   overflow-y: auto;
+}
+/* Let the floor buttons share the column's full height. */
+.arbor-viewer #floor-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100% - 56px);
+  gap: 2px;
+}
+
+/* Filters column — Show / Hide, Show Types, reset, legend — to the right of
+   the floor numbers, aligned to the same top. */
+.arbor-viewer #side-panel {
+  position: absolute;
+  top: 96px;
+  left: 204px;
+  width: 184px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: calc(100vh - 116px);
+  overflow-y: auto;
+  pointer-events: none;
+}
+.arbor-viewer #side-panel > * {
+  pointer-events: auto;
+}
+.arbor-viewer #type-panel {
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+.arbor-viewer #type-panel h3 {
+  font-size: 10px;
+  font-weight: 600;
+  color: #555;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 .arbor-viewer #controls h3 {
   font-size: 10px;

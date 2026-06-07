@@ -24,6 +24,9 @@ import { EvaluationTrigger } from "./scanner/EvaluationTrigger";
 import { EvaluationPipeline } from "./scanner/EvaluationPipeline";
 import { EvaluationResults, type ResultActions } from "./scanner/EvaluationResults";
 import { useBuildingEvaluation } from "./scanner/useBuildingEvaluation";
+import { ReconPipeline } from "./scanner/ReconPipeline";
+import { ReconWorkspace } from "./scanner/ReconWorkspace";
+import { useReconPipeline } from "./scanner/useReconPipeline";
 import { SchematicViewer } from "./SchematicViewer";
 
 const DEFAULT_CCTV_RANGE =
@@ -611,9 +614,13 @@ export function BuildingScannerProduct() {
     ? (liveTarget && liveTarget.id === selectedId ? liveTarget : TARGETS.find((t) => t.id === selectedId)) ?? null
     : null;
 
-  // Phased, streaming building evaluation (left-rail trigger → right-dock pipeline
-  // → results deck). Reuses the same aggregator the Intelligence tab does.
+  // Phased, streaming building evaluation (public-data process). Kept intact in
+  // the codebase but no longer triggered from the building dock.
   const evalu = useBuildingEvaluation();
+
+  // Offensive-recon pipeline (the second process) — frontend-only visual driven
+  // by the Run-recon trigger. Four phases from backend/PHASES.md run in parallel.
+  const recon = useReconPipeline();
 
   // Auto-fill the recon target from the currently selected building.
   useEffect(() => {
@@ -1875,9 +1882,9 @@ export function BuildingScannerProduct() {
 
       </ScannerDashboard>
 
-      {/* Evaluation pipeline / results — takes over the right dock while a phased
-          evaluation runs, then morphs into the results deck. Closing it (reset)
-          falls back to the building inspector below. */}
+      {/* Legacy public-data pipeline / results dock — kept intact, but no longer
+          triggered from the building dock (the Run-recon trigger drives the recon
+          pipeline instead). Stays dormant unless evalu is started elsewhere. */}
       {evalu.mode !== "idle" && (
         <div className="no-print fixed right-4 top-4 bottom-24 z-30 flex w-[min(24rem,calc(100vw-2rem))] flex-col">
           <div className="min-h-0 flex-1">
@@ -1890,21 +1897,43 @@ export function BuildingScannerProduct() {
         </div>
       )}
 
+      {/* Recon pipeline — takes over the right dock while the four-phase recon
+          runs (frontend-only visual). Closing it (reset) falls back to the
+          building inspector below. */}
+      {recon.mode !== "idle" && (
+        <div className="no-print fixed right-4 top-4 bottom-24 z-30 flex w-[min(24rem,calc(100vw-2rem))] flex-col">
+          <div className="min-h-0 flex-1">
+            <ReconPipeline recon={recon} />
+          </div>
+        </div>
+      )}
+
+      {/* Post-recon workspace — opens on the LEFT once the pipeline finishes:
+          a building-aware chat assistant, an enrichable people roster, OSINT
+          findings, and a hand-off to the 3D schematic. Frontend-only, fed by the
+          recon target. Closing the right pipeline (reset) tears this down too. */}
+      {recon.complete && recon.target && (
+        <div className="no-print fixed left-4 top-4 bottom-24 z-30 flex w-[min(26rem,calc(100vw-2rem))] flex-col">
+          <div className="min-h-0 flex-1">
+            <ReconWorkspace
+              building={recon.target.name}
+              onOpen3D={() => setSchematicOpen(true)}
+              onClose={recon.reset}
+            />
+          </div>
+        </div>
+      )}
+
       {/* Building inspector — its OWN docked panel on the right, separate from the
           scan dashboard, so the two never stack on top of each other. Shows for any
           selected building (curated, live planning result, or a chat lookup). */}
-      {selected && evalu.mode === "idle" && (
+      {selected && recon.mode === "idle" && (
         <div className="no-print fixed right-4 top-4 bottom-24 z-30 flex w-[min(24rem,calc(100vw-2rem))] flex-col gap-2">
           {/* Primary call to action — big and obvious, right where the eye lands
-              after selecting a building. Full run or à-la-carte phase subset. */}
+              after selecting a building. Full recon run or à-la-carte phase subset. */}
           <EvaluationTrigger
             buildingName={selected.name}
-            onEvaluate={(keys) =>
-              evalu.start(
-                { name: selected.name, address: selected.address, coords: selected.coords },
-                keys,
-              )
-            }
+            onEvaluate={(keys) => recon.start({ name: selected.name }, keys)}
           />
           {selected.id === "arbor" && (
             <button

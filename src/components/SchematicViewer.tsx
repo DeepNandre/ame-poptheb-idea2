@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from "react";
-import { X } from "lucide-react";
+import { ArrowLeft, X } from "lucide-react";
 
 // Lazy — pulls in three.js + react-three-fiber only when a schematic is opened,
 // keeping the main /app bundle lean.
@@ -30,6 +30,12 @@ export function SchematicViewer({ open, onClose, title = "Arbor 22 — 3D schema
 
   return (
     <div className="arbor-viewer fixed inset-0 z-[60] bg-[#0a0a0f]">
+      <button
+        onClick={onClose}
+        className="fixed left-4 top-4 z-[70] flex items-center gap-1.5 rounded-lg border border-white/20 bg-black/60 px-3 py-1.5 text-[13px] font-medium text-white/90 backdrop-blur transition-colors hover:bg-black/80"
+      >
+        <ArrowLeft className="size-4" /> Back
+      </button>
       <button
         onClick={onClose}
         className="fixed right-4 top-4 z-[70] flex items-center gap-1.5 rounded-lg border border-white/20 bg-black/60 px-3 py-1.5 text-[13px] font-medium text-white/90 backdrop-blur transition-colors hover:bg-black/80"
