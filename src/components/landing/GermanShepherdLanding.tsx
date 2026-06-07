@@ -20,11 +20,11 @@ function DogLogo({ className, style }: { className?: string; style?: React.CSSPr
 }
 
 const NAV_ITEMS = [
-  { label: "Solutions", dropdown: true },
-  { label: "Products", dropdown: true },
-  { label: "Company", dropdown: true },
-  { label: "Customers", dropdown: false },
-  { label: "Book a demo", dropdown: false },
+  { label: "Solutions", dropdown: true, to: undefined as string | undefined },
+  { label: "Products", dropdown: true, to: undefined },
+  { label: "Company", dropdown: true, to: undefined },
+  { label: "Evidence", dropdown: false, to: "/validate" },
+  { label: "Book a demo", dropdown: false, to: undefined },
 ];
 
 export function GermanShepherdLanding() {
@@ -82,17 +82,28 @@ export function GermanShepherdLanding() {
             </a>
 
             <ul className="hidden items-center gap-8 xl:flex">
-              {NAV_ITEMS.map((item) => (
-                <li key={item.label}>
-                  <a
-                    href="#"
-                    className="flex items-center gap-0.5 text-[15px] font-normal text-[#222] hover:text-black"
-                  >
-                    {item.label}
-                    {item.dropdown && <ChevronDown className="size-3.5 stroke-[2.5] opacity-50" />}
-                  </a>
-                </li>
-              ))}
+              {NAV_ITEMS.map((item) =>
+                item.to ? (
+                  <li key={item.label}>
+                    <Link
+                      to={item.to}
+                      className="flex items-center gap-0.5 text-[15px] font-medium text-[#222] hover:text-black"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ) : (
+                  <li key={item.label}>
+                    <a
+                      href="#"
+                      className="flex items-center gap-0.5 text-[15px] font-normal text-[#222] hover:text-black"
+                    >
+                      {item.label}
+                      {item.dropdown && <ChevronDown className="size-3.5 stroke-[2.5] opacity-50" />}
+                    </a>
+                  </li>
+                ),
+              )}
             </ul>
 
             <div className="flex shrink-0 items-center gap-2">
