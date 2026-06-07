@@ -1303,9 +1303,12 @@ export function BuildingScannerProduct() {
             {connectionError}
           </div>
         ) : backendOk === false || isHosted ? (
-          <div className="glass rounded-xl px-3 py-2 text-[11px] text-sky-100/90 border border-sky-300/30">
-            Hosted preview — map, building intelligence, planning &amp; 3D schematics are live here.
-            WiFi / Bluetooth / CCTV scanning runs in the local desktop build.
+          <div className="glass max-w-[20rem] rounded-xl border border-amber-400/30 px-3 py-2.5 text-[11px] leading-relaxed text-amber-100/90">
+            <span className="font-semibold text-amber-200">Restricted demo — by design.</span>{" "}
+            This public build runs on public records &amp; passive signals only, and even that maps a
+            live attack surface. The corporate-recon, network-discovery &amp; RF modules are
+            deliberately kept off the open web — the full picture is powerful enough to stay in
+            controlled hands.
           </div>
         ) : null}
 
