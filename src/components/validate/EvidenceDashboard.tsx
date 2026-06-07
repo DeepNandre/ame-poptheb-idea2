@@ -232,7 +232,7 @@ export function EvidenceDashboard() {
 
         {/* Featured LOIs */}
         <section className="py-10">
-          <SectionLabel>Featured artifacts — 2 signed LOIs, £50,000 committed</SectionLabel>
+          <SectionLabel>Featured artifacts — 3 signed LOIs · £70k committed · first revenue paid</SectionLabel>
           <div className="space-y-6">
             {lois.map((loi) => (
               <div
@@ -249,6 +249,27 @@ export function EvidenceDashboard() {
                     {loi.company}
                   </p>
                   <p className="mt-2 text-[14px] text-white/60">{loi.date}</p>
+
+                  {loi.payment && (
+                    <div className="mt-5 rounded-xl border border-emerald-400/30 bg-emerald-400/10 p-4">
+                      <div className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-300">
+                        <CheckCircle2 className="size-3.5" /> Deposit paid · first revenue
+                      </div>
+                      <p className="mt-1.5 text-[1.5rem] font-semibold text-white">
+                        {loi.payment.amount}{" "}
+                        <span className="text-[13px] font-normal text-white/55">{loi.payment.note}</span>
+                      </p>
+                      <p className="mt-1 text-[12px] text-white/55">{loi.payment.method} · {loi.payment.dated}</p>
+                      <a
+                        href={loi.payment.receiptUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-2 inline-flex items-center gap-1 text-[12px] font-medium text-emerald-300 underline decoration-emerald-300/40 underline-offset-2 hover:text-emerald-200"
+                      >
+                        View Stripe receipt <ArrowUpRight className="size-3" />
+                      </a>
+                    </div>
+                  )}
 
                   <dl className="mt-7 space-y-4">
                     <div>

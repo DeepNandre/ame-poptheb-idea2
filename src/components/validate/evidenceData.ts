@@ -39,26 +39,26 @@ export interface Claim {
 // ── The one thing we are proving ─────────────────────────────────────────────
 export const thesis = {
   kicker: "Validation evidence pack",
-  headline: "German Shepherd has real, paid commercial demand from the insurance market.",
-  sub: "Every claim below traces to a dated, independently checkable source. This page is the proof, not the pitch.",
+  headline: "German Shepherd has real, paid commercial demand — including money in the bank.",
+  sub: "Three signed LOIs (£70k committed) and a paying customer in the first 48 hours. Every claim below traces to a dated, independently checkable source. This page is the proof, not the pitch.",
   asOf: "2026-06-07",
 };
 
 // ── Headline metrics ─────────────────────────────────────────────────────────
 export const kpis: Kpi[] = [
   {
-    value: "£50,000",
-    label: "Pilot value committed",
-    sub: "Across 2 signed LOIs — Bolttech (£20k) + Upahaar (£30k)",
+    value: "£500",
+    label: "First revenue received",
+    sub: "TMC Solicitors deposit — real money, Stripe, 3D-Secure",
     status: "verified",
-    source: { label: "Both LOIs (GS-LOI-2026-001 / -002)", href: "/evidence/upahaar-loi-signed.pdf", dated: "2026-06-07" },
+    source: { label: "Stripe receipt (payment succeeded)", href: "/evidence/tmc-deposit-stripe.pdf", dated: "2026-06-06" },
   },
   {
-    value: "2",
-    label: "Signed Letters of Intent",
-    sub: "Bolttech (insurer channel) + Upahaar (direct, customer-countersigned)",
+    value: "3",
+    label: "Signed LOIs · £70k committed",
+    sub: "TMC (paid) · Upahaar (£30k) · Bolttech (£20k)",
     status: "verified",
-    source: { label: "Upahaar signed LOI · GS-LOI-2026-002", href: "/evidence/upahaar-loi-signed.pdf", dated: "2026-06-07" },
+    source: { label: "Signed LOIs on file", href: "/evidence/tmc-loi.pdf", dated: "2026-06-07" },
   },
   {
     value: "24h",
@@ -78,6 +78,15 @@ export const kpis: Kpi[] = [
 
 // ── Claims ledger — the heart of the rigour score ────────────────────────────
 export const claims: Claim[] = [
+  {
+    id: "revenue-tmc",
+    claim: "A customer has paid us real money — this is revenue, not just intent.",
+    evidence:
+      "TMC Solicitors (a Manchester law firm) paid a £500 deposit — 5% of the £20,000 pilot — via Stripe, 3D-Secure authenticated, status Succeeded. The firm had two break-in attempts in the past year, so the value was concrete. Signed LOI returned by the principal, Muazzam Chughtai.",
+    source: { label: "Stripe receipt + TMC signed LOI", href: "/evidence/tmc-deposit-stripe.pdf", dated: "2026-06-06" },
+    verify: "Open the Stripe receipt: £500.00 GBP, Succeeded, 3D-Secure, charged 6 Jun 23:52. Cross-check against the signed LOI (Muazzam Chughtai, Principal Solicitor & Director).",
+    status: "verified",
+  },
   {
     id: "loi-bolttech",
     claim: "A global insurer has committed to a paid pilot.",
@@ -163,12 +172,47 @@ export interface Loi {
   access: string;
   pdfUrl: string;
   emailUrl?: string; // email confirmation, where available
+  payment?: { amount: string; note: string; method: string; receiptUrl: string; dated: string };
   context?: string;
   terms: string[];
   deliverables: string[];
 }
 
 export const lois: Loi[] = [
+  {
+    company: "TMC Solicitors",
+    reference: "GS-LOI-2026-002",
+    date: "7 June 2026",
+    type: "Signed LOI — deposit PAID",
+    signatory: "Muazzam Chughtai",
+    signatoryRole: "Principal Solicitor & Director, TMC Solicitors Ltd — 4 Central Buildings, Kingsway, Manchester",
+    pilotValue: "£20,000",
+    access: "Month 1 free pilot, then £20k unlocks 24 months full access + 1 free month on launch",
+    pdfUrl: "/evidence/tmc-loi.pdf",
+    payment: {
+      amount: "£500",
+      note: "5% deposit of the £20k pilot value — first revenue received",
+      method: "Stripe · Visa · 3D-Secure authenticated",
+      receiptUrl: "/evidence/tmc-deposit-stripe.pdf",
+      dated: "2026-06-06",
+    },
+    context:
+      "Reached via Moeed Chughtai (AMe cohort). His father, Muazzam, runs a Manchester law firm that had two break-in attempts in the past year — high stakes for an immigration/asylum practice handling confidential files. He agreed to test and pay based on real benefit; Moeed paid the deposit on his father's behalf and his father returned the signed LOI.",
+    terms: [
+      "Month 1 free pilot — full platform access at no cost for the initial evaluation period.",
+      "£20,000 triggered at the end of Month 1, contingent on satisfactory pilot outcomes.",
+      "On payment: 24 months of continued full access (wireless scanning, OSINT, exposed-infra mapping, planning lookup, intelligence graph).",
+      "One additional free month of access on full product launch.",
+      "Joint use-case scoping and signal-to-risk interpretation for a legal-practice environment.",
+      "Progress toward a formal commercial agreement subject to satisfactory pilot outcomes.",
+    ],
+    deliverables: [
+      "Building intelligence report — risk profile of the TMC office (wireless exposure, OSINT, infrastructure, planning history).",
+      "Signal-to-risk summary — plain-English mapping of findings to legal-practice risk categories.",
+      "Pilot evaluation report (Month 1) — coverage, data quality, mutual go/no-go recommendation.",
+      "24 months platform access on payment confirmation, + 1 free month on launch.",
+    ],
+  },
   {
     company: "Upahaar",
     reference: "GS-LOI-2026-002",
@@ -417,7 +461,7 @@ export const significance = {
   narrative:
     "We insure the insurer: we show insurers what attackers already know about their policyholders, so clients are more secure and insurers pay out less.",
   points: [
-    "Two go-to-market paths are already validated with signed money: the insurer channel (Bolttech) and direct enterprise (Upahaar) — £50,000 committed across both.",
+    "Three customers across two go-to-market paths — the insurer channel (Bolttech) and direct enterprise (Upahaar, TMC Solicitors) — £70,000 committed and first cash already received.",
     "Building-level physical risk, drawn from passive signals + OSINT + the planning record, is a risk dimension existing underwriting data does not cover.",
     "Bolttech operates across device, property and SME risk products — a distribution channel into a whole insurer network, not a single team.",
     "Reseller rights in the LOI mean validated demand can scale market-wide, not just one pilot.",
