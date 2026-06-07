@@ -235,13 +235,21 @@ export interface Post {
 }
 export const buildInPublic: Post[] = [
   {
+    platform: "X / Twitter",
+    href: "https://x.com/BathoIsaac",
+    summary:
+      "Founder's live build-in-public feed — hackathon updates posted through the build. Open for the latest dated posts.",
+    dated: "2026-06",
+    status: "verified",
+  },
+  {
     platform: "LinkedIn",
     href: "https://www.linkedin.com/posts/isaac-batho_61-hours-with-1-hour-of-sleep-36-hours-of-activity-7441999771122204672-Dnfe",
     summary:
-      "Founder build-in-public: 36-hour hackathon build (START Hack 2026) — building-control RL agent + predictive-failure risk profiling.",
+      "Founder build-in-public track record: 36-hour hackathon build (START Hack 2026) — building-control RL agent + predictive-failure risk profiling.",
     dated: "2026-04",
     status: "verified",
   },
-  // TEAMMATES: add Pop the Bubble hackathon posts here as real, dated URLs go live.
+  // TEAMMATES: add specific dated Pop the Bubble posts (X/LinkedIn/Instagram) here as their URLs go live.
   // { platform: "Instagram", href: "https://...", summary: "...", dated: "2026-06-07", status: "verified" },
 ];
