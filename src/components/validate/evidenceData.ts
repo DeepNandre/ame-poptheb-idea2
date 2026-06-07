@@ -118,13 +118,13 @@ export const claims: Claim[] = [
     id: "build-in-public",
     claim: "The team builds in public and ships under pressure.",
     evidence:
-      "Founder Isaac Batho documents hackathon builds publicly. Verified example: a 36-hour build at START Hack / START Summit 2026 (building-control RL agent + predictive-failure risk profiling).",
+      "Founder Isaac Batho posts build-in-public updates through the Pop the Bubble hack — including the launch announcement tied directly to the field validation: breaking into buildings, then offering to insure them.",
     source: {
-      label: "Isaac Batho · LinkedIn (START Hack 2026)",
-      href: "https://www.linkedin.com/posts/isaac-batho_61-hours-with-1-hour-of-sleep-36-hours-of-activity-7441999771122204672-Dnfe",
-      dated: "2026-04",
+      label: "Isaac Batho · LinkedIn (Pop the Bubble launch)",
+      href: "https://www.linkedin.com/feed/update/urn:li:activity:7469163045601218560/",
+      dated: "2026-06-07",
     },
-    verify: "Open the LinkedIn post. Note: this proves the founder's build-in-public track record; Pop the Bubble hackathon posts are listed under Build-in-public below as they go live.",
+    verify: "Open the LinkedIn post; cross-check the #popthebubble tag and the live product link in the post.",
     status: "verified",
   },
 ];
@@ -222,7 +222,7 @@ export const pendingEvidence: Pending[] = [
   { label: "Additional LOIs", note: "More Letters of Intent toward the $50K LOI raise — add each as a verified claim + PDF when signed." },
   { label: "Product usage logs", note: "Scan counts / sessions from /app — wire in once captured for a depth-of-proof artifact." },
   { label: "Public data corroboration", note: "Public datasets backing specific risk findings — add source links per claim." },
-  { label: "Pop the Bubble social posts", note: "Dated @popthebubble.hack posts during the hack — add real URLs under Build-in-public." },
+  { label: "Teammates' social posts", note: "Dated Pop the Bubble posts from the rest of the team — add real URLs under Build-in-public as they come in." },
 ];
 
 // ── Build-in-public (bonus +12) — real, dated posts only ─────────────────────
@@ -235,21 +235,21 @@ export interface Post {
 }
 export const buildInPublic: Post[] = [
   {
-    platform: "X / Twitter",
-    href: "https://x.com/BathoIsaac",
+    platform: "LinkedIn",
+    href: "https://www.linkedin.com/feed/update/urn:li:activity:7469163045601218560/",
     summary:
-      "Founder's live build-in-public feed — hackathon updates posted through the build. Open for the latest dated posts.",
-    dated: "2026-06",
+      "“The BUBBLE has been POPPED.” Pop the Bubble launch — we broke into buildings, now we'll insure them. #popthebubble",
+    dated: "2026-06-07",
     status: "verified",
   },
   {
-    platform: "LinkedIn",
-    href: "https://www.linkedin.com/posts/isaac-batho_61-hours-with-1-hour-of-sleep-36-hours-of-activity-7441999771122204672-Dnfe",
+    platform: "X / Twitter",
+    href: "https://x.com/BathoIsaac",
     summary:
-      "Founder build-in-public track record: 36-hour hackathon build (START Hack 2026) — building-control RL agent + predictive-failure risk profiling.",
-    dated: "2026-04",
+      "Founder's live build-in-public feed — Pop the Bubble updates posted through the hack.",
+    dated: "2026-06-07",
     status: "verified",
   },
-  // TEAMMATES: add specific dated Pop the Bubble posts (X/LinkedIn/Instagram) here as their URLs go live.
-  // { platform: "Instagram", href: "https://...", summary: "...", dated: "2026-06-07", status: "verified" },
+  // TEAMMATES: add teammates' dated Pop the Bubble posts here as their URLs come in.
+  // { platform: "LinkedIn", href: "https://...", summary: "...", dated: "2026-06-07", status: "verified" },
 ];
