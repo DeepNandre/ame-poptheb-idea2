@@ -47,18 +47,18 @@ export const thesis = {
 // ── Headline metrics ─────────────────────────────────────────────────────────
 export const kpis: Kpi[] = [
   {
-    value: "£20,000",
+    value: "£50,000",
     label: "Pilot value committed",
-    sub: "Bolttech, 12-month platform access + 1 free month",
+    sub: "Across 2 signed LOIs — Bolttech (£20k) + Upahaar (£30k)",
     status: "verified",
-    source: { label: "Bolttech LOI · GS-LOI-2026-001", href: "/evidence/bolttech-loi.pdf", dated: "2026-06-06" },
+    source: { label: "Both LOIs (GS-LOI-2026-001 / -002)", href: "/evidence/upahaar-loi-signed.pdf", dated: "2026-06-07" },
   },
   {
-    value: "1",
-    label: "Signed Letter of Intent",
-    sub: "Named signatory, regional GM / Chief Growth Officer",
+    value: "2",
+    label: "Signed Letters of Intent",
+    sub: "Bolttech (insurer channel) + Upahaar (direct, customer-countersigned)",
     status: "verified",
-    source: { label: "Bolttech LOI · GS-LOI-2026-001", href: "/evidence/bolttech-loi.pdf", dated: "2026-06-06" },
+    source: { label: "Upahaar signed LOI · GS-LOI-2026-002", href: "/evidence/upahaar-loi-signed.pdf", dated: "2026-06-07" },
   },
   {
     value: "24h",
@@ -85,6 +85,15 @@ export const claims: Claim[] = [
       "Bolttech signed a non-binding Letter of Intent: £20,000 pilot, 12 months full platform access + 1 free month on launch, plus reseller rights into their insurance-provider network.",
     source: { label: "Bolttech LOI · GS-LOI-2026-001", href: "/evidence/bolttech-loi.pdf", dated: "2026-06-06" },
     verify: "Open the LOI PDF. Check the signatory (Baldev Singh), role, value (£20,000), reference (GS-LOI-2026-001) and date (6 Jun 2026).",
+    status: "verified",
+  },
+  {
+    id: "loi-upahaar",
+    claim: "A paying customer signed because the pain is real, not hypothetical.",
+    evidence:
+      "Upahaar — a marketing & gifting company in Nashik whose office had repeated break-ins — countersigned a £30,000 signed LOI (GS-LOI-2026-002) the same morning it was sent. The thesis landed because the break-ins made the value tangible.",
+    source: { label: "Upahaar signed LOI + email confirmation", href: "/evidence/upahaar-loi-signed.pdf", dated: "2026-06-07" },
+    verify: "Open the signed PDF (signatory Aditya Kakuste, Founder's Office) and the email thread: sent 05:47, signed reply 06:08 — “Please find the signed LOI attached.”",
     status: "verified",
   },
   {
@@ -142,34 +151,83 @@ export const claims: Claim[] = [
   },
 ];
 
-// ── Featured artifact: the Bolttech LOI ──────────────────────────────────────
-export const loi = {
-  company: "Bolttech",
-  reference: "GS-LOI-2026-001",
-  date: "6 June 2026",
-  type: "Non-binding Letter of Intent",
-  signatory: "Baldev Singh",
-  signatoryRole:
-    "Regional General Manager (Thailand, Singapore, Philippines) · Chief Growth Officer (Asia & Middle East)",
-  pilotValue: "£20,000",
-  access: "12 months full platform access + 1 free month on product launch",
-  pdfUrl: "/evidence/bolttech-loi.pdf",
-  terms: [
-    "£20,000 pilot covering an agreed set of policyholder building profiles.",
-    "12 months of full platform access: live wireless scanning, corporate OSINT, exposed-infrastructure mapping, planning-record lookup, building intelligence graph.",
-    "One additional free month of access on full product launch.",
-    "Reseller rights: Bolttech may distribute the platform to its insurance-provider network (formal terms TBC).",
-    "Joint use-case scoping, technical integration, and signal-to-risk mapping across embedded protection & SME risk.",
-    "Progress toward a formal commercial agreement subject to satisfactory pilot outcomes.",
-  ],
-  deliverables: [
-    "Building intelligence reports — risk profiles per policyholder site.",
-    "Signal-to-risk mapping — our data signals mapped to Bolttech underwriting variables.",
-    "Integration specification — how outputs connect to their underwriting/distribution stack.",
-    "Pilot evaluation report — coverage, data quality, signal accuracy, rollout recommendation.",
-    "Reseller onboarding pack — tooling for Bolttech to distribute the platform.",
-  ],
-};
+// ── Featured artifacts: the signed LOIs ──────────────────────────────────────
+export interface Loi {
+  company: string;
+  reference: string;
+  date: string;
+  type: string;
+  signatory: string;
+  signatoryRole: string;
+  pilotValue: string;
+  access: string;
+  pdfUrl: string;
+  emailUrl?: string; // email confirmation, where available
+  context?: string;
+  terms: string[];
+  deliverables: string[];
+}
+
+export const lois: Loi[] = [
+  {
+    company: "Upahaar",
+    reference: "GS-LOI-2026-002",
+    date: "7 June 2026",
+    type: "Signed LOI — customer-countersigned",
+    signatory: "Aditya Kakuste",
+    signatoryRole: "Founder's Office, Upahaar (marketing & gifting, Nashik, India)",
+    pilotValue: "£30,000",
+    access: "12 months full platform access + 1 free month on product launch",
+    pdfUrl: "/evidence/upahaar-loi-signed.pdf",
+    emailUrl: "/evidence/upahaar-email-confirmation.pdf",
+    context:
+      "Upahaar's Nashik office had suffered repeated break-ins, leaving the team worried about physical security. The German Shepherd thesis — we surface what anyone can already see about your building before you do — made the value immediate and tangible. Countersigned the same morning the LOI was sent (sent 05:47, signed reply 06:08).",
+    terms: [
+      "£30,000 pilot covering full evaluation and delivery across Upahaar's Nashik office and any additional agreed sites.",
+      "12 months of full platform access: live wireless scanning, corporate OSINT, exposed-infrastructure mapping, planning-record lookup, building intelligence graph.",
+      "One additional free month of access on full product launch.",
+      "A complete intelligence report on the Nashik office, in a structured, actionable format.",
+      "Joint scoping of additional sites or use cases identified during the pilot.",
+      "Progress toward a formal commercial agreement subject to satisfactory pilot outcomes.",
+    ],
+    deliverables: [
+      "Building intelligence report — full risk profile of the Nashik office (wireless, visible infrastructure, OSINT, planning/structural record).",
+      "Wireless signal scan — live SSID/signal mapping showing what's visible to anyone in range.",
+      "Corporate OSINT profile — subdomains, exposed infrastructure, tech stack, public corporate data.",
+      "Infrastructure visibility report — what's publicly exposed at the network/infrastructure level.",
+      "Pilot evaluation summary — findings, coverage, and recommendations for expansion.",
+    ],
+  },
+  {
+    company: "Bolttech",
+    reference: "GS-LOI-2026-001",
+    date: "6 June 2026",
+    type: "Letter of Intent",
+    signatory: "Baldev Singh",
+    signatoryRole:
+      "Regional General Manager (Thailand, Singapore, Philippines) · Chief Growth Officer (Asia & Middle East)",
+    pilotValue: "£20,000",
+    access: "12 months full platform access + 1 free month on product launch",
+    pdfUrl: "/evidence/bolttech-loi.pdf",
+    context:
+      "A global embedded-insurance platform: validates the channel play — building-level risk that existing underwriting data doesn't cover, with reseller rights into Bolttech's insurer network.",
+    terms: [
+      "£20,000 pilot covering an agreed set of policyholder building profiles.",
+      "12 months of full platform access: live wireless scanning, corporate OSINT, exposed-infrastructure mapping, planning-record lookup, building intelligence graph.",
+      "One additional free month of access on full product launch.",
+      "Reseller rights: Bolttech may distribute the platform to its insurance-provider network (formal terms TBC).",
+      "Joint use-case scoping, technical integration, and signal-to-risk mapping across embedded protection & SME risk.",
+      "Progress toward a formal commercial agreement subject to satisfactory pilot outcomes.",
+    ],
+    deliverables: [
+      "Building intelligence reports — risk profiles per policyholder site.",
+      "Signal-to-risk mapping — our data signals mapped to Bolttech underwriting variables.",
+      "Integration specification — how outputs connect to their underwriting/distribution stack.",
+      "Pilot evaluation report — coverage, data quality, signal accuracy, rollout recommendation.",
+      "Reseller onboarding pack — tooling for Bolttech to distribute the platform.",
+    ],
+  },
+];
 
 // ── Field validation log — the 24h method, reproducible ──────────────────────
 export interface FieldEntry {
@@ -359,6 +417,7 @@ export const significance = {
   narrative:
     "We insure the insurer: we show insurers what attackers already know about their policyholders, so clients are more secure and insurers pay out less.",
   points: [
+    "Two go-to-market paths are already validated with signed money: the insurer channel (Bolttech) and direct enterprise (Upahaar) — £50,000 committed across both.",
     "Building-level physical risk, drawn from passive signals + OSINT + the planning record, is a risk dimension existing underwriting data does not cover.",
     "Bolttech operates across device, property and SME risk products — a distribution channel into a whole insurer network, not a single team.",
     "Reseller rights in the LOI mean validated demand can scale market-wide, not just one pilot.",
@@ -382,7 +441,7 @@ export interface Pending {
   note: string;
 }
 export const pendingEvidence: Pending[] = [
-  { label: "Additional LOIs", note: "More Letters of Intent toward the $50K LOI raise — add each as a verified claim + PDF when signed." },
+  { label: "Further LOIs", note: "Two signed (£50k committed); add each new Letter of Intent as a verified claim + PDF as it lands." },
   { label: "Product usage logs", note: "Scan counts / sessions from /app — wire in once captured for a depth-of-proof artifact." },
   { label: "Public data corroboration", note: "Public datasets backing specific risk findings — add source links per claim." },
   { label: "Teammates' social posts", note: "Dated Pop the Bubble posts from the rest of the team — add real URLs under Build-in-public as they come in." },

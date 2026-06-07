@@ -16,7 +16,7 @@ import {
   claims,
   features,
   productNote,
-  loi,
+  lois,
   fieldLog,
   fieldFootage,
   interviews,
@@ -111,14 +111,14 @@ export function EvidenceDashboard() {
               Live product
             </Link>
             <a
-              href="/evidence/bolttech-loi.pdf"
+              href="/evidence/upahaar-loi-signed.pdf"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-[14px] font-semibold text-white"
               style={{ backgroundColor: ORANGE }}
             >
               <FileText className="size-4" />
-              View the LOI
+              View signed LOI
             </a>
           </div>
         </div>
@@ -230,73 +230,98 @@ export function EvidenceDashboard() {
           <p className="mt-3 text-[12px] leading-[1.55] text-[#999]">{productNote}</p>
         </section>
 
-        {/* Featured LOI */}
+        {/* Featured LOIs */}
         <section className="py-10">
-          <SectionLabel>Featured artifact</SectionLabel>
-          <div className="grid gap-px overflow-hidden rounded-2xl bg-[#eee] lg:grid-cols-[1fr_1.1fr]">
-            {/* Left: the headline terms */}
-            <div className="bg-[#0f0f0f] p-7 text-white md:p-9">
-              <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.18em] text-white/50">
-                <ShieldCheck className="size-3.5" style={{ color: ORANGE }} />
-                Letter of Intent · {loi.reference}
-              </div>
-              <p className="mt-5 text-[clamp(1.8rem,3.4vw,2.6rem)] font-semibold leading-none">
-                {loi.company}
-              </p>
-              <p className="mt-2 text-[14px] text-white/60">{loi.type} · {loi.date}</p>
-
-              <dl className="mt-7 space-y-4">
-                <div>
-                  <dt className="text-[11px] uppercase tracking-wide text-white/40">Pilot value</dt>
-                  <dd className="text-[1.5rem] font-semibold" style={{ color: ORANGE }}>
-                    {loi.pilotValue}
-                  </dd>
-                </div>
-                <div>
-                  <dt className="text-[11px] uppercase tracking-wide text-white/40">Access granted</dt>
-                  <dd className="text-[14px] text-white/90">{loi.access}</dd>
-                </div>
-                <div>
-                  <dt className="text-[11px] uppercase tracking-wide text-white/40">Signed by</dt>
-                  <dd className="text-[14px] font-medium text-white">{loi.signatory}</dd>
-                  <dd className="text-[12px] leading-snug text-white/55">{loi.signatoryRole}</dd>
-                </div>
-              </dl>
-
-              <a
-                href={loi.pdfUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-7 inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-[14px] font-semibold text-white"
-                style={{ backgroundColor: ORANGE }}
+          <SectionLabel>Featured artifacts — 2 signed LOIs, £50,000 committed</SectionLabel>
+          <div className="space-y-6">
+            {lois.map((loi) => (
+              <div
+                key={loi.reference}
+                className="grid gap-px overflow-hidden rounded-2xl bg-[#eee] lg:grid-cols-[1fr_1.1fr]"
               >
-                <FileText className="size-4" />
-                Open the signed document
-                <ArrowUpRight className="size-4" />
-              </a>
-            </div>
+                {/* Left: the headline terms */}
+                <div className="bg-[#0f0f0f] p-7 text-white md:p-9">
+                  <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.18em] text-white/50">
+                    <ShieldCheck className="size-3.5" style={{ color: ORANGE }} />
+                    {loi.type} · {loi.reference}
+                  </div>
+                  <p className="mt-5 text-[clamp(1.8rem,3.4vw,2.6rem)] font-semibold leading-none">
+                    {loi.company}
+                  </p>
+                  <p className="mt-2 text-[14px] text-white/60">{loi.date}</p>
 
-            {/* Right: terms + deliverables */}
-            <div className="bg-white p-7 md:p-9">
-              <p className="text-[13px] font-semibold text-[#222]">Key terms</p>
-              <ul className="mt-3 space-y-2.5">
-                {loi.terms.map((t) => (
-                  <li key={t} className="flex gap-2.5 text-[13px] leading-[1.55] text-[#555]">
-                    <CheckCircle2 className="mt-0.5 size-4 shrink-0" style={{ color: ORANGE }} />
-                    {t}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-6 text-[13px] font-semibold text-[#222]">Agreed deliverables</p>
-              <ul className="mt-3 space-y-1.5">
-                {loi.deliverables.map((d) => (
-                  <li key={d} className="flex gap-2.5 text-[12.5px] leading-[1.5] text-[#777]">
-                    <span className="mt-1.5 size-1 shrink-0 rounded-full bg-[#ccc]" />
-                    {d}
-                  </li>
-                ))}
-              </ul>
-            </div>
+                  <dl className="mt-7 space-y-4">
+                    <div>
+                      <dt className="text-[11px] uppercase tracking-wide text-white/40">Pilot value</dt>
+                      <dd className="text-[1.5rem] font-semibold" style={{ color: ORANGE }}>
+                        {loi.pilotValue}
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="text-[11px] uppercase tracking-wide text-white/40">Access granted</dt>
+                      <dd className="text-[14px] text-white/90">{loi.access}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-[11px] uppercase tracking-wide text-white/40">Signed by</dt>
+                      <dd className="text-[14px] font-medium text-white">{loi.signatory}</dd>
+                      <dd className="text-[12px] leading-snug text-white/55">{loi.signatoryRole}</dd>
+                    </div>
+                  </dl>
+
+                  <div className="mt-7 flex flex-wrap gap-2">
+                    <a
+                      href={loi.pdfUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-[14px] font-semibold text-white"
+                      style={{ backgroundColor: ORANGE }}
+                    >
+                      <FileText className="size-4" />
+                      Open the signed document
+                      <ArrowUpRight className="size-4" />
+                    </a>
+                    {loi.emailUrl && (
+                      <a
+                        href={loi.emailUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 rounded-lg border border-white/20 px-4 py-2.5 text-[13px] font-medium text-white/85 hover:bg-white/10"
+                      >
+                        Email confirmation
+                        <ArrowUpRight className="size-3.5" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                {/* Right: context + terms + deliverables */}
+                <div className="bg-white p-7 md:p-9">
+                  {loi.context && (
+                    <p className="mb-5 border-l-2 pl-3 text-[12.5px] leading-[1.6] text-[#555]" style={{ borderColor: ORANGE }}>
+                      {loi.context}
+                    </p>
+                  )}
+                  <p className="text-[13px] font-semibold text-[#222]">Key terms</p>
+                  <ul className="mt-3 space-y-2.5">
+                    {loi.terms.map((t) => (
+                      <li key={t} className="flex gap-2.5 text-[13px] leading-[1.55] text-[#555]">
+                        <CheckCircle2 className="mt-0.5 size-4 shrink-0" style={{ color: ORANGE }} />
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-6 text-[13px] font-semibold text-[#222]">Agreed deliverables</p>
+                  <ul className="mt-3 space-y-1.5">
+                    {loi.deliverables.map((d) => (
+                      <li key={d} className="flex gap-2.5 text-[12.5px] leading-[1.5] text-[#777]">
+                        <span className="mt-1.5 size-1 shrink-0 rounded-full bg-[#ccc]" />
+                        {d}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
