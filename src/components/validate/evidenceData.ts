@@ -40,7 +40,7 @@ export interface Claim {
 export const thesis = {
   kicker: "Validation evidence pack",
   headline: "German Shepherd has real, paid commercial demand — including money in the bank.",
-  sub: "Three signed LOIs (£70k committed) and a paying customer in the first 48 hours. Every claim below traces to a dated, independently checkable source. This page is the proof, not the pitch.",
+  sub: "Three signed LOIs (£80k committed) and a paying customer in the first 48 hours. Every claim below traces to a dated, independently checkable source. This page is the proof, not the pitch.",
   asOf: "2026-06-07",
 };
 
@@ -55,8 +55,8 @@ export const kpis: Kpi[] = [
   },
   {
     value: "3",
-    label: "Signed LOIs · £70k committed",
-    sub: "TMC (paid) · Upahaar (£30k) · Bolttech (£20k)",
+    label: "Signed LOIs · £80k committed",
+    sub: "TMC (paid) · Upahaar (£30k) · Bolttech (£30k)",
     status: "verified",
     source: { label: "Signed LOIs on file", href: "/evidence/tmc-loi.pdf", dated: "2026-06-07" },
   },
@@ -91,9 +91,9 @@ export const claims: Claim[] = [
     id: "loi-bolttech",
     claim: "A global insurer has committed to a paid pilot.",
     evidence:
-      "Bolttech signed a non-binding Letter of Intent: £20,000 pilot, 12 months full platform access + 1 free month on launch, plus reseller rights into their insurance-provider network.",
-    source: { label: "Bolttech LOI · GS-LOI-2026-001", href: "/evidence/bolttech-loi.pdf", dated: "2026-06-06" },
-    verify: "Open the LOI PDF. Check the signatory (Baldev Singh), role, value (£20,000), reference (GS-LOI-2026-001) and date (6 Jun 2026).",
+      "Bolttech signed a Letter of Intent: £30,000 pilot, 12 months full platform access + 1 free month on launch, plus reseller rights into their insurance-provider network.",
+    source: { label: "Bolttech LOI · GS-LOI-2026-001", href: "/evidence/bolttech-loi.pdf", dated: "2026-06-07" },
+    verify: "Open the LOI PDF. Check the signatory (Baldev Singh), role, value (£30,000), reference (GS-LOI-2026-001) and date (signed 7 Jun 2026).",
     status: "verified",
   },
   {
@@ -245,18 +245,18 @@ export const lois: Loi[] = [
   {
     company: "Bolttech",
     reference: "GS-LOI-2026-001",
-    date: "6 June 2026",
+    date: "Signed 7 June 2026",
     type: "Letter of Intent",
     signatory: "Baldev Singh",
     signatoryRole:
       "Regional General Manager (Thailand, Singapore, Philippines) · Chief Growth Officer (Asia & Middle East)",
-    pilotValue: "£20,000",
+    pilotValue: "£30,000",
     access: "12 months full platform access + 1 free month on product launch",
     pdfUrl: "/evidence/bolttech-loi.pdf",
     context:
       "A global embedded-insurance platform: validates the channel play — building-level risk that existing underwriting data doesn't cover, with reseller rights into Bolttech's insurer network.",
     terms: [
-      "£20,000 pilot covering an agreed set of policyholder building profiles.",
+      "£30,000 pilot covering an agreed set of policyholder building profiles.",
       "12 months of full platform access: live wireless scanning, corporate OSINT, exposed-infrastructure mapping, planning-record lookup, building intelligence graph.",
       "One additional free month of access on full product launch.",
       "Reseller rights: Bolttech may distribute the platform to its insurance-provider network (formal terms TBC).",
@@ -461,7 +461,7 @@ export const significance = {
   narrative:
     "We insure the insurer: we show insurers what attackers already know about their policyholders, so clients are more secure and insurers pay out less.",
   points: [
-    "Three customers across two go-to-market paths — the insurer channel (Bolttech) and direct enterprise (Upahaar, TMC Solicitors) — £70,000 committed and first cash already received.",
+    "Three customers across two go-to-market paths — the insurer channel (Bolttech) and direct enterprise (Upahaar, TMC Solicitors) — £80,000 committed and first cash already received.",
     "Building-level physical risk, drawn from passive signals + OSINT + the planning record, is a risk dimension existing underwriting data does not cover.",
     "Bolttech operates across device, property and SME risk products — a distribution channel into a whole insurer network, not a single team.",
     "Reseller rights in the LOI mean validated demand can scale market-wide, not just one pilot.",

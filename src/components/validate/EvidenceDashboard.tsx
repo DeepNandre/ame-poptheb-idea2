@@ -232,7 +232,7 @@ export function EvidenceDashboard() {
 
         {/* Featured LOIs */}
         <section className="py-10">
-          <SectionLabel>Featured artifacts — 3 signed LOIs · £70k committed · first revenue paid</SectionLabel>
+          <SectionLabel>Featured artifacts — 3 signed LOIs · £80k committed · first revenue paid</SectionLabel>
           <div className="space-y-6">
             {lois.map((loi) => (
               <div
