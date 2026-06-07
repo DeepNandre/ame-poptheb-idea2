@@ -11,12 +11,10 @@
 > per person). They are directional, not gospel — treat them as "how this kind of
 > person is likely to judge," and recalibrate once we see them react live.
 >
-> **⚠️ Open item — the official scoring is not yet loaded.** The hackpack at
-> `popthebubblehack.co.uk/hackpack` blocks automated fetching (HTTP 403), so the
-> *official* "how to get points / how to win" rules are **not** baked into the
-> rubric below yet. The rubric in §8 is a sensible hackathon-standard default.
-> **Paste the official points/winning criteria and I'll re-weight the rubric to
-> match it before the next assessment pass.**
+> **✅ Official scoring is now loaded** (from the hackpack screenshots) and baked
+> into §8. Max score **110** = 30 baseline + 60 chosen-track + 20 bonus. We are
+> almost certainly competing on **Track 02 · Validate**. See §8–§11 for the
+> verbatim rubric, our strategy against the field, and the bonus-capture plan.
 
 ---
 
@@ -150,28 +148,113 @@ for half the panel — we should make it *visible*, not buried.
 
 ---
 
-## 8. Scoring rubric (DEFAULT — replace with official hackpack points)
+## 8. OFFICIAL scoring rubric (from the hackpack)
 
-Standard hackathon criteria, 0–10 each, until the official "how to get points"
-is supplied. Synthesised from common rubrics (TAIKAI, CGU Ethical-AI, Ansys, MS Learn).
+**Max = 110.** `Total = 30 baseline + 60 chosen track + up to 20 bonus.`
+Pick **one** track — judges will **not** mix track-specific categories.
 
-| # | Criterion | Weight | What strong looks like here |
-|---|-----------|--------|------------------------------|
-| 1 | **Problem & insight** | 20% | Non-obvious wedge ("the planning record is the *inside* of a building"); clear who hurts |
-| 2 | **Validation / proof** | 15% | Evidence the problem is real + the solution works; real data, real users/segments |
-| 3 | **Technical execution** | 20% | Real engineering, runs live, honest architecture, no mocks |
-| 4 | **Innovation / agentic ambition** | 15% | Genuine autonomy, frontier-model use, novelty |
-| 5 | **Impact & GTM** | 15% | Named buyer (insurers/security), path to a company, market size |
-| 6 | **Demo & presentation** | 10% | Fast, lands a wow in 30s, dashboard is board-ready |
-| 7 | **Ethics / scope / responsibility** | 5% | Especially for a recon/OSINT product — scope limits, consent, disclosure |
+**Scoring rules (verbatim intent):**
+- Each criterion is scored to **the highest band fully met**. A partial claim earns the band **below**.
+- **Every point above zero must be backed by evidence.** Unverified claims score one band below.
+- **Fabrication = disqualification.**
 
-**Composite score** = weighted average across all six personas, with each persona
-weighting the criteria toward their lens (e.g. Lois over-weights #3, Oliver
-over-weights #4/#6, Alramina over-weights #5/#2).
+### Baseline — 30 pts (ALL TEAMS)
+
+| Criterion | Pts | Bands |
+|---|---|---|
+| **Does it actually work** | 10 | 0 slides/mockup · 4 core flow runs locally · 7 deployed & reachable by judges · **10 judges complete full flow end-to-end themselves** |
+| **Depth of proof** | 12 | 0 claims only · 4 one verifiable artifact · 8 ≥3 artifacts across ≥2 types (e.g. revenue + usage logs) · **12 every headline claim traces to a dated, independently checkable source** |
+| **Honesty** | 8 | 0 unverifiable headline claim · 4 minor unverifiable, nothing inflated · **8 every claim checks out** · **DQ for fabrication** |
+
+### Track 02 · Validate — 60 pts ("Test a company's story and make the evidence usable")
+
+| Criterion | Pts | Bands |
+|---|---|---|
+| **Rigour & credibility** | 25 | 0 assertions, no backing · 8 case made but method opaque/not reproducible · 16 sound transparent method a third party could rerun · **25 airtight: data + steps fully shared, conclusions reproducible, sourced so the target could not refute it** |
+| **Significance of truth** | 20 | 0 trivial/known · 8 matters to one team/product line · 14 matters to a whole company · **20 matters across a market, with materiality shown** |
+| **Decision-maker proof** | 15 | 0 raw notes/data dump · 6 clear readable writeup · 11 decision-ready artifact (one-pager/dashboard/report) a named role could act on today · **15 decision-ready AND put in front of / acknowledged by a relevant decision-maker** |
+
+### Bonus — up to +20
+
+| Bonus | Max | How |
+|---|---|---|
+| **Build in public** | +12 | +2 per **substantive, dated** public post **during the hack** (~6 max). Real moments > polished marketing. Tag **@popthebubble.hack** + organisers (**Aruzhan first**) so it counts and they amplify. |
+| **Mubit SDK** | +10 | +4 for bolted-on use · **+10 when the core product genuinely relies on Mubit operational memory and judges can verify it.** (Mubit = operational-memory/state layer for AI agents — persistent execution history, what worked/failed fed into the next run; SDKs for LangGraph/CrewAI/AutoGen.) |
+
+### How the personas score against this
+Each judge applies the **same** official bands, but their attention concentrates where their lens is sharpest:
+
+| Persona | Over-indexes on | Will personally pressure-test |
+|---|---|---|
+| **Lois / Eldar** | Honesty, Rigour & credibility, Does-it-work | "Rerun your method in front of me. Show the source for this number." |
+| **Oliver / Lyndon** | Does-it-work (full flow), Significance, the demo | "Make me complete the flow myself. Why does this matter across a market?" |
+| **Aruzhan / Alramina** | Significance (materiality), Decision-maker proof | "Who's the named decision-maker? Did a real one act on this?" |
 
 ---
 
-## 9. Assessment protocol (re-run this every iteration)
+## 9. Strategy — reading the field (CRITICAL)
+
+**This hack is Lyndon's baby.** He conceived it; he values *real-world effect* —
+teams that actually start a company, get revenue, or get real conversations going.
+His seed idea: **find a company and short its stock because its story doesn't hold
+up** — i.e. adversarial validation of a corporate narrative. The whole **Validate**
+track is that idea generalised.
+
+**The threat:** a competing team is doing the literal short-a-company play, and
+**Lyndon is already predisposed to love it.** We cannot out-Lyndon Lyndon on his
+own example with a weaker version of it. Our pitch has to be *unmistakably* better.
+
+**Our winning frame (proposed):** they make **one trade**; we built the **repeatable
+evidence machine** behind any such trade — *Spectre turns any company/building into
+a sourced, reproducible risk dossier that the target could not refute.* That reframes
+us from "a short thesis" to "the platform that mass-produces short theses / due-diligence
+/ underwriting evidence," which scores higher on **Significance (across a market)** and
+is more defensible as a company — exactly what Lyndon rewards.
+
+**Where this maps to points:**
+- **Rigour & credibility (25):** our **real-data-only / every-source-cited / no-mock**
+  posture is a *direct hit* on the 25-pt band ("sourced so the target could not refute
+  it"). Make the method **rerunnable live in the demo** — geocode → public planning
+  record → Shodan/Censys → citation trail. This is our single biggest lever; most teams
+  cannot hit 25 here and we structurally can.
+- **Significance (20):** don't stop at one company. Show **market materiality** —
+  e.g. mispriced cyber/property premiums for insurers, or due-diligence blind spots
+  across a sector. Put a number on it.
+- **Decision-maker proof (15):** the dashboard is the decision-ready artifact (11 pts).
+  To get **15**, get a **real underwriter / security lead / investor to acknowledge it**
+  before judging — even a quote or a logged reaction. This is a cheap 4 points the
+  field will mostly miss.
+- **Does-it-work (10):** we are currently **localhost only** (README) → caps at 4.
+  **Deploy a judge-reachable URL** (7) and ideally let **judges run the full flow
+  themselves** (10). This is a known, fixable 6-point gap.
+- **Honesty (8):** the honest-limitations copy ("estimate, not measured"; "LAN not
+  GPS") is a natural 8 and a DQ-insurance policy. Make it **visible**, not buried.
+
+**Tension to manage (offensive-recon optics):** the CCTV / live-wireless features are
+the demo "wow" (great for Oliver) but are *harder to make reproducible* and raise
+*ethics flags* for Aruzhan/Alramina, and they don't map cleanly to "test a company's
+story." **Lead the Validate narrative with the verifiable OSINT/planning evidence**
+(reproducible, sourced); keep live-scan as a contained demo beat, explicitly inside
+the stated scope/ethics. Don't let the offensive flavour overshadow the evidence rigour.
+
+---
+
+## 10. Bonus-capture plan (up to +20 — mostly free points)
+
+- **Build in public (+12):** start posting **now**, during the hack. 6 dated,
+  substantive posts (a real bug, a real finding, a method demo, a decision-maker
+  reaction). **Tag @popthebubble.hack and Aruzhan first.** Most teams forget this —
+  it's +12 for narrating work we're already doing.
+- **Mubit SDK (+10):** wire Mubit as the **operational memory of the recon agent** —
+  persist each investigation (what sources hit, what worked/failed per company/building)
+  and feed it into the next run so recon *improves over time*. Make it **verifiable**
+  (show the memory being read/written live). Bolt-on use is only +4; core-reliance is
+  +10, and it genuinely strengthens the product story. *Confirm Mubit is the sponsor
+  SDK and grab API access early.*
+
+---
+
+## 11. Assessment protocol (re-run this every iteration)
 
 1. **Inputs:** dashboard URL, evidence/proof artifacts, GitHub repo, demo (video or live).
 2. **Per-persona report:** for each of the 6 judges, write — *first impression →
@@ -181,7 +264,9 @@ over-weights #4/#6, Alramina over-weights #5/#2).
    surface disagreements explicitly; note where one persona's praise is another's
    red flag.
 4. **Converged output:**
-   - **Overall score** (weighted composite) + per-criterion breakdown.
+   - **Overall score out of 110** = baseline (/30) + Track 02 Validate (/60) +
+     bonus (/20), scored band-by-band per §8, plus each persona's own /110 read
+     and the panel's consensus number.
    - **Top 3 strengths to lean into** (and how to make them *visible* to judges).
    - **Top 3–5 improvements**, ranked by score impact × effort.
    - **The single highest-leverage change** before demo day.
