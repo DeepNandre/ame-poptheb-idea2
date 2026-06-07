@@ -512,6 +512,14 @@ export function BuildingScannerProduct() {
   const reconActive = dashOpen && (dashTab === "recon" || dashTab === "cctv");
   const token = import.meta.env.VITE_MAPBOX_TOKEN as string | undefined;
 
+  // On a hosted deploy (Cloudflare/Render) WiFi/Bluetooth/CCTV/recon need a local
+  // machine (radio hardware) or Python, so we don't auto-fire them — but building
+  // intelligence, planning and the command bar all work via the /api proxy. We
+  // detect "not localhost" to decide.
+  const isHosted =
+    typeof window !== "undefined" &&
+    !/^(localhost|127\.0\.0\.1|0\.0\.0\.0|\[?::1\]?)$/.test(window.location.hostname);
+
   // Is the Node backend reachable? On a static deploy (e.g. Vercel) there's no
   // /api server, so we skip the live scan/recon/CCTV auto-start and show a calm
   // "hosted preview" note instead of connection errors. null = still checking.
@@ -807,8 +815,9 @@ export function BuildingScannerProduct() {
   const didAutoLoad = useRef(false);
   useEffect(() => {
     // Wait until we know the backend is reachable; never auto-fire on a static
-    // deploy (it would just produce connection errors).
-    if (didAutoLoad.current || !token || backendOk !== true) return;
+    // deploy, and skip the local-only scans on any hosted domain (they need
+    // radio hardware / Python and would just produce connection errors).
+    if (didAutoLoad.current || !token || backendOk !== true || isHosted) return;
     didAutoLoad.current = true;
 
     // Instant: show the last recon (cached this session) with no re-query.
@@ -833,7 +842,7 @@ export function BuildingScannerProduct() {
     }, 2200);
     // Runs once the backend check resolves to true; mount-time closures are fine.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [token, backendOk]);
+  }, [token, backendOk, isHosted]);
 
   useEffect(() => {
     if (!token || !mapContainer.current || mapRef.current) return;
@@ -1293,10 +1302,10 @@ export function BuildingScannerProduct() {
           <div className="glass rounded-xl px-3 py-2 text-[11px] text-amber-200/90 border border-amber-400/30">
             {connectionError}
           </div>
-        ) : backendOk === false ? (
+        ) : backendOk === false || isHosted ? (
           <div className="glass rounded-xl px-3 py-2 text-[11px] text-sky-100/90 border border-sky-300/30">
-            Hosted preview — map, intelligence &amp; 3D schematics work here. Live WiFi / Bluetooth /
-            CCTV scanning runs in the local desktop build.
+            Hosted preview — map, building intelligence, planning &amp; 3D schematics are live here.
+            WiFi / Bluetooth / CCTV scanning runs in the local desktop build.
           </div>
         ) : null}
 

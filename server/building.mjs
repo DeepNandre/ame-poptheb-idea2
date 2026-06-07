@@ -56,6 +56,11 @@ function keyStatus() {
         note: "shares OS_PLACES_KEY — adds TOID + USRN to identity",
       },
     },
+    memory: {
+      recall: "local risk-factor similarity (always on)",
+      cloudSync: process.env.SUPERMEMORY_API_KEY ? "supermemory" : "off",
+      note: "Similar-sites recall works with no key; SUPERMEMORY_API_KEY adds cloud sync",
+    },
   };
 }
 

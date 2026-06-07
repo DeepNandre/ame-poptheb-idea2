@@ -7,6 +7,7 @@ import {
   Check,
   FileText,
   Landmark,
+  Layers,
   Loader2,
   MapPin,
   Mountain,
@@ -565,6 +566,35 @@ function GroundHazard({ ground }: { ground: UnifiedBuilding["ground"] }) {
   );
 }
 
+/* ----------------------------- similar sites ----------------------------- */
+
+function SimilarSites({ similar }: { similar: UnifiedBuilding["similar"] }) {
+  if (!similar?.enabled || !similar.matches.length) return null;
+  return (
+    <div className="rounded-xl border border-white/10 bg-white/[0.02] p-3">
+      <div className="mb-2 flex items-center gap-2">
+        <Layers className="size-3.5 text-white/45" />
+        <span className="text-[12px] font-semibold text-white/85">Similar sites assessed</span>
+        <Badge variant="outline" className="ml-auto text-[10px]">
+          {similar.matches.length}
+        </Badge>
+      </div>
+      <div className="space-y-1">
+        {similar.matches.map((m, i) => (
+          <div key={i} className="flex items-center gap-2">
+            <span className="min-w-0 flex-1 truncate text-[12px] text-white/80">{m.address}</span>
+            {m.council ? <span className="shrink-0 text-[10px] text-white/35">{m.council}</span> : null}
+            {m.riskScore != null ? (
+              <Badge variant={m.riskBand ? riskVariant(m.riskBand) : "outline"}>{m.riskScore}</Badge>
+            ) : null}
+          </div>
+        ))}
+      </div>
+      <p className="mt-2 text-[10px] text-white/30">Cross-building recall · ranked by risk-factor similarity</p>
+    </div>
+  );
+}
+
 /* ------------------------------- skeleton ------------------------------- */
 
 function Skeleton() {
@@ -648,7 +678,7 @@ export function IntelligencePanel({
     );
   }
 
-  const { identity, risk, safety, planning, occupants, environment, ground, ownership, building, financial, transport, foia } = data;
+  const { identity, risk, similar, safety, planning, occupants, environment, ground, ownership, building, financial, transport, foia } = data;
   const liveCount = data.meta.sources.filter((s) => s.status === "ok").length;
 
   return (
@@ -683,6 +713,9 @@ export function IntelligencePanel({
 
       {/* Headline risk index — synthesised from the real signals below. */}
       <RiskCard risk={risk} />
+
+      {/* Cross-building recall (only when SUPERMEMORY_API_KEY is set). */}
+      <SimilarSites similar={similar} />
 
       <Section title="Safety" icon={ShieldAlert} status={safety.status} defaultOpen>
         <div className="space-y-3">

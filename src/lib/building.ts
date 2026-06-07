@@ -294,6 +294,16 @@ export interface UnifiedBuilding {
     summary?: string;
   };
   foia: FoiaStub[];
+  similar: {
+    enabled: boolean;
+    matches: {
+      address: string;
+      council: string | null;
+      riskScore: number | null;
+      riskBand: string | null;
+      similarity: number | null;
+    }[];
+  };
   meta: { generatedAt: string; ctx: Record<string, unknown>; sources: SourceMeta[] };
 }
 
@@ -374,6 +384,12 @@ export function summarizeForAnswer(b: UnifiedBuilding) {
     toid: b.identity.toid ?? null,
     riskIndex: `${b.risk.score}/100 (${b.risk.band})`,
     riskFactors: b.risk.factors.map((f) => `${f.label}: ${f.score}/100 — ${f.basis}`),
+    similarSitesAssessed:
+      b.similar?.enabled && b.similar.matches.length
+        ? b.similar.matches.map(
+            (m) => `${m.address}${m.riskScore != null ? ` (${m.riskScore}/100 ${m.riskBand ?? ""})` : ""}`,
+          )
+        : "none on record yet",
     groundStability:
       b.ground.available && b.ground.overall
         ? `worst: ${b.ground.overall.name} = ${b.ground.overall.label}` +

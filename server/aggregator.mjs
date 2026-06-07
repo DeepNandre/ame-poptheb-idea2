@@ -15,6 +15,7 @@
 
 import { resolveIdentity } from "./sources/osPlaces.mjs";
 import { cacheKey, readCache, writeCache, TTL } from "./cache.mjs";
+import { recallSimilar, rememberBuilding } from "./memory.mjs";
 
 import * as police from "./sources/police.mjs";
 import * as foodStandards from "./sources/foodStandards.mjs";
@@ -362,6 +363,11 @@ export async function getBuilding(input) {
     ctx,
     sources: results.map(meta),
   };
+
+  // Cross-building risk recall (optional; only with SUPERMEMORY_API_KEY). Recall
+  // BEFORE remembering so a building never matches itself.
+  building.similar = await recallSimilar(building).catch(() => ({ enabled: false, matches: [] }));
+  rememberBuilding(building).catch(() => {}); // fire-and-forget write for next time
 
   return { ok: true, building };
 }
